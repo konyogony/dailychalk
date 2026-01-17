@@ -1,0 +1,309 @@
+{
+  "lastUpdate": "2026-01-17",
+  "problemSet": {
+    "Integration": {
+      "Easy": {
+        "id": "int-e-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "$$\\int (6x^2 - 4e^{2x} + \\sin x) \\, dx$$",
+        "possibleAnswers": [
+          "2x^3 - 2e^{2x} - \\cos x + C",
+          "12x - 8e^{2x} + \\cos x + C",
+          "2x^3 - 4e^{2x} + \\cos x + C",
+          "3x^3 - 2e^{2x} - \\cos x + C"
+        ],
+        "fullSolutionLatex": "We integrate each term separately: \n\n1. For $6x^2$: Using the power rule $\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C$, we get $\\int 6x^2 \\, dx = 6 \\frac{x^{2+1}}{2+1} = 6 \\frac{x^3}{3} = 2x^3$. \n\n2. For $-4e^{2x}$: Using the rule $\\int e^{ax} \\, dx = \\frac{1}{a} e^{ax} + C$, we get $\\int -4e^{2x} \\, dx = -4 \\cdot \\frac{1}{2} e^{2x} = -2e^{2x}$. \n\n3. For $\\sin x$: Using the rule $\\int \\sin x \\, dx = -\\cos x + C$, we get $\\int \\sin x \\, dx = -\\cos x$. \n\nCombining these, the indefinite integral is $2x^3 - 2e^{2x} - \\cos x + C$.",
+        "hintsLatex": [
+          "Integrate each term separately.",
+          "Remember the power rule for $x^n$.",
+          "For $e^{ax}$, the integral is $\\frac{1}{a}e^{ax}$.",
+          "The integral of $\\sin x$ is $-\\cos x$."
+        ],
+        "topicsCovered": [
+          "Power Rule",
+          "Exponential Integration",
+          "Trigonometric Integration"
+        ],
+        "difficultyLevel": "Easy",
+        "problemType": "Integration"
+      },
+      "Medium": {
+        "id": "int-m-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "$$\\int x \\sqrt{x^2 + 1} \\, dx$$",
+        "possibleAnswers": [
+          "$\\frac{1}{3}(x^2+1)^{3/2} + C$",
+          "$\\frac{2}{3}(x^2+1)^{3/2} + C$",
+          "$\\frac{1}{2}(x^2+1)^{1/2} + C$",
+          "$\\frac{1}{3}(x^2+1)^{1/2} + C$"
+        ],
+        "fullSolutionLatex": "Let $u = x^2 + 1$. \n\nThen $\\frac{du}{dx} = 2x$, which means $dx = \\frac{du}{2x}$. \n\nSubstitute these into the integral: \n\n$$\\int x \\sqrt{u} \\left(\\frac{du}{2x}\\right)$$ \n\nThe $x$ terms cancel out: \n\n$$\\int \\frac{1}{2} \\sqrt{u} \\, du = \\frac{1}{2} \\int u^{1/2} \\, du$$ \n\nNow, integrate with respect to $u$ using the power rule: \n\n$$\\frac{1}{2} \\cdot \\frac{u^{1/2+1}}{1/2+1} + C = \\frac{1}{2} \\cdot \\frac{u^{3/2}}{3/2} + C$$ \n\nSimplify the expression: \n\n$$\\frac{1}{2} \\cdot \\frac{2}{3} u^{3/2} + C = \\frac{1}{3} u^{3/2} + C$$ \n\nFinally, substitute back $u = x^2 + 1$: \n\n$$\\frac{1}{3}(x^2+1)^{3/2} + C$$",
+        "hintsLatex": [
+          "Consider using a substitution method.",
+          "Let $u$ be the expression inside the square root.",
+          "Remember to change $dx$ in terms of $du$.",
+          "Apply the power rule for integration after substitution."
+        ],
+        "topicsCovered": [
+          "Integration by Substitution"
+        ],
+        "difficultyLevel": "Medium",
+        "problemType": "Integration"
+      },
+      "Hard": {
+        "id": "int-h-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "$$\\int_0^{\\pi/2} x \\cos x \\, dx$$",
+        "possibleAnswers": [
+          "$\\frac{\\pi}{2} - 1$",
+          "$\\frac{\\pi}{2} + 1$",
+          "1",
+          "$\\frac{\\pi}{2}$"
+        ],
+        "fullSolutionLatex": "We use integration by parts, which states $\\int u \\, dv = uv - \\int v \\, du$. \n\nLet $u = x$ and $dv = \\cos x \\, dx$. \n\nThen $\\frac{du}{dx} = 1 \\implies du = dx$. \n\nAnd $\\int dv = \\int \\cos x \\, dx \\implies v = \\sin x$. \n\nApplying the formula: \n\n$$\\int x \\cos x \\, dx = x \\sin x - \\int \\sin x \\, dx$$ \n\n$$\\int x \\cos x \\, dx = x \\sin x - (-\\cos x) + C = x \\sin x + \\cos x + C$$ \n\nNow, evaluate the definite integral from $0$ to $\\pi/2$: \n\n$$[x \\sin x + \\cos x]_0^{\\pi/2} = \\left(\\frac{\\pi}{2} \\sin\\left(\\frac{\\pi}{2}\\right) + \\cos\\left(\\frac{\\pi}{2}\\right)\\right) - (0 \\sin(0) + \\cos(0))$$ \n\n$$= \\left(\\frac{\\pi}{2} (1) + 0\\right) - (0 + 1)$$ \n\n$$= \\frac{\\pi}{2} - 1$$",
+        "hintsLatex": [
+          "This integral requires integration by parts.",
+          "Choose $u=x$ and $dv=\\cos x \\, dx$.",
+          "Remember the formula: $\\int u \\, dv = uv - \\int v \\, du$.",
+          "Don't forget to evaluate the definite integral at the limits."
+        ],
+        "topicsCovered": [
+          "Integration by Parts",
+          "Definite Integrals"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Integration"
+      }
+    },
+    "Differentiation": {
+      "Easy": {
+        "id": "diff-e-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "$$\\frac{d}{dx}(4x^3 - 5\\sin(3x) + e^{2x})$$",
+        "possibleAnswers": [
+          "$12x^2 - 15\\cos(3x) + 2e^{2x}$",
+          "$12x^2 - 5\\cos(3x) + e^{2x}$",
+          "$4x^2 - 15\\cos(3x) + 2e^{2x}$",
+          "$12x^2 + 15\\cos(3x) + 2e^{2x}$"
+        ],
+        "fullSolutionLatex": "We differentiate each term separately: \n\n1. For $4x^3$: Using the power rule $\\frac{d}{dx}(x^n) = nx^{n-1}$, we get $\\frac{d}{dx}(4x^3) = 4 \\cdot 3x^{3-1} = 12x^2$. \n\n2. For $-5\\sin(3x)$: Using the chain rule and $\\frac{d}{dx}(\\sin(ax)) = a\\cos(ax)$, we get $\\frac{d}{dx}(-5\\sin(3x)) = -5 \\cdot 3\\cos(3x) = -15\\cos(3x)$. \n\n3. For $e^{2x}$: Using the chain rule and $\\frac{d}{dx}(e^{ax}) = ae^{ax}$, we get $\\frac{d}{dx}(e^{2x}) = 2e^{2x}$. \n\nCombining these, the derivative is $12x^2 - 15\\cos(3x) + 2e^{2x}$.",
+        "hintsLatex": [
+          "Differentiate each term independently.",
+          "Remember the chain rule for trigonometric and exponential functions.",
+          "The derivative of $x^n$ is $nx^{n-1}$.",
+          "The derivative of $\\sin(ax)$ is $a\\cos(ax)$ and $e^{ax}$ is $ae^{ax}$."
+        ],
+        "topicsCovered": [
+          "Power Rule",
+          "Chain Rule",
+          "Trigonometric Differentiation",
+          "Exponential Differentiation"
+        ],
+        "difficultyLevel": "Easy",
+        "problemType": "Differentiation"
+      },
+      "Medium": {
+        "id": "diff-m-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "$$\\frac{d}{dx}\\left(\\frac{\\ln x}{x^2}\\right)$$",
+        "possibleAnswers": [
+          "$\\frac{1 - 2\\ln x}{x^3}$",
+          "$\\frac{1 - 2x\\ln x}{x^4}$",
+          "$\\frac{2\\ln x - 1}{x^3}$",
+          "$\\frac{1 - \\ln x}{x^3}$"
+        ],
+        "fullSolutionLatex": "We use the quotient rule: $\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{u'v - uv'}{v^2}$. \n\nLet $u = \\ln x$ and $v = x^2$. \n\nThen $u' = \\frac{d}{dx}(\\ln x) = \\frac{1}{x}$. \n\nAnd $v' = \\frac{d}{dx}(x^2) = 2x$. \n\nSubstitute these into the quotient rule formula: \n\n$$\\frac{d}{dx}\\left(\\frac{\\ln x}{x^2}\\right) = \\frac{(\\frac{1}{x})(x^2) - (\\ln x)(2x)}{(x^2)^2}$$ \n\nSimplify the numerator: \n\n$$= \\frac{x - 2x\\ln x}{x^4}$$ \n\nFactor out $x$ from the numerator and cancel with one $x$ in the denominator: \n\n$$= \\frac{x(1 - 2\\ln x)}{x^4} = \\frac{1 - 2\\ln x}{x^3}$$",
+        "hintsLatex": [
+          "This problem requires the quotient rule.",
+          "Identify $u$ and $v$ correctly: $u = \\ln x$, $v = x^2$.",
+          "Recall that $\\frac{d}{dx}(\\ln x) = \\frac{1}{x}$.",
+          "Simplify the resulting expression after applying the rule."
+        ],
+        "topicsCovered": [
+          "Quotient Rule",
+          "Logarithmic Differentiation",
+          "Power Rule"
+        ],
+        "difficultyLevel": "Medium",
+        "problemType": "Differentiation"
+      },
+      "Hard": {
+        "id": "diff-h-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "A curve is defined parametrically by $x = t^2$ and $y = \\frac{1}{t}$. Find $\\frac{d^2y}{dx^2}$ in terms of $t$.",
+        "possibleAnswers": [
+          "$\\frac{3}{4t^5}$",
+          "$-\\frac{1}{2t^3}$",
+          "$-\\frac{3}{4t^5}$",
+          "$\\frac{1}{2t^4}$"
+        ],
+        "fullSolutionLatex": "First, find $\\frac{dy}{dt}$ and $\\frac{dx}{dt}$. \n\n$x = t^2 \\implies \\frac{dx}{dt} = 2t$. \n\n$y = t^{-1} \\implies \\frac{dy}{dt} = -t^{-2} = -\\frac{1}{t^2}$. \n\nNow, find $\\frac{dy}{dx}$ using the chain rule: $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$. \n\n$$\\frac{dy}{dx} = \\frac{-1/t^2}{2t} = -\\frac{1}{2t^3}$$ \n\nTo find $\\frac{d^2y}{dx^2}$, we differentiate $\\frac{dy}{dx}$ with respect to $x$. Since $\\frac{dy}{dx}$ is in terms of $t$, we use the chain rule again: $\\frac{d^2y}{dx^2} = \\frac{d}{dt}\\left(\\frac{dy}{dx}\\right) \\cdot \\frac{dt}{dx}$. \n\nFirst, find $\\frac{d}{dt}\\left(-\\frac{1}{2t^3}\\right)$: \n\n$$\\frac{d}{dt}\\left(-\\frac{1}{2}t^{-3}\\right) = -\\frac{1}{2} (-3)t^{-4} = \\frac{3}{2}t^{-4} = \\frac{3}{2t^4}$$ \n\nNext, recall that $\\frac{dt}{dx} = \\frac{1}{dx/dt} = \\frac{1}{2t}$. \n\nMultiply these two results: \n\n$$\\frac{d^2y}{dx^2} = \\left(\\frac{3}{2t^4}\\right) \\cdot \\left(\\frac{1}{2t}\\right) = \\frac{3}{4t^5}$$",
+        "hintsLatex": [
+          "First, find $\\frac{dy}{dx}$ using the chain rule $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$.",
+          "Then, to find $\\frac{d^2y}{dx^2}$, differentiate $\\frac{dy}{dx}$ with respect to $t$.",
+          "Finally, multiply your result by $\\frac{dt}{dx}$, which is $1/\\frac{dx}{dt}$.",
+          "Be careful with negative exponents and fractions."
+        ],
+        "topicsCovered": [
+          "Parametric Differentiation",
+          "Second Derivative"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Differentiation"
+      }
+    },
+    "Further Math (9231)": {
+      "Easy": {
+        "id": "fm-e-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "Given the matrix $\\mathbf{A} = \\begin{pmatrix} 3 & 1 \\\\ 2 & 4 \\end{pmatrix}$, find the determinant of $\\mathbf{A}$.",
+        "possibleAnswers": [
+          "10",
+          "14",
+          "6",
+          "11"
+        ],
+        "fullSolutionLatex": "For a 2x2 matrix $\\mathbf{A} = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$, the determinant is given by $\\det(\\mathbf{A}) = ad - bc$. \n\nGiven $\\mathbf{A} = \\begin{pmatrix} 3 & 1 \\\\ 2 & 4 \\end{pmatrix}$. \n\nHere, $a=3, b=1, c=2, d=4$. \n\nSubstitute these values into the formula: \n\n$$\\det(\\mathbf{A}) = (3)(4) - (1)(2)$$ \n\n$$= 12 - 2$$ \n\n$$= 10$$",
+        "hintsLatex": [
+          "Recall the formula for the determinant of a 2x2 matrix.",
+          "The formula is $ad-bc$ for a matrix $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$.",
+          "Be careful with the order of multiplication and subtraction.",
+          "The determinant is a single scalar value."
+        ],
+        "topicsCovered": [
+          "Matrices",
+          "Determinant of 2x2 Matrix"
+        ],
+        "difficultyLevel": "Easy",
+        "problemType": "Further Math (9231)"
+      },
+      "Medium": {
+        "id": "fm-m-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "Solve the differential equation $\\frac{dy}{dx} - 2y = e^{2x}$ given $y(0)=1$.",
+        "possibleAnswers": [
+          "$y = (x+1)e^{2x}$",
+          "$y = xe^{2x} + e^{2x}$",
+          "$y = xe^{2x} + C e^{2x}$",
+          "$y = e^{2x}$"
+        ],
+        "fullSolutionLatex": "This is a first-order linear differential equation of the form $\\frac{dy}{dx} + P(x)y = Q(x)$. \n\nHere, $P(x) = -2$ and $Q(x) = e^{2x}$. \n\nFirst, find the integrating factor (IF): \n\n$$\\text{IF} = e^{\\int P(x) \\, dx} = e^{\\int -2 \\, dx} = e^{-2x}$$ \n\nMultiply the entire differential equation by the integrating factor: \n\n$$e^{-2x}\\frac{dy}{dx} - 2ye^{-2x} = e^{2x}e^{-2x}$$ \n\nThe left side is the derivative of $(ye^{-2x})$ with respect to $x$: \n\n$$\\frac{d}{dx}(ye^{-2x}) = 1$$ \n\nNow, integrate both sides with respect to $x$: \n\n$$\\int \\frac{d}{dx}(ye^{-2x}) \\, dx = \\int 1 \\, dx$$ \n\n$$ye^{-2x} = x + C$$ \n\nSolve for $y$: \n\n$$y = (x+C)e^{2x}$$ \n\nUse the initial condition $y(0)=1$: \n\n$$1 = (0+C)e^{2(0)}$$ \n\n$$1 = C e^0$$ \n\n$$1 = C(1) \\implies C = 1$$ \n\nSubstitute $C=1$ back into the general solution: \n\n$$y = (x+1)e^{2x}$$",
+        "hintsLatex": [
+          "This is a first-order linear differential equation. Use an integrating factor.",
+          "The integrating factor is $e^{\\int P(x) \\, dx}$.",
+          "After multiplying by the integrating factor, the left side becomes $\\frac{d}{dx}(y \\cdot \\text{IF})$.",
+          "Don't forget to use the initial condition to find the constant of integration $C$."
+        ],
+        "topicsCovered": [
+          "Differential Equations",
+          "First Order Linear Differential Equations",
+          "Integrating Factor"
+        ],
+        "difficultyLevel": "Medium",
+        "problemType": "Further Math (9231)"
+      },
+      "Hard": {
+        "id": "fm-h-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "Find the first three non-zero terms of the Maclaurin series for $f(x) = \\ln(1+\\cos x)$.",
+        "possibleAnswers": [
+          "$\\ln 2 - \\frac{x^2}{4} - \\frac{x^4}{96} + \\dots$",
+          "$\\ln 2 - \\frac{x^2}{2} - \\frac{x^4}{24} + \\dots$",
+          "$\\ln 2 + \\frac{x^2}{4} + \\frac{x^4}{96} + \\dots$",
+          "$\\ln(1+\\cos x) = 1 - \\frac{x^2}{2} + \\frac{x^4}{24} - \\dots$"
+        ],
+        "fullSolutionLatex": "The Maclaurin series is given by $f(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\frac{f'''(0)}{3!}x^3 + \\frac{f^{(4)}(0)}{4!}x^4 + \\dots$ \n\nLet $f(x) = \\ln(1+\\cos x)$. \n\n1. $f(0) = \\ln(1+\\cos 0) = \\ln(1+1) = \\ln 2$. \n\n2. $f'(x) = \\frac{1}{1+\\cos x} \\cdot (-\\sin x) = -\\frac{\\sin x}{1+\\cos x}$. \n\n$f'(0) = -\\frac{\\sin 0}{1+\\cos 0} = -\\frac{0}{1+1} = 0$. \n\n3. $f''(x) = -\\frac{\\cos x(1+\\cos x) - \\sin x(-\\sin x)}{(1+\\cos x)^2}$ (using quotient rule) \n\n$f''(x) = -\\frac{\\cos x + \\cos^2 x + \\sin^2 x}{(1+\\cos x)^2} = -\\frac{\\cos x + 1}{(1+\\cos x)^2} = -\\frac{1}{1+\\cos x}$. \n\n$f''(0) = -\\frac{1}{1+\\cos 0} = -\\frac{1}{1+1} = -\\frac{1}{2}$. \n\n4. $f'''(x) = -\\frac{d}{dx}((1+\\cos x)^{-1}) = -(-1)(1+\\cos x)^{-2}(-\\sin x) = -\\frac{\\sin x}{(1+\\cos x)^2}$. \n\n$f'''(0) = -\\frac{\\sin 0}{(1+\\cos 0)^2} = 0$. \n\n5. $f^{(4)}(x) = -\\frac{\\cos x(1+\\cos x)^2 - \\sin x \\cdot 2(1+\\cos x)(-\\sin x)}{(1+\\cos x)^4}$ \n\n$f^{(4)}(x) = -\\frac{\\cos x(1+\\cos x) + 2\\sin^2 x}{(1+\\cos x)^3}$ \n\n$f^{(4)}(0) = -\\frac{\\cos 0(1+\\cos 0) + 2\\sin^2 0}{(1+\\cos 0)^3} = -\\frac{1(1+1) + 0}{(1+1)^3} = -\\frac{2}{8} = -\\frac{1}{4}$. \n\nNow substitute these values into the Maclaurin series formula: \n\n$f(x) = \\ln 2 + (0)x + \\frac{-1/2}{2!}x^2 + \\frac{0}{3!}x^3 + \\frac{-1/4}{4!}x^4 + \\dots$ \n\n$f(x) = \\ln 2 - \\frac{1}{4}x^2 - \\frac{1}{4 \\cdot 24}x^4 + \\dots$ \n\n$f(x) = \\ln 2 - \\frac{x^2}{4} - \\frac{x^4}{96} + \\dots$",
+        "hintsLatex": [
+          "Recall the Maclaurin series formula: $f(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\dots$",
+          "Calculate the first few derivatives of $f(x)$ and evaluate them at $x=0$.",
+          "Alternatively, use known Maclaurin series for $\\cos x$ and $\\ln(1+u)$, then substitute and expand.",
+          "Be careful with algebraic manipulations and collecting terms for the power series expansion."
+        ],
+        "topicsCovered": [
+          "Maclaurin Series",
+          "Series Expansion",
+          "Differentiation",
+          "Logarithmic Functions",
+          "Trigonometric Functions"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Further Math (9231)"
+      }
+    },
+    "Mathematics (9709)": {
+      "Easy": {
+        "id": "math-e-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "Given the vectors $\\mathbf{a} = 2\\mathbf{i} - \\mathbf{j} + 3\\mathbf{k}$ and $\\mathbf{b} = \\mathbf{i} + 2\\mathbf{j} - \\mathbf{k}$, find the scalar product $\\mathbf{a} \\cdot \\mathbf{b}$.",
+        "possibleAnswers": [
+          "-3",
+          "3",
+          "5",
+          "-1"
+        ],
+        "fullSolutionLatex": "The scalar product (dot product) of two vectors $\\mathbf{a} = a_1\\mathbf{i} + a_2\\mathbf{j} + a_3\\mathbf{k}$ and $\\mathbf{b} = b_1\\mathbf{i} + b_2\\mathbf{j} + b_3\\mathbf{k}$ is given by $\\mathbf{a} \\cdot \\mathbf{b} = a_1b_1 + a_2b_2 + a_3b_3$. \n\nGiven $\\mathbf{a} = 2\\mathbf{i} - \\mathbf{j} + 3\\mathbf{k}$ and $\\mathbf{b} = \\mathbf{i} + 2\\mathbf{j} - \\mathbf{k}$. \n\nSo, $a_1=2, a_2=-1, a_3=3$. \n\nAnd $b_1=1, b_2=2, b_3=-1$. \n\nSubstitute these values into the formula: \n\n$$\\mathbf{a} \\cdot \\mathbf{b} = (2)(1) + (-1)(2) + (3)(-1)$$ \n\n$$\\mathbf{a} \\cdot \\mathbf{b} = 2 - 2 - 3$$ \n\n$$\\mathbf{a} \\cdot \\mathbf{b} = -3$$",
+        "hintsLatex": [
+          "Recall the formula for the scalar product (dot product) of two 3D vectors.",
+          "Multiply corresponding components and sum the results.",
+          "Pay attention to the signs of the components.",
+          "The scalar product results in a scalar value, not a vector."
+        ],
+        "topicsCovered": [
+          "Vectors",
+          "Scalar Product (Dot Product)"
+        ],
+        "difficultyLevel": "Easy",
+        "problemType": "Mathematics (9709)"
+      },
+      "Medium": {
+        "id": "math-m-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "Find the complex number $z$ in the form $x+iy$ such that $z(2-i) = 7+4i$.",
+        "possibleAnswers": [
+          "$2+3i$",
+          "$-2-3i$",
+          "$-2+3i$",
+          "$2-3i$"
+        ],
+        "fullSolutionLatex": "We are given the equation $z(2-i) = 7+4i$. \n\nTo find $z$, we need to divide $7+4i$ by $2-i$: \n\n$$z = \\frac{7+4i}{2-i}$$ \n\nTo divide complex numbers, we multiply the numerator and the denominator by the conjugate of the denominator. The conjugate of $2-i$ is $2+i$. \n\n$$z = \\frac{7+4i}{2-i} \\cdot \\frac{2+i}{2+i}$$ \n\nMultiply the numerators: \n\n$$(7+4i)(2+i) = 7(2) + 7(i) + 4i(2) + 4i(i)$$ \n\n$$= 14 + 7i + 8i + 4i^2$$ \n\nSince $i^2 = -1$: \n\n$$= 14 + 15i - 4 = 10 + 15i$$ \n\nMultiply the denominators (difference of squares): \n\n$$(2-i)(2+i) = 2^2 - (i)^2 = 4 - (-1) = 4+1 = 5$$ \n\nSo, \n\n$$z = \\frac{10+15i}{5} = \\frac{10}{5} + \\frac{15}{5}i = 2+3i$$",
+        "hintsLatex": [
+          "To isolate $z$, you need to perform complex division.",
+          "Multiply the numerator and denominator by the conjugate of the denominator.",
+          "Recall that $i^2 = -1$.",
+          "The conjugate of $a-bi$ is $a+bi$."
+        ],
+        "topicsCovered": [
+          "Complex Numbers",
+          "Division of Complex Numbers"
+        ],
+        "difficultyLevel": "Medium",
+        "problemType": "Mathematics (9709)"
+      },
+      "Hard": {
+        "id": "math-h-1",
+        "date": "2024-05-15T10:00:00.000Z",
+        "problemLatex": "The vector equations of two lines are $\\mathbf{r}_1 = \\mathbf{i} + 2\\mathbf{j} - \\mathbf{k} + \\lambda(2\\mathbf{i} - \\mathbf{j} + 3\\mathbf{k})$ and $\\mathbf{r}_2 = 2\\mathbf{i} + \\mathbf{j} + 4\\mathbf{k} + \\mu(\\mathbf{i} + 2\\mathbf{j} - 2\\mathbf{k})$. Determine if the lines intersect, and if so, find the position vector of the intersection point.",
+        "possibleAnswers": [
+          "Lines do not intersect",
+          "$\\mathbf{i} + 2\\mathbf{j} - \\mathbf{k}$",
+          "$3\\mathbf{i} + \\mathbf{j} + 2\\mathbf{k}$",
+          "$5\\mathbf{i} + 0\\mathbf{j} + 5\\mathbf{k}$"
+        ],
+        "fullSolutionLatex": "For the lines to intersect, there must exist values of $\\lambda$ and $\\mu$ such that $\\mathbf{r}_1 = \\mathbf{r}_2$. \n\nEquating the components: \n\n$$(1 + 2\\lambda)\\mathbf{i} + (2 - \\lambda)\\mathbf{j} + (-1 + 3\\lambda)\\mathbf{k} = (2 + \\mu)\\mathbf{i} + (1 + 2\\mu)\\mathbf{j} + (4 - 2\\mu)\\mathbf{k}$$ \n\nThis gives us a system of three linear equations: \n\n1. $1 + 2\\lambda = 2 + \\mu \\implies 2\\lambda - \\mu = 1$ \n\n2. $2 - \\lambda = 1 + 2\\mu \\implies -\\lambda - 2\\mu = -1 \\implies \\lambda + 2\\mu = 1$ \n\n3. $-1 + 3\\lambda = 4 - 2\\mu \\implies 3\\lambda + 2\\mu = 5$ \n\nFrom equation (1), $\\mu = 2\\lambda - 1$. \n\nSubstitute this into equation (2): \n\n$$\\lambda + 2(2\\lambda - 1) = 1$$ \n\n$$\\lambda + 4\\lambda - 2 = 1$$ \n\n$$5\\lambda = 3 \\implies \\lambda = \\frac{3}{5}$$ \n\nNow find $\\mu$: \n\n$$\\mu = 2\\left(\\frac{3}{5}\\right) - 1 = \\frac{6}{5} - 1 = \\frac{1}{5}$$ \n\nCheck these values in the third equation: \n\n$$3\\left(\\frac{3}{5}\\right) + 2\\left(\\frac{1}{5}\\right) = \\frac{9}{5} + \\frac{2}{5} = \\frac{11}{5}$$ \n\nThe right side of equation (3) is $5$. Since $\\frac{11}{5} \\neq 5$, the values of $\\lambda$ and $\\mu$ obtained from the first two equations do not satisfy the third equation. \n\nTherefore, the lines do not intersect.",
+        "hintsLatex": [
+          "Equate the components of the two vector equations to form a system of simultaneous equations.",
+          "Solve the first two equations for $\\lambda$ and $\\mu$.",
+          "Substitute the found values of $\\lambda$ and $\\mu$ into the third equation to check for consistency.",
+          "If the third equation is satisfied, the lines intersect; otherwise, they do not."
+        ],
+        "topicsCovered": [
+          "Vectors",
+          "Intersection of Lines",
+          "Simultaneous Equations"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Mathematics (9709)"
+      }
+    }
+  }
+}

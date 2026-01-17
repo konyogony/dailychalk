@@ -1,0 +1,9 @@
+services:
+    app:
+        build: .
+        ports:
+            - '3005:3005'
+        environment:
+            - GEMINI_API_KEY=${GEMINI_API_KEY}
+        volumes:
+            - ./chalk-db:/app/data
