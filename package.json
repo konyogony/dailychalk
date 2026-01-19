@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start -p 3005",
-        "lint": "eslint"
+        "lint": "eslint",
+        "generate-daily": "bun scripts/generate-daily.ts"
     },
     "dependencies": {
         "@base-ui/react": "^1.1.0",

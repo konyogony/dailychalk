@@ -1,0 +1,38 @@
+name: Generate Daily Math Problems
+
+on:
+    schedule:
+        - cron: '0 6 * * *'
+    workflow_dispatch:
+
+jobs:
+    generate-problems:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: latest
+
+            - name: Install dependencies
+              run: bun install
+
+            - name: Generate new problems
+              env:
+                  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+              run: bun run generate-daily
+
+            - name: Commit and push changes
+              run: |
+                  git config --local user.email "action@github. com"
+                  git config --local user.name "GitHub Action"
+                  git add data/problems.json
+                  if git diff --staged --quiet; then
+                    echo "No changes to commit"
+                  else
+                    git commit -m "🧮 Daily math problems update - $(date +'%Y-%m-%d')"
+                    git push

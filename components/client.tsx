@@ -93,14 +93,13 @@ export const Client = ({ problem }: { problem: Problem }) => {
 
     return (
         <div className='flex flex-col gap-6 w-full max-w-full overflow-hidden'>
-            <div className='flex items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest'>
+            <div className='flex flex-wrap items-center gap-2 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest'>
                 <span className='text-primary font-bold'>{problem.problemType}</span>
                 <span>·</span>
                 <span>{problem.difficultyLevel}</span>
                 <span>·</span>
-                <span className='truncate'>{problem.topicsCovered.join(', ')}</span>
-                <span>·</span>
                 <span>#{problem.id.split('-')[2]}</span>
+                <span className='truncate text-[9.5px]'>{problem.topicsCovered.join(', ')}</span>
             </div>
 
             <div className='border border-border rounded-xl p-6 sm:p-8 w-full bg-card shadow-sm overflow-x-auto'>
@@ -133,7 +132,7 @@ export const Client = ({ problem }: { problem: Problem }) => {
                     onChange={(e) => setAnswer(e.target.value)}
                     placeholder={isFinished ? 'Problem closed' : 'e.g. x^2 + C'}
                     className={cn(
-                        'w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg text-sm transition-all focus:outline-none focus:ring-2',
+                        'w-full scale-[99%] px-4 py-3 bg-secondary/50 border border-border rounded-lg text-sm transition-all focus:outline-none focus:ring-2',
                         result === 'correct' ? 'ring-emerald-500/50 border-emerald-500' : 'focus:ring-primary/20',
                         isFinished && 'opacity-60 cursor-not-allowed',
                     )}
