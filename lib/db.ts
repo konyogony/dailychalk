@@ -2,7 +2,7 @@ import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { DailyProblems } from './types';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+const DATA_DIR = process.env.IS_DOCKER ? '/app/data' : path.join(process.cwd(), 'data');
 const DATA_FILE = path.join(DATA_DIR, 'problems.json');
 
 export const getDailyProblems = async () => {

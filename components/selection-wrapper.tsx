@@ -7,14 +7,20 @@ export const SelectionWrapper = async () => {
     let stored = await getDailyProblems();
 
     if (!stored || stored.lastUpdate !== today) {
+        console.log('Generating new problem set for', today);
         const newSet = await generateNewProblemSet(stored?.problemSet || null);
 
         if (newSet) {
             await saveDailyProblems(newSet);
             stored = { lastUpdate: today, problemSet: newSet };
+            console.log('New problems generated successfully');
         } else {
-            await new Promise((res) => setTimeout(res, 2000));
-            stored = await getDailyProblems();
+            console.error('Failed to generate new problems, using fallback');
+            if (!stored) {
+                const { problemSet: initialProblemSet } = await import('@/lib/lib');
+                stored = { lastUpdate: today, problemSet: initialProblemSet };
+                await saveDailyProblems(initialProblemSet);
+            }
         }
     }
 
