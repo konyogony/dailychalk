@@ -50,7 +50,8 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             1. Use DOUBLE BACKSLASHES for all LaTeX (e.g., "\\\\int", "\\\\frac{1}{2}").
             2. Ensure possibleAnswers contains the correct answer. Make sure that the format the answer is written in contains both LaTeX and plain text and other simplified versions of the answer.
             3.5 Ensure you have at least 15 possible answers for each question, where it ranges from some latex and formatting, to none.
-            3. Mathematics (9709) should cover Pure 1-3. Further Math (9231) should cover Further Pure 1-2.
+            3. Mathematics (9709) should cover Pure 1-3. Further Math (9231) should cover Further Pure 1-2 as well as mechanics.
+            4. Make sure every day the question is completeley different, cant have similarities.
         `;
 
         const result = await model.generateContent(prompt);
