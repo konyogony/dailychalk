@@ -27,4 +27,5 @@ export interface Problem {
     topicsCovered: string[];
     difficultyLevel: DifficultyLevel;
     problemType: ProblemType;
+    funFact?: string;
 }

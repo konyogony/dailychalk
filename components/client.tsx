@@ -203,7 +203,7 @@ export const Client = ({ problem }: { problem: Problem }) => {
                 </div>
             </div>
 
-            <div className='flex flex-col gap-2 w-full mb-12'>
+            <div className='flex flex-col gap-2 w-full'>
                 <span className='text-[10px] text-muted-foreground uppercase tracking-wider font-bold'>
                     full solution
                 </span>
@@ -230,6 +230,19 @@ export const Client = ({ problem }: { problem: Problem }) => {
                     )}
                 </div>
             </div>
+
+            {showSolution && problem.funFact && (
+                <div className='flex flex-col gap-2 w-full mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700'>
+                    <span className='text-[10px] text-muted-foreground uppercase tracking-wider font-bold flex items-center gap-1'>
+                        Did you know?
+                    </span>
+                    <div className='border border-border/80 bg-secondary/10 rounded-xl p-5 shadow-sm'>
+                        <p className='text-sm text-muted-foreground leading-relaxed italic'>{problem.funFact}</p>
+                    </div>
+                </div>
+            )}
+
+            {!problem.funFact && showSolution && <div className='mb-12' />}
         </div>
     );
 };

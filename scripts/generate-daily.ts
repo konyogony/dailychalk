@@ -1,41 +1,36 @@
-import { generateNewProblemSet } from '../lib/generate';
-import { getDailyProblems, saveDailyProblems } from '../lib/db';
-import { DailyProblems } from '../lib/types';
+import { getDailyProblems } from '@/lib/db';
+import { generateNewProblemSet } from '@/lib/generate';
+import { saveDailyProblems } from '@/lib/db';
+import { DailyProblems } from '@/lib/types';
 
 const generateDailyProblems = async (): Promise<void> => {
     try {
-        console.log('Starting daily problem generation...');
+        console.log('--- Starting Daily Problem Generation ---');
 
         const today = new Date().toISOString().split('T')[0];
-        console.log(`Today: ${today}`);
+        console.log(`Date Target: ${today}`);
 
         const stored = await getDailyProblems();
-        console.log(`Last update: ${stored?.lastUpdate || 'Never'}`);
 
         if (stored && stored.lastUpdate === today) {
-            console.log('Problems already updated for today! ');
+            console.log('✅ Problems already exist for today. Skipping generation.');
             return;
         }
 
-        console.log('Generating new problem set with AI...');
+        console.log('Querying Gemini AI...');
         const newSet: DailyProblems | null = await generateNewProblemSet(stored?.problemSet || null);
 
         if (!newSet) {
-            console.error('Failed to generate new problem set');
+            console.error('Failed to generate new problem set after retries.');
             process.exit(1);
         }
 
-        console.log('Saving new problems.. .');
+        console.log('Saving to disk...');
         await saveDailyProblems(newSet);
-        console.log('Daily problems generated successfully! ');
 
-        const totalProblems = Object.values(newSet).reduce((acc, category) => {
-            return acc + Object.keys(category).length;
-        }, 0);
-
-        console.log(`Generated ${totalProblems} problems across ${Object.keys(newSet).length} categories`);
+        console.log('Success! Daily problems generated.');
     } catch (error) {
-        console.error('Error generating daily problems:', error);
+        console.error('Fatal Error:', error);
         process.exit(1);
     }
 };

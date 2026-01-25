@@ -1,109 +1,132 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { DailyProblems, ProblemType, problemArray, DifficultyLevel } from './types';
-import { problemSet as initialProblemSet } from './lib';
+import { DailyProblems, Problem, diffMap, typeMap } from './types';
+import { THEMES } from './themes';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 export const generateNewProblemSet = async (previousSet: DailyProblems | null): Promise<DailyProblems | null> => {
-    try {
-        const { lastIds, usedProblems } = getContext(previousSet);
+    let attempts = 0;
+    const maxAttempts = 2;
 
-        const exampleSchema = JSON.stringify(initialProblemSet, null, 2).slice(0, 1500);
+    while (attempts < maxAttempts) {
+        try {
+            console.log(`AI Generation Attempt ${attempts + 1}...`);
 
-        const model = genAI.getGenerativeModel({
-            model: 'gemini-2.5-flash',
-            generationConfig: {
-                responseMimeType: 'application/json',
-                temperature: 0.7,
-            },
-        });
+            const { lastIndices, bannedTopics } = getContext(previousSet);
 
-        const prompt = `
-            Act as a mathematics professor for CIE A-Level (9709) and Further Maths (9231).
-            Generate a JSON object with exactly 12 problems.
+            const model = genAI.getGenerativeModel({
+                model: 'gemini-2.5',
+                generationConfig: {
+                    responseMimeType: 'application/json',
+                    temperature: 0.8,
+                },
+            });
 
-            ### SCHEMA REFERENCE:
-            ${exampleSchema}
+            const prompt = `
+            Act as an enthusiastic Mathematics Professor for CIE A-Level (9709) and Further Maths (9231).
+            Create a daily challenge set of 12 problems (4 Categories x 3 Difficulties).
 
-            ### REQUIRED DATA STRUCTURE:
-            Return a nested object with categories: "Integration", "Differentiation", "Further Math (9231)", "Mathematics (9709)".
-            Each category must contain "Easy", "Medium", and "Hard" objects.
+            ### CATEGORIES & THEMES:
+            1. Integration: Choose from [${THEMES.Integration.join(', ')}]
+            2. Differentiation: Choose from [${THEMES.Differentiation.join(', ')}]
+            3. Mathematics (9709): Choose from [${THEMES['Mathematics (9709)'].join(', ')}]
+            4. Further Math (9231): Choose from [${THEMES['Further Math (9231)'].join(', ')}]
+
+            ### IMPORTANT - AVOID REPETITION:
+            Do NOT generate questions exactly matching these recent topics: ${JSON.stringify(bannedTopics.slice(0, 15))}.
+
+            ### DATA STRUCTURE (JSON ONLY):
+            Return a single object. Keys are Category Names. Inside each, keys are "Easy", "Medium", "Hard".
             
-            Each Problem object MUST have:
-            - id: string (Follow ID rules below)
-            - date: string (ISO format)
-            - problemLatex: string (Use $$...$$)
-            - possibleAnswers: string[] (Array of 4 options)
-            - fullSolutionLatex: string (Detailed step-by-step)
-            - hintsLatex: string[] (3-4 hints)
-            - topicsCovered: string[]
-            - difficultyLevel: "Easy" | "Medium" | "Hard"
-            - problemType: (The category name)
+            Each Problem Object must have:
+            - "problemLatex": The question string (Use double backslash for latex: \\\\int, \\\\frac).
+            - "possibleAnswers": ARRAY of STRINGS. **CRITICAL**: The user types the answer. You must provide ALL valid variations. 
+               Example if answer is 1/2: ["1/2", "0.5", "50%", "1 over 2", "0.50"]
+               Example if answer is 4pi: ["4pi", "4\\pi", "4 pi", "12.57"]
+            - "fullSolutionLatex": Step-by-step solution.
+            - "hintsLatex": Array of 3 strings.
+            - "topicsCovered": Array of strings (The specific theme used).
+            - "funFact": A one-sentence interesting fact related to the math concept or its real-world usage.
 
-            ### ID & CONTEXT RULES:
-            - Previous max ID indices: ${lastIds}
-            - Do not repeat these problems: ${usedProblems.slice(0, 1000)}
-            - NEW ID FORMAT: "[type-prefix]-[difficulty-prefix]-[incremented-index]"
-            - Example: If last index for int-e was 1, new ID is "int-e-2".
+            ### DIFFICULTY GUIDE:
+            - Easy: Direct application of formula.
+            - Medium: Requires 2-3 steps or combining two concepts.
+            - Hard: Word problem, real-world scenario, or requires 'trick' / obscure identity.
 
-            ### CRITICAL:
-            1. Use DOUBLE BACKSLASHES for all LaTeX (e.g., "\\\\int", "\\\\frac{1}{2}").
-            2. Ensure possibleAnswers contains the correct answer. Make sure that the format the answer is written in contains both LaTeX and plain text and other simplified versions of the answer.
-            3.5 Ensure you have at least 15 possible answers for each question, where it ranges from some latex and formatting, to none.
-            3. Mathematics (9709) should cover Pure 1-3. Further Math (9231) should cover Further Pure 1-2 as well as mechanics.
-            4. Make sure every day the question is completeley different, cant have similarities.
-        `;
+            ### LATEX RULES:
+            ALWAYS use double backslashes (\\\\) for LaTeX commands.
+            `;
 
-        const result = await model.generateContent(prompt);
-        const text = result.response.text();
-        const rawData = JSON.parse(text);
+            const result = await model.generateContent(prompt);
+            const text = result.response.text();
 
-        const normalized: DailyProblems = JSON.parse(JSON.stringify(initialProblemSet));
+            const jsonString = text
+                .replace(/```json/g, '')
+                .replace(/```/g, '')
+                .trim();
+            const rawData = JSON.parse(jsonString);
 
-        const findCategory = (key: string): ProblemType | null => {
-            const match = problemArray.find((p) => p.toLowerCase().includes(key.toLowerCase().split(' ')[0]));
-            return (match as ProblemType) || null;
-        };
-
-        const sourceObj = rawData.problemSet || rawData;
-
-        Object.keys(sourceObj).forEach((rawCatKey) => {
-            const actualCat = findCategory(rawCatKey);
-            if (actualCat) {
-                const diffs = sourceObj[rawCatKey];
-                if (Array.isArray(diffs)) {
-                    diffs.forEach((p: any) => {
-                        const d = (p.difficultyLevel || p.difficulty || 'Easy') as DifficultyLevel;
-                        const capitalizedDiff = (d.charAt(0).toUpperCase() +
-                            d.slice(1).toLowerCase()) as DifficultyLevel;
-                        if (normalized[actualCat][capitalizedDiff]) {
-                            normalized[actualCat][capitalizedDiff] = p;
-                        }
-                    });
-                } else {
-                    Object.keys(diffs).forEach((rawDiffKey) => {
-                        const actualDiff = (rawDiffKey.charAt(0).toUpperCase() +
-                            rawDiffKey.slice(1).toLowerCase()) as DifficultyLevel;
-                        if (normalized[actualCat][actualDiff]) {
-                            normalized[actualCat][actualDiff] = diffs[rawDiffKey];
-                        }
-                    });
-                }
-            }
-        });
-
-        return normalized;
-    } catch (e) {
-        console.error('Generation failed:', e);
-        return null;
+            const finalSet = processAIResponse(rawData, lastIndices);
+            return finalSet;
+        } catch (e) {
+            console.error(`Generation attempt ${attempts + 1} failed:`, e);
+            attempts++;
+        }
     }
+    return null;
+};
+
+const processAIResponse = (rawData: any, lastIndices: Record<string, number>): DailyProblems => {
+    const newSet: Partial<DailyProblems> = {};
+    const categories = ['Integration', 'Differentiation', 'Further Math (9231)', 'Mathematics (9709)'] as const;
+    const difficulties = ['Easy', 'Medium', 'Hard'] as const;
+    const today = new Date().toISOString();
+
+    categories.forEach((cat) => {
+        const aiCatKey =
+            Object.keys(rawData).find((k) => k.toLowerCase().includes(cat.toLowerCase().split(' ')[0])) || cat;
+        const catData = rawData[aiCatKey];
+
+        newSet[cat] = {} as any;
+
+        difficulties.forEach((diff) => {
+            const aiDiffKey = catData ? Object.keys(catData).find((k) => k.toLowerCase() === diff.toLowerCase()) : null;
+            const rawProb = catData && aiDiffKey ? catData[aiDiffKey] : {};
+
+            const typePrefix = Object.keys(typeMap).find((key) => typeMap[key] === cat) || 'math';
+            const diffPrefix = Object.keys(diffMap).find((key) => diffMap[key] === diff) || 'e';
+            const baseId = `${typePrefix}-${diffPrefix}`;
+
+            const newIndex = (lastIndices[baseId] || 0) + 1;
+            lastIndices[baseId] = newIndex;
+
+            // 2. BUILD OBJECT
+            const problem: Problem = {
+                id: `${baseId}-${newIndex}`,
+                date: today,
+                problemLatex: rawProb.problemLatex || 'Error generating problem.',
+                possibleAnswers: Array.isArray(rawProb.possibleAnswers) ? rawProb.possibleAnswers : ['Error'],
+                fullSolutionLatex: rawProb.fullSolutionLatex || 'Solution unavailable.',
+                hintsLatex: rawProb.hintsLatex || [],
+                topicsCovered: rawProb.topicsCovered || [cat],
+                difficultyLevel: diff,
+                problemType: cat,
+                funFact: rawProb.funFact || 'Math is fun!',
+            };
+
+            // @ts-expect-error Man who cares about types and safety atp
+            newSet[cat][diff] = problem;
+        });
+    });
+
+    return newSet as DailyProblems;
 };
 
 const getContext = (previousSet: DailyProblems | null) => {
-    if (!previousSet) return { lastIds: 'None', usedProblems: 'None' };
+    const lastIndices: Record<string, number> = {};
+    const bannedTopics: Set<string> = new Set();
 
-    const lastIds: Record<string, number> = {};
-    const usedProblems: string[] = [];
+    if (!previousSet) return { lastIndices, bannedTopics: [] };
 
     Object.values(previousSet).forEach((category) => {
         Object.values(category).forEach((prob) => {
@@ -112,16 +135,19 @@ const getContext = (previousSet: DailyProblems | null) => {
             const base = parts.slice(0, -1).join('-');
 
             if (!isNaN(num)) {
-                if (!lastIds[base] || num > lastIds[base]) {
-                    lastIds[base] = num;
+                if (!lastIndices[base] || num > lastIndices[base]) {
+                    lastIndices[base] = num;
                 }
             }
-            usedProblems.push(prob.problemLatex);
+
+            if (prob.topicsCovered) {
+                prob.topicsCovered.forEach((t) => bannedTopics.add(t));
+            }
         });
     });
 
     return {
-        lastIds: JSON.stringify(lastIds),
-        usedProblems: usedProblems.join(' | '),
+        lastIndices,
+        bannedTopics: Array.from(bannedTopics),
     };
 };
