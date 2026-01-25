@@ -15,7 +15,7 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             const { lastIndices, bannedTopics } = getContext(previousSet);
 
             const model = genAI.getGenerativeModel({
-                model: 'gemini-2.5',
+                model: 'gemini-2.5-flash',
                 generationConfig: {
                     responseMimeType: 'application/json',
                     temperature: 0.8,
