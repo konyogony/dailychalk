@@ -1,27 +1,15 @@
-import { getDailyProblems, saveDailyProblems } from '@/lib/db';
-import { generateNewProblemSet } from '@/lib/generate';
+import { getDailyProblems } from '@/lib/db';
 import { Selection } from '@/components/selection';
 
 export const SelectionWrapper = async () => {
-    const today = new Date().toISOString().split('T')[0];
-    let stored = await getDailyProblems();
+    const stored = await getDailyProblems();
 
-    if (!stored || stored.lastUpdate !== today) {
-        console.log('Generating new problem set for', today);
-        const newSet = await generateNewProblemSet(stored?.problemSet || null);
-
-        if (newSet) {
-            await saveDailyProblems(newSet);
-            stored = { lastUpdate: today, problemSet: newSet };
-            console.log('New problems generated successfully');
-        } else {
-            console.error('Failed to generate new problems, using fallback');
-            if (!stored) {
-                const { problemSet: initialProblemSet } = await import('@/lib/lib');
-                stored = { lastUpdate: today, problemSet: initialProblemSet };
-                await saveDailyProblems(initialProblemSet);
-            }
-        }
+    if (!stored) {
+        return (
+            <span className='text-sm sm:text-base text-muted-foreground mb-8 border-b border-neutral-400/50'>
+                No problems available. Please check back later.
+            </span>
+        );
     }
 
     const currentDate = new Date().toLocaleDateString('en-US', {
