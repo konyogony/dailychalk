@@ -39,3 +39,4 @@ jobs:
                   else
                     git commit -m "Daily math problems update - $(date +'%Y-%m-%d')"
                     git push
+                  fi
