@@ -1,279 +1,291 @@
 {
-  "lastUpdate": "2026-01-25",
+  "lastUpdate": "2026-01-26",
   "problemSet": {
     "Integration": {
       "Easy": {
-        "id": "int-e-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Alright class, let's kick off our integration adventure! Integrate the following exponential function: \\int (3e^{2x} - 5) dx.",
+        "id": "int-e-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Find \\int (3x^2 - 4x + 5) \\, dx.",
         "possibleAnswers": [
-          "3/2 e^(2x) - 5x + C",
-          "1.5 e^(2x) - 5x + C",
-          "3/2e^(2x) - 5x + C",
-          "1.5e^(2x) - 5x + C",
-          "\\frac{3}{2} e^{2x} - 5x + C"
+          "x^3 - 2x^2 + 5x + C",
+          "x^3 - 2x^2 + 5x + c",
+          "x^3 - 2x^2 + 5x"
         ],
-        "fullSolutionLatex": "To integrate \\int (3e^{2x} - 5) dx, we integrate term by term.\\\\The integral of $3e^{2x}$ is $3 \\cdot \\frac{1}{2} e^{2x} = \\frac{3}{2} e^{2x}$.\\\\The integral of $-5$ is $-5x$.\\\\Don't forget the constant of integration, C!\\\\So, the result is \\frac{3}{2} e^{2x} - 5x + C.",
+        "fullSolutionLatex": "Using the power rule for integration, \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C:\\\\ \\int (3x^2 - 4x + 5) \\, dx = 3\\frac{x^{2+1}}{2+1} - 4\\frac{x^{1+1}}{1+1} + 5\\frac{x^{0+1}}{0+1} + C \\\\ = 3\\frac{x^3}{3} - 4\\frac{x^2}{2} + 5\\frac{x^1}{1} + C \\\\ = x^3 - 2x^2 + 5x + C",
         "hintsLatex": [
-          "Remember the integral of $e^{ax}$ is $\\frac{1}{a} e^{ax}$.",
-          "Integrate each term separately.",
-          "Always add the constant of integration, C, for indefinite integrals!"
+          "Remember the power rule for integration: \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C.",
+          "Don't forget the constant of integration, C.",
+          "Integrate each term separately."
         ],
         "topicsCovered": [
-          "Integration of Exponentials"
+          "Indefinite Integrals of Polynomials",
+          "Power Rule"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Integration",
-        "funFact": "The exponential function $e^x$ is unique because its derivative is itself, making it incredibly special in calculus and modelling natural growth!"
+        "funFact": "The integral sign \\int is an elongated 'S', introduced by Leibniz, representing summation."
       },
       "Medium": {
-        "id": "int-m-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Fantastic start! Now, let's find the area under the curve $y = x^2 + 1$ from $x=0$ to $x=2$. Give your answer as an exact fraction or decimal.",
+        "id": "int-m-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Evaluate \\int_0^1 x(x^2+1)^3 \\, dx.",
         "possibleAnswers": [
-          "14/3",
-          "4.666...",
-          "4.67",
-          "4 2/3",
-          "4 and 2/3"
+          "15/8",
+          "1.875"
         ],
-        "fullSolutionLatex": "To find the area under the curve $y = x^2 + 1$ from $x=0$ to $x=2$, we need to evaluate the definite integral:\\\\Area $= \\int_0^2 (x^2 + 1) dx$\\\\First, integrate the function:\\$\\int (x^2 + 1) dx = \\frac{x^3}{3} + x + C$\\\\Now, apply the limits of integration:\\$[\\frac{x^3}{3} + x]_0^2 = (\\frac{2^3}{3} + 2) - (\\frac{0^3}{3} + 0)$\\\\$= (\\frac{8}{3} + 2) - 0$\\\\$= \\frac{8}{3} + \\frac{6}{3} = \\frac{14}{3}$.\\\\The area under the curve is \\frac{14}{3} square units.",
+        "fullSolutionLatex": "Let u = x^2+1. \\\\ Then \\frac{du}{dx} = 2x, so dx = \\frac{du}{2x}. \\\\ When x=0, u = 0^2+1 = 1. \\\\ When x=1, u = 1^2+1 = 2. \\\\ The integral becomes \\int_1^2 x(u)^3 \\frac{du}{2x} \\\\ = \\int_1^2 \\frac{1}{2} u^3 \\, du \\\\ = \\frac{1}{2} \\left[ \\frac{u^4}{4} \\right]_1^2 \\\\ = \\frac{1}{8} [u^4]_1^2 \\\\ = \\frac{1}{8} (2^4 - 1^4) \\\\ = \\frac{1}{8} (16 - 1) \\\\ = \\frac{15}{8}",
         "hintsLatex": [
-          "The area under a curve $y=f(x)$ from $x=a$ to $x=b$ is given by $\\int_a^b f(x) dx$.",
-          "Integrate $x^n$ using the power rule: $\\int x^n dx = \\frac{x^{n+1}}{n+1} + C$.",
-          "Remember to evaluate the integral at the upper limit and subtract its value at the lower limit."
+          "Choose u = x^2+1.",
+          "Remember to change the limits of integration when performing substitution in definite integrals.",
+          "After substituting, simplify the integrand before integrating."
         ],
         "topicsCovered": [
-          "Area Under a Curve"
+          "Integration by Substitution (u-sub)",
+          "Definite Integrals",
+          "Change of Limits in Definite Integrals"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Integration",
-        "funFact": "The concept of finding the area under a curve led to the development of integral calculus, which was crucial for understanding complex shapes and physical phenomena."
+        "funFact": "Integration by substitution is essentially the reverse of the chain rule in differentiation."
       },
       "Hard": {
-        "id": "int-h-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Excellent progress, everyone! For our challenging integration problem, evaluate the integral: \\int \\frac{5x-1}{(x-1)(x+2)} dx.",
+        "id": "int-h-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Solve the differential equation \\frac{dy}{dx} = \\frac{y}{x^2} for y > 0 and x \\neq 0. Express y in terms of x.",
         "possibleAnswers": [
-          "2ln|x-1| + 3ln|x+2| + C",
-          "2ln(x-1) + 3ln(x+2) + C",
-          "2ln|x-1|+3ln|x+2|+C"
+          "y = Ae^(-1/x)",
+          "y = C_1 e^(-1/x)",
+          "y = c e^(-1/x)",
+          "y=Ae^{-1/x}",
+          "Ae^{-1/x}",
+          "Ce^{-1/x}"
         ],
-        "fullSolutionLatex": "This integral requires the method of partial fractions.\\\\First, decompose the integrand: \\frac{5x-1}{(x-1)(x+2)} = \\frac{A}{x-1} + \\frac{B}{x+2}.\\\\Multiply both sides by $(x-1)(x+2)$:\\$5x-1 = A(x+2) + B(x-1)$.\\\\To find A, set $x=1$:\\$5(1)-1 = A(1+2) + B(1-1)$\\\\$4 = 3A \\implies A = \\frac{4}{3}$.\\\\To find B, set $x=-2$:\\$5(-2)-1 = A(-2+2) + B(-2-1)$\\\\$-11 = -3B \\implies B = \\frac{11}{3}$.\\\\*Correction in thought process: The actual values for A and B are A=4/3 and B=11/3. Let me re-calculate with the actual values in my head, or let's pick a problem that gives integer A and B for simplicity in the solution.*\\\\Let's re-evaluate the partial fraction decomposition for a simpler example, or pick a different hard topic. \\\\Okay, let's use the given one and ensure the calculation is correct. Let me re-calculate A and B for $5x-1 = A(x+2) + B(x-1)$.\\\\If $x=1$: $5(1)-1 = A(1+2) \\Rightarrow 4 = 3A \\Rightarrow A = 4/3$.\\\\If $x=-2$: $5(-2)-1 = B(-2-1) \\Rightarrow -11 = -3B \\Rightarrow B = 11/3$.\\\\So the integral becomes $\\int (\\frac{4/3}{x-1} + \\frac{11/3}{x+2}) dx$.\\\\$= \\frac{4}{3} \\int \\frac{1}{x-1} dx + \\frac{11}{3} \\int \\frac{1}{x+2} dx$\\\\$= \\frac{4}{3} \\ln|x-1| + \\frac{11}{3} \\ln|x+2| + C$.\\\\*My previous thought was different, so I need to make sure the solution matches the provided problem and expected answers. The provided possible answers are $2ln|x-1| + 3ln|x+2| + C$. This means my A and B are off for the chosen problem. Let me adjust the problem slightly to match the expected answer structure.*\\\\New Problem: \\int \\frac{5x+1}{(x-1)(x+2)} dx.\\\\Decomposition: \\frac{5x+1}{(x-1)(x+2)} = \\frac{A}{x-1} + \\frac{B}{x+2}.\\\\$5x+1 = A(x+2) + B(x-1)$.\\\\If $x=1$: $5(1)+1 = A(1+2) \\Rightarrow 6 = 3A \\Rightarrow A = 2$.\\\\If $x=-2$: $5(-2)+1 = B(-2-1) \\Rightarrow -9 = -3B \\Rightarrow B = 3$.\\\\This matches the given possible answers. So, the problem should be: \\int \\frac{5x+1}{(x-1)(x+2)} dx.\\\\The integral then is:\\$\\int (\\frac{2}{x-1} + \\frac{3}{x+2}) dx$\\\\$= 2 \\int \\frac{1}{x-1} dx + 3 \\int \\frac{1}{x+2} dx$\\\\$= 2 \\ln|x-1| + 3 \\ln|x+2| + C$.",
+        "fullSolutionLatex": "Given \\frac{dy}{dx} = \\frac{y}{x^2}. \\\\ Separate the variables: \\frac{1}{y} \\, dy = \\frac{1}{x^2} \\, dx. \\\\ Integrate both sides: \\int \\frac{1}{y} \\, dy = \\int x^{-2} \\, dx. \\\\ \\ln|y| = \\frac{x^{-1}}{-1} + C \\\\ \\ln|y| = -\\frac{1}{x} + C. \\\\ Since y > 0, we can write \\ln y = -\\frac{1}{x} + C. \\\\ Exponentiate both sides: y = e^{(-1/x) + C} \\\\ y = e^{-1/x} \\cdot e^C. \\\\ Let A = e^C (where A is an arbitrary positive constant). \\\\ So, y = Ae^{-1/x}.",
         "hintsLatex": [
-          "Start by decomposing the rational function into partial fractions.",
-          "Set up the identity: $\\frac{5x+1}{(x-1)(x+2)} = \\frac{A}{x-1} + \\frac{B}{x+2}$.",
-          "Remember that $\\int \\frac{1}{ax+b} dx = \\frac{1}{a} \\ln|ax+b| + C$."
+          "Rearrange the equation to separate the variables y and x.",
+          "Integrate both sides of the separated equation.",
+          "Remember that \\int \\frac{1}{y} \\, dy = \\ln|y| + C and to express the final answer for y."
         ],
         "topicsCovered": [
-          "Integration Using Partial Fractions"
+          "First-Order Differential Equations",
+          "Separable Differential Equations"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Integration",
-        "funFact": "Partial fractions are not just for integration; they're also used in inverse Laplace transforms, a powerful tool for solving differential equations in engineering!"
+        "funFact": "Differential equations are fundamental in modelling real-world phenomena, from population growth to the trajectory of planets."
       }
     },
     "Differentiation": {
       "Easy": {
-        "id": "diff-e-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Welcome to the world of differentiation! Let's start with a straightforward application of the Quotient Rule. Differentiate $y = \\frac{3x+1}{x^2}$.",
+        "id": "diff-e-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Differentiate $y = (3x^2 - 5)^4$ with respect to $x$.",
         "possibleAnswers": [
-          "\\frac{-3x^2-2x}{x^4}",
-          "\\frac{-3x-2}{x^3}",
-          "(-3x-2)/x^3"
+          "24x(3x^2-5)^3",
+          "24x(3x^2 - 5)^3"
         ],
-        "fullSolutionLatex": "We'll use the Quotient Rule, which states that if $y = \\frac{u}{v}$, then $\\frac{dy}{dx} = \\frac{v\\frac{du}{dx} - u\\frac{dv}{dx}}{v^2}$.\\\\Let $u = 3x+1$, so $\\frac{du}{dx} = 3$.\\\\Let $v = x^2$, so $\\frac{dv}{dx} = 2x$.\\\\Substitute these into the Quotient Rule formula:\\$\\frac{dy}{dx} = \\frac{x^2(3) - (3x+1)(2x)}{(x^2)^2}$\\\\$= \\frac{3x^2 - (6x^2 + 2x)}{x^4}$\\\\$= \\frac{3x^2 - 6x^2 - 2x}{x^4}$\\\\$= \\frac{-3x^2 - 2x}{x^4}$\\\\We can simplify this by dividing the numerator and denominator by $x$ (assuming $x \\neq 0$):\\\\$= \\frac{-3x - 2}{x^3}$.",
+        "fullSolutionLatex": "Let $u = 3x^2 - 5$. Then $y = u^4$. \\\\ Using the chain rule, $\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$. \\\\ $\\frac{dy}{du} = 4u^3$. \\\\ $\\frac{du}{dx} = 6x$. \\\\ So, $\\frac{dy}{dx} = 4u^3 \\cdot 6x = 4(3x^2 - 5)^3 \\cdot 6x = 24x(3x^2 - 5)^3$.",
         "hintsLatex": [
-          "Recall the Quotient Rule: $\\frac{d}{dx} \\left( \\frac{u}{v} \\right) = \\frac{v u' - u v'}{v^2}$.",
-          "Identify $u$ and $v$ in the given function.",
-          "Don't forget to simplify your final answer!"
+          "Identify the 'inner' and 'outer' functions.",
+          "Apply the chain rule: $\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}$.",
+          "Don't forget to multiply by the derivative of the inner function."
         ],
         "topicsCovered": [
-          "Quotient Rule"
+          "Chain Rule",
+          "Differentiation of Composite Functions"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Differentiation",
-        "funFact": "The Quotient Rule is a direct consequence of the Product Rule and Chain Rule, showing how interconnected these fundamental differentiation rules are!"
+        "funFact": "The chain rule is crucial for differentiating complex functions that are compositions of simpler ones, much like a chain is made of linked segments."
       },
       "Medium": {
-        "id": "diff-m-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Alright, let's step it up a bit! Find $\\frac{dy}{dx}$ for the curve $x^2 + y^3 = 5xy$ using implicit differentiation.",
+        "id": "diff-m-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "A curve is defined parametrically by $x = t^2$ and $y = t^3 - 3t$. Find $\\frac{dy}{dx}$ in terms of $t$.",
         "possibleAnswers": [
-          "\\frac{5y-2x}{3y^2-5x}",
-          "(5y-2x)/(3y^2-5x)"
+          "(3t^2-3)/(2t)",
+          "(3t^2-3)/2t",
+          "(3t^2-3) / (2t)"
         ],
-        "fullSolutionLatex": "We'll differentiate both sides of the equation $x^2 + y^3 = 5xy$ with respect to $x$.\\\\Differentiating $x^2$ gives $2x$.\\\\Differentiating $y^3$ gives $3y^2 \\frac{dy}{dx}$ (using the chain rule).\\\\Differentiating $5xy$ requires the Product Rule. Let $u=5x$ and $v=y$. So $\\frac{du}{dx}=5$ and $\\frac{dv}{dx}=\\frac{dy}{dx}$.\\\\By Product Rule, $\\frac{d}{dx}(5xy) = 5(y) + 5x(\\frac{dy}{dx}) = 5y + 5x\\frac{dy}{dx}$.\\\\Putting it all together: $2x + 3y^2 \\frac{dy}{dx} = 5y + 5x \\frac{dy}{dx}$.\\\\Now, gather all terms containing $\\frac{dy}{dx}$ on one side and other terms on the other side:\\$3y^2 \\frac{dy}{dx} - 5x \\frac{dy}{dx} = 5y - 2x$\\\\Factor out $\\frac{dy}{dx}$:\\$\\frac{dy}{dx} (3y^2 - 5x) = 5y - 2x$\\\\Finally, solve for $\\frac{dy}{dx}$:\\$\\frac{dy}{dx} = \\frac{5y - 2x}{3y^2 - 5x}$.",
+        "fullSolutionLatex": "First, find $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$. \\\\ $\\frac{dx}{dt} = \\frac{d}{dt}(t^2) = 2t$. \\\\ $\\frac{dy}{dt} = \\frac{d}{dt}(t^3 - 3t) = 3t^2 - 3$. \\\\ Using the chain rule for parametric differentiation, $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$. \\\\ So, $\\frac{dy}{dx} = \\frac{3t^2 - 3}{2t}$.",
         "hintsLatex": [
-          "Remember to differentiate each term with respect to $x$.",
-          "When differentiating terms involving $y$, apply the Chain Rule, so $\\frac{d}{dx}(f(y)) = f'(y) \\frac{dy}{dx}$.",
-          "The term $5xy$ will require the Product Rule."
+          "Differentiate x with respect to t to find $\\frac{dx}{dt}$.",
+          "Differentiate y with respect to t to find $\\frac{dy}{dt}$.",
+          "Use the formula $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$."
         ],
         "topicsCovered": [
-          "Implicit Differentiation"
+          "Parametric Differentiation",
+          "Differentiation of Parametric Curves"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Differentiation",
-        "funFact": "Implicit differentiation is incredibly useful for finding tangents to curves that aren't easily expressed as $y = f(x)$, like circles or complex algebraic curves!"
+        "funFact": "Parametric equations allow us to describe curves that cannot be easily represented as functions of x, like the path of a projectile or complex Lissajous curves."
       },
       "Hard": {
-        "id": "diff-h-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Alright, future engineers and scientists, here's an optimization challenge! A rectangular piece of cardboard, 8 cm by 15 cm, has squares cut from each corner. The sides are then folded up to form an open box. What is the maximum possible volume of the box? Give your answer to 3 significant figures.",
+        "id": "diff-h-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Water is poured into a conical tank at a rate of $2 \\text{ cm}^3/s$. The tank has a height of $10 \\text{ cm}$ and a radius of $5 \\text{ cm}$. How fast is the water level rising when the water is $4 \\text{ cm}$ deep? (Volume of a cone $V = \\frac{1}{3}\\pi r^2 h$)",
         "possibleAnswers": [
-          "90.7",
-          "90.7 cm^3",
-          "90.7 cm3"
+          "1/(2pi)",
+          "1/(2\\pi)",
+          "0.159",
+          "0.15915",
+          "0.16"
         ],
-        "fullSolutionLatex": "Let $x$ be the side length of the square cut from each corner.\\\\The dimensions of the base of the box will be $(15-2x)$ cm and $(8-2x)$ cm.\\\\The height of the box will be $x$ cm.\\\\The volume $V$ of the box is given by $V(x) = x(15-2x)(8-2x)$.\\\\$V(x) = x(120 - 30x - 16x + 4x^2)$\\\\$V(x) = x(4x^2 - 46x + 120)$\\\\$V(x) = 4x^3 - 46x^2 + 120x$.\\\\To find the maximum volume, we differentiate $V(x)$ with respect to $x$ and set the derivative to zero.\\$\\frac{dV}{dx} = 12x^2 - 92x + 120$.\\\\Set $\\frac{dV}{dx} = 0$:\\$12x^2 - 92x + 120 = 0$\\\\Divide by 4 to simplify:\\$3x^2 - 23x + 30 = 0$.\\\\Solve this quadratic equation using the quadratic formula $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$:\\$x = \\frac{23 \\pm \\sqrt{(-23)^2 - 4(3)(30)}}{2(3)}$\\\\$x = \\frac{23 \\pm \\sqrt{529 - 360}}{6}$\\\\$x = \\frac{23 \\pm \\sqrt{169}}{6}$\\\\$x = \\frac{23 \\pm 13}{6}$.\\\\This gives two possible values for $x$:\\$x_1 = \\frac{23+13}{6} = \\frac{36}{6} = 6$\\\\$x_2 = \\frac{23-13}{6} = \\frac{10}{6} = \\frac{5}{3}$.\\\\Now we must consider the physical constraints. If $x=6$, then $8-2x = 8-2(6) = 8-12 = -4$, which is not possible as a side length cannot be negative. Therefore, $x = \\frac{5}{3}$ cm is the valid dimension.\\\\To confirm this is a maximum, we can use the second derivative test:\\$\\frac{d^2V}{dx^2} = 24x - 92$.\\\\At $x = \\frac{5}{3}$:\\$\\frac{d^2V}{dx^2} = 24(\\frac{5}{3}) - 92 = 8(5) - 92 = 40 - 92 = -52$.\\\\Since $\\frac{d^2V}{dx^2} < 0$, $x = \\frac{5}{3}$ corresponds to a local maximum.\\\\Now, calculate the maximum volume using $x = \\frac{5}{3}$:\\$V(\\frac{5}{3}) = \\frac{5}{3} (15 - 2(\\frac{5}{3})) (8 - 2(\\frac{5}{3}))$\\\\$= \\frac{5}{3} (15 - \\frac{10}{3}) (8 - \\frac{10}{3})$\\\\$= \\frac{5}{3} (\\frac{45-10}{3}) (\\frac{24-10}{3})$\\\\$= \\frac{5}{3} (\\frac{35}{3}) (\\frac{14}{3})$\\\\$= \\frac{5 \\cdot 35 \\cdot 14}{27} = \\frac{2450}{27}$\\\\$V \\approx 90.7407... \\approx 90.7$ cm$^3$ (to 3 significant figures).",
+        "fullSolutionLatex": "Let $V$ be the volume of water, $h$ be the height of the water, and $r$ be the radius of the water surface. \\\\ We are given $\\frac{dV}{dt} = 2 \\text{ cm}^3/s$. We need to find $\\frac{dh}{dt}$ when $h=4 \\text{ cm}$. \\\\ The volume of water in the cone is $V = \\frac{1}{3}\\pi r^2 h$. \\\\ By similar triangles, $\\frac{r}{h} = \\frac{5}{10} = \\frac{1}{2}$, so $r = \\frac{1}{2}h$. \\\\ Substitute $r$ into the volume formula: $V = \\frac{1}{3}\\pi (\\frac{1}{2}h)^2 h = \\frac{1}{3}\\pi \\frac{1}{4}h^2 h = \\frac{1}{12}\\pi h^3$. \\\\ Now, differentiate $V$ with respect to $t$: $\\frac{dV}{dt} = \\frac{dV}{dh} \\cdot \\frac{dh}{dt}$. \\\\ $\\frac{dV}{dh} = \\frac{d}{dh}(\\frac{1}{12}\\pi h^3) = \\frac{1}{12}\\pi (3h^2) = \\frac{1}{4}\\pi h^2$. \\\\ So, $\\frac{dV}{dt} = (\\frac{1}{4}\\pi h^2) \\frac{dh}{dt}$. \\\\ We are given $\\frac{dV}{dt} = 2$ and we want to find $\\frac{dh}{dt}$ when $h=4$. \\\\ $2 = (\\frac{1}{4}\\pi (4)^2) \\frac{dh}{dt}$ \\\\ $2 = (\\frac{1}{4}\\pi \\cdot 16) \\frac{dh}{dt}$ \\\\ $2 = 4\\pi \\frac{dh}{dt}$ \\\\ $\\frac{dh}{dt} = \\frac{2}{4\\pi} = \\frac{1}{2\\pi} \\text{ cm/s}$.",
         "hintsLatex": [
-          "Start by defining a variable for the side length of the cut squares, say $x$.",
-          "Express the dimensions of the box (length, width, height) in terms of $x$, then form the volume function $V(x)$.",
-          "To find the maximum volume, differentiate $V(x)$ with respect to $x$, set the derivative to zero, and solve for $x$. Remember to check physical constraints for $x$."
+          "Establish a relationship between the radius and height of the water using similar triangles.",
+          "Express the volume of water in terms of a single variable (height, h).",
+          "Differentiate the volume formula with respect to time (t) using the chain rule, then substitute the given values."
         ],
         "topicsCovered": [
-          "Optimization Problems"
+          "Connected Rates",
+          "Rates of Change"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Differentiation",
-        "funFact": "Optimization problems are everywhere in the real world, from designing efficient packaging to determining the best trajectory for a rocket, all thanks to the power of calculus!"
+        "funFact": "Connected rates of change problems often appear in physics and engineering to model how various quantities in a system change over time, such as the rate of flow or expansion."
       }
     },
     "Further Math (9231)": {
       "Easy": {
-        "id": "fm-e-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Welcome to Further Pure Mathematics! Let's start by plotting a complex number. Plot the complex number $z = 3 - 4i$ on an Argand diagram. Then, find its modulus and argument, giving the argument in radians to 3 significant figures.",
+        "id": "fm-e-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Simplify $\\cosh^2 x - \\sinh^2 x$.",
         "possibleAnswers": [
-          "Modulus 5, Argument -0.927",
-          "Modulus 5, Argument -0.927 radians",
-          "|z|=5, arg(z)=-0.927",
-          "|z|=5, Arg(z)=-0.927"
+          "1",
+          "one"
         ],
-        "fullSolutionLatex": "For the complex number $z = 3 - 4i$, the real part is $x=3$ and the imaginary part is $y=-4$.\\\\**Plotting on Argand Diagram:**\\\\Plot the point $(3, -4)$ in the complex plane. This point will be in the fourth quadrant.\\\\**Modulus:**\\\\The modulus of $z$, denoted $|z|$, is the distance from the origin to the point $(3, -4)$.\\\\$|z| = \\sqrt{x^2 + y^2} = \\sqrt{3^2 + (-4)^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.\\\\**Argument:**\\\\The argument of $z$, denoted $\\arg(z)$, is the angle the line from the origin to the point makes with the positive real axis. Since the point is in the fourth quadrant, the principal argument will be negative.\\\\Let $\\alpha$ be the reference angle, $\\tan \\alpha = |\\frac{y}{x}| = |\\frac{-4}{3}| = \\frac{4}{3}$.\\\\$\\alpha = \\arctan(\\frac{4}{3}) \\approx 0.927295$ radians.\\\\Since $z$ is in the fourth quadrant, $\\arg(z) = -\\alpha$.\\\\$\\arg(z) = -\\arctan(\\frac{4}{3}) \\approx -0.927$ radians (to 3 significant figures).",
+        "fullSolutionLatex": "Recall the definitions of hyperbolic cosine and sine: \\\\ $\\cosh x = \\frac{e^x + e^{-x}}{2}$ \\\\ $\\sinh x = \\frac{e^x - e^{-x}}{2}$ \\\\ So, $\\cosh^2 x = \\left(\\frac{e^x + e^{-x}}{2}\\right)^2 = \\frac{e^{2x} + 2e^x e^{-x} + e^{-2x}}{4} = \\frac{e^{2x} + 2 + e^{-2x}}{4}$. \\\\ And $\\sinh^2 x = \\left(\\frac{e^x - e^{-x}}{2}\\right)^2 = \\frac{e^{2x} - 2e^x e^{-x} + e^{-2x}}{4} = \\frac{e^{2x} - 2 + e^{-2x}}{4}$. \\\\ Therefore, $\\cosh^2 x - \\sinh^2 x = \\frac{(e^{2x} + 2 + e^{-2x}) - (e^{2x} - 2 + e^{-2x})}{4}$ \\\\ $= \\frac{e^{2x} + 2 + e^{-2x} - e^{2x} + 2 - e^{-2x}}{4}$ \\\\ $= \\frac{4}{4} = 1$.",
         "hintsLatex": [
-          "Remember that a complex number $z = x + iy$ is plotted as a point $(x,y)$ on the Argand diagram.",
-          "The modulus $|z|$ is the distance from the origin to the point $(x,y)$, calculated as $\\sqrt{x^2+y^2}$.",
-          "The argument $\\arg(z)$ is the angle with the positive real axis. Be mindful of the quadrant to determine the correct sign and range (usually $(-\\pi, \\pi]$)."
+          "Recall the definitions of $\\cosh x$ and $\\sinh x$ in terms of exponential functions.",
+          "Expand $\\cosh^2 x$ and $\\sinh^2 x$.",
+          "Subtract the expanded forms and simplify."
         ],
         "topicsCovered": [
-          "Argand Diagrams",
-          "Modulus and Argument"
+          "Hyperbolic Functions",
+          "Identities of Hyperbolic Functions"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Math (9231)",
-        "funFact": "Argand diagrams were independently invented by Caspar Wessel and Jean-Robert Argand, providing a crucial geometric interpretation to complex numbers that transformed their understanding and application!"
+        "funFact": "Hyperbolic functions are named for their analogy to trigonometric functions with respect to a hyperbola instead of a circle, and they naturally arise in the study of catenary curves (hanging chains)."
       },
       "Medium": {
-        "id": "fm-m-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Excellent work with complex numbers! Now, let's wield the power of De Moivre's Theorem. Express $(1 + i)^6$ in the form $a+bi$.",
+        "id": "fm-m-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Find the inverse of the matrix $A = \\begin{pmatrix} 3 & 1 \\\\ 5 & 2 \\end{pmatrix}$.",
         "possibleAnswers": [
-          "-8i",
-          "0 - 8i"
+          "((2,-1),(-5,3))",
+          "[[2,-1],[-5,3]]",
+          "{2,-1;-5,3}",
+          "(2,-1;-5,3)",
+          "{{2,-1},{-5,3}}"
         ],
-        "fullSolutionLatex": "First, convert $z = 1+i$ into polar form $r(\\cos \\theta + i \\sin \\theta)$.\\\\Modulus $r = |1+i| = \\sqrt{1^2 + 1^2} = \\sqrt{2}$.\\\\Argument $\\theta = \\arctan(\\frac{1}{1}) = \\frac{\\pi}{4}$ (since $1+i$ is in the first quadrant).\\\\So, $1+i = \\sqrt{2}(\\cos \\frac{\\pi}{4} + i \\sin \\frac{\\pi}{4})$.\\\\Now, apply De Moivre's Theorem: $(r(\\cos \\theta + i \\sin \\theta))^n = r^n(\\cos n\\theta + i \\sin n\\theta)$.\\\\We need to calculate $(1+i)^6$:\\\\$(1+i)^6 = (\\sqrt{2})^6 (\\cos (6 \\cdot \\frac{\\pi}{4}) + i \\sin (6 \\cdot \\frac{\\pi}{4}))$\\\\$= 2^3 (\\cos (\\frac{3\\pi}{2}) + i \\sin (\\frac{3\\pi}{2}))$\\\\$= 8 (\\cos (\\frac{3\\pi}{2}) + i \\sin (\\frac{3\\pi}{2}))$.\\\\Recall that $\\cos (\\frac{3\\pi}{2}) = 0$ and $\\sin (\\frac{3\\pi}{2}) = -1$.\\\\So, $(1+i)^6 = 8 (0 + i(-1)) = 8(-i) = -8i$.",
+        "fullSolutionLatex": "For a 2x2 matrix $A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$, its inverse $A^{-1}$ is given by $A^{-1} = \\frac{1}{\\det(A)} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$. \\\\ First, calculate the determinant of A: $\\det(A) = (3)(2) - (1)(5) = 6 - 5 = 1$. \\\\ Since the determinant is not zero, the inverse exists. \\\\ $A^{-1} = \\frac{1}{1} \\begin{pmatrix} 2 & -1 \\\\ -5 & 3 \\end{pmatrix} = \\begin{pmatrix} 2 & -1 \\\\ -5 & 3 \\end{pmatrix}$.",
         "hintsLatex": [
-          "First, convert the complex number $1+i$ into its polar form $r(\\cos \\theta + i \\sin \\theta)$.",
-          "Recall De Moivre's Theorem: $(r(\\cos \\theta + i \\sin \\theta))^n = r^n(\\cos n\\theta + i \\sin n\\theta)$.",
-          "Remember the values of $\\cos$ and $\\sin$ for common angles like $\\frac{3\\pi}{2}$."
+          "Calculate the determinant of the matrix.",
+          "If the determinant is non-zero, swap the diagonal elements and negate the off-diagonal elements.",
+          "Multiply the resulting matrix by the reciprocal of the determinant."
         ],
         "topicsCovered": [
-          "De Moivre’s Theorem"
+          "Matrices",
+          "Inverse Matrices"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Math (9231)",
-        "funFact": "De Moivre's Theorem is a cornerstone of complex number theory, simplifying calculations of powers and roots of complex numbers and having deep connections to trigonometry!"
+        "funFact": "Matrix inverses are crucial for solving systems of linear equations, just as division is used to solve simple algebraic equations."
       },
       "Hard": {
-        "id": "fm-h-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Alright, Further Mathematicians, a final, formidable challenge! Solve the second-order differential equation $\\frac{d^2y}{dx^2} - 4\\frac{dy}{dx} + 4y = 0$ given that $y(0) = 1$ and $y'(0) = 3$.",
+        "id": "fm-h-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Prove by induction that for all positive integers $n$, $\\sum_{r=1}^{n} r = \\frac{n(n+1)}{2}$.",
         "possibleAnswers": [
-          "y = e^(2x) + x e^(2x)",
-          "y = (1+x)e^(2x)",
-          "y=(1+x)e^(2x)"
+          "Proof by Induction",
+          "Proven by Induction",
+          "It is true"
         ],
-        "fullSolutionLatex": "This is a homogeneous second-order linear differential equation with constant coefficients.\\\\First, we find the auxiliary equation by replacing $\\frac{d^2y}{dx^2}$ with $m^2$, $\\frac{dy}{dx}$ with $m$, and $y$ with 1:\\$m^2 - 4m + 4 = 0$.\\\\Factorize the quadratic equation:\\$(m-2)(m-2) = 0$\\\\So, we have a repeated root $m = 2$.\\\\For repeated roots, the general solution is of the form $y = (A+Bx)e^{mx}$.\\\\In this case, $y = (A+Bx)e^{2x}$.\\\\Now, we use the initial conditions to find the constants $A$ and $B$.\\\\Condition 1: $y(0) = 1$.\\$1 = (A+B(0))e^{2(0)}$\\\\$1 = (A+0)e^0$\\\\$1 = A(1) \\implies A = 1$.\\\\So, $y = (1+Bx)e^{2x}$.\\\\Condition 2: $y'(0) = 3$.\\\\First, we need to find $\\frac{dy}{dx}$. We use the Product Rule.\\\\Let $u = 1+Bx$ and $v = e^{2x}$.\\\\$\\frac{du}{dx} = B$\\\\$\\frac{dv}{dx} = 2e^{2x}$.\\\\$\\frac{dy}{dx} = u\\frac{dv}{dx} + v\\frac{du}{dx} = (1+Bx)(2e^{2x}) + e^{2x}(B)$\\\\$\\frac{dy}{dx} = 2e^{2x} + 2Bxe^{2x} + Be^{2x}$.\\\\Now, substitute $x=0$ and $\\frac{dy}{dx}=3$:\\$3 = 2e^{2(0)} + 2B(0)e^{2(0)} + Be^{2(0)}$\\\\$3 = 2(1) + 0 + B(1)$\\\\$3 = 2 + B$\\\\$B = 1$.\\\\Substitute $A=1$ and $B=1$ back into the general solution:\\$y = (1+1x)e^{2x}$\\\\$y = (1+x)e^{2x}$.",
+        "fullSolutionLatex": "**Base Case (n=1):** \\\\ L.H.S. = $\\sum_{r=1}^{1} r = 1$. \\\\ R.H.S. = $\\frac{1(1+1)}{2} = \\frac{1(2)}{2} = 1$. \\\\ Since L.H.S. = R.H.S., the formula holds for $n=1$. \\\\ \\\\ **Inductive Hypothesis:** \\\\ Assume the formula is true for some positive integer $k$, i.e., $\\sum_{r=1}^{k} r = \\frac{k(k+1)}{2}$. \\\\ \\\\ **Inductive Step (n=k+1):** \\\\ We need to show that the formula is true for $n=k+1$, i.e., $\\sum_{r=1}^{k+1} r = \\frac{(k+1)((k+1)+1)}{2} = \\frac{(k+1)(k+2)}{2}$. \\\\ Consider the sum for $n=k+1$: \\\\ $\\sum_{r=1}^{k+1} r = \\left(\\sum_{r=1}^{k} r\\right) + (k+1)$. \\\\ Using the inductive hypothesis, substitute the sum up to $k$: \\\\ $= \\frac{k(k+1)}{2} + (k+1)$. \\\\ Factor out $(k+1)$: \\\\ $= (k+1) \\left( \\frac{k}{2} + 1 \\right)$. \\\\ $= (k+1) \\left( \\frac{k+2}{2} \\right)$. \\\\ $= \\frac{(k+1)(k+2)}{2}$. \\\\ This is the R.H.S. for $n=k+1$. \\\\ \\\\ **Conclusion:** \\\\ Since the formula holds for $n=1$, and if it holds for $n=k$, it also holds for $n=k+1$, by the principle of mathematical induction, the formula $\\sum_{r=1}^{n} r = \\frac{n(n+1)}{2}$ is true for all positive integers $n$.",
         "hintsLatex": [
-          "Form the auxiliary equation $m^2 - 4m + 4 = 0$ from the differential equation.",
-          "Solve the auxiliary equation for $m$. If there are repeated roots, the general solution takes the form $y = (A+Bx)e^{mx}$.",
-          "Use the initial conditions $y(0)=1$ and $y'(0)=3$ to find the constants $A$ and $B$. Remember to differentiate the general solution using the Product Rule for $y'(x)$."
+          "Start by proving the base case for n=1.",
+          "Assume the statement is true for n=k (the inductive hypothesis).",
+          "Prove that if it's true for n=k, it must also be true for n=k+1 by adding the (k+1)-th term to the sum."
         ],
         "topicsCovered": [
-          "Second-Order Differential Equations",
-          "Homogeneous Differential Equations",
-          "Differential Equations with Initial Conditions"
+          "Mathematical Induction",
+          "Summation Notation"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Math (9231)",
-        "funFact": "Second-order differential equations are indispensable for modeling systems involving oscillations, such as springs, pendulums, and electrical circuits, truly bringing mathematics to life!"
+        "funFact": "Mathematical induction is like a line of dominoes: if you push the first one (base case) and each domino knocks over the next (inductive step), then all dominoes will fall (the statement is true for all n)."
       }
     },
     "Mathematics (9709)": {
       "Easy": {
-        "id": "math-e-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Let's reinforce our algebraic foundations! Express the quadratic function $f(x) = x^2 - 6x + 11$ in the form $(x+a)^2 + b$ by completing the square.",
+        "id": "math-e-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Find the range of values of $k$ for which the quadratic equation $x^2 + kx + 4 = 0$ has two distinct real roots.",
         "possibleAnswers": [
-          "(x-3)^2 + 2",
-          "(x-3)^2+2"
+          "k < -4 or k > 4",
+          "k > 4 or k < -4"
         ],
-        "fullSolutionLatex": "To complete the square for $f(x) = x^2 - 6x + 11$:\\\\Take the coefficient of $x$, which is $-6$. Halve it to get $-3$. Square it to get $9$.\\$f(x) = (x^2 - 6x + 9) - 9 + 11$\\\\The first three terms form a perfect square trinomial:\\$f(x) = (x-3)^2 - 9 + 11$\\\\Simplify the constants:\\$f(x) = (x-3)^2 + 2$.",
+        "fullSolutionLatex": "For a quadratic equation $ax^2 + bx + c = 0$ to have two distinct real roots, its discriminant $\\Delta = b^2 - 4ac$ must be greater than 0. \\\\ In this equation, $a=1$, $b=k$, and $c=4$. \\\\ So, $k^2 - 4(1)(4) > 0$. \\\\ $k^2 - 16 > 0$. \\\\ $(k-4)(k+4) > 0$. \\\\ The critical values are $k=4$ and $k=-4$. \\\\ For $(k-4)(k+4) > 0$, the solution is $k < -4$ or $k > 4$.",
         "hintsLatex": [
-          "To complete the square for $x^2 + bx + c$, you need to add and subtract $(\\frac{b}{2})^2$.",
-          "The expression $x^2 + bx + (\\frac{b}{2})^2$ can be factored as $(x + \\frac{b}{2})^2$.",
-          "Remember to combine the constant terms after forming the squared term."
+          "Recall the condition for two distinct real roots of a quadratic equation.",
+          "Identify the values of a, b, and c from the given equation.",
+          "Solve the resulting inequality for k."
         ],
         "topicsCovered": [
-          "Completing the Square"
+          "Quadratic Functions",
+          "Discriminant and Roots",
+          "Inequalities"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mathematics (9709)",
-        "funFact": "Completing the square isn't just a useful algebraic trick; it's the basis for deriving the quadratic formula and understanding the geometry of parabolas!"
+        "funFact": "The discriminant not only tells us about the number of real roots but also whether they are rational or irrational, if the coefficients are rational."
       },
       "Medium": {
-        "id": "math-m-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "Excellent algebraic skills! Now, let's explore binomial expansion. Find the coefficient of $x^3$ in the expansion of $(1 - 2x)^{-4}$.",
+        "id": "math-m-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Solve $2\\cos^2\\theta - \\sin\\theta - 1 = 0$ for $0^\\circ \\le \\theta \\le 360^\\circ$.",
         "possibleAnswers": [
-          "160",
-          "160x^3"
+          "30, 150, 270",
+          "30, 150, 270 degrees"
         ],
-        "fullSolutionLatex": "We use the binomial expansion formula for a fractional/negative index: $(1+ax)^n = 1 + n(ax) + \\frac{n(n-1)}{2!}(ax)^2 + \\frac{n(n-1)(n-2)}{3!}(ax)^3 + \\dots$\\\\In this case, we have $(1 - 2x)^{-4}$. So, $a = -2$ and $n = -4$.\\\\We are looking for the term involving $x^3$, which is the fourth term in the general expansion.\\\\The coefficient of $x^3$ is $\\frac{n(n-1)(n-2)}{3!} (a)^3$.\\\\Substitute $n=-4$ and $a=-2$:\\\\Coefficient $= \\frac{(-4)(-4-1)(-4-2)}{3!} (-2)^3$\\\\$= \\frac{(-4)(-5)(-6)}{3 \\cdot 2 \\cdot 1} (-8)$\\\\$= \\frac{-120}{6} (-8)$\\\\$= (-20)(-8)$\\\\$= 160$.\\\\So, the coefficient of $x^3$ is 160.",
+        "fullSolutionLatex": "Use the identity $\\cos^2\\theta = 1 - \\sin^2\\theta$. \\\\ $2(1 - \\sin^2\\theta) - \\sin\\theta - 1 = 0$. \\\\ $2 - 2\\sin^2\\theta - \\sin\\theta - 1 = 0$. \\\\ $-2\\sin^2\\theta - \\sin\\theta + 1 = 0$. \\\\ $2\\sin^2\\theta + \\sin\\theta - 1 = 0$. \\\\ Let $x = \\sin\\theta$. Then $2x^2 + x - 1 = 0$. \\\\ Factorise: $(2x - 1)(x + 1) = 0$. \\\\ So, $2x - 1 = 0 \\Rightarrow x = \\frac{1}{2}$ or $x + 1 = 0 \\Rightarrow x = -1$. \\\\ Case 1: $\\sin\\theta = \\frac{1}{2}$. \\\\ Basic angle is $30^\\circ$. \\\\ In the range $0^\\circ \\le \\theta \\le 360^\\circ$, $\\theta = 30^\\circ$ (Quadrant I) or $\\theta = 180^\\circ - 30^\\circ = 150^\\circ$ (Quadrant II). \\\\ Case 2: $\\sin\\theta = -1$. \\\\ $\\theta = 270^\\circ$ (on the negative y-axis). \\\\ The solutions are $\\theta = 30^\\circ, 150^\\circ, 270^\\circ$.",
         "hintsLatex": [
-          "Recall the binomial expansion formula for $(1+ax)^n$: $1 + n(ax) + \\frac{n(n-1)}{2!}(ax)^2 + \\frac{n(n-1)(n-2)}{3!}(ax)^3 + \\dots$",
-          "Carefully identify $n$ and $a$ from the given expression $(1 - 2x)^{-4}$.",
-          "Pay close attention to the signs when calculating the product of the terms."
+          "Use the identity $\\sin^2\\theta + \\cos^2\\theta = 1$ to express the equation in terms of a single trigonometric function.",
+          "Solve the resulting quadratic equation for the trigonometric function.",
+          "Find all angles in the given range that satisfy the solutions."
         ],
         "topicsCovered": [
-          "Binomial Expansion (Fractional Index)"
+          "Trigonometric Identities",
+          "Trigonometric Equations"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mathematics (9709)",
-        "funFact": "The binomial theorem has applications far beyond simple expansions, appearing in probability, statistics, and even in advanced physics like quantum mechanics!"
+        "funFact": "Trigonometric equations are vital in fields like engineering and physics for analyzing periodic phenomena such as waves, oscillations, and alternating currents."
       },
       "Hard": {
-        "id": "math-h-3",
-        "date": "2026-01-25T09:46:32.179Z",
-        "problemLatex": "A fantastic challenge for your 9709 skills! A circle has the equation $x^2 + y^2 - 4x + 6y - 12 = 0$. Find the coordinates of its centre and its radius.",
+        "id": "math-h-4",
+        "date": "2026-01-26T06:43:03.925Z",
+        "problemLatex": "Given vectors $\\mathbf{a} = 2\\mathbf{i} + 3\\mathbf{j} - \\mathbf{k}$ and $\\mathbf{b} = 4\\mathbf{i} - \\mathbf{j} + m\\mathbf{k}$. Find the value of $m$ such that $\\mathbf{a}$ and $\\mathbf{b}$ are perpendicular.",
         "possibleAnswers": [
-          "Centre (2, -3), Radius 5",
-          "Center (2, -3), Radius 5"
+          "5",
+          "5.0"
         ],
-        "fullSolutionLatex": "The general equation of a circle is $x^2 + y^2 + 2gx + 2fy + c = 0$, where the centre is $(-g, -f)$ and the radius is $\\sqrt{g^2 + f^2 - c}$.\\\\Alternatively, we can complete the square.\\\\Rearrange the given equation to group $x$ terms and $y$ terms:\\$(x^2 - 4x) + (y^2 + 6y) = 12$\\\\Complete the square for the $x$ terms: $(x^2 - 4x + 4) - 4$.\\\\Complete the square for the $y$ terms: $(y^2 + 6y + 9) - 9$.\\\\Substitute these back into the equation:\\$(x^2 - 4x + 4) - 4 + (y^2 + 6y + 9) - 9 = 12$\\\\$(x-2)^2 - 4 + (y+3)^2 - 9 = 12$\\\\$(x-2)^2 + (y+3)^2 = 12 + 4 + 9$\\\\$(x-2)^2 + (y+3)^2 = 25$\\\\Comparing this to the standard form $(x-h)^2 + (y-k)^2 = r^2$, where $(h,k)$ is the centre and $r$ is the radius:\\\\The centre $(h,k)$ is $(2, -3)$.\\\\The radius $r = \\sqrt{25} = 5$.",
+        "fullSolutionLatex": "Two vectors are perpendicular if their scalar product (dot product) is zero. \\\\ $\\mathbf{a} \\cdot \\mathbf{b} = 0$. \\\\ $(2\\mathbf{i} + 3\\mathbf{j} - \\mathbf{k}) \\cdot (4\\mathbf{i} - \\mathbf{j} + m\\mathbf{k}) = 0$. \\\\ $(2)(4) + (3)(-1) + (-1)(m) = 0$. \\\\ $8 - 3 - m = 0$. \\\\ $5 - m = 0$. \\\\ $m = 5$.",
         "hintsLatex": [
-          "Recall the standard form of a circle's equation: $(x-h)^2 + (y-k)^2 = r^2$, where $(h,k)$ is the centre and $r$ is the radius.",
-          "You can find the centre and radius by completing the square for both the $x$ and $y$ terms.",
-          "Alternatively, compare the given equation to the general form $x^2 + y^2 + 2gx + 2fy + c = 0$."
+          "Recall the condition for two vectors to be perpendicular.",
+          "Calculate the scalar product (dot product) of the two vectors.",
+          "Set the scalar product equal to zero and solve for m."
         ],
         "topicsCovered": [
-          "Coordinate Geometry of Circles"
+          "Vectors in 3D",
+          "Scalar Product"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mathematics (9709)",
-        "funFact": "Circles are fundamental shapes with perfect symmetry, and their equations are crucial in fields like optics, astronomy, and even computer graphics for rendering smooth curves!"
+        "funFact": "The scalar product is a powerful tool in physics, for instance, to calculate the work done by a force or the flux of a vector field."
       }
     }
   }
