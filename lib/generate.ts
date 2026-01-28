@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { DailyProblems, Problem, diffMap, typeMap } from './types';
+import { getAllValidTopics } from './utils';
+import { DailyProblems, Problem, diffMap, difficultyArray, problemArray, typeMap } from './types';
 import { THEMES } from './themes';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
@@ -24,13 +25,15 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
 
             const prompt = `
             Act as an enthusiastic Mathematics Professor for CIE A-Level (9709) and Further Maths (9231).
-            Create a daily challenge set of 12 problems (4 Categories x 3 Difficulties).
+            Create a daily challenge set of 18 problems (6 Categories x 3 Difficulties).
 
             ### CATEGORIES & THEMES:
             1. Integration: Choose from [${THEMES.Integration.join(', ')}]
             2. Differentiation: Choose from [${THEMES.Differentiation.join(', ')}]
             3. Mathematics (9709): Choose from [${THEMES['Mathematics (9709)'].join(', ')}]
             4. Further Math (9231): Choose from [${THEMES['Further Math (9231)'].join(', ')}]
+            5. Further Mechanics (9231): Choose from [${THEMES['Further Mechanics (9231)'].join(', ')}]
+            6. Mechanics (9701): Choose from [${THEMES['Mechanics (9701)'].join(', ')}]
 
             ### IMPORTANT - AVOID REPETITION:
             Do NOT generate questions exactly matching these recent topics: ${JSON.stringify(bannedTopics.slice(0, 15))}.
@@ -78,18 +81,17 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
 
 const processAIResponse = (rawData: any, lastIndices: Record<string, number>): DailyProblems => {
     const newSet: Partial<DailyProblems> = {};
-    const categories = ['Integration', 'Differentiation', 'Further Math (9231)', 'Mathematics (9709)'] as const;
-    const difficulties = ['Easy', 'Medium', 'Hard'] as const;
     const today = new Date().toISOString();
 
-    categories.forEach((cat) => {
+    problemArray.forEach((cat) => {
         const aiCatKey =
-            Object.keys(rawData).find((k) => k.toLowerCase().includes(cat.toLowerCase().split(' ')[0])) || cat;
-        const catData = rawData[aiCatKey];
+            Object.keys(rawData).find((k) => k.toLowerCase().trim() === cat.toLowerCase().trim()) ??
+            Object.keys(rawData).find((k) => k.toLowerCase().includes(cat.toLowerCase().split(' ')[0]));
+        const catData = aiCatKey ? rawData[aiCatKey] : null;
 
         newSet[cat] = {} as any;
 
-        difficulties.forEach((diff) => {
+        difficultyArray.forEach((diff) => {
             const aiDiffKey = catData ? Object.keys(catData).find((k) => k.toLowerCase() === diff.toLowerCase()) : null;
             const rawProb = catData && aiDiffKey ? catData[aiDiffKey] : {};
 
@@ -100,7 +102,6 @@ const processAIResponse = (rawData: any, lastIndices: Record<string, number>): D
             const newIndex = (lastIndices[baseId] || 0) + 1;
             lastIndices[baseId] = newIndex;
 
-            // 2. BUILD OBJECT
             const problem: Problem = {
                 id: `${baseId}-${newIndex}`,
                 date: today,
@@ -125,6 +126,7 @@ const processAIResponse = (rawData: any, lastIndices: Record<string, number>): D
 const getContext = (previousSet: DailyProblems | null) => {
     const lastIndices: Record<string, number> = {};
     const bannedTopics: Set<string> = new Set();
+    const validTopics = getAllValidTopics();
 
     if (!previousSet) return { lastIndices, bannedTopics: [] };
 
@@ -135,13 +137,15 @@ const getContext = (previousSet: DailyProblems | null) => {
             const base = parts.slice(0, -1).join('-');
 
             if (!isNaN(num)) {
-                if (!lastIndices[base] || num > lastIndices[base]) {
-                    lastIndices[base] = num;
-                }
+                lastIndices[base] = Math.max(lastIndices[base] || 0, num);
             }
 
-            if (prob.topicsCovered) {
-                prob.topicsCovered.forEach((t) => bannedTopics.add(t));
+            if (Array.isArray(prob.topicsCovered)) {
+                prob.topicsCovered.forEach((t) => {
+                    if (validTopics.has(t)) {
+                        bannedTopics.add(t);
+                    }
+                });
             }
         });
     });

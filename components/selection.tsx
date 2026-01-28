@@ -82,16 +82,20 @@ export const Selection = ({ currentDate, dailyProblems }: SelectionProps) => {
                     <span className='text-muted-foreground text-sm uppercase tracking-wider w-fit'>problem type</span>
                     <div className='grid grid-cols-1 sm:grid-cols-2 w-full gap-2 sm:gap-3'>
                         {selectedDifficulty &&
-                            problemArray.map((t) => {
+                            problemArray.map((t, i) => {
                                 const problemId = dailyProblems[t][selectedDifficulty].id;
                                 const completed = completedIds.includes(problemId);
+
+                                const isLast = i === problemArray.length - 1;
+                                const isOddCount = problemArray.length % 2 === 1;
                                 return (
                                     <Link
-                                        key={t}
+                                        key={i}
                                         href={problemId}
                                         className={cn(
                                             'group px-4 py-3 sm:py-2 text-sm border border-border rounded transition-colors flex items-center min-h-11',
                                             completed && 'bg-accent',
+                                            isLast && isOddCount && 'sm:col-span-2',
                                         )}
                                     >
                                         {t}

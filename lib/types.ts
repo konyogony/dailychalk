@@ -6,14 +6,24 @@ export const typeMap: Record<string, ProblemType> = {
     diff: 'Differentiation',
     fm: 'Further Math (9231)',
     math: 'Mathematics (9709)',
+    fmech: 'Further Mechanics (9231)',
+    mech: 'Mechanics (9701)',
 };
+
 export const diffMap: Record<string, DifficultyLevel> = {
     e: 'Easy',
     m: 'Medium',
     h: 'Hard',
 };
 
-export const problemArray = ['Integration', 'Differentiation', 'Further Math (9231)', 'Mathematics (9709)'];
+export const problemArray = [
+    'Integration',
+    'Differentiation',
+    'Further Math (9231)',
+    'Mathematics (9709)',
+    'Further Mechanics (9231)',
+    'Mechanics (9701)',
+];
 export type ProblemType = (typeof problemArray)[number];
 export type DailyProblems = Record<ProblemType, Record<DifficultyLevel, Problem>>;
 
