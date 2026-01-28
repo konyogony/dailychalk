@@ -110,7 +110,7 @@ export const Selection = ({ currentDate, dailyProblems }: SelectionProps) => {
                 </div>
             </div>
             <div className='mt-auto p-6 flex justify-center gap-6 items-center text-muted-foreground text-[10px] uppercase tracking-tighter'>
-                <a href='https://github.com/konyogony/chalkdaily/' className='hover:text-foreground transition-colors'>
+                <a href='https://github.com/konyogony/dailychalk/' className='hover:text-foreground transition-colors'>
                     GitHub
                 </a>
                 <button
