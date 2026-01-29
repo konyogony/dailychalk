@@ -278,7 +278,7 @@
     },
     "Further Mechanics (9231)": {
       "Hard": {
-        "id": "fmech-h-1",
+        "id": "fmech-h-7",
         "date": "2026-01-29T06:56:55.270Z",
         "problemLatex": "A uniform rod of length $L$ and mass $M$ is pivoted freely at one end. It is released from rest in a horizontal position. Find the angular speed of the rod when it reaches the vertical position. (Moment of inertia of a rod about one end is $\\frac{1}{3}ML^2$).",
         "possibleAnswers": [
@@ -302,7 +302,7 @@
         "funFact": "Rotational dynamics is essential for understanding how gyroscopes stabilize spacecraft, how car wheels turn, and even the spin of celestial bodies."
       },
       "Medium": {
-        "id": "fmech-m-1",
+        "id": "fmech-m-7",
         "date": "2026-01-29T06:56:55.270Z",
         "problemLatex": "A particle P of mass $2\\text{ kg}$ is moving with velocity $\\begin{pmatrix} 3 \\\\ 2 \\end{pmatrix}\\text{ m/s}$. It collides with particle Q of mass $1\\text{ kg}$ moving with velocity $\\begin{pmatrix} 1 \\\\ -1 \\end{pmatrix}\\text{ m/s}$. After the collision, P has velocity $\\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}\\text{ m/s}$. Find the velocity of Q after the collision.",
         "possibleAnswers": [
@@ -326,7 +326,7 @@
         "funFact": "Conservation of momentum is a fundamental law of physics, explaining everything from rocket propulsion to how billiard balls scatter after a collision."
       },
       "Easy": {
-        "id": "fmech-e-1",
+        "id": "fmech-e-7",
         "date": "2026-01-29T06:56:55.270Z",
         "problemLatex": "A particle moves with Simple Harmonic Motion (SHM) with amplitude $A = 0.5\\text{ m}$ and angular frequency $\\omega = 4\\text{ rad/s}$. Calculate the maximum speed of the particle.",
         "possibleAnswers": [
@@ -349,7 +349,7 @@
     },
     "Mechanics (9701)": {
       "Hard": {
-        "id": "mech-h-1",
+        "id": "mech-h-7",
         "date": "2026-01-29T06:56:55.270Z",
         "problemLatex": "A block of mass $5\\text{ kg}$ is pulled up a rough inclined plane by a rope. The plane is inclined at $30^\\circ$ to the horizontal. The coefficient of friction between the block and the plane is $0.2\\sqrt{3}$. The block is pulled a distance of $4\\text{ m}$ up the plane at a constant speed. Find the work done by the rope. (Take $g = 10\\text{ m/s}^2$).",
         "possibleAnswers": [
@@ -373,7 +373,7 @@
         "funFact": "Work, in physics, has a very specific meaning: it's the energy transferred to or from an object by applying a force that causes displacement, and it's a scalar quantity measured in Joules."
       },
       "Medium": {
-        "id": "mech-m-1",
+        "id": "mech-m-7",
         "date": "2026-01-29T06:56:55.270Z",
         "problemLatex": "Two particles, A (mass $3\\text{ kg}$) and B (mass $2\\text{ kg}$), are connected by a light inextensible string passing over a smooth fixed pulley. Particle A rests on a smooth horizontal table, while particle B hangs freely. When the system is released from rest, find the acceleration of particle A. (Take $g = 10\\text{ m/s}^2$).",
         "possibleAnswers": [
@@ -397,7 +397,7 @@
         "funFact": "Connected particles problems are a classic way to understand how forces are transmitted and shared within a system, a concept critical in designing complex machinery and structures."
       },
       "Easy": {
-        "id": "mech-e-1",
+        "id": "mech-e-7",
         "date": "2026-01-29T06:56:55.270Z",
         "problemLatex": "A car accelerates uniformly from rest to $20\\text{ m/s}$ in $5\\text{ s}$. Calculate the distance traveled during this time.",
         "possibleAnswers": [
