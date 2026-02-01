@@ -11,6 +11,11 @@ permissions:
 jobs:
     generate-problems:
         runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            max-parallel: 1
+            matrix:
+                attempt: [1, 2, 3]
 
         steps:
             - name: Checkout repository
