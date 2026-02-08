@@ -1,440 +1,427 @@
 {
-  "lastUpdate": "2026-02-07",
+  "lastUpdate": "2026-02-08",
   "problemSet": {
     "Integration": {
       "Hard": {
-        "id": "int-h-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "A particle moves such that its velocity $v$ (in m/s) at time $t$ (in seconds) is given by $v(t) = \\frac{2t}{\\sqrt{t^2 + 9}}$. Find the total distance travelled by the particle from $t=0$ to $t=4$ seconds.",
+        "id": "int-h-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Evaluate \\(\\int \\frac{5x+1}{(x-1)(x+2)} dx\\).",
         "possibleAnswers": [
-          "2",
-          "2m",
-          "2 meters"
+          "2ln|x-1| + 3ln|x+2| + C",
+          "2ln(x-1) + 3ln(x+2) + C",
+          "ln((x-1)^2(x+2)^3) + C",
+          "2ln|x-1|+3ln|x+2|+C"
         ],
-        "fullSolutionLatex": "The total distance travelled is given by the integral of the speed, which is $|v(t)|$. Since $v(t) = \\frac{2t}{\\sqrt{t^2 + 9}}$ and $t \\ge 0$, $v(t) \\ge 0$, so speed is equal to velocity. \\\\ Distance $D = \\int_{0}^{4} \\frac{2t}{\\sqrt{t^2 + 9}} \\, dt$. \\\\ Let $u = t^2 + 9$. \\\\ Then $du = 2t \\, dt$. \\\\ When $t = 0$, $u = 0^2 + 9 = 9$. \\\\ When $t = 4$, $u = 4^2 + 9 = 16 + 9 = 25$. \\\\ The integral becomes $\\int_{9}^{25} \\frac{1}{\\sqrt{u}} \\, du = \\int_{9}^{25} u^{-1/2} \\, du$. \\\\ Integrating, we get $[\\frac{u^{1/2}}{1/2}]_{9}^{25} = [2\\sqrt{u}]_{9}^{25}$. \\\\ Evaluating the limits: $2\\sqrt{25} - 2\\sqrt{9} = 2(5) - 2(3) = 10 - 6 = 4$. \\\\ Oh, wait, I made an arithmetic mistake. The problem in the prompt was for 4 seconds, so the final answer should be 4. Let's recheck if I'm calculating correctly. $2\\sqrt{25} - 2\\sqrt{9} = 2(5) - 2(3) = 10 - 6 = 4$. So the answer should be 4. Let me correct the 'possibleAnswers' and 'fullSolutionLatex' if the problem was intended to give 2. \\\\ The problem stated 'Find the total distance travelled by the particle from $t=0$ to $t=4$ seconds.' And the initial problem was $v(t) = \\frac{2t}{\\sqrt{t^2 + 9}}$. My calculation results in 4. Let's make the answer 4. \\\\ The final answer is $4$ meters.",
+        "fullSolutionLatex": "First, decompose the integrand using partial fractions: \\\\ \\frac{5x+1}{(x-1)(x+2)} = \\frac{A}{x-1} + \\frac{B}{x+2} \\\\ Multiply by \\((x-1)(x+2)\\): \\\\ \\(5x+1 = A(x+2) + B(x-1)\\) \\\\ Set \\(x=1\\): \\\\ \\(5(1)+1 = A(1+2) + B(1-1) \\implies 6 = 3A \\implies A = 2\\) \\\\ Set \\(x=-2\\): \\\\ \\(5(-2)+1 = A(-2+2) + B(-2-1) \\implies -9 = -3B \\implies B = 3\\) \\\\ So, \\(\\int \\frac{5x+1}{(x-1)(x+2)} dx = \\int \\left( \\frac{2}{x-1} + \\frac{3}{x+2} \\right) dx \\\\ = 2 \\int \\frac{1}{x-1} dx + 3 \\int \\frac{1}{x+2} dx \\\\ = 2 \\ln|x-1| + 3 \\ln|x+2| + C\\).",
         "hintsLatex": [
-          "The total distance travelled is the integral of the speed. Since velocity is positive for $t \\ge 0$, it's $\\int v(t)\\,dt$.",
-          "Use the substitution $u = t^2 + 9$. Remember to change the limits.",
-          "Integrate $u^{-1/2}$ with respect to $u$."
+          "Start by using partial fraction decomposition for the integrand.",
+          "Set up the expression as \\(\\frac{A}{x-1} + \\frac{B}{x+2}\\) and solve for A and B.",
+          "Remember that \\(\\int \\frac{1}{ax+b} dx = \\frac{1}{a} \\ln|ax+b| + C\\)."
         ],
         "topicsCovered": [
-          "Integration by Substitution (u-sub)",
-          "Applications to Kinematics",
-          "Definite Integrals"
+          "Integration Using Partial Fractions"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Integration",
-        "funFact": "Calculus was independently developed by Isaac Newton and Gottfried Wilhelm Leibniz in the 17th century, revolutionizing the study of motion and change."
+        "funFact": "Partial fractions are essential in control theory and signal processing, helping to simplify complex transfer functions into manageable forms."
       },
       "Medium": {
-        "id": "int-m-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Calculate the definite integral: \\int_{0}^{\\pi/2} \\frac{\\cos x}{1 + \\sin x} \\, dx",
+        "id": "int-m-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Find the area under the curve \\(y = x^2 - x\\) from \\(x=1\\) to \\(x=3\\).",
         "possibleAnswers": [
-          "ln(2)",
-          "0.693",
-          "log_e(2)",
-          "ln 2"
+          "14/3",
+          "4.666...",
+          "4.67",
+          "4 and 2/3",
+          "4 2/3"
         ],
-        "fullSolutionLatex": "Let $u = 1 + \\sin x$. \\\\ Then $du = \\cos x \\, dx$. \\\\ When $x = 0$, $u = 1 + \\sin(0) = 1$. \\\\ When $x = \\pi/2$, $u = 1 + \\sin(\\pi/2) = 1 + 1 = 2$. \\\\ The integral becomes $\\int_{1}^{2} \\frac{1}{u} \\, du$. \\\\ Integrating, we get $[\\ln|u|]_{1}^{2} = \\ln(2) - \\ln(1)$. \\\\ Since $\\ln(1) = 0$, the final answer is $\\ln(2)$.",
+        "fullSolutionLatex": "The area under the curve \\(y = f(x)\\) from \\(x=a\\) to \\(x=b\\) is given by \\(\\int_a^b f(x) dx\\). \\\\ In this case, \\(f(x) = x^2 - x\\), \\(a=1\\), and \\(b=3\\). \\\\ Area = \\(\\int_1^3 (x^2 - x) dx \\\\ = \\left[ \\frac{x^3}{3} - \\frac{x^2}{2} \\right]_1^3 \\\\ = \\left( \\frac{3^3}{3} - \\frac{3^2}{2} \\right) - \\left( \\frac{1^3}{3} - \\frac{1^2}{2} \\right) \\\\ = \\left( 9 - 4.5 \\right) - \\left( \\frac{1}{3} - \\frac{1}{2} \\right) \\\\ = 4.5 - \\left( -\\frac{1}{6} \\right) \\\\ = 4.5 + \\frac{1}{6} \\\\ = \\frac{9}{2} + \\frac{1}{6} \\\\ = \\frac{27}{6} + \\frac{1}{6} \\\\ = \\frac{28}{6} = \\frac{14}{3}\\).",
         "hintsLatex": [
-          "Consider a substitution for the denominator.",
-          "Let $u = 1 + \\sin x$. Don't forget to change the limits of integration.",
-          "Recall that $\\ln(1) = 0$."
+          "Set up the definite integral with the given limits.",
+          "Integrate the function \\(x^2 - x\\) with respect to \\(x\\).",
+          "Evaluate the integral at the upper and lower limits, then subtract the results."
         ],
         "topicsCovered": [
-          "Integration by Substitution (u-sub)",
-          "Definite Integrals",
-          "Change of Limits in Definite Integrals",
-          "Integration of Trigonometric Functions"
+          "Area Under a Curve"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Integration",
-        "funFact": "The natural logarithm, $\\ln x$, appears frequently in integrals because the derivative of $\\ln x$ is $1/x$."
+        "funFact": "Calculating the area under a curve was one of the earliest motivations for the development of integral calculus, dating back to ancient Greek mathematicians like Archimedes."
       },
       "Easy": {
-        "id": "int-e-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Evaluate the indefinite integral: \\int (3x^2 + 2)\\sqrt{x^3 + 2x + 1} \\, dx",
+        "id": "int-e-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Evaluate the indefinite integral: \\(\\int (3x^2 - 4x + 5) dx\\)",
         "possibleAnswers": [
-          "2/3 * (x^3 + 2x + 1)^(3/2) + C",
-          "(2/3)(x^3 + 2x + 1)^(3/2) + C",
-          "2/3(x^3 + 2x + 1)^(3/2) + C"
+          "x^3 - 2x^2 + 5x + C",
+          "x^3 - 2x^2 + 5x + c",
+          "x^3-2x^2+5x+C"
         ],
-        "fullSolutionLatex": "Let $u = x^3 + 2x + 1$. \\\\ Then $du = (3x^2 + 2)\\,dx$. \\\\ The integral becomes \\int \\sqrt{u} \\, du = \\int u^{1/2} \\, du. \\\\ Integrating, we get $\\frac{u^{3/2}}{3/2} + C = \\frac{2}{3}u^{3/2} + C$. \\\\ Substituting back $u = x^3 + 2x + 1$, the final answer is $\\frac{2}{3}(x^3 + 2x + 1)^{3/2} + C$.",
+        "fullSolutionLatex": "To integrate a polynomial, we apply the power rule for integration, which states that \\(\\int x^n dx = \\frac{x^{n+1}}{n+1} + C\\) for \\(n \\neq -1\\). \\\\ \\int (3x^2 - 4x + 5) dx = 3\\frac{x^{2+1}}{2+1} - 4\\frac{x^{1+1}}{1+1} + 5\\frac{x^{0+1}}{0+1} + C \\\\ = 3\\frac{x^3}{3} - 4\\frac{x^2}{2} + 5\\frac{x^1}{1} + C \\\\ = x^3 - 2x^2 + 5x + C",
         "hintsLatex": [
-          "Look for a function whose derivative is also present in the integrand.",
-          "Let $u = x^3 + 2x + 1$.",
-          "Remember to substitute back for $u$ at the end."
+          "Recall the power rule for integration: \\(\\int x^n dx = \\frac{x^{n+1}}{n+1} + C\\).",
+          "Integrate each term of the polynomial separately.",
+          "Don't forget the constant of integration, \\(C\\)."
         ],
         "topicsCovered": [
-          "Integration by Substitution (u-sub)",
-          "Indefinite Integrals"
+          "Indefinite Integrals of Polynomials"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Integration",
-        "funFact": "Integration by substitution is essentially the reverse of the chain rule in differentiation."
+        "funFact": "The constant of integration 'C' arises because the derivative of a constant is always zero, meaning infinitely many functions can have the same derivative."
       }
     },
     "Differentiation": {
       "Hard": {
-        "id": "diff-h-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "A projectile's position is given by $x = (V_0 \\cos \\alpha) t$ and $y = (V_0 \\sin \\alpha) t - \\frac{1}{2}gt^2$, where $V_0$ is the initial speed, $\\alpha$ is the launch angle, and $g$ is the acceleration due to gravity. Find the maximum height reached by the projectile by finding the value of $t$ when $\\frac{dy}{dx} = 0$, and then substituting it into the $y$ equation.",
+        "id": "diff-h-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "A rectangular field is to be fenced off along a straight river bank. No fence is needed along the river. If the total length of the fence is 200 metres, find the maximum area of the field.",
         "possibleAnswers": [
-          "(V_0^2 sin^2 alpha) / (2g)",
-          "V_0^2 sin^2(alpha) / (2g)",
-          "V_0^2 * (sin alpha)^2 / (2g)"
+          "5000 m^2",
+          "5000m^2",
+          "5000"
         ],
-        "fullSolutionLatex": "First, find $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$. \\\\ $\\frac{dx}{dt} = \\frac{d}{dt}((V_0 \\cos \\alpha) t) = V_0 \\cos \\alpha$. \\\\ $\\frac{dy}{dt} = \\frac{d}{dt}((V_0 \\sin \\alpha) t - \\frac{1}{2}gt^2) = V_0 \\sin \\alpha - gt$. \\\\ Now, find $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{V_0 \\sin \\alpha - gt}{V_0 \\cos \\alpha}$. \\\\ At the maximum height, the vertical component of velocity is zero, which corresponds to $\\frac{dy}{dx} = 0$. \\\\ So, set $\\frac{dy}{dx} = 0$: \\\\ $\\frac{V_0 \\sin \\alpha - gt}{V_0 \\cos \\alpha} = 0$ \\\\ $V_0 \\sin \\alpha - gt = 0$ \\\\ $gt = V_0 \\sin \\alpha$ \\\\ $t = \\frac{V_0 \\sin \\alpha}{g}$. \\\\ Substitute this value of $t$ into the equation for $y$ to find the maximum height: \\\\ $y_{max} = (V_0 \\sin \\alpha) \\left(\\frac{V_0 \\sin \\alpha}{g}\\right) - \\frac{1}{2}g\\left(\\frac{V_0 \\sin \\alpha}{g}\\right)^2$ \\\\ $y_{max} = \\frac{V_0^2 \\sin^2 \\alpha}{g} - \\frac{1}{2}g\\frac{V_0^2 \\sin^2 \\alpha}{g^2}$ \\\\ $y_{max} = \\frac{V_0^2 \\sin^2 \\alpha}{g} - \\frac{V_0^2 \\sin^2 \\alpha}{2g}$ \\\\ $y_{max} = \\frac{2V_0^2 \\sin^2 \\alpha - V_0^2 \\sin^2 \\alpha}{2g}$ \\\\ $y_{max} = \\frac{V_0^2 \\sin^2 \\alpha}{2g}$.",
+        "fullSolutionLatex": "Let the width of the field (perpendicular to the river) be \\(x\\) metres and the length (parallel to the river) be \\(y\\) metres. \\\\ The total length of the fence is \\(2x + y = 200\\). \\\\ From this, we can express \\(y\\) in terms of \\(x\\): \\(y = 200 - 2x\\). \\\\ The area of the field, \\(A\\), is given by \\(A = xy\\). \\\\ Substitute the expression for \\(y\\) into the area formula: \\\\ \\(A(x) = x(200 - 2x) = 200x - 2x^2\\). \\\\ To find the maximum area, we differentiate \\(A(x)\\) with respect to \\(x\\) and set the derivative to zero. \\\\ \\(\\frac{dA}{dx} = 200 - 4x\\) \\\\ Set \\(\\frac{dA}{dx} = 0\\): \\\\ \\(200 - 4x = 0 \\implies 4x = 200 \\implies x = 50\\). \\\\ To confirm this is a maximum, we find the second derivative: \\\\ \\(\\frac{d^2A}{dx^2} = -4\\). \\\\ Since \\(\\frac{d^2A}{dx^2} < 0\\), the value \\(x=50\\) corresponds to a maximum area. \\\\ Now, find the maximum area: \\\\ \\(y = 200 - 2(50) = 200 - 100 = 100\\). \\\\ Maximum Area = \\(xy = 50 \\times 100 = 5000\\) square metres.",
         "hintsLatex": [
-          "The maximum height occurs when the vertical velocity component is zero, which means $\\frac{dy}{dx} = 0$.",
-          "Find $\\frac{dy}{dx}$ first, then set it to zero to solve for $t$.",
-          "Substitute the value of $t$ back into the $y$ equation to find the maximum height."
+          "Draw a diagram and label the dimensions of the rectangular field.",
+          "Formulate an equation for the total fence length and an equation for the area.",
+          "Express the area as a function of a single variable, then differentiate and set to zero to find the critical point."
         ],
         "topicsCovered": [
-          "Parametric Differentiation",
-          "Kinematics Applications",
-          "Optimization Problems (implicitly, by finding maximum height)"
+          "Optimization Problems"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Differentiation",
-        "funFact": "The parabolic trajectory of a projectile, when air resistance is ignored, is one of the most fundamental applications of kinematics and differentiation."
+        "funFact": "Optimization problems using calculus are vital in engineering and economics, helping to design efficient structures, minimize costs, and maximize profits."
       },
       "Medium": {
-        "id": "diff-m-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "For the parametric curve given by $x = e^t \\cos t$ and $y = e^t \\sin t$, find $\\frac{dy}{dx}$ and $\\frac{d^2y}{dx^2}$ in terms of $t$.",
+        "id": "diff-m-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Find \\(\\frac{dy}{dx}\\) if \\(y = (3x^2 + 5)^4\\).",
         "possibleAnswers": [
-          "dy/dx = (sin t + cos t) / (cos t - sin t), d2y/dx2 = 2e^(-t) / (cos t - sin t)^3",
-          "dy/dx = tan(t + pi/4), d2y/dx2 = 2e^(-t) / (cos t - sin t)^3"
+          "24x(3x^2+5)^3",
+          "24x(3x^2 + 5)^3",
+          "24x(3x^2+5)^3"
         ],
-        "fullSolutionLatex": "First, find $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$. \\\\ $\\frac{dx}{dt} = \\frac{d}{dt}(e^t \\cos t) = e^t \\cos t - e^t \\sin t = e^t(\\cos t - \\sin t)$. \\\\ $\\frac{dy}{dt} = \\frac{d}{dt}(e^t \\sin t) = e^t \\sin t + e^t \\cos t = e^t(\\sin t + \\cos t)$. \\\\ Now, $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{e^t(\\sin t + \\cos t)}{e^t(\\cos t - \\sin t)} = \\frac{\\sin t + \\cos t}{\\cos t - \\sin t}$. \\\\ For $\\frac{d^2y}{dx^2}$, we use the formula $\\frac{d^2y}{dx^2} = \\frac{d}{dt}\\left(\\frac{dy}{dx}\\right) / \\frac{dx}{dt}$. \\\\ Let $u = \\frac{dy}{dx} = \\frac{\\sin t + \\cos t}{\\cos t - \\sin t}$. \\\\ $\\frac{du}{dt} = \\frac{(\\cos t - \\sin t)(\\cos t - \\sin t) - (\\sin t + \\cos t)(-\\sin t - \\cos t)}{(\\cos t - \\sin t)^2}$ \\\\ $\\frac{du}{dt} = \\frac{(\\cos t - \\sin t)^2 + (\\sin t + \\cos t)^2}{(\\cos t - \\sin t)^2}$ \\\\ $\\frac{du}{dt} = \\frac{(\\cos^2 t - 2\\sin t \\cos t + \\sin^2 t) + (\\sin^2 t + 2\\sin t \\cos t + \\cos^2 t)}{(\\cos t - \\sin t)^2}$ \\\\ $\\frac{du}{dt} = \\frac{1 - 2\\sin t \\cos t + 1 + 2\\sin t \\cos t}{(\\cos t - \\sin t)^2} = \\frac{2}{(\\cos t - \\sin t)^2}$. \\\\ Finally, $\\frac{d^2y}{dx^2} = \\frac{du/dt}{dx/dt} = \\frac{2/(\\cos t - \\sin t)^2}{e^t(\\cos t - \\sin t)} = \\frac{2}{e^t(\\cos t - \\sin t)^3} = 2e^{-t}(\\cos t - \\sin t)^{-3}$. \\\\ An alternative form for $\\frac{dy}{dx}$ is $\\frac{\\sin t + \\cos t}{\\cos t - \\sin t} = \\frac{\\tan t + 1}{1 - \\tan t} = \\tan(t + \\pi/4)$.",
+        "fullSolutionLatex": "We use the chain rule, which states that if \\(y = f(g(x))\\), then \\(\\frac{dy}{dx} = f'(g(x)) \\cdot g'(x)\\). \\\\ Let \\(u = 3x^2 + 5\\). Then \\(y = u^4\\). \\\\ \\frac{dy}{du} = 4u^3\\) \\\\ \\frac{du}{dx} = 6x\\) \\\\ By the chain rule, \\(\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx} = (4u^3)(6x)\\) \\\\ Substitute \\(u = 3x^2 + 5\\) back into the expression: \\\\ \\frac{dy}{dx} = 4(3x^2 + 5)^3 (6x) \\\\ = 24x(3x^2 + 5)^3\\).",
         "hintsLatex": [
-          "Remember that $\\frac{d^2y}{dx^2} = \\frac{d}{dt}(\\frac{dy}{dx}) / \\frac{dx}{dt}$.",
-          "Use the product rule for $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$.",
-          "Simplify the expression for $\\frac{d}{dt}(\\frac{dy}{dx})$ carefully using the quotient rule and trigonometric identities."
+          "Identify the 'outer' and 'inner' functions.",
+          "Apply the chain rule: \\(\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}\\).",
+          "Don't forget to differentiate both parts and multiply them together."
         ],
         "topicsCovered": [
-          "Parametric Differentiation",
-          "Second Derivatives",
-          "Differentiation of Trigonometric Functions",
-          "Differentiation of Exponential Functions"
+          "Chain Rule"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Differentiation",
-        "funFact": "The second derivative helps determine the concavity of a curve, even for parametrically defined paths."
+        "funFact": "The chain rule is fundamental in calculus, allowing us to differentiate composite functions, much like a factory assembly line where the output of one process becomes the input for the next."
       },
       "Easy": {
-        "id": "diff-e-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "A curve is defined parametrically by $x = t^2 + 3t$ and $y = 2t^3 - t$. Find $\\frac{dy}{dx}$ in terms of $t$.",
+        "id": "diff-e-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Differentiate \\(y = 5x^3 - 2x + 7\\) with respect to \\(x\\).",
         "possibleAnswers": [
-          "(6t^2 - 1) / (2t + 3)",
-          "(6t^2-1)/(2t+3)"
+          "15x^2 - 2",
+          "15x^2-2"
         ],
-        "fullSolutionLatex": "First, find $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$. \\\\ $\\frac{dx}{dt} = \\frac{d}{dt}(t^2 + 3t) = 2t + 3$. \\\\ $\\frac{dy}{dt} = \\frac{d}{dt}(2t^3 - t) = 6t^2 - 1$. \\\\ Now, use the formula for parametric differentiation: $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$. \\\\ $\\frac{dy}{dx} = \\frac{6t^2 - 1}{2t + 3}$.",
+        "fullSolutionLatex": "To differentiate a polynomial, we apply the power rule for differentiation, which states that \\(\\frac{d}{dx}(x^n) = nx^{n-1}\\). \\\\ \\frac{d}{dx}(5x^3 - 2x + 7) = 5 \\frac{d}{dx}(x^3) - 2 \\frac{d}{dx}(x) + \\frac{d}{dx}(7) \\\\ = 5(3x^{3-1}) - 2(1x^{1-1}) + 0 \\\\ = 15x^2 - 2x^0 \\\\ = 15x^2 - 2\\).",
         "hintsLatex": [
-          "Recall the formula for parametric differentiation: $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$.",
-          "Differentiate $x$ with respect to $t$ and $y$ with respect to $t$ separately.",
-          "Combine the derivatives to find $\\frac{dy}{dx}$."
+          "Recall the power rule for differentiation: \\(\\frac{d}{dx}(x^n) = nx^{n-1}\\).",
+          "Differentiate each term of the polynomial separately.",
+          "Remember that the derivative of a constant is zero."
         ],
         "topicsCovered": [
-          "Parametric Differentiation"
+          "Power Rule"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Differentiation",
-        "funFact": "Parametric equations are powerful because they allow us to describe curves that cannot be represented as simple functions $y=f(x)$, such as circles or cycloids."
+        "funFact": "Differentiation, at its core, helps us understand how quickly things change, such as the speed of a car or the rate of growth of a population."
       }
     },
     "Further Math (9231)": {
       "Hard": {
-        "id": "fm-h-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Find the region in the Argand diagram defined by the inequalities $|z - 2i| \\le 2$ and $0 \\le \\arg(z - 2i) \\le \\frac{\\pi}{3}$. Sketch this region.",
+        "id": "fm-h-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "A cubic equation \\(ax^3 + bx^2 + cx + d = 0\\) has roots \\(\\alpha, \\beta, \\gamma\\). Given that \\(\\alpha + \\beta + \\gamma = 5\\), \\(\\alpha\\beta + \\beta\\gamma + \\gamma\\alpha = 8\\), and \\(\\alpha\\beta\\gamma = -4\\), find the cubic equation if \\(a=1\\).",
         "possibleAnswers": [
-          "Sector of a circle, center (0,2), radius 2, between angles 0 and pi/3 relative to the horizontal line from (0,2)",
-          "Sector of circle, center 2i, radius 2, arg from 0 to pi/3"
+          "x^3 - 5x^2 + 8x + 4 = 0",
+          "x^3-5x^2+8x+4=0",
+          "x^3 - 5x^2 + 8x + 4 = 0"
         ],
-        "fullSolutionLatex": "The first inequality, $|z - 2i| \\le 2$, describes the set of points inside or on a circle with center $2i$ (which is the point $(0,2)$ in the Cartesian plane) and radius $2$. \\\\ The second inequality, $0 \\le \\arg(z - 2i) \\le \\frac{\\pi}{3}$, describes the set of points such that the angle formed by the vector from $2i$ to $z$ with the positive real axis (or a horizontal line extending from $2i$) is between $0$ and $\\frac{\\pi}{3}$ (inclusive). \\\\ Combining these two conditions, the region is a sector of a circle. \\\\ The center of the sector is $(0,2)$. \\\\ The radius of the sector is $2$. \\\\ The sector starts from the line $y=2$ (horizontal line through the center) and extends upwards (counter-clockwise) by an angle of $\\frac{\\pi}{3}$. \\\\ To sketch: Draw a circle centered at $(0,2)$ with radius $2$. Draw a horizontal line from $(0,2)$ to the right. Draw another line from $(0,2)$ at an angle of $\\frac{\\pi}{3}$ (or $60^{\\circ}$) from the horizontal. The region is the part of the circle enclosed by these two lines and the arc of the circle.",
+        "fullSolutionLatex": "For a cubic equation \\(ax^3 + bx^2 + cx + d = 0\\) with roots \\(\\alpha, \\beta, \\gamma\\), the relations between roots and coefficients are: \\\\ 1. \\(\\alpha + \\beta + \\gamma = -\\frac{b}{a}\\) \\\\ 2. \\(\\alpha\\beta + \\beta\\gamma + \\gamma\\alpha = \\frac{c}{a}\\) \\\\ 3. \\(\\alpha\\beta\\gamma = -\\frac{d}{a}\\) \\\\ Given that \\(a=1\\): \\\\ 1. \\(\\alpha + \\beta + \\gamma = 5 \\implies -\\frac{b}{1} = 5 \\implies b = -5\\) \\\\ 2. \\(\\alpha\\beta + \\beta\\gamma + \\gamma\\alpha = 8 \\implies \\frac{c}{1} = 8 \\implies c = 8\\) \\\\ 3. \\(\\alpha\\beta\\gamma = -4 \\implies -\\frac{d}{1} = -4 \\implies d = 4\\) \\\\ Substitute these coefficients back into the cubic equation form \\(ax^3 + bx^2 + cx + d = 0\\): \\\\ \\(1x^3 + (-5)x^2 + (8)x + (4) = 0\\) \\\\ \\(x^3 - 5x^2 + 8x + 4 = 0\\).",
         "hintsLatex": [
-          "Break down the problem into two separate loci: one for the modulus and one for the argument.",
-          "Recall that $|z-z_0| \\le r$ represents a disk, and $\\arg(z-z_0)$ is the angle of the vector from $z_0$ to $z$.",
-          "The combination of a modulus and an argument inequality usually defines a sector of a circle."
+          "Recall the standard relationships between the roots and coefficients of a cubic equation.",
+          "Identify the sum of roots, sum of products of roots taken two at a time, and the product of roots from the given information.",
+          "Substitute these values into the general cubic equation formula \\(x^3 - (\\alpha + \\beta + \\gamma)x^2 + (\\alpha\\beta + \\beta\\gamma + \\gamma\\alpha)x - (\\alpha\\beta\\gamma) = 0\\) (when \\(a=1\\))."
         ],
         "topicsCovered": [
-          "Loci in the Complex Plane",
-          "Argand Diagrams",
-          "Inequalities (Complex Numbers)"
+          "Polynomials and Roots",
+          "Relations Between Roots and Coefficients"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Math (9231)",
-        "funFact": "The use of inequalities with complex numbers allows for the definition of complex regions, which have applications in fields like signal processing and fluid dynamics."
+        "funFact": "The relations between roots and coefficients (Vieta's formulas) are a powerful tool in algebra, allowing mathematicians to study polynomial properties without explicitly finding the roots."
       },
       "Medium": {
-        "id": "fm-m-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Sketch the locus of points $z$ in the Argand diagram such that $|z - 1| = |z - 3i|$. Describe the locus geometrically.",
+        "id": "fm-m-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Find the modulus and argument of the complex number \\(z = -1 + i\\).",
         "possibleAnswers": [
-          "Perpendicular bisector of the line segment joining (1,0) and (0,3)",
-          "Line with equation y = -1/3 x + 5/3",
-          "y = -1/3 x + 5/3"
+          "Modulus=sqrt(2), Argument=3pi/4",
+          "sqrt(2), 3pi/4",
+          "1.414, 2.356 radians",
+          "sqrt(2) and 135 degrees"
         ],
-        "fullSolutionLatex": "The equation $|z - z_1| = |z - z_2|$ represents the perpendicular bisector of the line segment joining $z_1$ and $z_2$. \\\\ Here, $z_1 = 1$ (representing the point $(1,0)$) and $z_2 = 3i$ (representing the point $(0,3)$). \\\\ Let $z = x+iy$. \\\\ $|(x+iy) - 1| = |(x+iy) - 3i|$ \\\\ $|(x-1) + iy| = |x + i(y-3)|$ \\\\ $\\sqrt{(x-1)^2 + y^2} = \\sqrt{x^2 + (y-3)^2}$ \\\\ Squaring both sides: \\\\ $(x-1)^2 + y^2 = x^2 + (y-3)^2$ \\\\ $x^2 - 2x + 1 + y^2 = x^2 + y^2 - 6y + 9$ \\\\ $-2x + 1 = -6y + 9$ \\\\ $6y = 2x + 8$ \\\\ $y = \\frac{2x+8}{6}$ \\\\ $y = \\frac{1}{3}x + \\frac{4}{3}$. \\\\ The locus is a straight line, which is the perpendicular bisector of the line segment joining $(1,0)$ and $(0,3)$. \\\\ The slope of the line segment joining $(1,0)$ and $(0,3)$ is $m = \\frac{3-0}{0-1} = -3$. \\\\ The slope of the perpendicular bisector is $-\\frac{1}{m} = -\\frac{1}{-3} = \\frac{1}{3}$. This matches our calculated slope. \\\\ The midpoint of the line segment is $(\\frac{1+0}{2}, \\frac{0+3}{2}) = (\\frac{1}{2}, \\frac{3}{2})$. \\\\ Substituting the midpoint into $y = \\frac{1}{3}x + \\frac{4}{3}$: \\\\ $\\frac{3}{2} = \\frac{1}{3}(\\frac{1}{2}) + \\frac{4}{3}$ \\\\ $\\frac{3}{2} = \\frac{1}{6} + \\frac{8}{6} = \\frac{9}{6} = \\frac{3}{2}$. This confirms the line passes through the midpoint. \\\\ So the equation is $y = \\frac{1}{3}x + \\frac{4}{3}$.",
+        "fullSolutionLatex": "The complex number is \\(z = -1 + i\\). This lies in the second quadrant of the Argand diagram. \\\\ **Modulus:** \\\\ The modulus \\(|z|\\) is given by \\(\\sqrt{x^2 + y^2}\\). \\\\ \\(|z| = \\sqrt{(-1)^2 + (1)^2} = \\sqrt{1 + 1} = \\sqrt{2}\\). \\\\ **Argument:** \\\\ The argument \\(\\arg(z)\\) is the angle \\(\\theta\\) such that \\(\\tan\\theta = \\frac{y}{x}\\). \\\\ \\(\\tan\\alpha = \\left| \\frac{1}{-1} \\right| = 1\\), so the reference angle \\(\\alpha = \\frac{\\pi}{4}\\) (or \\(45^\\circ\\)). \\\\ Since \\(z\\) is in the second quadrant, \\(\\theta = \\pi - \\alpha\\) (or \\(180^\\circ - \\alpha\\)). \\\\ \\(\\theta = \\pi - \\frac{\\pi}{4} = \\frac{3\\pi}{4}\\). \\\\ (Or in degrees: \\(180^\\circ - 45^\\circ = 135^\\circ\\)). \\\\ So, the modulus is \\(\\sqrt{2}\\) and the argument is \\(\\frac{3\\pi}{4}\\) radians (or \\(135^\\circ\\)).",
         "hintsLatex": [
-          "The locus $|z-z_1| = |z-z_2|$ represents the perpendicular bisector of the line segment joining $z_1$ and $z_2$.",
-          "Let $z = x+iy$ and express the equation in terms of $x$ and $y$.",
-          "Square both sides to eliminate the square roots and simplify to find the Cartesian equation of the line."
+          "Plot the complex number on an Argand diagram to determine its quadrant.",
+          "Calculate the modulus using the formula \\(|z| = \\sqrt{x^2 + y^2}\\).",
+          "Calculate the reference angle using \\(\\tan\\alpha = \\left| \\frac{y}{x} \\right|\\), then adjust it based on the quadrant to find the principal argument."
         ],
         "topicsCovered": [
-          "Loci in the Complex Plane",
-          "Argand Diagrams",
-          "Coordinate Geometry of Lines"
+          "Modulus and Argument"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Math (9231)",
-        "funFact": "The concept of a locus in the complex plane extends geometric ideas into the realm of complex numbers, providing a visual way to understand complex relationships."
+        "funFact": "The geometric interpretation of complex numbers on an Argand diagram allows for visualization of operations like multiplication as rotation and scaling, a concept crucial in fields like signal processing."
       },
       "Easy": {
-        "id": "fm-e-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Sketch the locus of points $z$ in the Argand diagram such that $|z - (3+4i)| = 2$. Describe the locus geometrically.",
+        "id": "fm-e-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Given \\(z_1 = 3 + 2i\\) and \\(z_2 = 1 - 4i\\), find \\(z_1 z_2\\).",
         "possibleAnswers": [
-          "Circle with center (3,4) and radius 2",
-          "Circle, center 3+4i, radius 2"
+          "11 - 10i",
+          "11-10i",
+          "11 - 10i"
         ],
-        "fullSolutionLatex": "The equation $|z - (a+bi)| = r$ represents a circle with center $(a,b)$ and radius $r$. \\\\ In this case, $a+bi = 3+4i$, so the center is $(3,4)$. \\\\ The radius is $r=2$. \\\\ Thus, the locus is a circle with center $(3,4)$ and radius $2$.",
+        "fullSolutionLatex": "To multiply two complex numbers \\((a+bi)(c+di)\\), we use the distributive property (similar to FOIL): \\\\ \\((3 + 2i)(1 - 4i) = 3(1) + 3(-4i) + 2i(1) + 2i(-4i)\\) \\\\ \\(= 3 - 12i + 2i - 8i^2\\) \\\\ Recall that \\(i^2 = -1\\): \\\\ \\(= 3 - 10i - 8(-1)\\) \\\\ \\(= 3 - 10i + 8\\) \\\\ \\(= 11 - 10i\\).",
         "hintsLatex": [
-          "Recall the geometric interpretation of $|z-z_0|=r$.",
-          "Identify the center and radius from the given equation.",
-          "A sketch would involve plotting the center and drawing a circle with the given radius."
+          "Use the distributive property (FOIL method) to multiply the complex numbers.",
+          "Remember that \\(i^2 = -1\\).",
+          "Group the real and imaginary parts to write the answer in the form \\(a+bi\\)."
         ],
         "topicsCovered": [
-          "Loci in the Complex Plane",
-          "Argand Diagrams"
+          "Complex Numbers (Basic Operations)"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Math (9231)",
-        "funFact": "The Argand diagram, named after Jean-Robert Argand, provides a geometric interpretation for complex numbers, allowing us to visualize operations like addition and multiplication."
+        "funFact": "Complex numbers, initially considered 'imaginary,' are fundamental in electrical engineering for analyzing AC circuits and in quantum mechanics for describing wave functions."
       }
     },
     "Mathematics (9709)": {
       "Hard": {
-        "id": "math-h-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Find the coefficient of $x^3$ in the expansion of $(1-2x)(1+x/2)^{-3}$.",
+        "id": "math-h-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Solve the equation \\(2\\sin^2\\theta = \\cos\\theta + 1\\) for \\(0^\\circ \\le \\theta \\le 360^\\circ\\).",
         "possibleAnswers": [
-          "17/4",
-          "4.25",
-          "4 1/4"
+          "60, 180, 300",
+          "60 degrees, 180 degrees, 300 degrees",
+          "60, 180, 300"
         ],
-        "fullSolutionLatex": "First, expand $(1+x/2)^{-3}$ using the binomial theorem up to the $x^3$ term. \\\\ $(1+z)^n = 1 + nz + \\frac{n(n-1)}{2!}z^2 + \\frac{n(n-1)(n-2)}{3!}z^3 + \\dots$ \\\\ Here, $n=-3$ and $z = x/2$. \\\\ $1 + (-3)(x/2) + \\frac{(-3)(-4)}{2}(x/2)^2 + \\frac{(-3)(-4)(-5)}{6}(x/2)^3 + \\dots$ \\\\ $= 1 - \\frac{3}{2}x + \\frac{12}{2}\\frac{x^2}{4} + \\frac{-60}{6}\\frac{x^3}{8} + \\dots$ \\\\ $= 1 - \\frac{3}{2}x + \\frac{3}{2}x^2 - \\frac{5}{4}x^3 + \\dots$ \\\\ Now, multiply this expansion by $(1-2x)$: \\\\ $(1-2x)(1 - \\frac{3}{2}x + \\frac{3}{2}x^2 - \\frac{5}{4}x^3 + \\dots)$ \\\\ We need the coefficient of $x^3$. This can be formed by: \\\\ $1 \\times (-\\frac{5}{4}x^3)$ gives $-\\frac{5}{4}x^3$. \\\\ $(-2x) \\times (\\frac{3}{2}x^2)$ gives $-3x^3$. \\\\ Adding these terms: $-\\frac{5}{4}x^3 - 3x^3 = (-\\frac{5}{4} - 3)x^3 = (-\\frac{5}{4} - \\frac{12}{4})x^3 = -\\frac{17}{4}x^3$. \\\\ The coefficient of $x^3$ is $-\\frac{17}{4}$. \\\\ Let me recheck the prompt. 'Find the coefficient of $x^3$ in the expansion of $(1-2x)(1+x/2)^{-3}$.' \\\\ My calculation yields -17/4. The possible answers are positive. \\\\ Let's adjust the problem to $(1+2x)(1+x/2)^{-3}$ to get a positive result for the given possible answers, or adjust the possible answers. Given the problem is hard, perhaps the sign is part of the challenge. \\\\ Let's stick with my calculated answer: $-\\frac{17}{4}$. And modify the possible answers. \\\\ Possible Answers: [\"-17/4\", \"-4.25\", \"-4 1/4\"]",
+        "fullSolutionLatex": "Use the identity \\(\\sin^2\\theta = 1 - \\cos^2\\theta\\) to express the equation entirely in terms of \\(\\cos\\theta\\). \\\\ \\(2(1 - \\cos^2\\theta) = \\cos\\theta + 1\\) \\\\ \\(2 - 2\\cos^2\\theta = \\cos\\theta + 1\\) \\\\ Rearrange into a quadratic equation in terms of \\(\\cos\\theta\\): \\\\ \\(2\\cos^2\\theta + \\cos\\theta - 1 = 0\\) \\\\ Factorize the quadratic equation: \\\\ \\((2\\cos\\theta - 1)(\\cos\\theta + 1) = 0\\) \\\\ So, \\(2\\cos\\theta - 1 = 0 \\implies \\cos\\theta = \\frac{1}{2}\\) or \\(\\cos\\theta + 1 = 0 \\implies \\cos\\theta = -1\\). \\\\ For \\(\\cos\\theta = \\frac{1}{2}\\): \\\\ The principal value is \\(\\theta = 60^\\circ\\). \\\\ In the range \\(0^\\circ \\le \\theta \\le 360^\\circ\\), the solutions are \\(\\theta = 60^\\circ\\) (Quadrant I) and \\(\\theta = 360^\\circ - 60^\\circ = 300^\\circ\\) (Quadrant IV). \\\\ For \\(\\cos\\theta = -1\\): \\\\ The solution is \\(\\theta = 180^\\circ\\). \\\\ Therefore, the solutions for \\(0^\\circ \\le \\theta \\le 360^\\circ\\) are \\(60^\\circ, 180^\\circ, 300^\\circ\\).",
         "hintsLatex": [
-          "First, find the binomial expansion of $(1+x/2)^{-3}$ up to the $x^3$ term.",
-          "Multiply the resulting expansion by $(1-2x)$.",
-          "Identify all terms that produce $x^3$ and sum their coefficients."
+          "Use the trigonometric identity \\(\\sin^2\\theta + \\cos^2\\theta = 1\\) to rewrite the equation in terms of a single trigonometric function.",
+          "Solve the resulting quadratic equation for \\(\\cos\\theta\\).",
+          "Find all angles in the given range that satisfy the values of \\(\\cos\\theta\\)."
         ],
         "topicsCovered": [
-          "Binomial Expansion (Fractional Index)",
-          "Algebraic Manipulation"
+          "Trigonometric Equations",
+          "Trigonometric Identities"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mathematics (9709)",
-        "funFact": "The binomial theorem can be used to approximate values of functions, such as square roots or cube roots, by choosing appropriate values for $x$."
+        "funFact": "Trigonometry, originally developed for astronomy and navigation, is now crucial in fields like physics, engineering, and computer graphics for describing waves, oscillations, and rotations."
       },
       "Medium": {
-        "id": "math-m-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Given that the coefficient of $x^2$ in the expansion of $(1+ax)^{-1}$ is $75$, find the possible values of $a$.",
+        "id": "math-m-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Solve the simultaneous equations: \\\\ \\(y = x^2 - 3x + 2\\) \\\\ \\(y = x - 1\\)",
         "possibleAnswers": [
-          "a = 5 or a = -5",
-          "a = +/- 5",
-          "5, -5"
+          "(1,0) and (3,2)",
+          "(1, 0) and (3, 2)",
+          "x=1, y=0, x=3, y=2",
+          "x=1,y=0; x=3,y=2"
         ],
-        "fullSolutionLatex": "The binomial expansion for $(1+ax)^{-1}$ is $1 + (-1)(ax) + \\frac{(-1)(-1-1)}{2!}(ax)^2 + \\dots$. \\\\ The term involving $x^2$ is $\\frac{(-1)(-2)}{2}(a^2x^2) = (1)(a^2x^2) = a^2x^2$. \\\\ The coefficient of $x^2$ is $a^2$. \\\\ We are given that the coefficient of $x^2$ is $75$. \\\\ So, $a^2 = 75$. \\\\ $a = \\pm \\sqrt{75} = \\pm \\sqrt{25 \\times 3} = \\pm 5\\sqrt{3}$. \\\\ Let me recheck the calculation. \\\\ $n=-1$, $z=ax$. \\\\ Coefficient of $x$: $n(a) = -a$. \\\\ Coefficient of $x^2$: $\\frac{n(n-1)}{2!}a^2 = \\frac{(-1)(-2)}{2}a^2 = 1 \\cdot a^2 = a^2$. \\\\ So $a^2 = 75$, $a = \\pm \\sqrt{75} = \\pm 5\\sqrt{3}$. \\\\ The 'possibleAnswers' had 5 and -5. This implies the problem should have given a different coefficient or a different power. Let's adjust the problem to fit the expected answers for ease of grading. If the coefficient of $x^2$ is 25, then $a^2=25$, so $a = \\pm 5$. \\\\ Let's correct the problem statement to: 'Given that the coefficient of $x^2$ in the expansion of $(1+ax)^{-1}$ is $25$, find the possible values of $a$.' \\\\ With the corrected problem: \\\\ The coefficient of $x^2$ is $a^2$. \\\\ We are given that the coefficient of $x^2$ is $25$. \\\\ So, $a^2 = 25$. \\\\ $a = \\pm \\sqrt{25}$. \\\\ $a = 5$ or $a = -5$.",
+        "fullSolutionLatex": "Since both equations are equal to \\(y\\), we can set them equal to each other: \\\\ \\(x^2 - 3x + 2 = x - 1\\) \\\\ Rearrange the equation to form a quadratic equation: \\\\ \\(x^2 - 3x - x + 2 + 1 = 0\\) \\\\ \\(x^2 - 4x + 3 = 0\\) \\\\ Factorize the quadratic equation: \\\\ \\((x-1)(x-3) = 0\\) \\\\ This gives two possible values for \\(x\\): \\(x=1\\) or \\(x=3\\). \\\\ Now substitute these values back into the linear equation \\(y = x - 1\\) to find the corresponding \\(y\\) values. \\\\ For \\(x=1\\): \\(y = 1 - 1 = 0\\). So, one solution is \\((1,0)\\). \\\\ For \\(x=3\\): \\(y = 3 - 1 = 2\\). So, the other solution is \\((3,2)\\). \\\\ The solutions are \\((1,0)\\) and \\((3,2)\\).",
         "hintsLatex": [
-          "Write out the binomial expansion of $(1+ax)^{-1}$ up to the $x^2$ term.",
-          "Identify the coefficient of $x^2$.",
-          "Set the coefficient equal to the given value and solve for $a$."
+          "Set the two expressions for \\(y\\) equal to each other.",
+          "Rearrange the resulting equation into a standard quadratic form.",
+          "Solve the quadratic equation for \\(x\\), then substitute the \\(x\\) values back into one of the original equations to find the corresponding \\(y\\) values."
         ],
         "topicsCovered": [
-          "Binomial Expansion (Fractional Index)",
+          "Simultaneous Equations",
           "Quadratic Functions"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mathematics (9709)",
-        "funFact": "Binomial expansions are crucial in statistics for understanding probability distributions like the binomial distribution."
+        "funFact": "Simultaneous equations are used to model situations where multiple conditions must be met, such as finding the intersection points of curves or balancing chemical reactions."
       },
       "Easy": {
-        "id": "math-e-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Find the first three terms, in ascending powers of $x$, of the binomial expansion of $(1 + 2x)^{-2}$. State the set of values of $x$ for which the expansion is valid.",
+        "id": "math-e-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Find the coordinates of the vertex of the quadratic function \\(y = 2(x-3)^2 + 4\\).",
         "possibleAnswers": [
-          "1 - 4x + 12x^2, |x| < 1/2",
-          "1 - 4x + 12x^2 for |x| < 0.5"
+          "(3,4)",
+          "3, 4",
+          "(3, 4)"
         ],
-        "fullSolutionLatex": "The binomial expansion for $(1+ax)^n$ is $1 + n(ax) + \\frac{n(n-1)}{2!}(ax)^2 + \\dots$. \\\\ Here, $a=2$ and $n=-2$. \\\\ First term: $1$ \\\\ Second term: $n(ax) = (-2)(2x) = -4x$. \\\\ Third term: $\\frac{n(n-1)}{2!}(ax)^2 = \\frac{(-2)(-2-1)}{2}(2x)^2 = \\frac{(-2)(-3)}{2}(4x^2) = (3)(4x^2) = 12x^2$. \\\\ So the first three terms are $1 - 4x + 12x^2$. \\\\ The expansion is valid when $|ax| < 1$, which means $|2x| < 1$, or $|x| < \\frac{1}{2}$.",
+        "fullSolutionLatex": "The given quadratic function is in vertex form, \\(y = a(x-h)^2 + k\\), where \\((h,k)\\) are the coordinates of the vertex. \\\\ Comparing \\(y = 2(x-3)^2 + 4\\) with the vertex form, we have \\(h=3\\) and \\(k=4\\). \\\\ Therefore, the vertex is at \\((3,4)\\).",
         "hintsLatex": [
-          "Recall the general formula for binomial expansion with a fractional or negative index: $(1+z)^n = 1 + nz + \\frac{n(n-1)}{2!}z^2 + \\dots$",
-          "Carefully substitute $n=-2$ and $z=2x$.",
-          "The condition for validity is $|ax| < 1$."
+          "Recall the vertex form of a quadratic equation: \\(y = a(x-h)^2 + k\\).",
+          "Identify the values of \\(h\\) and \\(k\\) from the given equation.",
+          "The vertex coordinates are \\((h,k)\\)."
         ],
         "topicsCovered": [
-          "Binomial Expansion (Fractional Index)"
+          "Quadratic Functions",
+          "Completing the Square"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mathematics (9709)",
-        "funFact": "The binomial theorem is attributed to Isaac Newton for its generalized form, even though specific cases were known centuries earlier by mathematicians like Omar Khayyam."
+        "funFact": "Quadratic functions describe parabolas, which are found in nature (like the trajectory of a projectile) and in engineering (like the shape of satellite dishes and bridge arches)."
       }
     },
     "Further Mechanics (9231)": {
       "Hard": {
-        "id": "fmech-h-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "A particle of mass $m$ is attached to one end of a light elastic string of natural length $l$ and modulus of elasticity $E$. The other end of the string is fixed to a point $O$. The particle is pulled down a distance $A$ below the equilibrium position and released. Show that the particle performs SHM and find the period of oscillation. (Assume the particle only moves vertically.)",
+        "id": "fmech-h-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "A particle undergoes Simple Harmonic Motion (SHM) with equation \\(x = A\\cos(\\omega t)\\). Its maximum speed is \\(v_{max} = 10\\text{ cm/s}\\) and its maximum acceleration is \\(a_{max} = 50\\text{ cm/s}^2\\). Find the period of the oscillation.",
         "possibleAnswers": [
-          "2pi * sqrt(ml / E)",
-          "2*pi*sqrt(ml/E)"
+          "0.4pi s",
+          "0.4π s",
+          "0.4 pi s",
+          "1.257 s",
+          "1.2566 s"
         ],
-        "fullSolutionLatex": "Let $x$ be the displacement of the particle from its equilibrium position. \\\\ At equilibrium, the tension in the string balances the weight of the particle. \\\\ Let $e_0$ be the extension at equilibrium. \\\\ Tension $T_0 = \\frac{E e_0}{l}$. \\\\ At equilibrium, $T_0 = mg \\implies \\frac{E e_0}{l} = mg \\implies e_0 = \\frac{mgl}{E}$. \\\\ Now, consider the particle at a displacement $x$ from the equilibrium position. \\\\ The total extension of the string is $e_0 + x$. \\\\ The tension in the string is $T = \\frac{E(e_0 + x)}{l}$. \\\\ The net force $F$ acting on the particle is $mg - T$ (taking downward as positive). \\\\ $F = mg - \\frac{E(e_0 + x)}{l} = mg - \\frac{E e_0}{l} - \\frac{Ex}{l}$. \\\\ Since $mg = \\frac{E e_0}{l}$ (from equilibrium), these terms cancel out. \\\\ $F = -\\frac{Ex}{l}$. \\\\ By Newton's second law, $F = ma$, so $ma = -\\frac{Ex}{l}$. \\\\ $a = -\\frac{E}{ml}x$. \\\\ This is in the form $a = -\\omega^2 x$, which is the defining equation for SHM. \\\\ Therefore, $\\omega^2 = \\frac{E}{ml}$, so $\\omega = \\sqrt{\\frac{E}{ml}}$. \\\\ The period of oscillation $T$ is given by $T = \\frac{2\\pi}{\\omega}$. \\\\ $T = \\frac{2\\pi}{\\sqrt{E/(ml)}} = 2\\pi \\sqrt{\\frac{ml}{E}}$.",
+        "fullSolutionLatex": "Given: \\\\ Maximum speed \\(v_{max} = A\\omega = 10\\text{ cm/s}\\) (Equation 1) \\\\ Maximum acceleration \\(a_{max} = A\\omega^2 = 50\\text{ cm/s}^2\\) (Equation 2) \\\\ We want to find the period \\(T\\), which is related to angular frequency \\(\\omega\\) by \\(T = \\frac{2\\pi}{\\omega}\\). \\\\ Divide Equation 2 by Equation 1: \\\\ \\(\\frac{A\\omega^2}{A\\omega} = \\frac{50}{10}\\) \\\\ \\(\\omega = 5\\text{ rad/s}\\) \\\\ Now, use the relation for the period: \\\\ \\(T = \\frac{2\\pi}{\\omega} = \\frac{2\\pi}{5}\\) s \\\\ \\(T = 0.4\\pi\\) s (approximately \\(1.257\\) s).",
         "hintsLatex": [
-          "First, find the equilibrium position by balancing forces.",
-          "Then, consider the forces acting on the particle when it is displaced by a small amount $x$ from equilibrium.",
-          "Show that the net restoring force is proportional to the displacement and in the opposite direction, leading to $a = -\\omega^2 x$. Then find $\\omega$ and thus the period."
+          "Recall the formulas for maximum speed and maximum acceleration in SHM in terms of amplitude (A) and angular frequency (\\(\\omega\\)).",
+          "Formulate two equations from the given information.",
+          "Solve the system of equations for \\(\\omega\\) and then use the relationship between \\(\\omega\\) and the period (T)."
         ],
         "topicsCovered": [
           "Simple Harmonic Motion",
-          "Advanced Dynamics",
-          "Equations of Motion in Vector Form (implicitly for forces)",
-          "Gravitational Fields (implicitly for weight)"
+          "Advanced Kinematics"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Elastic strings and springs, governed by Hooke's Law, are ideal systems for demonstrating SHM, a concept crucial for understanding wave phenomena like sound and light."
+        "funFact": "Simple Harmonic Motion describes many natural phenomena, from the swinging of a pendulum to the vibrations of atoms in a crystal lattice, making it a cornerstone of physics."
       },
       "Medium": {
-        "id": "fmech-m-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "A mass of $0.5$ kg attached to a spring oscillates with SHM. Its displacement $x$ from equilibrium is given by $x(t) = 0.08 \\sin(3t)$, where $x$ is in meters and $t$ is in seconds. Find the maximum speed and maximum acceleration of the mass.",
+        "id": "fmech-m-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "A projectile is launched from the ground with an initial speed of 20 m/s at an angle of \\(30^\\circ\\) above the horizontal. Calculate the horizontal range of the projectile. (Assume \\(g = 9.8 \\text{ m/s}^2\\) and air resistance is negligible).",
         "possibleAnswers": [
-          "Max Speed = 0.24 m/s, Max Acceleration = 0.72 m/s^2",
-          "v_max = 0.24, a_max = 0.72",
-          "0.24, 0.72"
+          "35.3 m",
+          "35.3 meters",
+          "35.3"
         ],
-        "fullSolutionLatex": "The displacement is given by $x(t) = 0.08 \\sin(3t)$. \\\\ Comparing this to $x(t) = A \\sin(\\omega t)$, we have amplitude $A = 0.08$ m and angular frequency $\\omega = 3$ rad/s. \\\\ The velocity $v(t)$ is the first derivative of displacement with respect to time: \\\\ $v(t) = \\frac{dx}{dt} = \\frac{d}{dt}(0.08 \\sin(3t)) = 0.08 \\times 3 \\cos(3t) = 0.24 \\cos(3t)$. \\\\ The maximum speed occurs when $\\cos(3t) = \\pm 1$. \\\\ $v_{max} = 0.24 \\times 1 = 0.24$ m/s. \\\\ The acceleration $a(t)$ is the first derivative of velocity (or second derivative of displacement) with respect to time: \\\\ $a(t) = \\frac{dv}{dt} = \\frac{d}{dt}(0.24 \\cos(3t)) = 0.24 \\times (-3 \\sin(3t)) = -0.72 \\sin(3t)$. \\\\ The maximum acceleration occurs when $\\sin(3t) = \\pm 1$. \\\\ $a_{max} = |-0.72 \\times 1| = 0.72$ m/s$^2$.",
+        "fullSolutionLatex": "Given: \\\\ Initial speed \\(u = 20\\) m/s \\\\ Angle of projection \\(\\alpha = 30^\\circ\\) \\\\ Acceleration due to gravity \\(g = 9.8\\) m/s\\(^2\\) \\\\ \\\\ The horizontal range \\(R\\) of a projectile launched from ground level is given by the formula: \\\\ \\(R = \\frac{u^2 \\sin(2\\alpha)}{g}\\) \\\\ Substitute the given values: \\\\ \\(R = \\frac{(20)^2 \\sin(2 \\times 30^\\circ)}{9.8}\\) \\\\ \\(R = \\frac{400 \\sin(60^\\circ)}{9.8}\\) \\\\ \\(R = \\frac{400 \\times \\frac{\\sqrt{3}}{2}}{9.8}\\) \\\\ \\(R = \\frac{200\\sqrt{3}}{9.8}\\) \\\\ \\(R \\approx \\frac{200 \\times 1.732}{9.8}\\) \\\\ \\(R \\approx \\frac{346.4}{9.8} \\approx 35.347\\) m \\\\ Rounding to 3 significant figures, the horizontal range is \\(35.3\\) m.",
         "hintsLatex": [
-          "Recall the general forms for displacement, velocity, and acceleration in SHM: $x = A\\sin(\\omega t)$, $v = A\\omega\\cos(\\omega t)$, $a = -A\\omega^2\\sin(\\omega t)$.",
-          "Identify the amplitude ($A$) and angular frequency ($\\omega$) from the given displacement equation.",
-          "The maximum values of sine and cosine functions are 1 and -1."
+          "Recall the formula for the horizontal range of a projectile.",
+          "Ensure your calculator is in degree mode for the trigonometric function.",
+          "Substitute the given values for initial speed, angle, and gravitational acceleration into the formula."
         ],
         "topicsCovered": [
-          "Simple Harmonic Motion",
-          "Advanced Kinematics",
-          "Velocity and Acceleration"
+          "Projectile Motion",
+          "Motion in Two Dimensions"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "The restoring force in an ideal spring, described by Hooke's Law ($F = -kx$), is the fundamental reason why spring-mass systems exhibit Simple Harmonic Motion."
+        "funFact": "Projectile motion is a classic application of kinematics that governs everything from how a basketball flies through the air to the trajectory of rockets and artillery shells."
       },
       "Easy": {
-        "id": "fmech-e-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "A particle undergoes Simple Harmonic Motion (SHM) with amplitude $A = 5$ cm and angular frequency $\\omega = 4$ rad/s. If its displacement is given by $x = A \\cos(\\omega t)$, find the period of oscillation.",
+        "id": "fmech-e-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "A particle of mass 2 kg moves in a horizontal circle of radius 0.5 m with a constant speed of 3 m/s. Calculate the centripetal force acting on the particle.",
         "possibleAnswers": [
-          "pi/2 s",
-          "0.5pi s",
-          "1.57 s",
-          "pi / 2 seconds"
+          "36 N",
+          "36N"
         ],
-        "fullSolutionLatex": "The period of oscillation $T$ for SHM is given by the formula $T = \\frac{2\\pi}{\\omega}$. \\\\ Given $\\omega = 4$ rad/s. \\\\ $T = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$ seconds.",
+        "fullSolutionLatex": "The formula for centripetal force is \\(F = \\frac{mv^2}{r}\\). \\\\ Given: \\\\ Mass \\(m = 2\\) kg \\\\ Speed \\(v = 3\\) m/s \\\\ Radius \\(r = 0.5\\) m \\\\ Substitute the values into the formula: \\\\ \\(F = \\frac{2 \\times 3^2}{0.5}\\) \\\\ \\(F = \\frac{2 \\times 9}{0.5}\\) \\\\ \\(F = \\frac{18}{0.5}\\) \\\\ \\(F = 36\\) N.",
         "hintsLatex": [
-          "Recall the relationship between angular frequency and period for SHM.",
-          "The formula for the period is $T = \\frac{2\\pi}{\\omega}$.",
-          "Substitute the given angular frequency into the formula."
+          "Recall the formula for centripetal force in terms of mass, speed, and radius.",
+          "Identify the given values for mass, speed, and radius.",
+          "Ensure all units are consistent (SI units) before calculation."
         ],
         "topicsCovered": [
-          "Simple Harmonic Motion",
-          "Angular Velocity and Acceleration"
+          "Motion in a Circle",
+          "Centripetal Force"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Simple Harmonic Motion is a fundamental concept in physics, describing many oscillatory phenomena from a swinging pendulum to atomic vibrations, provided the restoring force is proportional to the displacement."
+        "funFact": "Centripetal force, meaning 'center-seeking' force, is what keeps satellites in orbit around Earth and cars on a curved track, preventing them from flying off in a straight line."
       }
     },
     "Mechanics (9701)": {
       "Hard": {
-        "id": "mech-h-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "A system consists of two blocks, A (mass $2$ kg) and B (mass $3$ kg), connected by a light inextensible string. Block A is on a smooth inclined plane at an angle of $30^{\\circ}$ to the horizontal. Block B hangs freely. The string passes over a smooth pulley at the top of the incline. The system is released from rest. Find the tension in the string and the acceleration of the blocks.",
+        "id": "mech-h-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "A block of mass 5 kg is pulled up a rough inclined plane by a constant force of 60 N acting parallel to the plane. The plane is inclined at \\(30^\\circ\\) to the horizontal, and the coefficient of kinetic friction between the block and the plane is 0.2. Calculate the work done by the pulling force if the block moves 4 m up the plane. (Assume \\(g = 9.8 \\text{ m/s}^2\\)).",
         "possibleAnswers": [
-          "Tension = 24 N, Acceleration = 1 m/s^2",
-          "T = 24, a = 1",
-          "24 N, 1 m/s^2"
+          "240 J",
+          "240J",
+          "240 Joules"
         ],
-        "fullSolutionLatex": "Let $m_A = 2$ kg and $m_B = 3$ kg. Let $T$ be the tension and $a$ be the acceleration. \\\\ For block A (on the incline): \\\\ The forces acting are its weight $m_A g$ downwards, normal reaction perpendicular to the plane, and tension $T$ up the plane. \\\\ The component of weight parallel to the incline is $m_A g \\sin 30^{\\circ} = 2g \\times 0.5 = g$. \\\\ Since $m_B$ is heavier than $m_A \\sin 30^{\\circ}$ ($3g$ vs $g$), block B will accelerate downwards, and block A will accelerate up the incline. \\\\ Equation of motion for A (up the incline): $T - m_A g \\sin 30^{\\circ} = m_A a$ \\\\ $T - g = 2a$ (1) \\\\ For block B (hanging): \\\\ Forces acting are its weight $m_B g$ downwards and tension $T$ upwards. It accelerates downwards. \\\\ Equation of motion for B: $m_B g - T = m_B a$ \\\\ $3g - T = 3a$ (2) \\\\ Add equations (1) and (2) to eliminate $T$: \\\\ $(T - g) + (3g - T) = 2a + 3a$ \\\\ $2g = 5a$ \\\\ $a = \\frac{2g}{5}$. \\\\ Using $g = 10$ m/s$^2$: \\\\ $a = \\frac{2 \\times 10}{5} = \\frac{20}{5} = 4$ m/s$^2$. \\\\ Now substitute $a$ back into equation (1) to find $T$: \\\\ $T - g = 2a$ \\\\ $T - 10 = 2(4)$ \\\\ $T - 10 = 8$ \\\\ $T = 18$ N. \\\\ My calculations give $a=4$ m/s$^2$ and $T=18$ N. The possible answers are $a=1$ m/s$^2$ and $T=24$ N. This means the problem values might need adjustment. \\\\ Let's work backwards from $a=1$ m/s$^2$ and $T=24$ N. \\\\ If $a=1$: \\\\ From (1): $T - g = 2(1) \\implies T = g+2$. \\\\ From (2): $3g - T = 3(1) \\implies 3g - T = 3$. \\\\ Substitute $T$: $3g - (g+2) = 3 \\implies 2g - 2 = 3 \\implies 2g = 5 \\implies g = 2.5$. This is not a standard value for $g$. \\\\ Let's re-evaluate the problem statement to match the typical A-level $g=9.8$ or $g=10$. The question is consistent with the general setup of connected particles. It is possible the given answers are based on different mass values or g value. Given it's a hard problem, I will stick to my calculated values with $g=10$ and update the 'possibleAnswers'. \\\\ $T=18$ N, $a=4$ m/s$^2$. \\\\ Possible answers: [\"Tension = 18 N, Acceleration = 4 m/s^2\", \"T = 18, a = 4\", \"18 N, 4 m/s^2\"]",
+        "fullSolutionLatex": "Given: \\\\ Mass \\(m = 5\\text{ kg}\\) \\\\ Pulling force \\(F_p = 60\\text{ N}\\) \\\\ Distance moved \\(d = 4\\text{ m}\\) \\\\ Angle of inclination \\(\\theta = 30^\\circ\\) \\\\ Coefficient of kinetic friction \\(\\mu_k = 0.2\\) \\\\ Gravitational acceleration \\(g = 9.8\\text{ m/s}^2\\) \\\\ \\\\ The work done by the pulling force is given by \\(W_p = F_p \\cdot d \\cos\\phi\\), where \\(\\phi\\) is the angle between the force and displacement. Since the force is acting parallel to the plane and the block moves up the plane, \\(\\phi = 0^\\circ\\), so \\(\\cos\\phi = 1\\). \\\\ \\(W_p = 60 \\text{ N} \\times 4\\text{ m}\\) \\\\ \\(W_p = 240\\text{ J}\\) \\\\ Note: The information about friction, mass, inclination, and gravity is relevant if we were asked to calculate the net work done, the acceleration, or the power. For 'work done by the pulling force', only the pulling force and displacement in its direction are needed. This is a common distractor in harder problems to test careful reading.",
         "hintsLatex": [
-          "Draw free body diagrams for both blocks. For the block on the incline, resolve its weight into components parallel and perpendicular to the plane.",
-          "Apply Newton's Second Law ($F=ma$) along the direction of motion for each block.",
-          "Solve the resulting system of simultaneous equations for tension and acceleration."
+          "Recall the definition of work done by a constant force: \\(W = Fd\\cos\\theta\\).",
+          "Identify the specific force for which work is being calculated (the pulling force).",
+          "Note that the angle between the pulling force and the displacement is \\(0^\\circ\\) since it acts parallel to the plane."
         ],
         "topicsCovered": [
-          "Connected Particles",
-          "Forces and Newton’s Laws",
-          "Equilibrium of Forces (components)",
-          "Dynamics of a Particle"
+          "Work Done by a Force",
+          "Forces and Newton’s Laws"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mechanics (9701)",
-        "funFact": "Inclined planes are ubiquitous in mechanics problems, representing situations from ramps and slides to the forces acting on vehicles on hills."
+        "funFact": "Work in physics quantifies the energy transferred by a force acting over a distance; understanding it is vital for designing machines, analyzing engine efficiency, and even understanding metabolic processes in biology."
       },
       "Medium": {
-        "id": "mech-m-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "A particle of mass $5$ kg rests on a rough horizontal table. It is connected by a light inextensible string passing over a smooth pulley at the edge of the table to a hanging particle of mass $3$ kg. The coefficient of friction between the $5$ kg particle and the table is $0.2$. The system is released from rest. Find the acceleration of the $5$ kg particle.",
+        "id": "mech-m-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "Two masses, 4 kg and 6 kg, are connected by a light inextensible string passing over a smooth fixed pulley. Find the acceleration of the system and the tension in the string when the system is released from rest.",
         "possibleAnswers": [
-          "2/3 m/s^2",
-          "0.667 m/s^2",
-          "2/3"
+          "a=1.96 m/s^2, T=47.04 N",
+          "a=1.96m/s^2, T=47.04N",
+          "1.96 m/s^2 and 47.04 N"
         ],
-        "fullSolutionLatex": "Let $m_1 = 5$ kg (on table) and $m_2 = 3$ kg (hanging). \\\\ Let $T$ be the tension in the string and $a$ be the acceleration. \\\\ For $m_1$ (on the table): \\\\ Normal reaction $R = m_1 g$. \\\\ Maximum friction force $F_{max} = \\mu_s R = 0.2 \\times 5g = g$. \\\\ Since the system is released, we assume it moves, so kinetic friction $F_k = \\mu_k R = 0.2 \\times 5g = g$. \\\\ Forces horizontally: Tension $T$ pulling right, friction $F_k$ opposing motion (left). \\\\ Equation of motion: $T - F_k = m_1 a \\implies T - g = 5a$ (1) \\\\ For $m_2$ (hanging): \\\\ Forces vertically: Weight $m_2 g$ downwards, Tension $T$ upwards. It accelerates downwards. \\\\ Equation of motion: $m_2 g - T = m_2 a \\implies 3g - T = 3a$ (2) \\\\ Add equations (1) and (2): \\\\ $(T - g) + (3g - T) = 5a + 3a$ \\\\ $2g = 8a$ \\\\ $a = \\frac{2g}{8} = \\frac{g}{4}$. \\\\ Using $g = 10$ m/s$^2$: \\\\ $a = \\frac{10}{4} = 2.5$ m/s$^2$. \\\\ Let me recheck the calculation. $F_k = 0.2 * 5g = g$. Yes. $T-g = 5a$. $3g-T = 3a$. Summing them: $2g = 8a$, $a = g/4$. \\\\ The 'possibleAnswers' are 2/3. This means either I made a mistake in calculation or the problem values should be different. Let's adjust values to match the answer. \\\\ If $a = 2/3$, then $2g = 8(2/3) \\implies 2g = 16/3$. So $g=8/3$. This is not standard. \\\\ Let's assume the given answer $2/3$ m/s$^2$ is correct and work backwards to find a possible friction coefficient or mass. \\\\ If $a = 2/3$: \\\\ $T - g = 5(2/3) \\implies T = g + 10/3$. \\\\ $3g - T = 3(2/3) \\implies 3g - T = 2$. \\\\ Substitute $T$: $3g - (g + 10/3) = 2 \\implies 2g - 10/3 = 2 \\implies 2g = 2 + 10/3 = 16/3 \\implies g = 8/3$. Still not 10. \\\\ Let's adjust the problem wording to match the $2/3$ m/s$^2$ answer. If the mass on the table is $2$ kg, coefficient $0.5$, and hanging mass is $3$ kg. \\\\ $m_1=2$, $m_2=3$, $\\mu=0.5$. \\\\ $F_k = 0.5 \\times 2g = g$. \\\\ $T - g = 2a$ (1) \\\\ $3g - T = 3a$ (2) \\\\ Add (1) and (2): $2g = 5a \\implies a = 2g/5$. Using $g=10$, $a = 4$ m/s$^2$. Still not $2/3$. \\\\ Let's re-evaluate the original problem and my answer: $a = g/4$. If $g=9.8$, $a=2.45$. If $g=10$, $a=2.5$. \\\\ The possible answers are just for numerical values. Let me assume the intended answer is $2.5$ m/s$^2$. \\\\ So, $a = 2.5$ m/s$^2$. \\\\ Possible Answers: [\"2.5 m/s^2\", \"2.5ms^-2\", \"2.5\"]",
+        "fullSolutionLatex": "Let \\(m_1 = 4\\text{ kg}\\) and \\(m_2 = 6\\text{ kg}\\). Assume \\(g = 9.8\\text{ m/s}^2\\). \\\\ The 6 kg mass will move downwards, and the 4 kg mass will move upwards. Let \\(a\\) be the acceleration of the system and \\(T\\) be the tension in the string. \\\\ **For the 6 kg mass (downwards motion):** \\\\ Forces acting: Gravity \\(m_2 g\\) downwards, Tension \\(T\\) upwards. \\\\ Using Newton's Second Law: \\(F_{net} = m_2 a\\) \\\\ \\(m_2 g - T = m_2 a\\) \\\\ \\(6(9.8) - T = 6a\\) \\\\ \\(58.8 - T = 6a\\) (Equation 1) \\\\ **For the 4 kg mass (upwards motion):** \\\\ Forces acting: Tension \\(T\\) upwards, Gravity \\(m_1 g\\) downwards. \\\\ Using Newton's Second Law: \\(F_{net} = m_1 a\\) \\\\ \\(T - m_1 g = m_1 a\\) \\\\ \\(T - 4(9.8) = 4a\\) \\\\ \\(T - 39.2 = 4a\\) (Equation 2) \\\\ **Solve the simultaneous equations:** \\\\ Add Equation 1 and Equation 2: \\\\ \\((58.8 - T) + (T - 39.2) = 6a + 4a\\) \\\\ \\(19.6 = 10a\\) \\\\ \\(a = \\frac{19.6}{10} = 1.96\\text{ m/s}^2\\) \\\\ Substitute \\(a = 1.96\\) into Equation 2 to find \\(T\\): \\\\ \\(T - 39.2 = 4(1.96)\\) \\\\ \\(T - 39.2 = 7.84\\) \\\\ \\(T = 7.84 + 39.2 = 47.04\\text{ N}\\) \\\\ The acceleration of the system is \\(1.96\\text{ m/s}^2\\) and the tension in the string is \\(47.04\\text{ N}\\).",
         "hintsLatex": [
-          "Draw free body diagrams for both particles, including friction for the particle on the table.",
-          "Calculate the friction force $F = \\mu R = \\mu mg$.",
-          "Apply Newton's Second Law to both particles and solve the simultaneous equations."
+          "Draw a free-body diagram for each mass, clearly showing all forces and the direction of acceleration.",
+          "Apply Newton's Second Law (\\(F=ma\\)) to each mass, forming two simultaneous equations.",
+          "Solve the simultaneous equations for acceleration (a) and tension (T)."
         ],
         "topicsCovered": [
           "Connected Particles",
-          "Friction",
-          "Forces and Newton’s Laws",
-          "Dynamics of a Particle"
+          "Forces and Newton’s Laws"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mechanics (9701)",
-        "funFact": "Friction, while often seen as an opposing force, is essential for walking, driving, and preventing objects from sliding indefinitely."
+        "funFact": "Connected particle problems, often involving pulleys, are fundamental in understanding how forces transmit through systems, crucial for designing cranes and other mechanical linkages."
       },
       "Easy": {
-        "id": "mech-e-16",
-        "date": "2026-02-07T06:49:16.351Z",
-        "problemLatex": "Two particles, P (mass $3$ kg) and Q (mass $2$ kg), are connected by a light inextensible string passing over a smooth fixed pulley. The particles are released from rest. Find the acceleration of the system.",
+        "id": "mech-e-17",
+        "date": "2026-02-08T06:56:15.979Z",
+        "problemLatex": "A car accelerates uniformly from rest to 15 m/s in 5 seconds. Calculate the acceleration of the car.",
         "possibleAnswers": [
-          "2 m/s^2",
-          "2ms^-2",
-          "2"
+          "3 m/s^2",
+          "3m/s^2",
+          "3"
         ],
-        "fullSolutionLatex": "Let $T$ be the tension in the string and $a$ be the acceleration of the system. \\\\ For particle P (mass $m_P = 3$ kg): \\\\ The forces acting are its weight $m_P g$ downwards and tension $T$ upwards. Since P is heavier, it will accelerate downwards. \\\\ Equation of motion: $m_P g - T = m_P a$ \\\\ $3g - T = 3a$ (1) \\\\ For particle Q (mass $m_Q = 2$ kg): \\\\ The forces acting are its weight $m_Q g$ downwards and tension $T$ upwards. Q will accelerate upwards. \\\\ Equation of motion: $T - m_Q g = m_Q a$ \\\\ $T - 2g = 2a$ (2) \\\\ Add equations (1) and (2) to eliminate $T$: \\\\ $(3g - T) + (T - 2g) = 3a + 2a$ \\\\ $g = 5a$ \\\\ $a = \\frac{g}{5}$. \\\\ Using $g = 10$ m/s$^2$ (standard approximation for A-Level Mechanics): \\\\ $a = \\frac{10}{5} = 2$ m/s$^2$.",
+        "fullSolutionLatex": "Given: \\\\ Initial velocity \\(u = 0\\) m/s (starts from rest) \\\\ Final velocity \\(v = 15\\) m/s \\\\ Time \\(t = 5\\) s \\\\ We need to find the acceleration \\(a\\). \\\\ Using the SUVAT equation \\(v = u + at\\): \\\\ \\(15 = 0 + a(5)\\) \\\\ \\(15 = 5a\\) \\\\ \\(a = \\frac{15}{5}\\) \\\\ \\(a = 3\\text{ m/s}^2\\).",
         "hintsLatex": [
-          "Draw a free body diagram for each particle.",
-          "Apply Newton's Second Law ($F=ma$) to each particle, considering the direction of acceleration.",
-          "Solve the system of simultaneous equations for tension and acceleration."
+          "Identify the known variables (u, v, t) and the unknown variable (a).",
+          "Choose the appropriate SUVAT equation that relates these variables.",
+          "Substitute the values and solve for the unknown."
         ],
         "topicsCovered": [
-          "Connected Particles",
-          "Forces and Newton’s Laws",
-          "Dynamics of a Particle"
+          "Equations of Motion (SUVAT)",
+          "Kinematics in One Dimension"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mechanics (9701)",
-        "funFact": "The Atwood machine, a system of two masses connected by a string over a pulley, is a classic setup for demonstrating Newton's laws and the concept of connected particles."
+        "funFact": "The SUVAT equations are a simplified set of formulas that describe motion with constant acceleration, making complex kinematic problems manageable and predictable."
       }
     }
   }
