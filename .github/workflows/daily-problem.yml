@@ -31,7 +31,7 @@ jobs:
                   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
               run: bun run generate-daily
 
-            - name: Wait before retry 1
+            - name: Wait before retry (5 seconds)
               if: steps.attempt1.outcome == 'failure'
               run: sleep 5
 
@@ -43,7 +43,7 @@ jobs:
                   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
               run: bun run generate-daily
 
-            - name: Wait before retry 2
+            - name: Wait before retry (10 seconds)
               if: steps.attempt2.outcome == 'failure'
               run: sleep 10
 

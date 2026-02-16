@@ -128,7 +128,7 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             
             // Exponential backoff: 2s, 4s, 8s
             if (attempts < maxAttempts) {
-                const backoffMs = Math.pow(2, attempts) * 1000;
+                const backoffMs = Math.pow(2, attempts) * 1000; // 2^1=2s, 2^2=4s, 2^3=8s
                 console.log(`⏳ Waiting ${backoffMs / 1000}s before retry...`);
                 await delay(backoffMs);
             }
