@@ -1,17 +1,25 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI, GenerateContentResult } from '@google/generative-ai';
 import { getAllValidTopics } from './utils';
 import { DailyProblems, Problem, diffMap, difficultyArray, problemArray, typeMap } from './types';
 import { THEMES } from './themes';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const generateNewProblemSet = async (previousSet: DailyProblems | null): Promise<DailyProblems | null> => {
+    // Validate API key exists
+    if (!process.env.GEMINI_API_KEY) {
+        console.error('ERROR: GEMINI_API_KEY environment variable is not set');
+        return null;
+    }
+
     let attempts = 0;
-    const maxAttempts = 2;
+    const maxAttempts = 3;
 
     while (attempts < maxAttempts) {
         try {
-            console.log(`AI Generation Attempt ${attempts + 1}...`);
+            console.log(`AI Generation Attempt ${attempts + 1} of ${maxAttempts}...`);
 
             const { lastIndices, bannedTopics } = getContext(previousSet);
 
@@ -39,6 +47,8 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             Do NOT generate questions exactly matching these recent topics: ${JSON.stringify(bannedTopics.slice(0, 15))}.
 
             ### DATA STRUCTURE (JSON ONLY):
+            **CRITICAL: You must return ONLY valid JSON, no markdown code blocks, no explanations, no extra text.**
+            
             Return a single object. Keys are Category Names. Inside each, keys are "Easy", "Medium", "Hard".
             
             Each Problem Object must have:
@@ -58,24 +68,74 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
 
             ### LATEX RULES:
             ALWAYS use double backslashes (\\\\) for LaTeX commands.
+
+            ### EXAMPLE FORMAT:
+            {
+              "Integration": {
+                "Easy": {
+                  "problemLatex": "Find \\\\int 2x \\\\, dx",
+                  "possibleAnswers": ["x^2 + C", "x^2+C", "x squared plus C"],
+                  "fullSolutionLatex": "Step 1: Apply power rule...",
+                  "hintsLatex": ["Remember the power rule", "Don't forget +C", "Increase power by 1"],
+                  "topicsCovered": ["Basic Integration"],
+                  "funFact": "Integration was invented independently by Newton and Leibniz."
+                }
+              }
+            }
+
+            **REMINDER: All 6 categories required, each with Easy/Medium/Hard. Return ONLY valid JSON.**
             `;
 
-            const result = await model.generateContent(prompt);
+            // Set a timeout for the API call (30 seconds)
+            const apiCallPromise = model.generateContent(prompt);
+            const timeoutPromise = new Promise<never>((_, reject) =>
+                setTimeout(() => reject(new Error('API call timeout after 30 seconds')), 30000)
+            );
+
+            const result = (await Promise.race([
+                apiCallPromise,
+                timeoutPromise,
+            ])) as GenerateContentResult;
             const text = result.response.text();
 
+            // Clean and parse JSON with better error handling
             const jsonString = text
                 .replace(/```json/g, '')
                 .replace(/```/g, '')
                 .trim();
-            const rawData = JSON.parse(jsonString);
+
+            let rawData;
+            try {
+                rawData = JSON.parse(jsonString);
+            } catch (parseError) {
+                const preview = jsonString.length > 200 ? jsonString.slice(0, 200) + '...' : jsonString;
+                throw new Error(`JSON parsing failed: ${parseError instanceof Error ? parseError.message : 'Unknown error'}. Raw response: ${preview}`);
+            }
+
+            // Validate the structure
+            if (!rawData || typeof rawData !== 'object') {
+                throw new Error('Invalid response structure: Expected an object');
+            }
 
             const finalSet = processAIResponse(rawData, lastIndices);
+            console.log('✅ Successfully generated problem set');
             return finalSet;
         } catch (e) {
-            console.error(`Generation attempt ${attempts + 1} failed:`, e);
+            const errorType = e instanceof Error ? e.constructor.name : 'Unknown';
+            const errorMessage = e instanceof Error ? e.message : String(e);
+            console.error(`❌ Generation attempt ${attempts + 1} failed [${errorType}]: ${errorMessage}`);
+            
             attempts++;
+            
+            // Exponential backoff: 2s, 4s (with maxAttempts=3, we only get 2 backoffs)
+            if (attempts < maxAttempts) {
+                const backoffMs = Math.pow(2, attempts) * 1000; // 2^1=2s, 2^2=4s
+                console.log(`⏳ Waiting ${backoffMs / 1000}s before retry...`);
+                await delay(backoffMs);
+            }
         }
     }
+    console.error(`❌ All ${maxAttempts} generation attempts failed`);
     return null;
 };
 
