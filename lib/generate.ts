@@ -108,7 +108,8 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             try {
                 rawData = JSON.parse(jsonString);
             } catch (parseError) {
-                throw new Error(`JSON parsing failed: ${parseError instanceof Error ? parseError.message : 'Unknown error'}. Raw response: ${jsonString.substring(0, 200)}`);
+                const preview = jsonString.length > 200 ? jsonString.slice(0, 200) + '...' : jsonString;
+                throw new Error(`JSON parsing failed: ${parseError instanceof Error ? parseError.message : 'Unknown error'}. Raw response: ${preview}`);
             }
 
             // Validate the structure
@@ -126,9 +127,9 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             
             attempts++;
             
-            // Exponential backoff: 2s, 4s, 8s
+            // Exponential backoff: 2s, 4s (with maxAttempts=3, we only get 2 backoffs)
             if (attempts < maxAttempts) {
-                const backoffMs = Math.pow(2, attempts) * 1000; // 2^1=2s, 2^2=4s, 2^3=8s
+                const backoffMs = Math.pow(2, attempts) * 1000; // 2^1=2s, 2^2=4s
                 console.log(`⏳ Waiting ${backoffMs / 1000}s before retry...`);
                 await delay(backoffMs);
             }

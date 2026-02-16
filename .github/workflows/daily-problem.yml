@@ -59,13 +59,16 @@ jobs:
               id: check_failure
               if: always()
               run: |
-                  if [[ "${{ steps.attempt1.outcome }}" == "failure" && "${{ steps.attempt2.outcome }}" == "failure" && "${{ steps.attempt3.outcome }}" == "failure" ]]; then
-                    echo "final_failure=true" >> $GITHUB_OUTPUT
-                    echo "❌ All 3 attempts failed"
-                    exit 1
-                  else
+                  # Check if any attempt succeeded
+                  if [[ "${{ steps.attempt1.outcome }}" == "success" ]] || \
+                     [[ "${{ steps.attempt2.outcome }}" == "success" ]] || \
+                     [[ "${{ steps.attempt3.outcome }}" == "success" ]]; then
                     echo "final_failure=false" >> $GITHUB_OUTPUT
                     echo "✅ Generation succeeded"
+                  else
+                    echo "final_failure=true" >> $GITHUB_OUTPUT
+                    echo "❌ All attempts failed"
+                    exit 1
                   fi
 
             - name: Commit and push changes
