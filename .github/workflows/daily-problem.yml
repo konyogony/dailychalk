@@ -11,11 +11,6 @@ permissions:
 jobs:
     generate-problems:
         runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
-            max-parallel: 1
-            matrix:
-                attempt: [1, 2, 3]
 
         steps:
             - name: Checkout repository
@@ -29,12 +24,52 @@ jobs:
             - name: Install dependencies
               run: bun install
 
-            - name: Generate new problems
+            - name: Generate new problems (Attempt 1)
+              id: attempt1
+              continue-on-error: true
               env:
                   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
               run: bun run generate-daily
 
+            - name: Wait before retry 1
+              if: steps.attempt1.outcome == 'failure'
+              run: sleep 5
+
+            - name: Generate new problems (Attempt 2)
+              id: attempt2
+              if: steps.attempt1.outcome == 'failure'
+              continue-on-error: true
+              env:
+                  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+              run: bun run generate-daily
+
+            - name: Wait before retry 2
+              if: steps.attempt2.outcome == 'failure'
+              run: sleep 10
+
+            - name: Generate new problems (Attempt 3)
+              id: attempt3
+              if: steps.attempt2.outcome == 'failure'
+              continue-on-error: true
+              env:
+                  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+              run: bun run generate-daily
+
+            - name: Check if all attempts failed
+              id: check_failure
+              if: always()
+              run: |
+                  if [[ "${{ steps.attempt1.outcome }}" == "failure" && "${{ steps.attempt2.outcome }}" == "failure" && "${{ steps.attempt3.outcome }}" == "failure" ]]; then
+                    echo "final_failure=true" >> $GITHUB_OUTPUT
+                    echo "❌ All 3 attempts failed"
+                    exit 1
+                  else
+                    echo "final_failure=false" >> $GITHUB_OUTPUT
+                    echo "✅ Generation succeeded"
+                  fi
+
             - name: Commit and push changes
+              if: steps.check_failure.outputs.final_failure == 'false'
               run: |
                   git config --local user.email "action@github.com"
                   git config --local user.name "GitHub Action"
@@ -45,3 +80,29 @@ jobs:
                     git commit -m "Daily math problems update - $(date +'%Y-%m-%d')"
                     git push
                   fi
+
+            - name: Send failure email notification
+              if: steps.check_failure.outputs.final_failure == 'true'
+              uses: dawidd6/action-send-mail@v3
+              with:
+                  server_address: smtp.gmail.com
+                  server_port: 587
+                  username: ${{ secrets.MAIL_USERNAME }}
+                  password: ${{ secrets.MAIL_PASSWORD }}
+                  subject: '❌ Daily Math Problem Generation Failed'
+                  to: ${{ secrets.MAIL_TO }}
+                  from: Daily Chalk Bot
+                  body: |
+                      The daily math problem generation workflow failed after 3 attempts.
+                      
+                      Repository: ${{ github.repository }}
+                      Workflow: ${{ github.workflow }}
+                      Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+                      
+                      Please check the workflow logs for details:
+                      ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+                      
+                      Attempt 1: ${{ steps.attempt1.outcome }}
+                      Attempt 2: ${{ steps.attempt2.outcome }}
+                      Attempt 3: ${{ steps.attempt3.outcome }}
+
