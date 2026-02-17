@@ -1,5 +1,12 @@
 name: Generate Daily Math Problems
 
+# This workflow runs daily at 6 AM UTC to generate new math problems
+# Improvements made:
+# - Increased API timeout from 30s to 90s for slow Gemini API responses
+# - Simplified retry logic: 5 retries handled in the script with exponential backoff (5s, 10s, 20s, 30s)
+# - Email notifications sent ONLY when generation fails after all retries
+# - Removed redundant workflow-level retries for cleaner logs
+
 on:
     schedule:
         - cron: '0 6 * * *'
@@ -57,14 +64,13 @@ jobs:
                   from: Daily Chalk Bot
                   body: |
                       The daily math problem generation workflow has failed after all retry attempts.
-                      
+
                       Repository: ${{ github.repository }}
                       Workflow: ${{ github.workflow }}
                       Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-                      
+
                       Please check the workflow logs for details:
                       ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-                      
+
                       The script attempted 5 retries with exponential backoff (5s, 10s, 20s, 30s).
                       This is likely an issue with the Gemini API being slow or unavailable.
-
