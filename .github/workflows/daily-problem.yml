@@ -3,7 +3,7 @@ name: Generate Daily Math Problems
 # This workflow runs daily at 6 AM UTC to generate new math problems
 # Improvements made:
 # - Increased API timeout from 30s to 90s for slow Gemini API responses
-# - Simplified retry logic: 5 retries handled in the script with exponential backoff (5s, 10s, 20s, 30s)
+# - Simplified retry logic: 5 attempts with exponential backoff delays (5s, 10s, 20s, 30s between attempts)
 # - Email notifications sent ONLY when generation fails after all retries
 # - Removed redundant workflow-level retries for cleaner logs
 
@@ -72,5 +72,5 @@ jobs:
                       Please check the workflow logs for details:
                       ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-                      The script attempted 5 retries with exponential backoff (5s, 10s, 20s, 30s).
+                      The script attempted 5 times with exponential backoff delays (5s, 10s, 20s, 30s).
                       This is likely an issue with the Gemini API being slow or unavailable.

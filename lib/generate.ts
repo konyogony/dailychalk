@@ -127,7 +127,7 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             
             attempts++;
             
-            // Exponential backoff with cap: 5s, 10s, 20s, 30s
+            // Exponential backoff with cap: 5s, 10s, 20s, 30s (4 delays between 5 attempts)
             if (attempts < maxAttempts) {
                 const backoffMs = Math.min(Math.pow(2, attempts) * 2500, 30000); // 2^1*2.5=5s, 2^2*2.5=10s, 2^3*2.5=20s, max 30s
                 console.log(`⏳ Waiting ${backoffMs / 1000}s before retry...`);
