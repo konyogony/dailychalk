@@ -15,7 +15,7 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
     }
 
     let attempts = 0;
-    const maxAttempts = 3;
+    const maxAttempts = 5;
 
     while (attempts < maxAttempts) {
         try {
@@ -86,10 +86,10 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             **REMINDER: All 6 categories required, each with Easy/Medium/Hard. Return ONLY valid JSON.**
             `;
 
-            // Set a timeout for the API call (30 seconds)
+            // Set a timeout for the API call (90 seconds to handle slow responses)
             const apiCallPromise = model.generateContent(prompt);
             const timeoutPromise = new Promise<never>((_, reject) =>
-                setTimeout(() => reject(new Error('API call timeout after 30 seconds')), 30000)
+                setTimeout(() => reject(new Error('API call timeout after 90 seconds')), 90000)
             );
 
             const result = (await Promise.race([
@@ -127,9 +127,9 @@ export const generateNewProblemSet = async (previousSet: DailyProblems | null): 
             
             attempts++;
             
-            // Exponential backoff: 2s, 4s (with maxAttempts=3, we only get 2 backoffs)
+            // Exponential backoff with cap: 5s, 10s, 20s, 30s
             if (attempts < maxAttempts) {
-                const backoffMs = Math.pow(2, attempts) * 1000; // 2^1=2s, 2^2=4s
+                const backoffMs = Math.min(Math.pow(2, attempts) * 2500, 30000); // 2^1*2.5=5s, 2^2*2.5=10s, 2^3*2.5=20s, max 30s
                 console.log(`⏳ Waiting ${backoffMs / 1000}s before retry...`);
                 await delay(backoffMs);
             }
