@@ -1,434 +1,430 @@
 {
-  "lastUpdate": "2026-02-24",
+  "lastUpdate": "2026-02-25",
   "problemSet": {
     "Integration": {
       "Hard": {
-        "id": "int-h-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Find the indefinite integral $\\int \\sin^2(x) \\, dx$.",
+        "id": "int-h-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "The region R is bounded by the curve y = \\sqrt{x}, the x-axis, and the line x = 4. Find the volume of the solid formed when R is rotated 360\\degree about the x-axis.",
         "possibleAnswers": [
-          "x/2 - 1/4 sin(2x) + C",
-          "0.5x - 0.25sin(2x) + C",
-          "x/2 - (sin(2x))/4 + C",
-          "x/2 - \\frac{1}{4}\\sin(2x) + C"
+          "8pi",
+          "8\\pi",
+          "25.13",
+          "25.132"
         ],
-        "fullSolutionLatex": "To integrate $\\sin^2(x)$, we use the double angle identity $\\cos(2x) = 1 - 2\\sin^2(x)$, which implies $\\sin^2(x) = \\frac{1 - \\cos(2x)}{2}$. \\\\ So, $\\int \\sin^2(x) \\, dx = \\int \\frac{1 - \\cos(2x)}{2} \\, dx$. \\\\ This simplifies to $\\frac{1}{2} \\int (1 - \\cos(2x)) \\, dx$. \\\\ Integrating term by term: \\\\ $\\frac{1}{2} \\left( \\int 1 \\, dx - \\int \\cos(2x) \\, dx \\right)$. \\\\ Recall that $\\int \\cos(ax) \\, dx = \\frac{1}{a}\\sin(ax) + C$. \\\\ So, $\\frac{1}{2} \\left( x - \\frac{\\sin(2x)}{2} \\right) + C$. \\\\ Thus, the final answer is $\\frac{x}{2} - \\frac{\\sin(2x)}{4} + C$.",
+        "fullSolutionLatex": "The volume of a solid of revolution about the x-axis is given by the formula V = \\int_{a}^{b} \\pi y^2 \\, dx.\\\\ Given y = \\sqrt{x}, so y^2 = x.\\\\ The limits of integration are from x = 0 to x = 4 (from the x-axis intersection to the line x=4).\\\\ V = \\int_{0}^{4} \\pi (\\sqrt{x})^2 \\, dx \\\\ V = \\int_{0}^{4} \\pi x \\, dx \\\\ V = \\pi \\left[ \\frac{x^2}{2} \\right]_{0}^{4} \\\\ V = \\pi \\left( \\frac{4^2}{2} - \\frac{0^2}{2} \\right) \\\\ V = \\pi \\left( \\frac{16}{2} - 0 \\right) \\\\ V = 8\\pi \\text{ cubic units}.",
         "hintsLatex": [
-          "Recall trigonometric identities that relate $\\sin^2(x)$ to $\\cos(2x)$.",
-          "The identity $\\cos(2x) = 1 - 2\\sin^2(x)$ is useful here.",
-          "Remember to handle the constant factor and the argument of the trigonometric function correctly during integration."
+          "Recall the formula for the volume of revolution about the x-axis.",
+          "Square the function y to get y^2.",
+          "Identify the correct limits of integration."
         ],
         "topicsCovered": [
-          "Integration Using Trigonometric Identities"
+          "Volumes of Revolution (x-axis)"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Integration",
-        "funFact": "The integral of $\\sin^2(x)$ is often encountered in physics problems involving wave mechanics or alternating currents."
+        "funFact": "Calculating volumes of revolution has applications in engineering for designing components like shafts, bottles, and architectural structures."
       },
       "Medium": {
-        "id": "int-m-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Error generating problem.",
+        "id": "int-m-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Evaluate \\int x(x^2 + 1)^3 \\, dx.",
         "possibleAnswers": [
-          "14/3",
-          "4.666...",
-          "4.67",
-          "4\\frac{2}{3}"
+          "1/8(x^2+1)^4 + C",
+          "1/8(x^2+1)^4+C",
+          "(x^2+1)^4/8 + C",
+          "0.125(x^2+1)^4 + C"
         ],
-        "fullSolutionLatex": "To find the area under the curve $y = x^2 + 1$ from $x=0$ to $x=2$, we need to evaluate the definite integral: \\\\ Area $= \\int_0^2 (x^2 + 1) \\, dx$. \\\\ First, integrate term by term: \\\\ $\\int (x^2 + 1) \\, dx = \\frac{x^3}{3} + x + C$. \\\\ Now, apply the limits of integration: \\\\ Area $= \\left[ \\frac{x^3}{3} + x \\right]_0^2$. \\\\ $= \\left( \\frac{2^3}{3} + 2 \\right) - \\left( \\frac{0^3}{3} + 0 \\right)$. \\\\ $= \\left( \\frac{8}{3} + 2 \\right) - (0)$. \\\\ $= \\frac{8}{3} + \\frac{6}{3}$. \\\\ $= \\frac{14}{3}$. \\\\ The area under the curve is $\\frac{14}{3}$ square units.",
+        "fullSolutionLatex": "This integral can be solved using substitution. Let u = x^2 + 1.\\\\ Then \\frac{du}{dx} = 2x, which means dx = \\frac{du}{2x}.\\\\ Substitute u and dx into the integral:\\\\ \\int x(u)^3 \\left(\\frac{du}{2x}\\right) = \\int \\frac{1}{2} u^3 \\, du \\\\ Now, integrate with respect to u:\\\\ = \\frac{1}{2} \\cdot \\frac{u^{3+1}}{3+1} + C \\\\ = \\frac{1}{2} \\cdot \\frac{u^4}{4} + C \\\\ = \\frac{1}{8} u^4 + C \\\\ Finally, substitute back u = x^2 + 1:\\\\ = \\frac{1}{8}(x^2 + 1)^4 + C.",
         "hintsLatex": [
-          "The area under a curve $y=f(x)$ from $x=a$ to $x=b$ is given by $\\int_a^b f(x) \\, dx$.",
-          "Remember to integrate each term of the polynomial.",
-          "Ensure you correctly substitute the limits and subtract."
+          "Consider using a substitution. What part of the integrand looks like a good candidate for 'u'?",
+          "Remember to also substitute 'dx' in terms of 'du'.",
+          "Don't forget to substitute 'u' back to 'x' after integration."
         ],
         "topicsCovered": [
-          "Area Under a Curve"
+          "Integration by Substitution (u-sub)"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Integration",
-        "funFact": "The concept of finding area under a curve was a driving force behind the development of integral calculus."
+        "funFact": "Integration by substitution is often called 'u-substitution' and is the reverse of the chain rule for differentiation."
       },
       "Easy": {
-        "id": "int-e-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Evaluate the definite integral $\\int_1^2 (3x^2 - 4x) \\, dx$.",
+        "id": "int-e-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Find \\int (3x^2 - 4x + 5) \\, dx.",
         "possibleAnswers": [
-          "1"
+          "x^3 - 2x^2 + 5x + C",
+          "x^3-2x^2+5x+C",
+          "x^3 - 2x^2 + 5x + c",
+          "x cubed minus 2x squared plus 5x plus C"
         ],
-        "fullSolutionLatex": "To evaluate the definite integral $\\int_1^2 (3x^2 - 4x) \\, dx$: \\\\ First, find the indefinite integral of the function: \\\\ $\\int (3x^2 - 4x) \\, dx = 3\\frac{x^{2+1}}{2+1} - 4\\frac{x^{1+1}}{1+1} + C = 3\\frac{x^3}{3} - 4\\frac{x^2}{2} + C = x^3 - 2x^2 + C$. \\\\ Next, apply the limits of integration using the Fundamental Theorem of Calculus: $[F(x)]_a^b = F(b) - F(a)$. \\\\ $[x^3 - 2x^2]_1^2 = (2^3 - 2(2^2)) - (1^3 - 2(1^2))$. \\\\ $= (8 - 2(4)) - (1 - 2(1))$. \\\\ $= (8 - 8) - (1 - 2)$. \\\\ $= 0 - (-1)$. \\\\ $= 1$. \\\\ The value of the definite integral is 1.",
+        "fullSolutionLatex": "To find the indefinite integral, we apply the power rule for integration, \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C, to each term.\\\\ \\int (3x^2 - 4x + 5) \\, dx = 3\\frac{x^{2+1}}{2+1} - 4\\frac{x^{1+1}}{1+1} + 5\\frac{x^{0+1}}{0+1} + C \\\\ = 3\\frac{x^3}{3} - 4\\frac{x^2}{2} + 5\\frac{x^1}{1} + C \\\\ = x^3 - 2x^2 + 5x + C.",
         "hintsLatex": [
-          "Remember the power rule for integration: $\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C$.",
-          "Apply the Fundamental Theorem of Calculus: $\\int_a^b f(x) \\, dx = F(b) - F(a)$.",
-          "Be careful with the arithmetic when substituting the limits."
+          "Remember the power rule for integration: \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C.",
+          "Integrate each term separately.",
+          "Don't forget the constant of integration, +C."
         ],
         "topicsCovered": [
-          "Definite Integrals"
+          "Indefinite Integrals of Polynomials"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Integration",
-        "funFact": "The definite integral can represent the net change of a quantity over an interval."
+        "funFact": "The 'S' shape of the integral sign \\int is an elongated letter 'S', standing for 'sum', as integration is essentially a sum of infinitely many infinitesimal parts."
       }
     },
     "Differentiation": {
       "Hard": {
-        "id": "diff-h-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Find $\\frac{dy}{dx}$ implicitly for $x^2 + y^2 = 2xy$.",
+        "id": "diff-h-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "A rectangular enclosure is to be built with one side against an existing wall. If 120 meters of fencing is available for the other three sides, find the maximum area of the enclosure.",
         "possibleAnswers": [
-          "1"
+          "1800 m^2",
+          "1800m^2",
+          "1800"
         ],
-        "fullSolutionLatex": "Differentiate both sides of the equation $x^2 + y^2 = 2xy$ with respect to $x$. Remember to use the chain rule for terms involving $y$ and the product rule for $2xy$. \\\\ $\\frac{d}{dx}(x^2) + \\frac{d}{dx}(y^2) = \\frac{d}{dx}(2xy)$. \\\\ For the left side: \\\\ $\\frac{d}{dx}(x^2) = 2x$. \\\\ $\\frac{d}{dx}(y^2) = 2y \\frac{dy}{dx}$ (using the chain rule). \\\\ For the right side, use the product rule with $u=2x$ and $v=y$: \\\\ $\\frac{d}{dx}(2xy) = \\frac{d}{dx}(2x) \\cdot y + 2x \\cdot \\frac{d}{dx}(y) = 2y + 2x \\frac{dy}{dx}$. \\\\ Substitute these back into the differentiated equation: \\\\ $2x + 2y \\frac{dy}{dx} = 2y + 2x \\frac{dy}{dx}$. \\\\ Now, rearrange the terms to isolate $\\frac{dy}{dx}$: \\\\ $2y \\frac{dy}{dx} - 2x \\frac{dy}{dx} = 2y - 2x$. \\\\ Factor out $\\frac{dy}{dx}$ from the left side: \\\\ $(2y - 2x) \\frac{dy}{dx} = 2y - 2x$. \\\\ Assuming $2y - 2x \\neq 0$ (i.e., $y \\neq x$), we can divide both sides by $(2y - 2x)$: \\\\ $\\frac{dy}{dx} = \\frac{2y - 2x}{2y - 2x} = 1$. \\\\ Therefore, $\\frac{dy}{dx} = 1$ (for $y \\neq x$).",
+        "fullSolutionLatex": "Let the side parallel to the wall be length L and the two sides perpendicular to the wall be width W.\\\\ The total fencing available is for the three sides: L + 2W = 120.\\\\ From this, L = 120 - 2W.\\\\ The area of the enclosure is A = LW.\\\\ Substitute L: A = (120 - 2W)W = 120W - 2W^2.\\\\ To find the maximum area, differentiate A with respect to W and set the derivative to zero.\\\\ \\frac{dA}{dW} = 120 - 4W.\\\\ Set \\frac{dA}{dW} = 0:\\\\ 120 - 4W = 0 \\\\ 4W = 120 \\\\ W = 30 \\text{ meters}.\\\\ Now, find L using W = 30:\\\\ L = 120 - 2(30) = 120 - 60 = 60 \\text{ meters}.\\\\ The maximum area is A = LW = 60 \\times 30 = 1800 \\text{ m}^2.\\\\ To confirm it's a maximum, find the second derivative: \\frac{d^2A}{dW^2} = -4. Since this is negative, it confirms a maximum.",
         "hintsLatex": [
-          "Differentiate both sides of the equation with respect to $x$.",
-          "Remember to apply the chain rule when differentiating terms involving $y$ (e.g., $\\frac{d}{dx}(y^2) = 2y \\frac{dy}{dx}$).",
-          "Use the product rule for the term $2xy$."
+          "Define variables for the dimensions of the rectangle.",
+          "Formulate an equation for the total fencing used.",
+          "Express the area as a function of a single variable, then differentiate and set to zero."
         ],
         "topicsCovered": [
-          "Implicit Differentiation"
+          "Optimization Problems"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Differentiation",
-        "funFact": "Implicit differentiation is particularly useful when it's difficult or impossible to express $y$ explicitly as a function of $x$."
+        "funFact": "Optimization problems using differentiation are crucial in fields like economics (maximizing profit), engineering (minimizing material usage), and logistics (optimizing routes)."
       },
       "Medium": {
-        "id": "diff-m-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Differentiate $y = x^2 \\cos(x)$ with respect to $x$.",
+        "id": "diff-m-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "A curve is defined parametrically by x = t^2 + 1 and y = 2t^3 - t. Find \\frac{dy}{dx} in terms of t.",
         "possibleAnswers": [
-          "2x cos(x) - x^2 sin(x)",
-          "2xcos(x) - x^2sin(x)",
-          "2x\\cos(x) - x^2\\sin(x)"
+          "(6t^2-1)/(2t)",
+          "(6t^2-1)/(2t)",
+          "6t^2-1 / 2t"
         ],
-        "fullSolutionLatex": "To differentiate $y = x^2 \\cos(x)$, we need to use the product rule, which states that if $y = uv$, then $\\frac{dy}{dx} = u'v + uv'$. \\\\ Let $u = x^2$ and $v = \\cos(x)$. \\\\ Then, find the derivatives of $u$ and $v$: \\\\ $u' = \\frac{d}{dx}(x^2) = 2x$. \\\\ $v' = \\frac{d}{dx}(\\cos(x)) = -\\sin(x)$. \\\\ Now apply the product rule formula: \\\\ $\\frac{dy}{dx} = (2x)(\\cos(x)) + (x^2)(-\\sin(x))$. \\\\ $\\frac{dy}{dx} = 2x \\cos(x) - x^2 \\sin(x)$. \\\\ The derivative is $2x \\cos(x) - x^2 \\sin(x)$.",
+        "fullSolutionLatex": "To find \\frac{dy}{dx} for parametric equations, we use the formula \\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}.\\\\ First, differentiate x with respect to t:\\\\ \\frac{dx}{dt} = \\frac{d}{dt}(t^2 + 1) = 2t.\\\\ Next, differentiate y with respect to t:\\\\ \\frac{dy}{dt} = \\frac{d}{dt}(2t^3 - t) = 6t^2 - 1.\\\\ Now, apply the formula:\\\\ \\frac{dy}{dx} = \\frac{6t^2 - 1}{2t}.",
         "hintsLatex": [
-          "Recall the product rule for differentiation: $\\frac{d}{dx}(uv) = u'v + uv'$.",
-          "Identify the two functions $u$ and $v$ in the product.",
-          "Remember the derivatives of basic trigonometric functions, especially $\\frac{d}{dx}(\\cos(x)) = -\\sin(x)$."
+          "Recall the formula for parametric differentiation.",
+          "Differentiate x with respect to t.",
+          "Differentiate y with respect to t."
         ],
         "topicsCovered": [
-          "Product Rule",
-          "Differentiation of Trigonometric Functions"
+          "Parametric Differentiation"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Differentiation",
-        "funFact": "The product rule is essential for differentiating functions that are combinations of simpler functions, like polynomials and trigonometric functions."
+        "funFact": "Parametric equations are useful for describing motion, where 't' often represents time, allowing us to track position (x, y) over time."
       },
       "Easy": {
-        "id": "diff-e-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Find $\\frac{dy}{dx}$ for $y = 5x^3 - 2x + 7$.",
+        "id": "diff-e-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Differentiate y = (2x+3)^4 with respect to x.",
         "possibleAnswers": [
-          "15x^2 - 2",
-          "15x^2-2"
+          "8(2x+3)^3",
+          "8(2x+3)^3",
+          "8(2x+3)^3"
         ],
-        "fullSolutionLatex": "To find $\\frac{dy}{dx}$ for $y = 5x^3 - 2x + 7$, we differentiate each term using the power rule, which states that $\\frac{d}{dx}(ax^n) = nax^{n-1}$. \\\\ Differentiate $5x^3$: $\\frac{d}{dx}(5x^3) = 3 \\times 5x^{3-1} = 15x^2$. \\\\ Differentiate $-2x$: $\\frac{d}{dx}(-2x) = 1 \\times (-2)x^{1-1} = -2x^0 = -2$. \\\\ Differentiate the constant $7$: $\\frac{d}{dx}(7) = 0$. \\\\ Combine the results: \\\\ $\\frac{dy}{dx} = 15x^2 - 2 + 0 = 15x^2 - 2$. \\\\ The derivative is $15x^2 - 2$.",
+        "fullSolutionLatex": "To differentiate y = (2x+3)^4, we use the chain rule.\\\\ Let u = 2x+3. Then y = u^4.\\\\ \\frac{dy}{du} = 4u^3.\\\\ \\frac{du}{dx} = 2.\\\\ By the chain rule, \\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}.\\\\ \\frac{dy}{dx} = 4u^3 \\cdot 2 \\\\ \\frac{dy}{dx} = 8u^3 \\\\ Substitute u = 2x+3 back into the expression:\\\\ \\frac{dy}{dx} = 8(2x+3)^3.",
         "hintsLatex": [
-          "Apply the power rule for differentiation: $\\frac{d}{dx}(ax^n) = nax^{n-1}$.",
-          "Remember that the derivative of a constant is zero.",
-          "Differentiate each term separately."
+          "Identify the 'inner' and 'outer' functions.",
+          "Apply the chain rule: \\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}.",
+          "Remember to multiply by the derivative of the inner function."
         ],
         "topicsCovered": [
-          "Power Rule"
+          "Chain Rule"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Differentiation",
-        "funFact": "The power rule for differentiation was first explicitly stated by Isaac Newton in the late 17th century."
+        "funFact": "The chain rule is fundamental in calculus and allows us to differentiate composite functions, which are functions within functions."
       }
     },
     "Further Math (9231)": {
       "Hard": {
-        "id": "fm-h-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Find the area enclosed by the cardioid $r = a(1 + \\cos(\\theta))$.",
+        "id": "fm-h-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Find the eigenvalues of the matrix \\mathbf{A} = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}.",
         "possibleAnswers": [
-          "3/2 pi a^2",
-          "1.5 pi a^2",
-          "1.5\\pi a^2",
-          "3\\pi a^2 / 2",
-          "3pi a^2 / 2"
+          "1, 3",
+          "3, 1",
+          "lambda=1,3",
+          "lambda=3,1"
         ],
-        "fullSolutionLatex": "The area $A$ enclosed by a polar curve $r = f(\\theta)$ is given by the formula $A = \\frac{1}{2} \\int_{\\alpha}^{\\beta} r^2 \\, d\\theta$. \\\\ For the cardioid $r = a(1 + \\cos(\\theta))$, the curve completes one loop from $\\theta = 0$ to $\\theta = 2\\pi$. \\\\ So, $A = \\frac{1}{2} \\int_0^{2\\pi} [a(1 + \\cos(\\theta))]^2 \\, d\\theta$. \\\\ $A = \\frac{a^2}{2} \\int_0^{2\\pi} (1 + 2\\cos(\\theta) + \\cos^2(\\theta)) \\, d\\theta$. \\\\ We use the identity $\\cos^2(\\theta) = \\frac{1 + \\cos(2\\theta)}{2}$. \\\\ $A = \\frac{a^2}{2} \\int_0^{2\\pi} \\left( 1 + 2\\cos(\\theta) + \\frac{1 + \\cos(2\\theta)}{2} \\right) \\, d\\theta$. \\\\ $A = \\frac{a^2}{2} \\int_0^{2\\pi} \\left( \\frac{3}{2} + 2\\cos(\\theta) + \\frac{1}{2}\\cos(2\\theta) \\right) \\, d\\theta$. \\\\ Now, integrate term by term: \\\\ $A = \\frac{a^2}{2} \\left[ \\frac{3}{2}\\theta + 2\\sin(\\theta) + \\frac{1}{2} \\left( \\frac{\\sin(2\\theta)}{2} \\right) \\right]_0^{2\\pi}$. \\\\ $A = \\frac{a^2}{2} \\left[ \\frac{3}{2}\\theta + 2\\sin(\\theta) + \\frac{1}{4}\\sin(2\\theta) \\right]_0^{2\\pi}$. \\\\ Evaluate at the limits: \\\\ $A = \\frac{a^2}{2} \\left[ \\left( \\frac{3}{2}(2\\pi) + 2\\sin(2\\pi) + \\frac{1}{4}\\sin(4\\pi) \\right) - \\left( \\frac{3}{2}(0) + 2\\sin(0) + \\frac{1}{4}\\sin(0) \\right) \\right]$. \\\\ Since $\\sin(2\\pi) = 0$ and $\\sin(4\\pi) = 0$, the expression simplifies to: \\\\ $A = \\frac{a^2}{2} \\left[ (3\\pi + 0 + 0) - (0 + 0 + 0) \\right]$. \\\\ $A = \\frac{a^2}{2} (3\\pi) = \\frac{3}{2}\\pi a^2$. \\\\ The area enclosed by the cardioid is $\\frac{3}{2}\\pi a^2$.",
+        "fullSolutionLatex": "To find the eigenvalues (\\lambda) of a matrix \\mathbf{A}, we solve the characteristic equation det(\\mathbf{A} - \\lambda\\mathbf{I}) = 0, where \\mathbf{I} is the identity matrix.\\\\ \\mathbf{A} - \\lambda\\mathbf{I} = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix} - \\lambda\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 2-\\lambda & 1 \\\\ 1 & 2-\\lambda \\end{pmatrix}.\\\\ Now, find the determinant:\\\\ det(\\mathbf{A} - \\lambda\\mathbf{I}) = (2-\\lambda)(2-\\lambda) - (1)(1) = 0 \\\\ (2-\\lambda)^2 - 1 = 0 \\\\ 4 - 4\\lambda + \\lambda^2 - 1 = 0 \\\\ \\lambda^2 - 4\\lambda + 3 = 0.\\\\ Factorize the quadratic equation:\\\\ (\\lambda - 1)(\\lambda - 3) = 0.\\\\ Thus, the eigenvalues are \\lambda = 1 and \\lambda = 3.",
         "hintsLatex": [
-          "The formula for the area enclosed by a polar curve is $A = \\frac{1}{2} \\int r^2 \\, d\\theta$.",
-          "Remember to use the trigonometric identity $\\cos^2(\\theta) = \\frac{1 + \\cos(2\\theta)}{2}$ to simplify the integrand.",
-          "The integration limits for a full loop of a cardioid are typically $0$ to $2\\pi$."
+          "Formulate the characteristic equation det(\\mathbf{A} - \\lambda\\mathbf{I}) = 0.",
+          "Calculate the determinant of the resulting matrix.",
+          "Solve the quadratic equation for \\lambda."
         ],
         "topicsCovered": [
-          "Polar Coordinates",
-          "Polar Curves",
-          "Further Integration Techniques"
+          "Matrices",
+          "Eigenvalues and Eigenvectors"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Math (9231)",
-        "funFact": "Cardioid curves are named for their heart-like shape (from the Greek 'kardia' for heart) and appear in various optical phenomena, such as the caustic formed by light reflecting inside a cup."
+        "funFact": "Eigenvalues and eigenvectors are fundamental concepts in linear algebra, used in Google's PageRank algorithm, quantum mechanics, and analyzing vibrations of structures."
       },
       "Medium": {
-        "id": "fm-m-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Solve the differential equation $\\frac{dy}{dx} = x e^{-y}$, given that $y=0$ when $x=0$.",
+        "id": "fm-m-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Use De Moivre's Theorem to express (\\cos \\theta + i \\sin \\theta)^4 in the form x + iy.",
         "possibleAnswers": [
-          "ln(x^2/2 + 1)",
-          "ln(0.5x^2 + 1)",
-          "log_e(x^2/2 + 1)",
-          "\\ln(\\frac{x^2}{2} + 1)"
+          "cos(4theta) + i sin(4theta)",
+          "cos(4\\theta)+isin(4\\theta)",
+          "cos4theta + isin4theta"
         ],
-        "fullSolutionLatex": "The given differential equation is $\\frac{dy}{dx} = x e^{-y}$. This is a separable differential equation. \\\\ First, separate the variables: \\\\ $\\frac{dy}{e^{-y}} = x \\, dx$. \\\\ $e^y \\, dy = x \\, dx$. \\\\ Now, integrate both sides: \\\\ $\\int e^y \\, dy = \\int x \\, dx$. \\\\ $e^y = \\frac{x^2}{2} + C$. \\\\ Use the initial condition $y=0$ when $x=0$ to find the constant $C$: \\\\ $e^0 = \\frac{0^2}{2} + C$. \\\\ $1 = 0 + C \\implies C = 1$. \\\\ Substitute $C=1$ back into the general solution: \\\\ $e^y = \\frac{x^2}{2} + 1$. \\\\ To solve for $y$, take the natural logarithm of both sides: \\\\ $y = \\ln\\left(\\frac{x^2}{2} + 1\\right)$. \\\\ The solution is $y = \\ln\\left(\\frac{x^2}{2} + 1\\right)$.",
+        "fullSolutionLatex": "De Moivre's Theorem states that (\\cos \\theta + i \\sin \\theta)^n = \\cos(n\\theta) + i \\sin(n\\theta).\\\\ In this problem, n = 4.\\\\ Therefore, (\\cos \\theta + i \\sin \\theta)^4 = \\cos(4\\theta) + i \\sin(4\\theta).",
         "hintsLatex": [
-          "This is a separable differential equation. Rearrange it so that all $y$ terms are on one side and all $x$ terms are on the other.",
-          "Integrate both sides with respect to their respective variables.",
-          "Use the given initial condition to find the constant of integration, $C$."
+          "Recall the statement of De Moivre's Theorem.",
+          "Identify the value of 'n' in the given expression.",
+          "Apply the theorem directly."
         ],
         "topicsCovered": [
-          "First-Order Differential Equations",
-          "Separable Differential Equations",
-          "Differential Equations with Initial Conditions"
+          "De Moivre’s Theorem"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Math (9231)",
-        "funFact": "Differential equations are the language of change, modeling everything from population growth to the spread of diseases and the motion of planets."
+        "funFact": "De Moivre's Theorem, named after Abraham de Moivre, is crucial for finding powers and roots of complex numbers and has applications in trigonometry and polynomial theory."
       },
       "Easy": {
-        "id": "fm-e-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "The polynomial $x^3 - 3x^2 + 2x - 5 = 0$ has roots $\\alpha, \\beta, \\gamma$. Find the value of $\\alpha + \\beta + \\gamma$.",
+        "id": "fm-e-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Given z_1 = 3 + 2i and z_2 = 1 - 4i, find z_1z_2.",
         "possibleAnswers": [
-          "3"
+          "11 - 10i",
+          "11-10i",
+          "11 minus 10i"
         ],
-        "fullSolutionLatex": "For a cubic polynomial of the form $ax^3 + bx^2 + cx + d = 0$ with roots $\\alpha, \\beta, \\gamma$, the sum of the roots is given by $\\alpha + \\beta + \\gamma = -\\frac{b}{a}$. \\\\ In the given polynomial $x^3 - 3x^2 + 2x - 5 = 0$: \\\\ $a = 1$. \\\\ $b = -3$. \\\\ $c = 2$. \\\\ $d = -5$. \\\\ So, the sum of the roots $\\alpha + \\beta + \\gamma = -\\frac{(-3)}{1} = 3$. \\\\ The value of $\\alpha + \\beta + \\gamma$ is 3.",
+        "fullSolutionLatex": "To multiply two complex numbers, we treat them like binomials:\\\\ z_1z_2 = (3 + 2i)(1 - 4i) \\\\ = 3(1) + 3(-4i) + 2i(1) + 2i(-4i) \\\\ = 3 - 12i + 2i - 8i^2.\\\\ Remember that i^2 = -1.\\\\ = 3 - 10i - 8(-1) \\\\ = 3 - 10i + 8 \\\\ = 11 - 10i.",
         "hintsLatex": [
-          "Recall Vieta's formulas for the relations between roots and coefficients of a polynomial.",
-          "For a cubic $ax^3 + bx^2 + cx + d = 0$, the sum of roots is $-b/a$.",
-          "Carefully identify the coefficients $a$ and $b$ from the given equation."
+          "Treat complex numbers like binomials when multiplying.",
+          "Remember to distribute each term.",
+          "Substitute i^2 = -1 and simplify."
         ],
         "topicsCovered": [
-          "Polynomials and Roots",
-          "Relations Between Roots and Coefficients"
+          "Complex Numbers (Basic Operations)"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Math (9231)",
-        "funFact": "Vieta's formulas, named after the French mathematician François Viète, provide a powerful link between algebra and the theory of equations."
+        "funFact": "Complex numbers, initially met with skepticism, are now indispensable in electrical engineering (AC circuits), quantum mechanics, and signal processing."
       }
     },
     "Mathematics (9709)": {
       "Hard": {
-        "id": "math-h-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Solve the equation $2\\cos^2(\\theta) + \\sin(\\theta) = 1$ for $0 \\le \\theta \\le \\pi$.",
+        "id": "math-h-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Given vectors \\mathbf{a} = 2\\mathbf{i} - \\mathbf{j} + 3\\mathbf{k} and \\mathbf{b} = \\mathbf{i} + 5\\mathbf{j} - 2\\mathbf{k}, find the angle between \\mathbf{a} and \\mathbf{b} to one decimal place.",
         "possibleAnswers": [
-          "pi/2",
-          "\\pi/2",
-          "1.5708",
-          "90 degrees",
-          "90"
+          "115.9 degrees",
+          "115.9 deg",
+          "115.9\\degree"
         ],
-        "fullSolutionLatex": "We need to solve $2\\cos^2(\\theta) + \\sin(\\theta) = 1$ for $0 \\le \\theta \\le \\pi$. \\\\ Use the identity $\\cos^2(\\theta) = 1 - \\sin^2(\\theta)$ to express the equation entirely in terms of $\\sin(\\theta)$: \\\\ $2(1 - \\sin^2(\\theta)) + \\sin(\\theta) = 1$. \\\\ $2 - 2\\sin^2(\\theta) + \\sin(\\theta) = 1$. \\\\ Rearrange into a quadratic equation in terms of $\\sin(\\theta)$: \\\\ $2\\sin^2(\\theta) - \\sin(\\theta) - 1 = 0$. \\\\ Let $y = \\sin(\\theta)$. The equation becomes $2y^2 - y - 1 = 0$. \\\\ Factor the quadratic: $(2y + 1)(y - 1) = 0$. \\\\ This gives two possible values for $y$: \\\\ $2y + 1 = 0 \\implies y = -\\frac{1}{2}$. \\\\ $y - 1 = 0 \\implies y = 1$. \\\\ Now substitute back $\\sin(\\theta)$ for $y$: \\\\ Case 1: $\\sin(\\theta) = 1$. \\\\ For $0 \\le \\theta \\le \\pi$, the only solution is $\\theta = \\frac{\\pi}{2}$. \\\\ Case 2: $\\sin(\\theta) = -\\frac{1}{2}$. \\\\ For $0 \\le \\theta \\le \\pi$, the sine function is positive or zero. Therefore, there are no solutions for $\\sin(\\theta) = -\\frac{1}{2}$ in the given range. \\\\ The only solution in the range $0 \\le \\theta \\le \\pi$ is $\\theta = \\frac{\\pi}{2}$.",
+        "fullSolutionLatex": "The angle \\theta between two vectors \\mathbf{a} and \\mathbf{b} can be found using the scalar product formula: \\mathbf{a} \\cdot \\mathbf{b} = |\\mathbf{a}||\\mathbf{b}|\\cos\\theta.\\\\ First, calculate the scalar product \\mathbf{a} \\cdot \\mathbf{b}:\\\\ \\mathbf{a} \\cdot \\mathbf{b} = (2)(1) + (-1)(5) + (3)(-2) \\\\ = 2 - 5 - 6 \\\\ = -9.\\\\ Next, calculate the magnitudes of \\mathbf{a} and \\mathbf{b}:\\\\ |\\mathbf{a}| = \\sqrt{2^2 + (-1)^2 + 3^2} = \\sqrt{4 + 1 + 9} = \\sqrt{14}.\\\\ |\\mathbf{b}| = \\sqrt{1^2 + 5^2 + (-2)^2} = \\sqrt{1 + 25 + 4} = \\sqrt{30}.\\\\ Now, use the formula for \\cos\\theta:\\\\ \\cos\\theta = \\frac{\\mathbf{a} \\cdot \\mathbf{b}}{|\\mathbf{a}||\\mathbf{b}|} = \\frac{-9}{\\sqrt{14}\\sqrt{30}} = \\frac{-9}{\\sqrt{420}}.\\\\ \\theta = \\cos^{-1}\\left(\\frac{-9}{\\sqrt{420}}\\right) \\\\ \\theta \\approx 115.9\\degree \\text{ (to one decimal place)}.",
         "hintsLatex": [
-          "Convert the equation into a single trigonometric function using identities.",
-          "The identity $\\cos^2(\\theta) + \\sin^2(\\theta) = 1$ is key.",
-          "Solve the resulting quadratic equation and check solutions against the given domain."
+          "Recall the scalar product formula: \\mathbf{a} \\cdot \\mathbf{b} = |\\mathbf{a}||\\mathbf{b}|\\cos\\theta.",
+          "Calculate the dot product of the two vectors.",
+          "Calculate the magnitude of each vector."
         ],
         "topicsCovered": [
-          "Trigonometric Equations",
-          "Trigonometric Identities"
+          "Vectors in 3D",
+          "Scalar Product"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mathematics (9709)",
-        "funFact": "Solving trigonometric equations has applications in fields like signal processing and celestial mechanics."
+        "funFact": "The scalar product (or dot product) of two vectors gives a scalar value and is related to the projection of one vector onto another, finding wide use in physics for concepts like work done."
       },
       "Medium": {
-        "id": "math-m-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Find the first three terms, in ascending powers of $x$, of the binomial expansion of $(1+x)^{1/2}$.",
+        "id": "math-m-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Find the first three terms in the expansion of (1 + 2x)^{1/2} in ascending powers of x.",
         "possibleAnswers": [
-          "1 + x/2 - x^2/8",
-          "1 + 0.5x - 0.125x^2",
-          "1 + \\frac{1}{2}x - \\frac{1}{8}x^2"
+          "1 + x - 1/2x^2",
+          "1+x-0.5x^2",
+          "1 + x - 0.5x^2"
         ],
-        "fullSolutionLatex": "The binomial expansion for $(1+x)^n$ is given by $1 + nx + \\frac{n(n-1)}{2!}x^2 + \\frac{n(n-1)(n-2)}{3!}x^3 + \\dots$. \\\\ In this case, $n = 1/2$. \\\\ The first term is $1$. \\\\ The second term is $nx = \\frac{1}{2}x$. \\\\ The third term is $\\frac{n(n-1)}{2!}x^2 = \\frac{\\frac{1}{2}(\\frac{1}{2}-1)}{2 \\times 1}x^2$. \\\\ $= \\frac{\\frac{1}{2}(-\\frac{1}{2})}{2}x^2$. \\\\ $= \\frac{-\\frac{1}{4}}{2}x^2$. \\\\ $= -\\frac{1}{8}x^2$. \\\\ So, the first three terms are $1 + \\frac{1}{2}x - \\frac{1}{8}x^2$.",
+        "fullSolutionLatex": "We use the binomial expansion for a fractional index: \\\\ (1+u)^n = 1 + nu + \\frac{n(n-1)}{2!}u^2 + \\dots \\\\ Here, u = 2x and n = \\frac{1}{2}.\\\\ First term: 1\\\\ Second term: nu = \\frac{1}{2}(2x) = x.\\\\ Third term: \\frac{n(n-1)}{2!}u^2 = \\frac{\\frac{1}{2}(\\frac{1}{2}-1)}{2 \\times 1}(2x)^2 \\\\ = \\frac{\\frac{1}{2}(-\\frac{1}{2})}{2}(4x^2) \\\\ = \\frac{-\\frac{1}{4}}{2}(4x^2) \\\\ = -\\frac{1}{8}(4x^2) \\\\ = -\\frac{1}{2}x^2.\\\\ So, the first three terms are 1 + x - \\frac{1}{2}x^2.",
         "hintsLatex": [
-          "Recall the binomial expansion formula for $(1+x)^n$: $1 + nx + \\frac{n(n-1)}{2!}x^2 + \\dots$",
-          "Carefully substitute $n = 1/2$ into the formula.",
-          "Pay attention to the signs and fractions in the calculations."
+          "Recall the binomial expansion formula for (1+u)^n.",
+          "Identify 'n' and 'u' correctly.",
+          "Calculate each term up to the x^2 term."
         ],
         "topicsCovered": [
           "Binomial Expansion (Fractional Index)"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mathematics (9709)",
-        "funFact": "The binomial theorem for fractional and negative exponents was generalized by Isaac Newton, extending its utility beyond positive integers."
+        "funFact": "The binomial theorem for fractional and negative indices was generalized by Isaac Newton, extending its utility beyond positive integer powers."
       },
       "Easy": {
-        "id": "math-e-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Express $x^2 + 6x + 5$ in the form $(x+a)^2 + b$.",
+        "id": "math-e-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Express x^2 - 6x + 11 in the form (x+a)^2 + b.",
         "possibleAnswers": [
-          "(x+3)^2 - 4",
-          "(x+3)^2-4"
+          "(x-3)^2 + 2",
+          "(x-3)^2+2",
+          "x-3 squared plus 2"
         ],
-        "fullSolutionLatex": "To express $x^2 + 6x + 5$ in the form $(x+a)^2 + b$, we use the method of completing the square. \\\\ Start with the terms involving $x$: $x^2 + 6x$. \\\\ Take half of the coefficient of $x$ (which is $6/2 = 3$) and square it ($3^2 = 9$). \\\\ Add and subtract this value to the expression: \\\\ $x^2 + 6x + 9 - 9 + 5$. \\\\ Group the perfect square trinomial: \\\\ $(x^2 + 6x + 9) - 9 + 5$. \\\\ This simplifies to $(x+3)^2 - 4$. \\\\ So, $x^2 + 6x + 5 = (x+3)^2 - 4$. \\\\ Comparing with $(x+a)^2 + b$, we have $a=3$ and $b=-4$.",
+        "fullSolutionLatex": "To express x^2 - 6x + 11 in the form (x+a)^2 + b, we complete the square.\\\\ The general form is (x+a)^2 + b = x^2 + 2ax + a^2 + b.\\\\ Comparing x^2 - 6x + 11 with x^2 + 2ax + a^2 + b:\\\\ First, compare the coefficient of x: 2a = -6 \\implies a = -3.\\\\ Now, substitute a = -3 into (x+a)^2 + b: (x-3)^2 + b = x^2 - 6x + 9 + b.\\\\ Comparing the constant terms: 9 + b = 11 \\implies b = 2.\\\\ So, x^2 - 6x + 11 = (x-3)^2 + 2.",
         "hintsLatex": [
-          "Focus on the $x^2$ and $x$ terms first.",
-          "Take half of the coefficient of $x$ and square it.",
-          "Add and subtract this value to complete the square, then simplify the constants."
+          "Halve the coefficient of x to find 'a'.",
+          "Square 'a' and subtract it to balance the equation.",
+          "Then add the original constant term."
         ],
         "topicsCovered": [
-          "Completing the Square",
-          "Quadratic Functions"
+          "Quadratic Functions",
+          "Completing the Square"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mathematics (9709)",
-        "funFact": "Completing the square is not just for solving quadratics; it's also fundamental for analyzing conic sections like circles and ellipses."
+        "funFact": "Completing the square is not just for solving quadratics; it's also used to find the vertex of a parabola, which represents the maximum or minimum point of the quadratic function."
       }
     },
     "Further Mechanics (9231)": {
       "Hard": {
-        "id": "fmech-h-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "A uniform ladder of length $L$ and mass $m$ rests against a smooth vertical wall and rough horizontal ground. The ladder makes an angle $\\theta$ with the horizontal. Find the minimum coefficient of friction between the ladder and the ground required for equilibrium.",
+        "id": "fmech-h-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "A particle of mass 2 kg moving at velocity \\mathbf{v}_1 = (3\\mathbf{i} + 2\\mathbf{j}) \\text{ m/s} collides with a particle of mass 1 kg moving at velocity \\mathbf{v}_2 = (-2\\mathbf{i} + 4\\mathbf{j}) \\text{ m/s}. If they coalesce, find the velocity of the combined mass.",
         "possibleAnswers": [
-          "1/2 cot(theta)",
-          "0.5 cot(theta)",
-          "cot(theta)/2",
-          "\\frac{1}{2}\\cot(\\theta)",
-          "0.5\\cot(\\theta)"
+          "(4/3 i + 8/3 j) m/s",
+          "(4i/3 + 8j/3) m/s",
+          "(1.33i + 2.67j) m/s",
+          "4/3i + 8/3j",
+          "1.33i+2.67j"
         ],
-        "fullSolutionLatex": "Let $R_g$ be the normal reaction force from the ground, $F_f$ be the frictional force from the ground, and $R_w$ be the normal reaction force from the smooth vertical wall. \\\\ The weight of the ladder, $mg$, acts downwards at its centre of mass, which is at $L/2$ from the base since it's uniform. \\\\ **1. Resolve forces vertically (up = down):** \\\\ $R_g - mg = 0 \\implies R_g = mg$. \\\\ **2. Resolve forces horizontally (left = right):** \\\\ $R_w - F_f = 0 \\implies R_w = F_f$. \\\\ **3. Take moments about the base of the ladder (point of contact with the ground) to eliminate $R_g$ and $F_f$ from the moment equation:** \\\\ The perpendicular distance from the base to the line of action of weight $mg$ is $(L/2) \\cos\\theta$. The moment is $mg (L/2 \\cos\\theta)$ (clockwise). \\\\ The perpendicular distance from the base to the line of action of the wall's reaction $R_w$ is $L \\sin\\theta$. The moment is $R_w (L \\sin\\theta)$ (anticlockwise). \\\\ For equilibrium, clockwise moments = anticlockwise moments: \\\\ $mg (L/2 \\cos\\theta) = R_w (L \\sin\\theta)$. \\\\ Divide by $L$: \\\\ $mg/2 \\cos\\theta = R_w \\sin\\theta$. \\\\ Substitute $R_w = F_f$ from the horizontal forces equation: \\\\ $mg/2 \\cos\\theta = F_f \\sin\\theta$. \\\\ Solve for $F_f$: \\\\ $F_f = \\frac{mg \\cos\\theta}{2 \\sin\\theta} = \\frac{1}{2} mg \\cot\\theta$. \\\\ **4. Apply the condition for friction:** \\\\ For the ladder not to slip, the frictional force must be less than or equal to the maximum static friction: $F_f \\le \\mu R_g$. \\\\ Substitute $F_f = \\frac{1}{2} mg \\cot\\theta$ and $R_g = mg$: \\\\ $\\frac{1}{2} mg \\cot\\theta \\le \\mu mg$. \\\\ Divide by $mg$ (assuming $m > 0$): \\\\ $\\frac{1}{2} \\cot\\theta \\le \\mu$. \\\\ The minimum coefficient of friction required for equilibrium is $\\mu_{min} = \\frac{1}{2} \\cot\\theta$.",
+        "fullSolutionLatex": "This is a collision problem where particles coalesce, meaning it's an inelastic collision and momentum is conserved.\\\\ Let m_1 = 2 \\text{ kg}, \\mathbf{v}_1 = (3\\mathbf{i} + 2\\mathbf{j}) \\text{ m/s}.\\\\ Let m_2 = 1 \\text{ kg}, \\mathbf{v}_2 = (-2\\mathbf{i} + 4\\mathbf{j}) \\text{ m/s}.\\\\ Let \\mathbf{V} be the velocity of the combined mass (m_1 + m_2) after collision.\\\\ By conservation of momentum:\\\\ m_1\\mathbf{v}_1 + m_2\\mathbf{v}_2 = (m_1 + m_2)\\mathbf{V}.\\\\ (2)(3\\mathbf{i} + 2\\mathbf{j}) + (1)(-2\\mathbf{i} + 4\\mathbf{j}) = (2 + 1)\\mathbf{V}.\\\\ (6\\mathbf{i} + 4\\mathbf{j}) + (-2\\mathbf{i} + 4\\mathbf{j}) = 3\\mathbf{V}.\\\\ (6-2)\\mathbf{i} + (4+4)\\mathbf{j} = 3\\mathbf{V}.\\\\ 4\\mathbf{i} + 8\\mathbf{j} = 3\\mathbf{V}.\\\\ \\mathbf{V} = \\frac{1}{3}(4\\mathbf{i} + 8\\mathbf{j}) \\text{ m/s} \\\\ \\mathbf{V} = \\left(\\frac{4}{3}\\mathbf{i} + \\frac{8}{3}\\mathbf{j}\\right) \\text{ m/s}.",
         "hintsLatex": [
-          "Draw a free-body diagram of the ladder, showing all forces and their points of application.",
-          "Apply the conditions for equilibrium: net force is zero (resolve horizontally and vertically) and net moment is zero (take moments about a convenient point, usually where unknown forces act).",
-          "Remember that for a smooth surface, there is no friction, only a normal reaction force. For a rough surface, both normal reaction and friction are present."
+          "Recall the principle of conservation of momentum for collisions.",
+          "Remember that momentum is a vector quantity, so handle i and j components separately.",
+          "The combined mass after coalescing is the sum of the individual masses."
         ],
         "topicsCovered": [
-          "Equilibrium of Rigid Bodies",
-          "Moments and Couples",
-          "Advanced Modelling Techniques"
+          "Impulse and Momentum (Advanced)",
+          "Collisions in Two Dimensions"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "The stability of structures like ladders and bridges relies heavily on the principles of rigid body equilibrium and moments, concepts developed in classical mechanics."
+        "funFact": "The conservation of momentum is one of the most fundamental laws in physics, applicable from billiard ball collisions to astrophysical events like galaxy mergers."
       },
       "Medium": {
-        "id": "fmech-m-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "A car of mass $m$ travels around a horizontal circular track of radius $r$ at a constant speed $v$. What is the minimum coefficient of friction required for the car not to slip?",
+        "id": "fmech-m-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "A particle undergoes Simple Harmonic Motion (SHM) with an amplitude of 0.1 m and a period of \\frac{\\pi}{2} seconds. Find the maximum speed of the particle.",
         "possibleAnswers": [
-          "v^2/(gr)",
-          "v^2 / (gr)",
-          "v^2/(g*r)",
-          "\\frac{v^2}{gr}"
+          "0.4 m/s",
+          "0.4m/s",
+          "0.4",
+          "2/5 m/s"
         ],
-        "fullSolutionLatex": "For the car to travel in a horizontal circular track, a centripetal force is required. This force is provided by the static friction between the tires and the road. \\\\ The required centripetal force $F_c = \\frac{mv^2}{r}$. \\\\ The maximum static frictional force $F_f = \\mu R$, where $\\mu$ is the coefficient of friction and $R$ is the normal reaction force. \\\\ On a horizontal track, the normal reaction force $R$ balances the weight of the car: $R = mg$. \\\\ So, $F_f = \\mu mg$. \\\\ For the car not to slip, the required centripetal force must be less than or equal to the maximum static frictional force: \\\\ $F_c \\le F_f$. \\\\ $\\frac{mv^2}{r} \\le \\mu mg$. \\\\ We are looking for the minimum coefficient of friction, so we consider the equality: \\\\ $\\frac{mv^2}{r} = \\mu_{min} mg$. \\\\ Divide both sides by $mg$ to solve for $\\mu_{min}$: \\\\ $\\mu_{min} = \\frac{mv^2}{r \\cdot mg} = \\frac{v^2}{gr}$. \\\\ The minimum coefficient of friction required is $\\frac{v^2}{gr}$.",
+        "fullSolutionLatex": "For SHM, the angular frequency \\omega is related to the period T by the formula \\omega = \\frac{2\\pi}{T}.\\\\ Given T = \\frac{\\pi}{2} s.\\\\ \\omega = \\frac{2\\pi}{\\frac{\\pi}{2}} = 2\\pi \\cdot \\frac{2}{\\pi} = 4 \\text{ rad/s}.\\\\ The maximum speed (v_{max}) of a particle in SHM is given by v_{max} = A\\omega.\\\\ Given Amplitude (A) = 0.1 m.\\\\ v_{max} = (0.1)(4) \\\\ v_{max} = 0.4 \\text{ m/s}.",
         "hintsLatex": [
-          "The centripetal force required for circular motion is $F_c = \\frac{mv^2}{r}$.",
-          "This centripetal force is provided by the static friction, $F_f = \\mu R$.",
-          "On a horizontal surface, the normal reaction force $R$ balances the weight $mg$."
-        ],
-        "topicsCovered": [
-          "Motion in a Circle",
-          "Centripetal Force",
-          "Forces in Two Dimensions"
-        ],
-        "difficultyLevel": "Medium",
-        "problemType": "Further Mechanics (9231)",
-        "funFact": "The principle of centripetal force is crucial in designing safe roads, especially for curves, and in understanding planetary orbits."
-      },
-      "Easy": {
-        "id": "fmech-e-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "A particle moves with simple harmonic motion with amplitude $A$ and period $T$. What is its maximum speed?",
-        "possibleAnswers": [
-          "2piA/T",
-          "2\\pi A / T",
-          "(2*pi*A)/T",
-          "2*pi*A/T"
-        ],
-        "fullSolutionLatex": "For a particle undergoing Simple Harmonic Motion (SHM), the displacement is given by $x = A\\sin(\\omega t)$ or $x = A\\cos(\\omega t)$, where $A$ is the amplitude and $\\omega$ is the angular frequency. \\\\ The velocity $v$ is the derivative of the displacement with respect to time: \\\\ $v = \\frac{dx}{dt} = A\\omega \\cos(\\omega t)$ (if $x = A\\sin(\\omega t)$). \\\\ The maximum speed occurs when $\\cos(\\omega t) = \\pm 1$. \\\\ So, $v_{max} = A\\omega$. \\\\ The angular frequency $\\omega$ is related to the period $T$ by the formula $\\omega = \\frac{2\\pi}{T}$. \\\\ Substituting this into the expression for maximum speed: \\\\ $v_{max} = A \\left(\\frac{2\\pi}{T}\\right) = \\frac{2\\pi A}{T}$. \\\\ The maximum speed is $\\frac{2\\pi A}{T}$.",
-        "hintsLatex": [
-          "Recall the relationship between angular frequency $\\omega$, period $T$, and frequency $f$.",
-          "The velocity in SHM is the time derivative of displacement.",
-          "Maximum speed occurs when the oscillating term (e.g., $\\cos(\\omega t)$) reaches its maximum value."
+          "First, calculate the angular frequency (\\omega) from the given period.",
+          "Recall the formula for maximum speed in SHM.",
+          "Substitute the amplitude and angular frequency to find the maximum speed."
         ],
         "topicsCovered": [
           "Simple Harmonic Motion"
         ],
+        "difficultyLevel": "Medium",
+        "problemType": "Further Mechanics (9231)",
+        "funFact": "Simple Harmonic Motion describes many oscillating systems, from pendulums and mass-spring systems to the vibrations of atoms in a crystal lattice."
+      },
+      "Easy": {
+        "id": "fmech-e-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "A particle of mass 0.5 kg moves in a horizontal circle of radius 2m with a constant speed of 4 m/s. Calculate the centripetal force acting on the particle.",
+        "possibleAnswers": [
+          "4 N",
+          "4N",
+          "4 Newton",
+          "4.0 N"
+        ],
+        "fullSolutionLatex": "The formula for centripetal force (F_c) is F_c = \\frac{mv^2}{r}.\\\\ Given: \\\\ Mass (m) = 0.5 kg \\\\ Speed (v) = 4 m/s \\\\ Radius (r) = 2 m \\\\ Substitute the values into the formula:\\\\ F_c = \\frac{(0.5)(4^2)}{2} \\\\ F_c = \\frac{(0.5)(16)}{2} \\\\ F_c = \\frac{8}{2} \\\\ F_c = 4 \\text{ N}.",
+        "hintsLatex": [
+          "Recall the formula for centripetal force.",
+          "Identify the given values for mass, speed, and radius.",
+          "Substitute the values carefully into the formula."
+        ],
+        "topicsCovered": [
+          "Motion in a Circle",
+          "Centripetal Force"
+        ],
         "difficultyLevel": "Easy",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Simple Harmonic Motion describes many natural phenomena, from a pendulum's swing to the vibrations of atoms in a crystal lattice."
+        "funFact": "Centripetal force is not a new type of force; it's the net force required to keep an object moving in a circular path, often provided by tension, gravity, or friction."
       }
     },
     "Mechanics (9701)": {
       "Hard": {
-        "id": "mech-h-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "A projectile is fired from horizontal ground with an initial speed of $20 \\text{ m s}^{-1}$ at an angle of $30^\\circ$ above the horizontal. Assuming negligible air resistance, calculate the horizontal range of the projectile.",
+        "id": "mech-h-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "A particle is moved along the x-axis from x = 1 to x = 3 by a force \\mathbf{F} = (3x^2 - 2x) \\mathbf{i} \\, N. Calculate the work done by the force.",
         "possibleAnswers": [
-          "200\\sqrt{3}/g",
-          "35.3",
-          "35.35",
-          "35.347"
+          "18 J",
+          "18J",
+          "18 Joules",
+          "18.0 J"
         ],
-        "fullSolutionLatex": "Given: \\\\ Initial speed $u = 20 \\text{ m s}^{-1}$. \\\\ Angle of projection $\\alpha = 30^\\circ$. \\\\ We need to calculate the horizontal range $R$. \\\\ First, resolve the initial velocity into horizontal and vertical components: \\\\ Horizontal component: $u_x = u \\cos(\\alpha) = 20 \\cos(30^\\circ) = 20 \\times \\frac{\\sqrt{3}}{2} = 10\\sqrt{3} \\text{ m s}^{-1}$. \\\\ Vertical component: $u_y = u \\sin(\\alpha) = 20 \\sin(30^\\circ) = 20 \\times \\frac{1}{2} = 10 \\text{ m s}^{-1}$. \\\\ **1. Find the time of flight ($T$):** \\\\ The projectile starts and lands on horizontal ground, so the vertical displacement is $s_y = 0$. \\\\ Using the SUVAT equation for vertical motion: $s_y = u_yT + \\frac{1}{2}a_yT^2$. \\\\ Here, $a_y = -g$ (taking upwards as positive). \\\\ $0 = 10T - \\frac{1}{2}gT^2$. \\\\ $T(10 - \\frac{1}{2}gT) = 0$. \\\\ This gives $T=0$ (initial launch) or $10 - \\frac{1}{2}gT = 0$. \\\\ $\\frac{1}{2}gT = 10 \\implies T = \\frac{20}{g} \\text{ s}$. \\\\ **2. Calculate the horizontal range ($R$):** \\\\ For horizontal motion, acceleration $a_x = 0$. \\\\ Range $R = u_x T$. \\\\ $R = (10\\sqrt{3}) \\left(\\frac{20}{g}\\right)$. \\\\ $R = \\frac{200\\sqrt{3}}{g}$. \\\\ Using $g = 9.8 \\text{ m s}^{-2}$: \\\\ $R = \\frac{200\\sqrt{3}}{9.8} \\approx \\frac{200 \\times 1.73205}{9.8} \\approx \\frac{346.41}{9.8} \\approx 35.348 \\text{ m}$. \\\\ The horizontal range is approximately $35.3 \\text{ m}$ (to 3 significant figures).",
+        "fullSolutionLatex": "The work done (W) by a variable force \\mathbf{F}(x) moving an object from x_1 to x_2 is given by the integral W = \\int_{x_1}^{x_2} F(x) \\, dx.\\\\ Given force F(x) = 3x^2 - 2x.\\\\ Limits are x_1 = 1 and x_2 = 3.\\\\ W = \\int_{1}^{3} (3x^2 - 2x) \\, dx.\\\\ Integrate the expression:\\\\ W = \\left[ \\frac{3x^3}{3} - \\frac{2x^2}{2} \\right]_{1}^{3} \\\\ W = \\left[ x^3 - x^2 \\right]_{1}^{3}.\\\\ Now, evaluate at the limits:\\\\ W = (3^3 - 3^2) - (1^3 - 1^2) \\\\ W = (27 - 9) - (1 - 1) \\\\ W = 18 - 0 \\\\ W = 18 \\text{ J}.",
         "hintsLatex": [
-          "Resolve the initial velocity into horizontal and vertical components.",
-          "Use vertical motion to find the time of flight, remembering that vertical acceleration is $-g$.",
-          "Use horizontal motion (constant velocity) and the time of flight to find the horizontal range."
+          "Recall that work done by a variable force is calculated using integration.",
+          "Set up the definite integral with the given force function and limits.",
+          "Evaluate the definite integral."
         ],
         "topicsCovered": [
-          "Projectiles",
-          "Kinematics in 1D",
-          "Vector Addition and Resolution"
+          "Work Done by a Force",
+          "Applications to Physics"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mechanics (9701)",
-        "funFact": "The study of projectile motion, first systematically analyzed by Galileo Galilei, laid the groundwork for modern ballistics and space travel calculations."
+        "funFact": "In physics, work is not just any effort; it's specifically the energy transferred to or from an object by applying a force that causes displacement, and it's a scalar quantity."
       },
       "Medium": {
-        "id": "mech-m-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "Two particles of masses $3 \\text{ kg}$ and $2 \\text{ kg}$ are connected by a light inextensible string passing over a smooth fixed pulley. The system is released from rest. Find the acceleration of the particles.",
+        "id": "mech-m-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "Two particles of masses 3 kg and 2 kg are connected by a light inextensible string passing over a smooth fixed pulley. The system is released from rest. Find the acceleration of the 3 kg particle. (Take g = 9.8 m/s^2).",
         "possibleAnswers": [
-          "g/5",
+          "1.96 m/s^2",
+          "1.96m/s^2",
           "1.96",
-          "9.8/5",
-          "9.8/5 m/s^2",
-          "1.96 m/s^2"
+          "9.8/5 m/s^2"
         ],
-        "fullSolutionLatex": "Let $m_1 = 3 \\text{ kg}$ and $m_2 = 2 \\text{ kg}$. Let $T$ be the tension in the string and $a$ be the acceleration of the system. We assume $m_1$ moves downwards and $m_2$ moves upwards. \\\\ **For $m_1$ (downwards motion):** \\\\ The forces acting on $m_1$ are its weight $m_1g$ downwards and tension $T$ upwards. \\\\ Using Newton's Second Law, $F_{net} = m_1a$: \\\\ $m_1g - T = m_1a$  (Equation 1) \\\\ $3g - T = 3a$ \\\\ **For $m_2$ (upwards motion):** \\\\ The forces acting on $m_2$ are its weight $m_2g$ downwards and tension $T$ upwards. \\\\ Using Newton's Second Law, $F_{net} = m_2a$: \\\\ $T - m_2g = m_2a$  (Equation 2) \\\\ $T - 2g = 2a$ \\\\ **Add Equation 1 and Equation 2 to eliminate $T$:** \\\\ $(3g - T) + (T - 2g) = 3a + 2a$ \\\\ $g = 5a$ \\\\ Solve for $a$: \\\\ $a = \\frac{g}{5}$. \\\\ Using the standard value of $g = 9.8 \\text{ m s}^{-2}$: \\\\ $a = \\frac{9.8}{5} = 1.96 \\text{ m s}^{-2}$. \\\\ The acceleration of the particles is $\\frac{g}{5}$ or $1.96 \\text{ m s}^{-2}$.",
+        "fullSolutionLatex": "Let m_1 = 3 \\text{ kg} and m_2 = 2 \\text{ kg}. Let T be the tension in the string and a be the acceleration of the system.\\\\ For the 3 kg particle (moving downwards):\\\\ F_{net} = m_1g - T = m_1a \\\\ 3(9.8) - T = 3a \\quad (1)\\\\ For the 2 kg particle (moving upwards):\\\\ F_{net} = T - m_2g = m_2a \\\\ T - 2(9.8) = 2a \\quad (2)\\\\ Add (1) and (2) to eliminate T:\\\\ (3(9.8) - T) + (T - 2(9.8)) = 3a + 2a \\\\ 3(9.8) - 2(9.8) = 5a \\\\ (3-2)(9.8) = 5a \\\\ 1(9.8) = 5a \\\\ 9.8 = 5a \\\\ a = \\frac{9.8}{5} \\\\ a = 1.96 \\text{ m/s}^2.\\\\ The 3 kg particle accelerates downwards at 1.96 m/s^2.",
         "hintsLatex": [
-          "Draw a free-body diagram for each particle, showing all forces acting on them.",
-          "Apply Newton's Second Law ($F=ma$) to each particle, considering the direction of acceleration.",
-          "Solve the resulting simultaneous equations to find the acceleration and tension (if needed)."
+          "Draw free-body diagrams for both particles.",
+          "Formulate Newton's Second Law (F=ma) equations for each particle, considering their directions of motion.",
+          "Solve the simultaneous equations to find the acceleration."
         ],
         "topicsCovered": [
           "Connected Particles",
-          "Forces and Newton’s Laws"
+          "Newton’s Laws"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mechanics (9701)",
-        "funFact": "The Atwood machine, a classic setup for connected particles, was originally designed to demonstrate Newton's laws of motion and measure the acceleration due to gravity."
+        "funFact": "Atwood machines, which this problem resembles, were originally invented to demonstrate Newton's laws of motion and measure the acceleration due to gravity with high precision."
       },
       "Easy": {
-        "id": "mech-e-30",
-        "date": "2026-02-24T07:07:01.168Z",
-        "problemLatex": "A car starts from rest and accelerates uniformly at $2 \\text{ m s}^{-2}$ for $5 \\text{ s}$. Calculate the distance travelled.",
+        "id": "mech-e-31",
+        "date": "2026-02-25T07:07:16.932Z",
+        "problemLatex": "A block of mass 5 kg rests on a horizontal surface. A horizontal force of 20 N is applied to the block. If the coefficient of friction between the block and the surface is 0.3, calculate the acceleration of the block. (Take g = 10 m/s^2).",
         "possibleAnswers": [
-          "25 m",
-          "25m",
-          "25"
+          "1 m/s^2",
+          "1m/s^2",
+          "1.0 m/s^2"
         ],
-        "fullSolutionLatex": "We are given the following information: \\\\ Initial velocity, $u = 0 \\text{ m s}^{-1}$ (starts from rest). \\\\ Acceleration, $a = 2 \\text{ m s}^{-2}$. \\\\ Time, $t = 5 \\text{ s}$. \\\\ We need to find the distance travelled, $s$. \\\\ We can use the SUVAT equation: $s = ut + \\frac{1}{2}at^2$. \\\\ Substitute the given values: \\\\ $s = (0)(5) + \\frac{1}{2}(2)(5^2)$. \\\\ $s = 0 + (1)(25)$. \\\\ $s = 25 \\text{ m}$. \\\\ The distance travelled is $25 \\text{ m}$.",
+        "fullSolutionLatex": "First, calculate the frictional force (F_f).\\\\ The normal reaction force (R) on a horizontal surface is equal to the weight of the block, R = mg.\\\\ R = 5 \\text{ kg} \\times 10 \\text{ m/s}^2 = 50 \\text{ N}.\\\\ The maximum static frictional force is F_f = \\mu R.\\\\ F_f = 0.3 \\times 50 = 15 \\text{ N}.\\\\ Since the applied force (20 N) is greater than the maximum frictional force (15 N), the block will accelerate.\\\\ Apply Newton's Second Law, F_{net} = ma.\\\\ F_{applied} - F_f = ma.\\\\ 20 - 15 = 5a.\\\\ 5 = 5a.\\\\ a = 1 \\text{ m/s}^2.",
         "hintsLatex": [
-          "Identify the known variables (u, a, t) and the unknown variable (s).",
-          "Choose the appropriate SUVAT equation that relates these variables.",
-          "Remember that 'starts from rest' means initial velocity $u=0$."
+          "Draw a free-body diagram for the block.",
+          "Calculate the normal reaction force and then the frictional force.",
+          "Apply Newton's Second Law (F=ma) to find the acceleration."
         ],
         "topicsCovered": [
-          "Equations of Motion (SUVAT)",
-          "Kinematics in One Dimension"
+          "Forces and Newton’s Laws",
+          "Friction"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mechanics (9701)",
-        "funFact": "The SUVAT equations are a simplified set of kinematic equations that apply specifically to motion under constant acceleration, making them powerful tools for many introductory physics problems."
+        "funFact": "Friction, while often seen as a force to overcome, is essential for many everyday activities, allowing us to walk, drive cars, and write with pencils."
       }
     }
   }
