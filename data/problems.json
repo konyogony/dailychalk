@@ -1,362 +1,369 @@
 {
-  "lastUpdate": "2026-03-01",
+  "lastUpdate": "2026-03-02",
   "problemSet": {
     "Integration": {
       "Hard": {
-        "id": "int-h-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Evaluate the improper integral \\int_{1}^{\\infty} \\frac{1}{x^2} \\, dx.",
+        "id": "int-h-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Excellent work! For our final integration challenge, let's tackle a geometric problem: Find the area enclosed by the curves y = x^2 and y = 2x.",
         "possibleAnswers": [
-          "1",
-          "1.0"
+          "4/3",
+          "1.333",
+          "1.33",
+          "4 divided by 3"
         ],
-        "fullSolutionLatex": "An improper integral with an infinite limit is evaluated using limits: \\\\ \\int_{1}^{\\infty} \\frac{1}{x^2} \\, dx = \\lim_{b \\to \\infty} \\int_{1}^{b} x^{-2} \\, dx \\\\ First, evaluate the definite integral: \\\\ \\int_{1}^{b} x^{-2} \\, dx = \\left[ -x^{-1} \\right]_{1}^{b} = \\left[ -\\frac{1}{x} \\right]_{1}^{b} \\\\ = \\left(-\\frac{1}{b}\\right) - \\left(-\\frac{1}{1}\\right) \\\\ = -\\frac{1}{b} + 1 \\\\ Now, take the limit as $b \\to \\infty$: \\\\ \\lim_{b \\to \\infty} \\left(1 - \\frac{1}{b}\\right) \\\\ As $b \\to \\infty$, $\\frac{1}{b} \\to 0$. \\\\ Therefore, the integral evaluates to $1 - 0 = 1$.",
+        "fullSolutionLatex": "To find the area enclosed by two curves, we first need to find their points of intersection. Set the two equations equal to each other:\\\\x^2 = 2x\\\\x^2 - 2x = 0\\\\x(x - 2) = 0\\\\So, the intersection points are x = 0 and x = 2.\\\\Next, we need to determine which function is 'above' the other in the interval [0, 2]. Let's test a value, say x = 1:\\\\For y = x^2, y = 1^2 = 1\\\\For y = 2x, y = 2(1) = 2\\\\Since 2 > 1, y = 2x is the upper curve and y = x^2 is the lower curve in the interval [0, 2].\\\\The area enclosed is given by the definite integral of (upper curve - lower curve) from x = 0 to x = 2:\\\\Area = \\int_0^2 (2x - x^2) \\, dx\\\\Now, integrate term by term:\\\\ \\int (2x - x^2) \\, dx = x^2 - \\frac{x^3}{3}\\\\Evaluate at the limits:\\\\ Area = (2^2 - \\frac{2^3}{3}) - (0^2 - \\frac{0^3}{3})\\\\ = (4 - \\frac{8}{3}) - (0)\\\\ = \\frac{12}{3} - \\frac{8}{3}\\\\ = \\frac{4}{3}\\\\The area enclosed by the curves is \\frac{4}{3} square units.",
         "hintsLatex": [
-          "Rewrite the improper integral using a limit.",
-          "Integrate $x^{-2}$ with respect to $x$.",
-          "Evaluate the limit as the upper bound approaches infinity."
+          "First, find the points of intersection of the two curves by setting their equations equal to each other.",
+          "Determine which function is the 'upper' curve and which is the 'lower' curve within the interval of intersection.",
+          "The area is the definite integral of (upper curve - lower curve) between the intersection points."
         ],
         "topicsCovered": [
-          "Improper Integrals",
-          "Limits"
+          "Area Between Two Curves",
+          "Definite Integrals"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Integration",
-        "funFact": "Improper integrals are crucial in probability theory, where they are used to calculate probabilities for continuous random variables over infinite ranges."
+        "funFact": "The concept of finding area by breaking it into infinitesimally small rectangles and summing them up dates back to ancient Greek mathematicians like Archimedes, making it a truly timeless technique!"
       },
       "Medium": {
-        "id": "int-m-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Evaluate \\int x \\cos(3x) \\, dx.",
+        "id": "int-m-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Fantastic start! Now, let's calculate the area under the curve y = 4 - x^2 from x = 0 to x = 2. This is a classic application of definite integrals!",
         "possibleAnswers": [
-          "1/3 x sin(3x) + 1/9 cos(3x) + C",
-          "1/3 xsin(3x) + 1/9cos(3x) + C",
-          "x sin(3x)/3 + cos(3x)/9 + C",
-          "0.333 x sin(3x) + 0.111 cos(3x) + C"
+          "16/3",
+          "5.333",
+          "5.33",
+          "5 1/3",
+          "16 divided by 3"
         ],
-        "fullSolutionLatex": "We use integration by parts, which states \\int u \\, dv = uv - \\int v \\, du. \\\\ Let $u = x$ and $dv = \\cos(3x) \\, dx$. \\\\ Then $du = 1 \\, dx$ and $v = \\int \\cos(3x) \\, dx = \\frac{1}{3}\\sin(3x)$. \\\\ Applying the formula: \\\\ \\int x \\cos(3x) \\, dx = x \\left(\\frac{1}{3}\\sin(3x)\\right) - \\int \\left(\\frac{1}{3}\\sin(3x)\\right) (1) \\, dx \\\\ = \\frac{1}{3}x\\sin(3x) - \\frac{1}{3} \\int \\sin(3x) \\, dx \\\\ Now, we integrate \\int \\sin(3x) \\, dx = -\\frac{1}{3}\\cos(3x). \\\\ So, the integral becomes: \\\\ = \\frac{1}{3}x\\sin(3x) - \\frac{1}{3} \\left(-\\frac{1}{3}\\cos(3x)\\right) + C \\\\ = \\frac{1}{3}x\\sin(3x) + \\frac{1}{9}\\cos(3x) + C.",
+        "fullSolutionLatex": "To find the area under the curve y = f(x) from x = a to x = b, we evaluate the definite integral \\int_a^b f(x) \\, dx.\\\\Here, f(x) = 4 - x^2, a = 0, and b = 2.\\\\Area = \\int_0^2 (4 - x^2) \\, dx\\\\First, find the indefinite integral:\\\\ \\int (4 - x^2) \\, dx = 4x - \\frac{x^3}{3} + C\\\\Now, evaluate the definite integral using the Fundamental Theorem of Calculus: F(b) - F(a).\\ (4(2) - \\frac{2^3}{3}) - (4(0) - \\frac{0^3}{3})\\\\ = (8 - \\frac{8}{3}) - (0 - 0)\\\\ = \\frac{24}{3} - \\frac{8}{3}\\\\ = \\frac{16}{3}\\\\The area under the curve is \\frac{16}{3} square units.",
         "hintsLatex": [
-          "This integral requires integration by parts.",
-          "Choose $u=x$ and $dv=\\cos(3x) \\, dx$.",
-          "Recall the formula for integration by parts: \\int u \\, dv = uv - \\int v \\, du."
+          "Remember that the area under a curve is found by evaluating a definite integral.",
+          "Integrate the function y = 4 - x^2 with respect to x.",
+          "Evaluate the integral from the lower limit x=0 to the upper limit x=2."
         ],
         "topicsCovered": [
-          "Integration by Parts",
-          "Integration of Trigonometric Functions"
+          "Area Under a Curve",
+          "Definite Integrals"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Integration",
-        "funFact": "Integration by parts is essentially the reverse of the product rule for differentiation, revealing the deep connection between these two fundamental calculus operations."
+        "funFact": "Integral calculus is not just for math; it's essential for engineers to calculate things like the volume of a reservoir, the stress on a bridge, or even the work done by a varying force!"
       },
       "Easy": {
-        "id": "int-e-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Evaluate the indefinite integral: \\int (3e^{2x} + \\frac{1}{x}) \\, dx",
+        "id": "int-e-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Welcome, brilliant mathematicians! Let's kick off our day with a warm-up! Find the indefinite integral of the polynomial function: \\int (3x^2 - 4x + 5) \\, dx.",
         "possibleAnswers": [
-          "3/2 e^(2x) + ln|x| + C",
-          "1.5 e^(2x) + ln|x| + C",
-          "3/2e^(2x) + ln|x| + C",
-          "1.5e^(2x) + ln|x| + C",
-          "3/2 e^2x + ln x + C",
-          "3/2 exp(2x) + ln(x) + C"
+          "x^3 - 2x^2 + 5x + C",
+          "x^3 - 2x^2 + 5x + c",
+          "x^3-2x^2+5x+C",
+          "x cubed minus 2x squared plus 5x plus C"
         ],
-        "fullSolutionLatex": "To evaluate the integral, we integrate each term separately.\\\\ \\int (3e^{2x} + \\frac{1}{x}) \\, dx = \\int 3e^{2x} \\, dx + \\int \\frac{1}{x} \\, dx \\\\ For the first term, \\int 3e^{2x} \\, dx, we use the rule \\int e^{ax} \\, dx = \\frac{1}{a}e^{ax} + C. \\\\ So, \\int 3e^{2x} \\, dx = 3 \\cdot \\frac{1}{2}e^{2x} = \\frac{3}{2}e^{2x}. \\\\ For the second term, \\int \\frac{1}{x} \\, dx, we know it's \\ln|x|. \\\\ Combining these, we get \\frac{3}{2}e^{2x} + \\ln|x| + C.",
+        "fullSolutionLatex": "To find the indefinite integral of a polynomial, we apply the power rule for integration, which states that \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C. We apply this term by term:\\\\1. \\int 3x^2 \\, dx = 3 \\cdot \\frac{x^{2+1}}{2+1} + C_1 = 3 \\cdot \\frac{x^3}{3} + C_1 = x^3 + C_1\\\\2. \\int -4x \\, dx = -4 \\cdot \\frac{x^{1+1}}{1+1} + C_2 = -4 \\cdot \\frac{x^2}{2} + C_2 = -2x^2 + C_2\\\\3. \\int 5 \\, dx = 5x + C_3\\\\Combining these, we get: \\int (3x^2 - 4x + 5) \\, dx = x^3 - 2x^2 + 5x + C, where C = C_1 + C_2 + C_3 is the constant of integration.",
         "hintsLatex": [
-          "Recall the integration rule for \\int e^{ax} \\, dx.",
-          "Remember the integration rule for \\int \\frac{1}{x} \\, dx.",
-          "Don't forget the constant of integration, +C."
+          "Remember the power rule for integration: \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C.",
+          "Integrate each term of the polynomial separately.",
+          "Don't forget the constant of integration, C!"
         ],
         "topicsCovered": [
-          "Integration of Exponentials",
-          "Integration of Rational Functions"
+          "Indefinite Integrals of Polynomials"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Integration",
-        "funFact": "The number 'e' is also known as Euler's number, named after the Swiss mathematician Leonhard Euler, and it appears naturally in continuous growth processes."
+        "funFact": "The elongated 'S' symbol for integration was introduced by Gottfried Wilhelm Leibniz in the late 17th century, representing 'summa' or 'sum' of infinitesimal parts!"
       }
     },
     "Differentiation": {
       "Hard": {
-        "id": "diff-h-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "A rectangular box with a square base has a total surface area of $150 \\, \\text{cm}^2$. Find the maximum possible volume of the box.",
+        "id": "diff-h-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Absolutely brilliant! For our final differentiation challenge, let's explore a more intricate curve. Given the equation x^2 + y^2 = 25, use implicit differentiation to find \\frac{dy}{dx} at the point (3, 4).",
         "possibleAnswers": [
-          "125 cm^3",
-          "125",
-          "125.0 cm^3",
-          "125.0"
+          "-3/4",
+          "-0.75",
+          "minus 3 over 4"
         ],
-        "fullSolutionLatex": "Let the side length of the square base be $x$ cm and the height of the box be $h$ cm. \\\\ The surface area (A) of the box is given by: \\\\ $A = 2x^2 + 4xh$. (Two square bases, four rectangular sides) \\\\ We are given $A = 150 \\, \\text{cm}^2$, so $150 = 2x^2 + 4xh$. \\\\ We need to express $h$ in terms of $x$: \\\\ $4xh = 150 - 2x^2$ \\\\ $h = \\frac{150 - 2x^2}{4x} = \\frac{75 - x^2}{2x}$. \\\\ The volume (V) of the box is given by: \\\\ $V = x^2h$. \\\\ Substitute the expression for $h$ into the volume equation: \\\\ $V = x^2 \\left(\\frac{75 - x^2}{2x}\\right) = \\frac{x(75 - x^2)}{2} = \\frac{75x - x^3}{2}$. \\\\ To find the maximum volume, we differentiate $V$ with respect to $x$ and set it to zero. \\\\ $\\frac{dV}{dx} = \\frac{1}{2}(75 - 3x^2)$. \\\\ Set $\\frac{dV}{dx} = 0$: \\\\ $\\frac{1}{2}(75 - 3x^2) = 0$ \\\\ $75 - 3x^2 = 0$ \\\\ $3x^2 = 75$ \\\\ $x^2 = 25$ \\\\ $x = 5$ (Since length must be positive). \\\\ To confirm this is a maximum, we can find the second derivative: \\\\ $\\frac{d^2V}{dx^2} = \\frac{1}{2}(-6x) = -3x$. \\\\ For $x=5$, $\\frac{d^2V}{dx^2} = -3(5) = -15 < 0$, which confirms it's a maximum. \\\\ Now, substitute $x=5$ back into the volume equation: \\\\ $V = \\frac{75(5) - (5)^3}{2} = \\frac{375 - 125}{2} = \\frac{250}{2} = 125$. \\\\ The maximum possible volume of the box is $125 \\, \\text{cm}^3$.",
+        "fullSolutionLatex": "The equation x^2 + y^2 = 25 defines a circle. To find \\frac{dy}{dx}, we differentiate both sides of the equation with respect to x.\\\\ \\frac{d}{dx}(x^2) + \\frac{d}{dx}(y^2) = \\frac{d}{dx}(25)\\\\For x^2, the derivative is 2x.\\\\For y^2, we must use the chain rule, treating y as a function of x: \\frac{d}{dx}(y^2) = 2y \\frac{dy}{dx}.\\\\For 25 (a constant), the derivative is 0.\\\\So, we get: 2x + 2y \\frac{dy}{dx} = 0\\\\Now, solve for \\frac{dy}{dx}:\\\\ 2y \\frac{dy}{dx} = -2x\\\\ \\frac{dy}{dx} = \\frac{-2x}{2y}\\\\ \\frac{dy}{dx} = -\\frac{x}{y}\\\\Finally, substitute the given point (3, 4) into the expression for \\frac{dy}{dx}:\\\\ \\frac{dy}{dx} \\text{ at } (3, 4) = -\\frac{3}{4}.\\\\The gradient of the tangent to the circle at (3, 4) is -\\frac{3}{4}.",
         "hintsLatex": [
-          "Express the height of the box in terms of the base side length using the surface area constraint.",
-          "Formulate the volume of the box as a function of a single variable.",
-          "Differentiate the volume function, set it to zero, and solve for the variable to find the critical point."
+          "Differentiate both sides of the equation with respect to x.",
+          "Remember to use the chain rule when differentiating terms involving y, treating y as a function of x (e.g., \\frac{d}{dx}(y^n) = ny^{n-1} \\frac{dy}{dx}).",
+          "After finding a general expression for \\frac{dy}{dx}, substitute the coordinates of the given point."
         ],
         "topicsCovered": [
-          "Optimization Problems",
-          "Stationary Points",
-          "Second Derivatives"
+          "Implicit Differentiation",
+          "Tangents to Curves"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Differentiation",
-        "funFact": "Optimization problems, like this box volume puzzle, are fundamental in engineering and economics, helping design efficient structures and maximize profits."
+        "funFact": "Implicit differentiation allows us to find gradients for curves that aren't easily expressed as y = f(x), opening up a whole new world of shapes and their slopes, like the beautiful curves of an ellipse or a hyperbola!"
       },
       "Medium": {
-        "id": "diff-m-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Error generating problem.",
+        "id": "diff-m-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Splendid! Now, let's combine our rules. Find \\frac{dy}{dx} if y = x^2 e^{3x}. You'll need a specific rule here!",
         "possibleAnswers": [
-          "(1,2) and (3,-2)",
-          "(1, 2) and (3, -2)",
-          "x=1, y=2; x=3, y=-2",
-          "stationary points are (1,2) and (3,-2)"
+          "2xe^{3x} + 3x^2e^{3x}",
+          "e^{3x}(2x + 3x^2)",
+          "e^(3x)(2x + 3x^2)",
+          "2xe^(3x) + 3x^2e^(3x)"
         ],
-        "fullSolutionLatex": "To find stationary points, we need to find the values of $x$ for which $\\frac{dy}{dx} = 0$. \\\\ Given $y = x^3 - 6x^2 + 9x - 2$. \\\\ Differentiate $y$ with respect to $x$: \\\\ $\\frac{dy}{dx} = 3x^2 - 12x + 9$. \\\\ Set $\\frac{dy}{dx} = 0$: \\\\ $3x^2 - 12x + 9 = 0$. \\\\ Divide by 3: \\\\ $x^2 - 4x + 3 = 0$. \\\\ Factorize the quadratic equation: \\\\ $(x-1)(x-3) = 0$. \\\\ This gives $x=1$ or $x=3$. \\\\ Now, substitute these $x$ values back into the original equation for $y$ to find the corresponding $y$ coordinates. \\\\ For $x=1$: \\\\ $y = (1)^3 - 6(1)^2 + 9(1) - 2 = 1 - 6 + 9 - 2 = 2$. \\\\ So, one stationary point is $(1, 2)$. \\\\ For $x=3$: \\\\ $y = (3)^3 - 6(3)^2 + 9(3) - 2 = 27 - 6(9) + 27 - 2 = 27 - 54 + 27 - 2 = -2$. \\\\ So, the other stationary point is $(3, -2)$. \\\\ The stationary points are $(1, 2)$ and $(3, -2)$.",
+        "fullSolutionLatex": "This function is a product of two functions, u = x^2 and v = e^{3x}. We'll use the product rule: \\frac{d}{dx}(uv) = u'v + uv'.\\\\First, find the derivatives of u and v:\\\\u = x^2 \\implies u' = \\frac{d}{dx}(x^2) = 2x\\\\v = e^{3x} \\implies v' = \\frac{d}{dx}(e^{3x}) = 3e^{3x} \\text{ (using the chain rule for } e^{kx})\\\\Now, apply the product rule:\\\\ \\frac{dy}{dx} = (2x)(e^{3x}) + (x^2)(3e^{3x})\\\\ \\frac{dy}{dx} = 2xe^{3x} + 3x^2e^{3x}\\\\We can factor out e^{3x} for a cleaner expression:\\\\ \\frac{dy}{dx} = e^{3x}(2x + 3x^2).",
         "hintsLatex": [
-          "Differentiate the function and set the derivative to zero.",
-          "Solve the resulting quadratic equation for $x$.",
-          "Substitute the $x$ values back into the original function to find the corresponding $y$ coordinates."
+          "Identify the two functions being multiplied together.",
+          "Recall the product rule: \\frac{d}{dx}(uv) = u'v + uv'.",
+          "Remember that \\frac{d}{dx}(e^{kx}) = ke^{kx}."
         ],
         "topicsCovered": [
-          "Stationary Points",
-          "Local Maxima and Minima"
+          "Product Rule",
+          "Differentiation of Exponential Functions"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Differentiation",
-        "funFact": "Stationary points are critical in physics and engineering for identifying equilibrium states or points of maximum/minimum stress in systems."
+        "funFact": "The product rule is crucial for differentiating functions that are combinations of other functions, much like how a chef combines ingredients to create a complex dish!"
       },
       "Easy": {
-        "id": "diff-e-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Differentiate $y = \\ln(x^2 + 5x)$ with respect to $x$.",
+        "id": "diff-e-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Alright, my eager learners, let's differentiate our way through! Our first challenge: Differentiate f(x) = 5x^4 - 2x^3 + 7x - 1 with respect to x.",
         "possibleAnswers": [
-          "(2x+5)/(x^2+5x)",
-          "(2x+5)/(x^2 + 5x)",
-          "2x+5 / (x^2+5x)"
+          "20x^3 - 6x^2 + 7",
+          "20x^3-6x^2+7",
+          "20x cubed minus 6x squared plus 7"
         ],
-        "fullSolutionLatex": "To differentiate $y = \\ln(x^2 + 5x)$, we use the chain rule. \\\\ The chain rule states that if $y = f(g(x))$, then $\\frac{dy}{dx} = f'(g(x)) \\cdot g'(x)$. \\\\ Here, $f(u) = \\ln(u)$ and $u = g(x) = x^2 + 5x$. \\\\ First, differentiate $f(u)$ with respect to $u$: $\\frac{d}{du}(\\ln(u)) = \\frac{1}{u}$. \\\\ Next, differentiate $g(x)$ with respect to $x$: $\\frac{d}{dx}(x^2 + 5x) = 2x + 5$. \\\\ Now, multiply these results: \\\\ $\\frac{dy}{dx} = \\frac{1}{x^2 + 5x} \\cdot (2x + 5) = \\frac{2x+5}{x^2+5x}$.",
+        "fullSolutionLatex": "To differentiate a polynomial function, we apply the power rule for differentiation, which states that \\frac{d}{dx}(x^n) = nx^{n-1}, and the constant multiple rule. We differentiate each term separately:\\\\1. For 5x^4: \\frac{d}{dx}(5x^4) = 5 \\cdot (4x^{4-1}) = 20x^3\\\\2. For -2x^3: \\frac{d}{dx}(-2x^3) = -2 \\cdot (3x^{3-1}) = -6x^2\\\\3. For 7x: \\frac{d}{dx}(7x) = 7 \\cdot (1x^{1-1}) = 7x^0 = 7\\\\4. For -1 (a constant): \\frac{d}{dx}(-1) = 0\\\\Combining these, we get: f'(x) = 20x^3 - 6x^2 + 7.",
         "hintsLatex": [
-          "Apply the chain rule.",
-          "Recall the derivative of $\\ln(u)$.",
-          "Identify the 'inner' and 'outer' functions."
+          "Remember the power rule: \\frac{d}{dx}(x^n) = nx^{n-1}.",
+          "Differentiate each term of the polynomial independently.",
+          "The derivative of a constant is zero."
         ],
         "topicsCovered": [
-          "Differentiation of Logarithmic Functions",
-          "Chain Rule"
+          "Power Rule",
+          "Constant Multiple Rule",
+          "Sum and Difference Rule"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Differentiation",
-        "funFact": "Logarithmic differentiation is particularly useful for differentiating complex functions involving products, quotients, and powers by first taking the natural logarithm of both sides."
+        "funFact": "The power rule is one of the most fundamental rules of differentiation, allowing us to differentiate polynomial functions with ease, much like learning the alphabet before writing a novel!"
       }
     },
     "Further Math (9231)": {
       "Hard": {
-        "id": "fm-h-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Prove by induction that $\\sum_{r=1}^{n} r^2 = \\frac{n(n+1)(2n+1)}{6}$ for all positive integers $n$.",
+        "id": "fm-h-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Absolutely brilliant! For our ultimate Further Maths complex challenge, let's explore the heart of linear transformations. Find the eigenvalues of the matrix A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}.",
         "possibleAnswers": [
-          "Proof by induction",
-          "Proved by induction"
+          "1, 3",
+          "3, 1",
+          "(1,3)",
+          "(3,1)",
+          "lambda = 1 and lambda = 3"
         ],
-        "fullSolutionLatex": "Let $P(n)$ be the statement $\\sum_{r=1}^{n} r^2 = \\frac{n(n+1)(2n+1)}{6}$. \\\\ **Base Case (n=1):** \\\\ Left Hand Side (LHS): $\\sum_{r=1}^{1} r^2 = 1^2 = 1$. \\\\ Right Hand Side (RHS): $\\frac{1(1+1)(2(1)+1)}{6} = \\frac{1(2)(3)}{6} = \\frac{6}{6} = 1$. \\\\ Since LHS = RHS, $P(1)$ is true. \\\\ **Inductive Hypothesis:** \\\\ Assume $P(k)$ is true for some positive integer $k$. That is, assume: \\\\ $\\sum_{r=1}^{k} r^2 = \\frac{k(k+1)(2k+1)}{6}$. \\\\ **Inductive Step (n=k+1):** \\\\ We need to show that $P(k+1)$ is true, i.e., $\\sum_{r=1}^{k+1} r^2 = \\frac{(k+1)((k+1)+1)(2(k+1)+1)}{6} = \\frac{(k+1)(k+2)(2k+3)}{6}$. \\\\ Start with the LHS of $P(k+1)$: \\\\ $\\sum_{r=1}^{k+1} r^2 = \\left(\\sum_{r=1}^{k} r^2\\right) + (k+1)^2$ \\\\ Using the inductive hypothesis, substitute the sum up to $k$: \\\\ $= \\frac{k(k+1)(2k+1)}{6} + (k+1)^2$ \\\\ Factor out $(k+1)$: \\\\ $= (k+1) \\left[ \\frac{k(2k+1)}{6} + (k+1) \\right]$ \\\\ Find a common denominator for the terms inside the bracket: \\\\ $= (k+1) \\left[ \\frac{k(2k+1) + 6(k+1)}{6} \\right]$ \\\\ Expand and simplify the numerator: \\\\ $= (k+1) \\left[ \\frac{2k^2 + k + 6k + 6}{6} \\right]$ \\\\ $= (k+1) \\left[ \\frac{2k^2 + 7k + 6}{6} \\right]$ \\\\ Factor the quadratic $2k^2 + 7k + 6$. We need two numbers that multiply to $12$ and add to $7$, which are $3$ and $4$. \\\\ $2k^2 + 4k + 3k + 6 = 2k(k+2) + 3(k+2) = (2k+3)(k+2)$. \\\\ Substitute this back: \\\\ $= \\frac{(k+1)(k+2)(2k+3)}{6}$. \\\\ This is the RHS of $P(k+1)$. \\\\ Since $P(1)$ is true and $P(k) \\implies P(k+1)$, by the principle of mathematical induction, $P(n)$ is true for all positive integers $n$.",
+        "fullSolutionLatex": "To find the eigenvalues (\\lambda) of a matrix A, we solve the characteristic equation det(A - \\lambda I) = 0, where I is the identity matrix.\\\\Given A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}.\\\\The identity matrix I = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}.\\\\So, A - \\lambda I = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix} - \\lambda \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 2 - \\lambda & 1 \\\\ 1 & 2 - \\lambda \\end{pmatrix}.\\\\Now, calculate the determinant:\\\\det(A - \\lambda I) = (2 - \\lambda)(2 - \\lambda) - (1)(1)\\\\ = (2 - \\lambda)^2 - 1\\\\ = (4 - 4\\lambda + \\lambda^2) - 1\\\\ = \\lambda^2 - 4\\lambda + 3\\\\Set the determinant to zero to find the eigenvalues:\\\\ \\lambda^2 - 4\\lambda + 3 = 0\\\\Factor the quadratic equation:\\\\ (\\lambda - 1)(\\lambda - 3) = 0\\\\This gives us two eigenvalues:\\\\ \\lambda - 1 = 0 \\implies \\lambda_1 = 1\\\\ \\lambda - 3 = 0 \\implies \\lambda_2 = 3\\\\The eigenvalues of the matrix A are 1 and 3.",
         "hintsLatex": [
-          "Establish the base case for $n=1$.",
-          "Assume the formula holds for $n=k$ (inductive hypothesis).",
-          "Prove it holds for $n=k+1$ by adding the $(k+1)$-th term and manipulating the expression to match the formula for $n=k+1$."
-        ],
-        "topicsCovered": [
-          "Mathematical Induction",
-          "Summation Notation"
-        ],
-        "difficultyLevel": "Hard",
-        "problemType": "Further Math (9231)",
-        "funFact": "Mathematical induction is a powerful proof technique that allows mathematicians to establish the truth of a statement for an infinite sequence of natural numbers, starting from a single base case."
-      },
-      "Medium": {
-        "id": "fm-m-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Solve the first-order differential equation $\\frac{dy}{dx} = y \\tan(x)$, given that $y=1$ when $x=0$.",
-        "possibleAnswers": [
-          "y = sec(x)",
-          "y = 1/cos(x)",
-          "y=sec(x)",
-          "y=1/cos(x)"
-        ],
-        "fullSolutionLatex": "This is a separable differential equation. \\\\ $\\frac{dy}{dx} = y \\tan(x)$ \\\\ Separate the variables: \\\\ $\\frac{1}{y} \\, dy = \\tan(x) \\, dx$ \\\\ Integrate both sides: \\\\ $\\int \\frac{1}{y} \\, dy = \\int \\tan(x) \\, dx$ \\\\ $\\ln|y| = \\ln|\\sec(x)| + C$ \\\\ (Recall that $\\int \\tan(x) \\, dx = \\ln|\\sec(x)| + C$) \\\\ To find $C$, use the initial condition $y=1$ when $x=0$: \\\\ $\\ln|1| = \\ln|\\sec(0)| + C$ \\\\ $\\ln(1) = \\ln(1) + C$ \\\\ $0 = 0 + C$, so $C=0$. \\\\ Substitute $C=0$ back into the general solution: \\\\ $\\ln|y| = \\ln|\\sec(x)|$ \\\\ Exponentiate both sides: \\\\ $|y| = |\\sec(x)|$ \\\\ Since $y=1$ (positive) at $x=0$, we take the positive root: \\\\ $y = \\sec(x)$.",
-        "hintsLatex": [
-          "Separate the variables $y$ and $x$ to opposite sides of the equation.",
-          "Integrate both sides of the equation.",
-          "Use the given initial condition to find the constant of integration."
-        ],
-        "topicsCovered": [
-          "Differential Equations (First Order)",
-          "Separable Differential Equations"
-        ],
-        "difficultyLevel": "Medium",
-        "problemType": "Further Math (9231)",
-        "funFact": "Differential equations are the language of change, describing phenomena from population growth and spread of diseases to the motion of planets and the flow of heat."
-      },
-      "Easy": {
-        "id": "fm-e-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Given matrices $\\mathbf{A} = \\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix}$ and $\\mathbf{B} = \\begin{pmatrix} 1 & -1 \\\\ 4 & 0 \\end{pmatrix}$, find the matrix product $\\mathbf{AB}$.",
-        "possibleAnswers": [
-          "[[6, -2], [12, 0]]",
-          "((6, -2), (12, 0))",
-          "matrix(6, -2; 12, 0)",
-          "{{6, -2}, {12, 0}}"
-        ],
-        "fullSolutionLatex": "To find the matrix product $\\mathbf{AB}$, we multiply the rows of $\\mathbf{A}$ by the columns of $\\mathbf{B}$. \\\\ $\\mathbf{A} = \\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix}$, $\\mathbf{B} = \\begin{pmatrix} 1 & -1 \\\\ 4 & 0 \\end{pmatrix}$ \\\\ The element in the first row, first column of $\\mathbf{AB}$ is: \\\\ $(2 \\times 1) + (1 \\times 4) = 2 + 4 = 6$. \\\\ The element in the first row, second column of $\\mathbf{AB}$ is: \\\\ $(2 \\times -1) + (1 \\times 0) = -2 + 0 = -2$. \\\\ The element in the second row, first column of $\\mathbf{AB}$ is: \\\\ $(0 \\times 1) + (3 \\times 4) = 0 + 12 = 12$. \\\\ The element in the second row, second column of $\\mathbf{AB}$ is: \\\\ $(0 \\times -1) + (3 \\times 0) = 0 + 0 = 0$. \\\\ So, $\\mathbf{AB} = \\begin{pmatrix} 6 & -2 \\\\ 12 & 0 \\end{pmatrix}$.",
-        "hintsLatex": [
-          "Remember the rule for matrix multiplication: (row by column).",
-          "Multiply corresponding elements and sum the products.",
-          "Ensure the dimensions allow for multiplication (number of columns in first matrix must equal number of rows in second)."
+          "Formulate the characteristic equation: det(A - \\lambda I) = 0, where I is the identity matrix.",
+          "Subtract \\lambda from the main diagonal elements of matrix A.",
+          "Calculate the determinant of the resulting matrix and solve the quadratic equation for \\lambda."
         ],
         "topicsCovered": [
           "Matrices",
-          "Matrix Multiplication"
+          "Determinants",
+          "Eigenvalues and Eigenvectors"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Further Math (9231)",
+        "funFact": "Eigenvalues and eigenvectors are like the 'fingerprints' of a matrix, revealing crucial information about how linear transformations stretch or compress vectors; they are fundamental in fields like data analysis, quantum physics, and even Google's PageRank algorithm!"
+      },
+      "Medium": {
+        "id": "fm-m-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Spectacular! Now, let's wield the power of De Moivre's Theorem! Use De Moivre's Theorem to evaluate (cos(\\frac{\\pi}{6}) + i \\sin(\\frac{\\pi}{6}))^3. Get ready for a neat result!",
+        "possibleAnswers": [
+          "i",
+          "0 + i",
+          "0+i",
+          "0 + 1i",
+          "cos(pi/2) + i sin(pi/2)"
+        ],
+        "fullSolutionLatex": "De Moivre's Theorem states that for any real number n and any complex number in polar form cos(\\theta) + i sin(\\theta), we have:\\\\(cos(\\theta) + i \\sin(\\theta))^n = cos(n\\theta) + i \\sin(n\\theta)\\\\In this problem, we have \\theta = \\frac{\\pi}{6} and n = 3.\\\\So, we can apply the theorem directly:\\\\(cos(\\frac{\\pi}{6}) + i \\sin(\\frac{\\pi}{6}))^3 = cos(3 \\cdot \\frac{\\pi}{6}) + i \\sin(3 \\cdot \\frac{\\pi}{6})\\\\ = cos(\\frac{3\\pi}{6}) + i \\sin(\\frac{3\\pi}{6})\\\\ = cos(\\frac{\\pi}{2}) + i \\sin(\\frac{\\pi}{2})\\\\Now, we evaluate the trigonometric values:\\\\cos(\\frac{\\pi}{2}) = 0\\\\ \\sin(\\frac{\\pi}{2}) = 1\\\\Therefore, the expression evaluates to:\\\\0 + i(1) = i\\\\The result is the imaginary unit i.",
+        "hintsLatex": [
+          "Recall De Moivre's Theorem: (cos(\\theta) + i \\sin(\\theta))^n = cos(n\\theta) + i \\sin(n\\theta).",
+          "Multiply the argument (angle) by the power.",
+          "Evaluate the resulting trigonometric functions for the new angle."
+        ],
+        "topicsCovered": [
+          "De Moivre’s Theorem",
+          "Complex Numbers (Polar Form)"
+        ],
+        "difficultyLevel": "Medium",
+        "problemType": "Further Math (9231)",
+        "funFact": "De Moivre's Theorem elegantly connects complex numbers with trigonometry, making it a powerhouse for finding powers and roots of complex numbers, and it's even used in deriving trigonometric identities!"
+      },
+      "Easy": {
+        "id": "fm-e-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Alright, Further Maths enthusiasts, let's conquer complex numbers! Find the modulus and principal argument of the complex number z = 1 + i. Let's get those \\rho e^{i\\theta} forms ready!",
+        "possibleAnswers": [
+          "modulus = sqrt(2), arg = pi/4",
+          "sqrt(2), pi/4",
+          "1.414, 0.785",
+          "sqrt(2) and pi/4",
+          "rho = sqrt(2), theta = pi/4"
+        ],
+        "fullSolutionLatex": "Given the complex number z = 1 + i, we have the real part x = 1 and the imaginary part y = 1.\\\\1. Modulus (r or |z|):\\\\The modulus is the distance from the origin to the point (x, y) in the Argand diagram. It's calculated as r = \\sqrt{x^2 + y^2}.\\\\r = \\sqrt{1^2 + 1^2} = \\sqrt{1 + 1} = \\sqrt{2}\\\\2. Principal Argument (\\theta or arg(z)):\\\\The principal argument is the angle between the positive real axis and the line connecting the origin to the point (x, y), measured counter-clockwise. It lies in the range (-\\pi, \\pi].\\\\Since x > 0 and y > 0, the complex number is in the first quadrant.\\\\ \\tan(\\theta) = \\frac{y}{x} = \\frac{1}{1} = 1\\\\ \\theta = \\arctan(1)\\\\ \\theta = \\frac{\\pi}{4} \\text{ radians (or } 45^\\circ)\\\\So, the modulus is \\sqrt{2} and the principal argument is \\frac{\\pi}{4}.",
+        "hintsLatex": [
+          "Represent the complex number z = x + iy on an Argand diagram.",
+          "The modulus is the distance from the origin: |z| = \\sqrt{x^2 + y^2}.",
+          "The argument is the angle \\theta such that \\tan \\theta = y/x. Pay attention to the quadrant to ensure you find the principal argument."
+        ],
+        "topicsCovered": [
+          "Complex Numbers (Basic Operations)",
+          "Argand Diagrams",
+          "Modulus and Argument"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Math (9231)",
-        "funFact": "Matrices, first systematically developed in the mid-19th century, are fundamental to computer graphics, quantum mechanics, and solving systems of linear equations."
+        "funFact": "Complex numbers, once considered 'imaginary' and purely theoretical, are now indispensable in fields like electrical engineering (for alternating current analysis), quantum mechanics, and signal processing, making the seemingly 'imaginary' very real in applications!"
       }
     },
     "Mathematics (9709)": {
       "Hard": {
-        "id": "math-h-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Find the first three terms, in ascending powers of $x$, of the binomial expansion of $(1+2x)^{-2}$. State the range of values of $x$ for which the expansion is valid.",
+        "id": "math-h-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Wonderful! Let's elevate our geometry skills. Find the equation of the tangent to the circle x^2 + y^2 = 25 at the point (3, 4). This combines circles and lines beautifully!",
         "possibleAnswers": [
-          "1 - 4x + 12x^2, valid for |x| < 1/2",
-          "1 - 4x + 12x^2, valid for -1/2 < x < 1/2",
-          "1-4x+12x^2, |x|<1/2",
-          "1 - 4x + 12x^2. Range: -0.5 < x < 0.5"
+          "3x + 4y = 25",
+          "y = -3/4 x + 25/4",
+          "y = -0.75x + 6.25",
+          "4y = -3x + 25"
         ],
-        "fullSolutionLatex": "We use the binomial expansion for $(1+ax)^n = 1 + n(ax) + \\frac{n(n-1)}{2!}(ax)^2 + \\dots$, which is valid for $|ax| < 1$. \\\\ Here, $a=2$ and $n=-2$. \\\\ First term: $1$. \\\\ Second term: $n(ax) = (-2)(2x) = -4x$. \\\\ Third term: $\\frac{n(n-1)}{2!}(ax)^2 = \\frac{(-2)(-2-1)}{2 \\times 1}(2x)^2 = \\frac{(-2)(-3)}{2}(4x^2) = \\frac{6}{2}(4x^2) = 3(4x^2) = 12x^2$. \\\\ So the first three terms are $1 - 4x + 12x^2$. \\\\ The expansion is valid when $|ax| < 1$. \\\\ In this case, $|2x| < 1$. \\\\ This implies $-1 < 2x < 1$. \\\\ Dividing by 2, we get $-\\frac{1}{2} < x < \\frac{1}{2}$. \\\\ Or, in modulus notation, $|x| < \\frac{1}{2}$.",
+        "fullSolutionLatex": "There are a couple of ways to approach this, let's use the property that the tangent to a circle is perpendicular to the radius at the point of tangency.\\\\1. The center of the circle x^2 + y^2 = 25 is (0, 0).\\\\2. The radius connects the center (0, 0) to the point of tangency (3, 4).\\\\3. Calculate the gradient of the radius (m_r):\\\\m_r = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{4 - 0}{3 - 0} = \\frac{4}{3}\\\\4. The tangent line is perpendicular to the radius. So, the gradient of the tangent (m_t) is the negative reciprocal of m_r:\\\\m_t = -\\frac{1}{m_r} = -\\frac{1}{4/3} = -\\frac{3}{4}\\\\5. Now we have the gradient of the tangent and a point (3, 4) it passes through. Use the point-slope form of a line: y - y_1 = m(x - x_1)\\\\y - 4 = -\\frac{3}{4}(x - 3)\\\\Multiply by 4 to clear the fraction:\\\\4(y - 4) = -3(x - 3)\\\\4y - 16 = -3x + 9\\\\Rearrange to the general form Ax + By = C:\\\\3x + 4y = 9 + 16\\\\3x + 4y = 25\\\\This is the equation of the tangent.",
         "hintsLatex": [
-          "Recall the binomial expansion formula for $(1+ax)^n$ where $n$ is not a positive integer.",
-          "Carefully calculate each term, paying attention to signs.",
-          "Remember the condition for the validity of the expansion, which involves $|ax| < 1$."
-        ],
-        "topicsCovered": [
-          "Binomial Expansion (Fractional Index)",
-          "Inequalities"
-        ],
-        "difficultyLevel": "Hard",
-        "problemType": "Mathematics (9709)",
-        "funFact": "Newton generalized the binomial theorem to include fractional and negative exponents, a breakthrough that significantly expanded the power of calculus and series expansions."
-      },
-      "Medium": {
-        "id": "math-m-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "A circle has the equation $x^2 + y^2 - 6x + 4y - 12 = 0$. Find its radius and the coordinates of its centre.",
-        "possibleAnswers": [
-          "Centre (3,-2), Radius 5",
-          "radius 5, centre (3,-2)",
-          "r=5, c=(3,-2)",
-          "centre (3,-2) and radius is 5"
-        ],
-        "fullSolutionLatex": "The general equation of a circle is $(x-a)^2 + (y-b)^2 = r^2$, where $(a,b)$ is the centre and $r$ is the radius. \\\\ We can convert the given equation into this form by completing the square. \\\\ $x^2 + y^2 - 6x + 4y - 12 = 0$ \\\\ Group $x$ terms and $y$ terms: \\\\ $(x^2 - 6x) + (y^2 + 4y) = 12$ \\\\ Complete the square for $x$: $(x^2 - 6x + (\\frac{-6}{2})^2) = (x^2 - 6x + 9) = (x-3)^2$. \\\\ Complete the square for $y$: $(y^2 + 4y + (\\frac{4}{2})^2) = (y^2 + 4y + 4) = (y+2)^2$. \\\\ Add the constants we added to both sides of the equation: \\\\ $(x^2 - 6x + 9) + (y^2 + 4y + 4) = 12 + 9 + 4$ \\\\ $(x-3)^2 + (y+2)^2 = 25$ \\\\ Comparing this to $(x-a)^2 + (y-b)^2 = r^2$: \\\\ The centre is $(a,b) = (3, -2)$. \\\\ The radius squared is $r^2 = 25$, so the radius $r = \\sqrt{25} = 5$.",
-        "hintsLatex": [
-          "Rearrange the terms to group $x$ terms and $y$ terms.",
-          "Complete the square for both the $x$ terms and the $y$ terms.",
-          "Compare the resulting equation to the standard form of a circle $(x-a)^2 + (y-b)^2 = r^2$."
+          "Remember that the tangent to a circle is perpendicular to the radius at the point of tangency.",
+          "First, find the gradient of the radius connecting the center of the circle (0,0) to the point (3,4).",
+          "Then, use the negative reciprocal to find the gradient of the tangent, and use the point-slope form (y - y1 = m(x - x1)) to find the equation of the line."
         ],
         "topicsCovered": [
           "Coordinate Geometry of Circles",
-          "Completing the Square"
+          "Tangents to Curves"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Mathematics (9709)",
+        "funFact": "The tangent to a circle is always perpendicular to the radius at the point of tangency, a beautiful geometric property that has applications in optics (how light reflects off curved surfaces) and even in designing gears!"
+      },
+      "Medium": {
+        "id": "math-m-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Excellent grasp of quadratics! Now, let's venture into sequences. The first term of a geometric progression is 10 and the common ratio is 0.5. Find the sum to infinity of this progression. What a fascinating concept!",
+        "possibleAnswers": [
+          "20",
+          "20.0",
+          "twenty"
+        ],
+        "fullSolutionLatex": "For a geometric progression to have a sum to infinity, the absolute value of its common ratio, r, must be less than 1 (i.e., |r| < 1). In this case, r = 0.5, so |0.5| < 1, and a sum to infinity exists.\\\\The formula for the sum to infinity (S_\\infty) of a geometric progression is:\\\\S_\\infty = \\frac{a}{1 - r}\\\\where 'a' is the first term and 'r' is the common ratio.\\\\Given: a = 10 and r = 0.5.\\\\Substitute these values into the formula:\\\\S_\\infty = \\frac{10}{1 - 0.5}\\\\S_\\infty = \\frac{10}{0.5}\\\\S_\\infty = 20\\\\The sum to infinity of the geometric progression is 20.",
+        "hintsLatex": [
+          "Recall the formula for the sum to infinity of a geometric progression.",
+          "Ensure that the common ratio satisfies the condition for convergence (|r| < 1).",
+          "Substitute the given first term and common ratio into the formula."
+        ],
+        "topicsCovered": [
+          "Geometric Progressions",
+          "Sum to Infinity"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mathematics (9709)",
-        "funFact": "Circles have been studied since ancient times, with Euclid dedicating an entire book of his 'Elements' to their properties, forming the basis of classical geometry."
+        "funFact": "Geometric progressions can model phenomena like radioactive decay, the bouncing height of a ball, or even the diminishing returns of a repeating economic investment, where each successive term is a constant multiple of the previous one!"
       },
       "Easy": {
-        "id": "math-e-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "Find the coefficient of $x^3$ in the expansion of $(2+x)^5$.",
+        "id": "math-e-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Alright, 9709 scholars, let's dive into some core algebra! Express the quadratic expression x^2 - 6x + 11 in the form (x+a)^2 + b. This technique is super useful!",
         "possibleAnswers": [
-          "40",
-          "40x^3"
+          "(x-3)^2 + 2",
+          "(x-3)^2+2",
+          "(x-3)(x-3)+2",
+          "x minus 3 all squared plus 2"
         ],
-        "fullSolutionLatex": "We use the binomial expansion formula $(a+b)^n = \\sum_{r=0}^{n} \\binom{n}{r} a^{n-r} b^r$. \\\\ In this case, $a=2$, $b=x$, and $n=5$. \\\\ We want the term with $x^3$, so we set $r=3$. \\\\ The term is $\\binom{5}{3} (2)^{5-3} (x)^3$. \\\\ Calculate $\\binom{5}{3}$: \\\\ $\\binom{5}{3} = \\frac{5!}{3!(5-3)!} = \\frac{5!}{3!2!} = \\frac{5 \\times 4}{2 \\times 1} = 10$. \\\\ Substitute this back into the term: \\\\ $10 \\cdot (2)^2 \\cdot x^3$ \\\\ $10 \\cdot 4 \\cdot x^3$ \\\\ $40x^3$. \\\\ The coefficient of $x^3$ is $40$.",
+        "fullSolutionLatex": "To express x^2 - 6x + 11 in the form (x+a)^2 + b, we use the method of completing the square.\\\\1. Take the coefficient of x, which is -6.\\\\2. Halve it: -6 / 2 = -3.\\\\3. Square it: (-3)^2 = 9.\\\\Now, rewrite the expression by adding and subtracting this squared value:\\\\x^2 - 6x + 11 = (x^2 - 6x + 9) - 9 + 11\\\\The terms in the parenthesis form a perfect square trinomial:\\\\(x^2 - 6x + 9) = (x - 3)^2\\\\So, the expression becomes:\\\\(x - 3)^2 - 9 + 11\\\\(x - 3)^2 + 2\\\\Thus, a = -3 and b = 2.",
         "hintsLatex": [
-          "Use the binomial theorem formula for $(a+b)^n$.",
-          "Identify $a$, $b$, $n$, and the power of $x$ you need ($r$).",
-          "Calculate the binomial coefficient $\\binom{n}{r}$."
+          "Focus on the x^2 and x terms first: x^2 - 6x.",
+          "Take half of the coefficient of x and square it.",
+          "Add and subtract this value to maintain the equality, then group the perfect square."
         ],
         "topicsCovered": [
-          "Binomial Expansion (Positive Integer)"
+          "Quadratic Functions",
+          "Completing the Square"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mathematics (9709)",
-        "funFact": "The coefficients in a binomial expansion are famously found in Pascal's Triangle, a numerical pattern with deep connections across mathematics, from probability to fractals."
+        "funFact": "Completing the square is not just for solving quadratics; it's also fundamental for understanding and sketching conic sections like circles, parabolas, ellipses, and hyperbolas by rewriting their equations into standard forms!"
       }
     },
     "Further Mechanics (9231)": {
       "Hard": {
-        "id": "fmech-h-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "A uniform lamina is in the shape of a right-angled triangle with vertices at $(0,0)$, $(a,0)$, and $(0,b)$. Find the coordinates of its centre of mass.",
+        "id": "fmech-h-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Absolutely fantastic! For our ultimate Further Mechanics challenge, let's delve into oscillations. A particle undergoes Simple Harmonic Motion (SHM) with amplitude 0.1 m and period 2\\pi seconds. Find its maximum speed and its speed when its displacement is 0.05 m. Let's make it oscillate!",
         "possibleAnswers": [
-          "(a/3, b/3)",
-          "(a/3, b/3) cm",
-          "x=a/3, y=b/3",
-          "(0.333a, 0.333b)"
+          "Max speed = 0.1 m/s, Speed at 0.05m = 0.0866 m/s",
+          "0.1, 0.0866",
+          "0.1 m/s, sqrt(3)/20 m/s",
+          "0.1 m/s, 0.08660 m/s",
+          "0.1 and 0.0866"
         ],
-        "fullSolutionLatex": "For a uniform lamina, the centre of mass can be found by integrating the moments. For a triangle, there's a simpler geometric approach. \\\\ The centre of mass (centroid) of a triangle is the intersection of its medians. \\\\ The vertices are $A=(0,0)$, $B=(a,0)$, and $C=(0,b)$. \\\\ The median from $A$ to the midpoint of $BC$ passes through $(\\frac{a+0}{2}, \\frac{0+b}{2}) = (\\frac{a}{2}, \\frac{b}{2})$. \\\\ The median from $B$ to the midpoint of $AC$ passes through $(\\frac{0+0}{2}, \\frac{0+b}{2}) = (0, \\frac{b}{2})$. \\\\ The median from $C$ to the midpoint of $AB$ passes through $(\\frac{0+a}{2}, \\frac{0+0}{2}) = (\\frac{a}{2}, 0)$. \\\\ For a general triangle with vertices $(x_1, y_1)$, $(x_2, y_2)$, $(x_3, y_3)$, the centre of mass $(\\bar{x}, \\bar{y})$ is given by: \\\\ $\\bar{x} = \\frac{x_1+x_2+x_3}{3}$ \\\\ $\\bar{y} = \\frac{y_1+y_2+y_3}{3}$ \\\\ Using the given vertices: \\\\ $\\bar{x} = \\frac{0+a+0}{3} = \\frac{a}{3}$ \\\\ $\\bar{y} = \\frac{0+0+b}{3} = \\frac{b}{3}$ \\\\ So, the centre of mass is at $(\\frac{a}{3}, \\frac{b}{3})$.",
+        "fullSolutionLatex": "For a particle undergoing Simple Harmonic Motion (SHM):\\\\Given: Amplitude A = 0.1 m, Period T = 2\\pi s.\\\\1. Angular frequency (\\omega):\\\\The period T is related to the angular frequency \\omega by T = \\frac{2\\pi}{\\omega}.\\\\So, \\omega = \\frac{2\\pi}{T} = \\frac{2\\pi}{2\\pi} = 1 \\text{ rad/s}.\\\\2. Maximum Speed (v_\\text{max}):\\\\The maximum speed in SHM is given by v_\\text{max} = A\\omega.\\\\v_\\text{max} = (0.1 \\text{ m})(1 \\text{ rad/s}) = 0.1 \\text{ m/s}.\\\\3. Speed (v) at a given displacement (x):\\\\The general formula for speed in SHM is v = \\pm \\omega \\sqrt{A^2 - x^2}.\\\\We need to find the speed when x = 0.05 m.\\\\v = (1 \\text{ rad/s}) \\sqrt{(0.1 \\text{ m})^2 - (0.05 \\text{ m})^2}\\\\v = \\sqrt{0.01 - 0.0025}\\\\v = \\sqrt{0.0075}\\\\v = \\sqrt{\\frac{75}{10000}} = \\sqrt{\\frac{3 \\cdot 25}{100 \\cdot 100}} = \\frac{5\\sqrt{3}}{100} = \\frac{\\sqrt{3}}{20}\\\\v \\approx \\frac{1.732}{20} \\approx 0.0866 \\text{ m/s}.\\\\So, the maximum speed is 0.1 m/s, and the speed when the displacement is 0.05 m is \\frac{\\sqrt{3}}{20} \\approx 0.0866 \\text{ m/s}.",
         "hintsLatex": [
-          "Recall the formula for the centroid (centre of mass) of a triangle given its vertices.",
-          "Alternatively, consider integrating to find the moments, but there's a simpler formula.",
-          "The centroid is the average of the coordinates of the vertices."
-        ],
-        "topicsCovered": [
-          "Centre of Mass (2D and 3D)"
-        ],
-        "difficultyLevel": "Hard",
-        "problemType": "Further Mechanics (9231)",
-        "funFact": "The concept of the center of mass is crucial for understanding stability and balance in structures and for predicting the motion of complex objects in physics."
-      },
-      "Medium": {
-        "id": "fmech-m-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "A particle moves with simple harmonic motion (SHM) about a fixed point $O$. Its period is $4 \\, \\text{s}$ and its amplitude is $0.5 \\, \\text{m}$. Find the maximum speed of the particle.",
-        "possibleAnswers": [
-          "0.785 m/s",
-          "pi/4 m/s",
-          "0.7854 m/s",
-          "pi/4",
-          "0.25pi m/s",
-          "0.25pi"
-        ],
-        "fullSolutionLatex": "For simple harmonic motion, the angular frequency $\\omega$ is related to the period $T$ by the formula $\\omega = \\frac{2\\pi}{T}$. \\\\ Given period $T = 4 \\, \\text{s}$. \\\\ $\\omega = \\frac{2\\pi}{4} = \\frac{\\pi}{2} \\, \\text{rad/s}$. \\\\ The maximum speed $v_{\\text{max}}$ of a particle in SHM is given by the formula $v_{\\text{max}} = A\\omega$, where $A$ is the amplitude. \\\\ Given amplitude $A = 0.5 \\, \\text{m}$. \\\\ $v_{\\text{max}} = (0.5) \\left(\\frac{\\pi}{2}\\right)$ \\\\ $v_{\\text{max}} = \\frac{\\pi}{4} \\, \\text{m/s}$. \\\\ Numerically, $v_{\\text{max}} \\approx 0.785 \\, \\text{m/s}$.",
-        "hintsLatex": [
-          "First, calculate the angular frequency $\\omega$ using the period.",
-          "Recall the formula for maximum speed in SHM.",
-          "Substitute the amplitude and angular frequency into the maximum speed formula."
+          "First, calculate the angular frequency (\\omega) from the given period (T).",
+          "The maximum speed in SHM is given by the formula v_\\text{max} = A\\omega.",
+          "The speed at a given displacement (x) is found using the formula v = \\omega \\sqrt{A^2 - x^2}."
         ],
         "topicsCovered": [
           "Simple Harmonic Motion",
-          "Angular Velocity and Acceleration"
+          "Advanced Kinematics"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Further Mechanics (9231)",
+        "funFact": "Simple Harmonic Motion describes oscillations that are fundamental to many natural phenomena, from the swinging of a pendulum to the vibrations of atoms in a crystal lattice, and even the oscillating electromagnetic fields that make up light!"
+      },
+      "Medium": {
+        "id": "fmech-m-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Excellent work with circular motion! Now, let's explore a dynamic interaction: A particle A of mass 2 kg moving with velocity (3i - 2j) m/s collides with a particle B of mass 1 kg moving with velocity (-i + 4j) m/s. After the collision, A moves with velocity (i + j) m/s. Find the velocity of B after the collision. Remember momentum is conserved!",
+        "possibleAnswers": [
+          "(3i - 2j) m/s",
+          "3i - 2j",
+          "3i - 2j m/s",
+          "(3, -2)"
+        ],
+        "fullSolutionLatex": "We will use the principle of conservation of momentum, which states that the total momentum of a system remains constant if no external forces act on it. In a collision, the total momentum before the collision equals the total momentum after the collision.\\\\Let m_A, m_B be the masses of particles A and B.\\\\Let u_A, u_B be their velocities before collision.\\\\Let v_A, v_B be their velocities after collision.\\\\Given:\\\\m_A = 2 kg, u_A = (3i - 2j) m/s\\\\m_B = 1 kg, u_B = (-i + 4j) m/s\\\\v_A = (i + j) m/s\\\\We need to find v_B.\\\\Conservation of momentum in vector form: m_A u_A + m_B u_B = m_A v_A + m_B v_B\\\\Substitute the given values:\\\\2(3i - 2j) + 1(-i + 4j) = 2(i + j) + 1(v_B)\\\\(6i - 4j) + (-i + 4j) = (2i + 2j) + v_B\\\\Combine terms on the left side:\\\\(6i - i) + (-4j + 4j) = (2i + 2j) + v_B\\\\5i + 0j = (2i + 2j) + v_B\\\\Now, solve for v_B:\\\\v_B = (5i + 0j) - (2i + 2j)\\\\v_B = (5 - 2)i + (0 - 2)j\\\\v_B = (3i - 2j) m/s\\\\The velocity of particle B after the collision is (3i - 2j) m/s.",
+        "hintsLatex": [
+          "Recall the principle of conservation of momentum in vector form: m_1 u_1 + m_2 u_2 = m_1 v_1 + m_2 v_2.",
+          "Be careful with vector addition and subtraction for the i and j components.",
+          "Solve the resulting vector equation for the unknown velocity."
+        ],
+        "topicsCovered": [
+          "Impulse and Momentum (Advanced)",
+          "Collisions in Two Dimensions"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Simple Harmonic Motion is a fundamental concept in physics, describing oscillations like a pendulum's swing or a mass on a spring, and it forms the basis for understanding waves."
+        "funFact": "The principle of conservation of momentum is a cornerstone of physics, explaining everything from rocket propulsion to billiard ball collisions, and it holds true even in the vastness of space where galaxies collide!"
       },
       "Easy": {
-        "id": "fmech-e-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "A particle of mass $0.5 \\, \\text{kg}$ moves in a horizontal circle of radius $2 \\, \\text{m}$ with a constant speed of $4 \\, \\text{m/s}$. Calculate the centripetal force acting on the particle.",
+        "id": "fmech-e-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Alright, Further Mechanics gurus, prepare for action! A particle of mass 2 kg moves in a horizontal circle of radius 0.5 m with a constant speed of 3 m/s. Calculate the centripetal force acting on the particle. Let's get circular!",
         "possibleAnswers": [
-          "4 N",
-          "4N",
-          "4.0 N",
-          "4.0N"
+          "36 N",
+          "36.0 N",
+          "36 Newtons"
         ],
-        "fullSolutionLatex": "The formula for centripetal force is $F = \\frac{mv^2}{r}$. \\\\ Given: \\\\ Mass $m = 0.5 \\, \\text{kg}$ \\\\ Speed $v = 4 \\, \\text{m/s}$ \\\\ Radius $r = 2 \\, \\text{m}$ \\\\ Substitute the values into the formula: \\\\ $F = \\frac{(0.5)(4^2)}{2}$ \\\\ $F = \\frac{(0.5)(16)}{2}$ \\\\ $F = \\frac{8}{2}$ \\\\ $F = 4 \\, \\text{N}$. \\\\ The centripetal force acting on the particle is $4 \\, \\text{N}$.",
+        "fullSolutionLatex": "The centripetal force (F_c) required to keep an object moving in a circular path is given by the formula:\\\\F_c = \\frac{mv^2}{r}\\\\where:\\\\m = mass of the particle = 2 kg\\\\v = speed of the particle = 3 m/s\\\\r = radius of the circular path = 0.5 m\\\\Substitute the values into the formula:\\\\F_c = \\frac{(2 \\text{ kg})(3 \\text{ m/s})^2}{0.5 \\text{ m}}\\\\F_c = \\frac{2 \\cdot 9}{0.5}\\\\F_c = \\frac{18}{0.5}\\\\F_c = 36 \\text{ N}\\\\The centripetal force acting on the particle is 36 N.",
         "hintsLatex": [
           "Recall the formula for centripetal force.",
-          "Identify the given values for mass, speed, and radius.",
-          "Ensure units are consistent (SI units)."
+          "Identify the given mass, speed, and radius.",
+          "Ensure all units are consistent (SI units are given here)."
         ],
         "topicsCovered": [
           "Motion in a Circle",
@@ -364,83 +371,82 @@
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Centripetal force is always directed towards the center of the circular path, and it's what keeps planets in orbit around the sun and cars from skidding off a curve."
+        "funFact": "Centripetal force is not a 'new' fundamental force but rather the net force (like tension, gravity, or friction) that is directed towards the center of a circular path, constantly changing an object's direction without changing its speed!"
       }
     },
     "Mechanics (9701)": {
       "Hard": {
-        "id": "mech-h-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "A block of mass $5 \\, \\text{kg}$ is placed on a rough inclined plane at an angle of $30^\\circ$ to the horizontal. The coefficient of friction between the block and the plane is $0.2$. Find the acceleration of the block down the plane. (Take $g = 9.8 \\, \\text{m/s}^2$).",
+        "id": "mech-h-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Outstanding! For our final Mechanics challenge, let's launch into projectiles! A projectile is launched from the ground with an initial speed of 30 m/s at an angle of 30° above the horizontal. Assuming g = 10 m/s^2, find the maximum height reached by the projectile. Aim high!",
         "possibleAnswers": [
-          "3.23 m/s^2",
-          "3.23 m/s/s",
-          "3.23",
-          "3.228 m/s^2"
+          "11.25 m",
+          "11.250 m",
+          "45/4 m",
+          "11 and 1/4 m"
         ],
-        "fullSolutionLatex": "First, resolve the weight of the block into components parallel and perpendicular to the plane. \\\\ Weight $W = mg = 5 \\times 9.8 = 49 \\, \\text{N}$. \\\\ Component of weight parallel to the plane (downwards): $W_{\\text{parallel}} = mg\\sin(30^\\circ) = 49 \\times 0.5 = 24.5 \\, \\text{N}$. \\\\ Component of weight perpendicular to the plane: $W_{\\text{perpendicular}} = mg\\cos(30^\\circ) = 49 \\times \\frac{\\sqrt{3}}{2} \\approx 49 \\times 0.866 = 42.434 \\, \\text{N}$. \\\\ The normal reaction force $R$ is equal to the perpendicular component of the weight: \\\\ $R = W_{\\text{perpendicular}} = 42.434 \\, \\text{N}$. \\\\ The friction force $F_f$ is given by $F_f = \\mu R$, where $\\mu$ is the coefficient of friction. \\\\ $F_f = 0.2 \\times 42.434 = 8.4868 \\, \\text{N}$. \\\\ The net force acting on the block down the plane is the parallel component of weight minus the friction force: \\\\ $F_{\\text{net}} = W_{\\text{parallel}} - F_f$ \\\\ $F_{\\text{net}} = 24.5 - 8.4868 = 16.0132 \\, \\text{N}$. \\\\ Now, use Newton's second law, $F_{\\text{net}} = ma$, to find the acceleration $a$. \\\\ $16.0132 = 5a$ \\\\ $a = \\frac{16.0132}{5} = 3.20264 \\, \\text{m/s}^2$. \\\\ Rounding to 3 significant figures, $a \\approx 3.20 \\, \\text{m/s}^2$. \\\\ (Using $\\sin(30)=0.5$ and $\\cos(30) = \\frac{\\sqrt{3}}{2}$ gives $a = g(\\sin 30 - \\mu \\cos 30) = 9.8(0.5 - 0.2 \\times \\frac{\\sqrt{3}}{2}) = 9.8(0.5 - 0.1\\sqrt{3}) = 9.8(0.5 - 0.1732) = 9.8(0.3268) \\approx 3.20264 \\, \\text{m/s}^2$) \\\\ The acceleration of the block down the plane is approximately $3.20 \\, \\text{m/s}^2$.",
+        "fullSolutionLatex": "We need to find the maximum height reached by the projectile. This occurs when the vertical component of its velocity becomes zero.\\\\Given:\\\\Initial speed, u = 30 m/s\\\\Launch angle, \\theta = 30^\\circ\\\\Acceleration due to gravity, g = 10 m/s^2 (downwards)\\\\1. Resolve the initial velocity into vertical and horizontal components:\\\\Initial vertical velocity, u_y = u \\sin \\theta = 30 \\sin(30^\\circ) = 30 \\cdot 0.5 = 15 \\text{ m/s}\\\\Initial horizontal velocity, u_x = u \\cos \\theta = 30 \\cos(30^\\circ) = 30 \\cdot \\frac{\\sqrt{3}}{2} = 15\\sqrt{3} \\text{ m/s}\\\\2. Consider vertical motion to find maximum height (H):\\\\At maximum height, the final vertical velocity, v_y = 0.\\\\We can use the kinematic equation: v_y^2 = u_y^2 + 2a_y H\\\\Here, a_y = -g = -10 m/s^2 (since g acts downwards and we've taken upwards as positive for u_y).\\\\0^2 = (15)^2 + 2(-10)H\\\\0 = 225 - 20H\\\\20H = 225\\\\H = \\frac{225}{20} = \\frac{45}{4}\\\\H = 11.25 \\text{ m}\\\\The maximum height reached by the projectile is 11.25 m.",
         "hintsLatex": [
-          "Draw a free body diagram and resolve the weight into components parallel and perpendicular to the inclined plane.",
-          "Calculate the normal reaction force and then the maximum friction force.",
-          "Apply Newton's second law ($F=ma$) along the inclined plane to find the net force and acceleration."
+          "Resolve the initial velocity into its horizontal and vertical components.",
+          "Remember that at the maximum height, the vertical component of the velocity is zero.",
+          "Use the appropriate kinematic equation (SUVAT) for vertical motion, considering acceleration due to gravity."
         ],
         "topicsCovered": [
-          "Friction",
-          "Dynamics of a Particle",
-          "Forces and Newton’s Laws"
+          "Projectiles",
+          "Kinematics in One Dimension",
+          "Motion Under Gravity"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mechanics (9701)",
-        "funFact": "Friction, while often seen as a hindrance, is essential for many everyday activities, allowing us to walk, drive cars, and even write with a pen."
+        "funFact": "Projectile motion is a fundamental concept used in sports like basketball, golf, and artillery, illustrating the beautiful parabolic path objects take under gravity, a perfect blend of mathematics and real-world dynamics!"
       },
       "Medium": {
-        "id": "mech-m-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "A ball of mass $0.2 \\, \\text{kg}$ is dropped from a height of $10 \\, \\text{m}$. Calculate its speed just before it hits the ground, assuming no air resistance. (Take $g = 9.8 \\, \\text{m/s}^2$).",
+        "id": "mech-m-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Splendid! Now, let's connect some particles. Two particles of masses 3 kg and 2 kg are connected by a light inextensible string passing over a smooth fixed pulley. Assuming g = 10 m/s^2, find the acceleration of the system when released from rest. This is a classic setup!",
         "possibleAnswers": [
-          "14 m/s",
-          "14.0 m/s",
-          "14.0",
-          "14"
+          "2 m/s^2",
+          "2.0 m/s^2",
+          "2 meters per second squared"
         ],
-        "fullSolutionLatex": "We can use the principle of conservation of energy. \\\\ The initial energy is purely potential energy, and the final energy (just before hitting the ground) is purely kinetic energy. \\\\ Initial Potential Energy (PE) $= mgh$ \\\\ Final Kinetic Energy (KE) $= \\frac{1}{2}mv^2$ \\\\ By conservation of energy, Initial PE = Final KE: \\\\ $mgh = \\frac{1}{2}mv^2$ \\\\ The mass $m$ cancels out: \\\\ $gh = \\frac{1}{2}v^2$ \\\\ $v^2 = 2gh$ \\\\ $v = \\sqrt{2gh}$ \\\\ Given: \\\\ $g = 9.8 \\, \\text{m/s}^2$ \\\\ $h = 10 \\, \\text{m}$ \\\\ Substitute the values: \\\\ $v = \\sqrt{2 \\times 9.8 \\times 10}$ \\\\ $v = \\sqrt{196}$ \\\\ $v = 14 \\, \\text{m/s}$. \\\\ The speed of the ball just before it hits the ground is $14 \\, \\text{m/s}$.",
+        "fullSolutionLatex": "Let m_1 = 3 kg and m_2 = 2 kg. Let T be the tension in the string and a be the acceleration of the system. We'll assume m_1 moves downwards and m_2 moves upwards.\\\\For m_1 (3 kg particle, moving downwards):\\\\The forces acting on m_1 are its weight (m_1 g) downwards and the tension (T) upwards.\\\\Using Newton's Second Law, F_\\text{net} = ma:\\\\m_1 g - T = m_1 a \\quad (Equation 1)\\\\3(10) - T = 3a\\\\30 - T = 3a\\\\For m_2 (2 kg particle, moving upwards):\\\\The forces acting on m_2 are its weight (m_2 g) downwards and the tension (T) upwards.\\\\Using Newton's Second Law, F_\\text{net} = ma:\\\\T - m_2 g = m_2 a \\quad (Equation 2)\\\\T - 2(10) = 2a\\\\T - 20 = 2a\\\\Now, we have a system of two linear equations. Add (Equation 1) and (Equation 2) to eliminate T:\\\\(30 - T) + (T - 20) = 3a + 2a\\\\10 = 5a\\\\a = \\frac{10}{5}\\\\a = 2 \\text{ m/s}^2\\\\The acceleration of the system is 2 m/s^2.",
         "hintsLatex": [
-          "Use the principle of conservation of mechanical energy.",
-          "Equate the initial potential energy to the final kinetic energy.",
-          "Remember that mass cancels out in this scenario."
+          "Draw a free-body diagram for each particle, identifying all forces.",
+          "Apply Newton's Second Law (F_\\text{net} = ma) to each particle, considering the direction of motion.",
+          "Solve the resulting simultaneous equations for acceleration (a) and tension (T)."
         ],
         "topicsCovered": [
-          "Conservation of Energy",
-          "Kinetic and Potential Energy",
-          "Motion Under Gravity"
+          "Forces and Newton’s Laws",
+          "Connected Particles",
+          "Dynamics of a Particle"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mechanics (9701)",
-        "funFact": "The conservation of energy is one of the most fundamental principles in physics, stating that energy cannot be created or destroyed, only transformed from one form to another."
+        "funFact": "The classic 'Atwood machine' (connected particles over a pulley) was invented in 1784 by George Atwood to demonstrate Newton's laws of motion with remarkable precision, a brilliant piece of educational apparatus!"
       },
       "Easy": {
-        "id": "mech-e-35",
-        "date": "2026-03-01T06:54:50.584Z",
-        "problemLatex": "A car accelerates uniformly from rest to $20 \\, \\text{m/s}$ in $5 \\, \\text{s}$. Calculate the distance travelled during this time.",
+        "id": "mech-e-36",
+        "date": "2026-03-02T07:04:07.950Z",
+        "problemLatex": "Hello, Mechanics maestros! Let's get our forces balanced. A block of mass 5 kg rests on a horizontal surface. A horizontal force of 20 N is applied to it. If the block remains at rest, what is the magnitude of the frictional force acting on it?",
         "possibleAnswers": [
-          "50 m",
-          "50m",
-          "50.0 m",
-          "50.0m"
+          "20 N",
+          "20.0 N",
+          "20 Newtons"
         ],
-        "fullSolutionLatex": "We can use the SUVAT equations for motion under constant acceleration. \\\\ Given: \\\\ Initial velocity $u = 0 \\, \\text{m/s}$ (from rest) \\\\ Final velocity $v = 20 \\, \\text{m/s}$ \\\\ Time $t = 5 \\, \\text{s}$ \\\\ We need to find the distance travelled, $s$. \\\\ The appropriate SUVAT equation is $s = \\frac{u+v}{2}t$. \\\\ Substitute the values: \\\\ $s = \\frac{0+20}{2} \\times 5$ \\\\ $s = \\frac{20}{2} \\times 5$ \\\\ $s = 10 \\times 5$ \\\\ $s = 50 \\, \\text{m}$. \\\\ The distance travelled is $50 \\, \\text{m}$.",
+        "fullSolutionLatex": "Since the block remains at rest, it is in equilibrium. According to Newton's First Law, for an object in equilibrium, the net force acting on it is zero.\\\\The horizontal forces acting on the block are the applied force and the frictional force.\\\\Applied force = 20 N (let's assume to the right)\\\\Frictional force = f (acting to the left, opposing motion)\\\\For equilibrium, the forces must balance:\\\\Sum of forces = 0\\\\Applied Force - Frictional Force = 0\\\\20 N - f = 0\\\\f = 20 N\\\\The magnitude of the frictional force acting on the block is 20 N.",
         "hintsLatex": [
-          "List the given quantities and what you need to find.",
-          "Choose the appropriate SUVAT equation.",
-          "Substitute the values and calculate the distance."
+          "If the block remains at rest, it is in equilibrium.",
+          "Recall Newton's First Law: the net force on an object in equilibrium is zero.",
+          "The frictional force opposes the applied force."
         ],
         "topicsCovered": [
-          "Equations of Motion (SUVAT)",
-          "Kinematics in One Dimension"
+          "Forces and Newton’s Laws",
+          "Equilibrium of Forces",
+          "Friction"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mechanics (9701)",
-        "funFact": "The SUVAT equations are a simplified set of formulas that efficiently describe motion under constant acceleration, a foundational concept in classical mechanics."
+        "funFact": "When an object is in equilibrium, all the forces acting on it are perfectly balanced, making it a state of perfect harmony, much like a perfectly stable structure or a planet orbiting steadily!"
       }
     }
   }
