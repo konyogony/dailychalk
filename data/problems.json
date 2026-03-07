@@ -1,284 +1,277 @@
 {
-  "lastUpdate": "2026-03-06",
+  "lastUpdate": "2026-03-07",
   "problemSet": {
     "Integration": {
       "Hard": {
-        "id": "int-h-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Evaluate `\\int x^2 e^x \\, dx`.",
+        "id": "int-h-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Find the volume generated when the region bounded by $y = x^2$, the y-axis, and the line $y=4$ is rotated about the y-axis.",
         "possibleAnswers": [
-          "x^2 e^x - 2x e^x + 2e^x + C",
-          "e^x (x^2 - 2x + 2) + C",
-          "e^x(x^2 - 2x + 2) + C"
+          "8pi",
+          "8\\pi",
+          "8 pi",
+          "25.13",
+          "25.133"
         ],
-        "fullSolutionLatex": "This requires integration by parts twice. The formula for integration by parts is `\\int u \\, dv = uv - \\int v \\, du`. \\n First application: Let `u = x^2` (so `du = 2x \\, dx`) and `dv = e^x \\, dx` (so `v = e^x`). \\n `\\int x^2 e^x \\, dx = x^2 e^x - \\int e^x (2x) \\, dx = x^2 e^x - 2 \\int x e^x \\, dx`. \\n Second application (for `\\int x e^x \\, dx`): Let `u = x` (so `du = dx`) and `dv = e^x \\, dx` (so `v = e^x`). \\n `\\int x e^x \\, dx = x e^x - \\int e^x \\, dx = x e^x - e^x`. \\n Substitute this back into the first result: \\n `\\int x^2 e^x \\, dx = x^2 e^x - 2 (x e^x - e^x) + C = x^2 e^x - 2x e^x + 2e^x + C`. \\n This can also be written as `e^x (x^2 - 2x + 2) + C`.",
+        "fullSolutionLatex": "For rotation about the y-axis, we use the formula $V = \\pi \\int_a^b x^2 \\, dy$. \\\\ From $y = x^2$, we have $x^2 = y$. \\\\ The limits of integration for y are from $y=0$ (since it's bounded by y-axis, implying x=0) to $y=4$. \\\\ $V = \\pi \\int_0^4 y \\, dy$. \\\\ $V = \\pi [\\frac{y^2}{2}]_0^4$. \\\\ $V = \\pi (\\frac{4^2}{2} - \\frac{0^2}{2}) = \\pi (\\frac{16}{2} - 0) = 8\\pi$.",
         "hintsLatex": [
-          "Use integration by parts: `\\int u \\, dv = uv - \\int v \\, du`.",
-          "You'll need to apply integration by parts more than once.",
-          "Choose `u` as the polynomial term to differentiate it away."
+          "The formula for volume of revolution about the y-axis is $V = \\pi \\int x^2 \\, dy$.",
+          "Express $x^2$ in terms of y from the given curve equation.",
+          "Identify the correct limits of integration along the y-axis."
         ],
         "topicsCovered": [
-          "Integration by Parts",
-          "Integration of Exponentials"
+          "Volumes of Revolution (y-axis)"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Integration",
-        "funFact": "Integration by parts is often remembered using the mnemonic 'LIATE' (Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential) to suggest which function to choose for `u`."
+        "funFact": "The method of disks/washers for volumes of revolution was developed by calculus pioneers to calculate the volumes of complex 3D shapes."
       },
       "Medium": {
-        "id": "int-m-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Calculate the area under the curve `y = x^2 + 1` from `x=0` to `x=2`.",
+        "id": "int-m-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Evaluate \\int x\\sqrt{x^2+1} \\, dx.",
         "possibleAnswers": [
-          "14/3",
-          "4.666...",
-          "4.67",
-          "4 and 2/3"
+          "1/3 (x^2+1)^(3/2) + C",
+          "(1/3)(x^2+1)^(3/2)+C",
+          "1/3(x^2+1)^1.5+C",
+          "0.333 (x^2+1)^1.5 + C"
         ],
-        "fullSolutionLatex": "The area under the curve is given by the definite integral `\\int_0^2 (x^2 + 1) \\, dx`. \\n First, find the indefinite integral: `\\int (x^2 + 1) \\, dx = \\frac{x^3}{3} + x + C`. \\n Now, evaluate this from `0` to `2`: `\\left[ \\frac{x^3}{3} + x \\right]_0^2 = \\left( \\frac{2^3}{3} + 2 \\right) - \\left( \\frac{0^3}{3} + 0 \\right)`. \\n This simplifies to `\\left( \\frac{8}{3} + 2 \\right) - 0 = \\frac{8}{3} + \\frac{6}{3} = \\frac{14}{3}`.",
+        "fullSolutionLatex": "Let $u = x^2+1$. Then $\\frac{du}{dx} = 2x$, so $dx = \\frac{du}{2x}$. \\\\ Substituting these into the integral: \\\\ $\\int x\\sqrt{u} \\frac{du}{2x} = \\int \\frac{1}{2} \\sqrt{u} \\, du = \\frac{1}{2} \\int u^{1/2} \\, du$. \\\\ Applying the power rule: $\\frac{1}{2} \\cdot \\frac{u^{3/2}}{3/2} + C = \\frac{1}{2} \\cdot \\frac{2}{3} u^{3/2} + C = \\frac{1}{3} u^{3/2} + C$. \\\\ Substituting back $u = x^2+1$: $\\frac{1}{3}(x^2+1)^{3/2} + C$.",
         "hintsLatex": [
-          "The area is given by a definite integral.",
-          "Integrate the function with respect to `x`.",
-          "Evaluate the integral at the upper and lower limits and subtract."
+          "Consider a substitution for the term inside the square root.",
+          "Let u be x^2+1.",
+          "Remember to change dx in terms of du."
         ],
         "topicsCovered": [
-          "Area Under a Curve",
-          "Definite Integrals"
+          "Integration by Substitution (u-sub)"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Integration",
-        "funFact": "Calculating areas under curves was a fundamental problem that led to the development of integral calculus."
+        "funFact": "The 'u-substitution' technique is essentially the reverse of the chain rule for differentiation."
       },
       "Easy": {
-        "id": "int-e-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Find the indefinite integral of `3x^2 - 4x + 5` with respect to `x`.",
+        "id": "int-e-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Find \\int (\\sin(3x) + \\cos(2x)) \\, dx.",
         "possibleAnswers": [
-          "x^3 - 2x^2 + 5x + C",
-          "x^3 - 2x^2 + 5x + c"
+          "-1/3 cos(3x) + 1/2 sin(2x) + C",
+          "-1/3cos(3x)+1/2sin(2x)+C",
+          "-0.333 cos(3x) + 0.5 sin(2x) + C"
         ],
-        "fullSolutionLatex": "To integrate `3x^2`, use the power rule: `\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C`. So, `\\int 3x^2 \\, dx = 3 \\frac{x^{2+1}}{2+1} = x^3`. \\n Similarly, `\\int -4x \\, dx = -4 \\frac{x^{1+1}}{1+1} = -2x^2`. \\n And `\\int 5 \\, dx = 5x`. \\n Combining these, the integral is `x^3 - 2x^2 + 5x + C`.",
+        "fullSolutionLatex": "Using the standard integrals \\int \\sin(ax) \\, dx = -\\frac{1}{a}\\cos(ax) + C and \\int \\cos(ax) \\, dx = \\frac{1}{a}\\sin(ax) + C. \\\\ \\int (\\sin(3x) + \\cos(2x)) \\, dx = -\\frac{1}{3}\\cos(3x) + \\frac{1}{2}\\sin(2x) + C.",
         "hintsLatex": [
-          "Remember the power rule for integration.",
-          "Integrate each term separately.",
-          "Don't forget the constant of integration, `+C`."
+          "Recall standard integrals for sine and cosine.",
+          "Remember to divide by the coefficient of x.",
+          "Don't forget the constant of integration, +C."
         ],
         "topicsCovered": [
-          "Indefinite Integrals of Polynomials"
+          "Integration of Trigonometric Functions"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Integration",
-        "funFact": "The integral sign `\\int` is an elongated 'S', standing for 'sum', as integration can be thought of as summing infinitely many infinitesimally small parts."
+        "funFact": "Trigonometric functions are fundamental in describing periodic phenomena, from sound waves to planetary orbits."
       }
     },
     "Differentiation": {
       "Hard": {
-        "id": "diff-h-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "The radius of a spherical balloon is increasing at a rate of `2 \\text{ cm/s}`. Find the rate at which its volume is increasing when the radius is `5 \\text{ cm}`. The volume `V` of a sphere is given by `V = \\frac{4}{3}\\pi r^3`.",
+        "id": "diff-h-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "A farmer wants to fence off a rectangular field adjacent to a river. No fencing is needed along the river. If the farmer has 1200 meters of fencing, what are the dimensions of the field that will maximize its area? (Give length parallel to river first, then width perpendicular to river).",
         "possibleAnswers": [
-          "200pi cm^3/s",
-          "200\\pi cm^3/s",
-          "200\\pi \\text{ cm}^3/s",
-          "628.3",
-          "628.32",
-          "628.3 cm^3/s"
+          "600m by 300m",
+          "600 m by 300 m",
+          "600, 300",
+          "600x300"
         ],
-        "fullSolutionLatex": "We are given `\\frac{dr}{dt} = 2 \\text{ cm/s}` and we need to find `\\frac{dV}{dt}` when `r=5 \\text{ cm}`. \\n The formula for the volume of a sphere is `V = \\frac{4}{3}\\pi r^3`. \\n Differentiate `V` with respect to `r`: `\\frac{dV}{dr} = \\frac{4}{3}\\pi (3r^2) = 4\\pi r^2`. \\n Using the chain rule, `\\frac{dV}{dt} = \\frac{dV}{dr} \\cdot \\frac{dr}{dt}`. \\n Substitute the known values: `\\frac{dV}{dt} = (4\\pi r^2) \\cdot (2)`. \\n When `r=5`: `\\frac{dV}{dt} = 4\\pi (5^2) \\cdot 2 = 4\\pi (25) \\cdot 2 = 100\\pi \\cdot 2 = 200\\pi \\text{ cm}^3/s`.",
+        "fullSolutionLatex": "Let the length of the field parallel to the river be L and the width perpendicular to the river be W. \\\\ The amount of fencing used is $L + 2W = 1200$. So $L = 1200 - 2W$. \\\\ The area of the field is $A = LW$. \\\\ Substitute L: $A = (1200 - 2W)W = 1200W - 2W^2$. \\\\ To maximize A, find $\\frac{dA}{dW}$ and set it to zero. \\\\ $\\frac{dA}{dW} = 1200 - 4W$. \\\\ Set $\\frac{dA}{dW} = 0 \\Rightarrow 1200 - 4W = 0 \\Rightarrow 4W = 1200 \\Rightarrow W = 300$ meters. \\\\ Now find L: $L = 1200 - 2(300) = 1200 - 600 = 600$ meters. \\\\ The dimensions are 600m (parallel to river) by 300m (perpendicular to river). \\\\ To confirm it's a maximum, find $\\frac{d^2A}{dW^2} = -4$, which is less than 0, so it's a maximum.",
         "hintsLatex": [
-          "Identify the given rates and the rate you need to find.",
-          "Use the chain rule: `\\frac{dV}{dt} = \\frac{dV}{dr} \\cdot \\frac{dr}{dt}`.",
-          "First, differentiate the volume formula with respect to `r`."
+          "Draw a diagram to represent the field and the river.",
+          "Formulate equations for the total fencing (perimeter) and the area.",
+          "Use differentiation to find the maximum area."
         ],
         "topicsCovered": [
-          "Related Rates",
-          "Connected Rates",
-          "Kinematics Applications"
+          "Optimization Problems"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Differentiation",
-        "funFact": "Related rates problems are common in engineering and physics, used to describe how quantities change in relation to each other over time, like the rate of water filling a tank."
+        "funFact": "Optimization problems are ubiquitous in engineering, economics, and business, helping to minimize costs, maximize profits, or use resources most efficiently."
       },
       "Medium": {
-        "id": "diff-m-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Error generating problem.",
+        "id": "diff-m-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Find $\\frac{dy}{dx}$ if $x^2y + y^3 = 5$.",
         "possibleAnswers": [
-          "2x sin(3x) + 3x^2 cos(3x)",
-          "2x \\sin(3x) + 3x^2 \\cos(3x)"
+          "-2xy / (x^2+3y^2)",
+          "-2xy/(x^2+3y^2)"
         ],
-        "fullSolutionLatex": "This requires the product rule: `\\frac{d}{dx}(uv) = u \\frac{dv}{dx} + v \\frac{du}{dx}`. \\n Let `u = x^2` and `v = \\sin(3x)`. \\n Then `\\frac{du}{dx} = 2x`. \\n For `v = \\sin(3x)`, use the chain rule: `\\frac{dv}{dx} = \\cos(3x) \\cdot 3 = 3\\cos(3x)`. \\n Applying the product rule: `\\frac{dy}{dx} = (x^2)(3\\cos(3x)) + (\\sin(3x))(2x)`. \\n So, `\\frac{dy}{dx} = 3x^2 \\cos(3x) + 2x \\sin(3x)`.",
+        "fullSolutionLatex": "Solution unavailable.",
         "hintsLatex": [
-          "Use the product rule for differentiation.",
-          "Remember the chain rule for differentiating `\\sin(3x)`.",
-          "Identify `u` and `v` correctly."
+          "Differentiate each term with respect to x.",
+          "Remember to use the product rule for $x^2y$.",
+          "When differentiating terms involving y, multiply by $\\frac{dy}{dx}$ (chain rule)."
         ],
         "topicsCovered": [
-          "Product Rule",
-          "Chain Rule",
-          "Differentiation of Trigonometric Functions"
+          "Implicit Differentiation"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Differentiation",
-        "funFact": "The product rule is essential for differentiating functions that are combinations of other functions, such as in physics when dealing with varying forces and distances."
+        "funFact": "Implicit differentiation is crucial for finding slopes of tangents to curves that are not easily expressed as $y = f(x)$, like circles and ellipses."
       },
       "Easy": {
-        "id": "diff-e-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Differentiate `y = (2x + 3)^4` with respect to `x`.",
+        "id": "diff-e-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Differentiate $y = \\ln(x^3+1)$ with respect to $x$.",
         "possibleAnswers": [
-          "8(2x+3)^3",
-          "8(2x + 3)^3"
+          "3x^2 / (x^3+1)",
+          "3x^2/(x^3+1)"
         ],
-        "fullSolutionLatex": "This requires the chain rule. Let `u = 2x + 3`, so `y = u^4`. \\n Then `\\frac{dy}{du} = 4u^3` and `\\frac{du}{dx} = 2`. \\n By the chain rule, `\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx} = 4u^3 \\cdot 2 = 8u^3`. \\n Substitute back `u = 2x + 3`: `\\frac{dy}{dx} = 8(2x + 3)^3`.",
+        "fullSolutionLatex": "Using the chain rule, if $y = \\ln(f(x))$, then $\\frac{dy}{dx} = \\frac{f'(x)}{f(x)}$. \\\\ Here, $f(x) = x^3+1$, so $f'(x) = 3x^2$. \\\\ Therefore, $\\frac{dy}{dx} = \\frac{3x^2}{x^3+1}$.",
         "hintsLatex": [
-          "Apply the chain rule.",
-          "Differentiate the outer function first, then multiply by the derivative of the inner function.",
-          "Let `u = 2x + 3`."
+          "Recall the derivative of $\\ln(u)$ is $\\frac{1}{u} \\frac{du}{dx}$.",
+          "Identify the 'u' in this expression.",
+          "Apply the chain rule."
         ],
         "topicsCovered": [
-          "Chain Rule",
-          "Differentiation of Composite Functions"
+          "Differentiation of Logarithmic Functions"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Differentiation",
-        "funFact": "The chain rule is named because it links the rates of change of two or more related variables, forming a 'chain'."
+        "funFact": "Logarithmic differentiation can simplify the process of differentiating complex functions involving products, quotients, and powers."
       }
     },
     "Further Math (9231)": {
       "Hard": {
-        "id": "fm-h-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Find the acute angle between the lines `r_1 = \\begin{pmatrix} 1 \\\\ 0 \\\\ 2 \\end{pmatrix} + \\lambda \\begin{pmatrix} 1 \\\\ -1 \\\\ 0 \\end{pmatrix}` and `r_2 = \\begin{pmatrix} 0 \\\\ 1 \\\\ -1 \\end{pmatrix} + \\mu \\begin{pmatrix} 2 \\\\ 0 \\\\ 1 \\end{pmatrix}`.",
+        "id": "fm-h-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Prove by induction that $\\sum_{r=1}^{n} r^2 = \\frac{n(n+1)(2n+1)}{6}$ for all positive integers $n$. (Just state \"Proven by Induction\" as the answer if you understand the process.)",
         "possibleAnswers": [
-          "arccos(2/sqrt(10))",
-          "arccos(sqrt(10)/5)",
-          "arccos(0.632)",
-          "50.77 degrees",
-          "50.77",
-          "0.886 radians"
+          "Proven by Induction",
+          "Proven by induction",
+          "Proof by Induction",
+          "Proof by induction"
         ],
-        "fullSolutionLatex": "The angle `\\alpha` between two lines with direction vectors `d_1` and `d_2` is given by `\\cos \\alpha = \\frac{|d_1 \\cdot d_2|}{|d_1||d_2|}`. \\n From `r_1`, the direction vector `d_1 = \\begin{pmatrix} 1 \\\\ -1 \\\\ 0 \\end{pmatrix}`. \\n From `r_2`, the direction vector `d_2 = \\begin{pmatrix} 2 \\\\ 0 \\\\ 1 \\end{pmatrix}`. \\n Calculate the dot product `d_1 \\cdot d_2`: `(1)(2) + (-1)(0) + (0)(1) = 2 + 0 + 0 = 2`. \\n Calculate the magnitude of `d_1`: `|d_1| = \\sqrt{1^2 + (-1)^2 + 0^2} = \\sqrt{1+1+0} = \\sqrt{2}`. \\n Calculate the magnitude of `d_2`: `|d_2| = \\sqrt{2^2 + 0^2 + 1^2} = \\sqrt{4+0+1} = \\sqrt{5}`. \\n Now, `\\cos \\alpha = \\frac{|2|}{\\sqrt{2}\\sqrt{5}} = \\frac{2}{\\sqrt{10}}`. \\n So, `\\alpha = \\arccos\\left(\\frac{2}{\\sqrt{10}}\\right)`.",
+        "fullSolutionLatex": "**Base Case:** For $n=1$, LHS = $\\sum_{r=1}^{1} r^2 = 1^2 = 1$. \\\\ RHS = $\\frac{1(1+1)(2(1)+1)}{6} = \\frac{1(2)(3)}{6} = \\frac{6}{6} = 1$. \\\\ LHS = RHS, so the statement is true for $n=1$. \\\\ **Inductive Hypothesis:** Assume the statement is true for some positive integer $k$, i.e., $\\sum_{r=1}^{k} r^2 = \\frac{k(k+1)(2k+1)}{6}$. \\\\ **Inductive Step:** We need to show the statement is true for $n=k+1$. \\\\ $\\sum_{r=1}^{k+1} r^2 = \\sum_{r=1}^{k} r^2 + (k+1)^2$. \\\\ Using the inductive hypothesis: \\\\ $= \\frac{k(k+1)(2k+1)}{6} + (k+1)^2$. \\\\ Factor out $(k+1)$: \\\\ $= (k+1) \\left[ \\frac{k(2k+1)}{6} + (k+1) \\right]$. \\\\ $= (k+1) \\left[ \\frac{2k^2+k}{6} + \\frac{6(k+1)}{6} \\right]$. \\\\ $= (k+1) \\left[ \\frac{2k^2+k+6k+6}{6} \\right]$. \\\\ $= (k+1) \\left[ \\frac{2k^2+7k+6}{6} \\right]$. \\\\ Factor the quadratic $2k^2+7k+6$: $(2k+3)(k+2)$. \\\\ $= \\frac{(k+1)(k+2)(2k+3)}{6}$. \\\\ This is the RHS with $n$ replaced by $(k+1)$. \\\\ **Conclusion:** By the principle of mathematical induction, the statement is true for all positive integers $n$.",
         "hintsLatex": [
-          "Identify the direction vectors of both lines.",
-          "Use the formula for the angle between two vectors involving the dot product.",
-          "Remember to find the acute angle, so take the absolute value of the dot product."
+          "Start by proving the base case, typically for n=1.",
+          "Formulate the inductive hypothesis, assuming the statement holds for n=k.",
+          "In the inductive step, express the sum for n=k+1 in terms of the sum for n=k and simplify."
         ],
         "topicsCovered": [
-          "Vectors in 3D",
-          "Scalar Product",
-          "Angle Between Lines and Planes"
+          "Mathematical Induction"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Math (9231)",
-        "funFact": "Vectors in 3D are crucial for describing motion, forces, and fields in physics and engineering, enabling us to model complex spatial relationships."
+        "funFact": "Mathematical induction is a powerful proof technique that allows mathematicians to establish the truth of an infinite sequence of statements by proving just two conditions."
       },
       "Medium": {
-        "id": "fm-m-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Use De Moivre’s Theorem to express `(\\cos \\theta + i \\sin \\theta)^4` in the form `a + bi`.",
+        "id": "fm-m-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Find the general solution of the differential equation $\\frac{d^2y}{dx^2} + 4\\frac{dy}{dx} + 3y = 0$.",
         "possibleAnswers": [
-          "cos(4theta) + i sin(4theta)",
-          "cos(4\\theta) + i sin(4\\theta)",
-          "cos(4\\theta) + i\\sin(4\\theta)"
+          "y = Ae^(-x) + Be^(-3x)",
+          "y=Ae^{-x}+Be^{-3x}",
+          "y = A e^{-x} + B e^{-3x}",
+          "y = A exp(-x) + B exp(-3x)"
         ],
-        "fullSolutionLatex": "De Moivre’s Theorem states that for any real number `\\theta` and any integer `n`, `(\\cos \\theta + i \\sin \\theta)^n = \\cos(n\\theta) + i \\sin(n\\theta)`. \\n In this problem, `n=4`. \\n Therefore, `(\\cos \\theta + i \\sin \\theta)^4 = \\cos(4\\theta) + i \\sin(4\\theta)`.",
+        "fullSolutionLatex": "The auxiliary equation is $m^2 + 4m + 3 = 0$. \\\\ Factorizing: $(m+1)(m+3) = 0$. \\\\ The roots are $m_1 = -1$ and $m_2 = -3$. \\\\ Since the roots are real and distinct, the general solution is $y = Ae^{m_1x} + Be^{m_2x}$. \\\\ Therefore, $y = Ae^{-x} + Be^{-3x}$.",
         "hintsLatex": [
-          "Recall De Moivre's Theorem.",
-          "Identify the value of `n` in the expression.",
-          "Apply the theorem directly."
+          "Formulate the auxiliary equation from the given differential equation.",
+          "Solve the quadratic auxiliary equation for its roots.",
+          "Apply the correct form of the general solution based on the nature of the roots (real and distinct)."
         ],
         "topicsCovered": [
-          "De Moivre’s Theorem",
-          "Complex Numbers (Basic Operations)"
+          "Second-Order Differential Equations",
+          "Auxiliary Equation Method"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Math (9231)",
-        "funFact": "De Moivre's Theorem simplifies powers of complex numbers, making calculations for oscillations and wave phenomena much more manageable in physics and engineering."
+        "funFact": "Second-order differential equations are fundamental in physics for describing oscillations, such as a mass on a spring or an RLC circuit."
       },
       "Easy": {
-        "id": "fm-e-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Simplify the complex number expression `(2+3i)(4-i)`.",
+        "id": "fm-e-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Given $z_1 = 3 + 2i$ and $z_2 = 1 - 4i$, express $z_1 z_2$ in the form $a+bi$.",
         "possibleAnswers": [
-          "11+10i",
-          "11 + 10i"
+          "11 - 10i",
+          "11-10i",
+          "11 -10i"
         ],
-        "fullSolutionLatex": "To multiply complex numbers, expand the brackets as you would with binomials, remembering that `i^2 = -1`. \\n `(2+3i)(4-i) = 2(4) + 2(-i) + 3i(4) + 3i(-i)`. \\n `= 8 - 2i + 12i - 3i^2`. \\n Since `i^2 = -1`, we have `-3i^2 = -3(-1) = 3`. \\n So, the expression becomes `8 - 2i + 12i + 3 = (8+3) + (-2+12)i = 11 + 10i`.",
+        "fullSolutionLatex": "Multiply $z_1$ and $z_2$ like binomials: \\\\ $z_1 z_2 = (3+2i)(1-4i)$ \\\\ $= 3(1) + 3(-4i) + 2i(1) + 2i(-4i)$ \\\\ $= 3 - 12i + 2i - 8i^2$. \\\\ Since $i^2 = -1$: \\\\ $= 3 - 10i - 8(-1)$ \\\\ $= 3 - 10i + 8$ \\\\ $= 11 - 10i$.",
         "hintsLatex": [
-          "Expand the brackets like a normal binomial multiplication.",
-          "Remember the fundamental identity `i^2 = -1`.",
-          "Group the real and imaginary parts at the end."
+          "Treat complex numbers like binomials when multiplying.",
+          "Remember that $i^2 = -1$.",
+          "Group the real and imaginary parts."
         ],
         "topicsCovered": [
           "Complex Numbers (Basic Operations)"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Math (9231)",
-        "funFact": "Complex numbers were initially viewed with suspicion but became indispensable in solving cubic equations and later revolutionized fields like electrical engineering and quantum mechanics."
+        "funFact": "Complex numbers were initially met with skepticism but proved indispensable for solving cubic equations and later for describing phenomena in electrical engineering and quantum mechanics."
       }
     },
     "Mathematics (9709)": {
       "Hard": {
-        "id": "math-h-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "A circle has equation `x^2 + y^2 - 4x + 6y - 12 = 0`. Find the coordinates of its centre and its radius.",
+        "id": "math-h-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Solve the inequality $|2x-3| \\ge 5$.",
         "possibleAnswers": [
-          "Centre (2,-3), Radius 5",
-          "Center (2,-3), Radius 5",
-          "Centre (2, -3), Radius 5"
+          "x >= 4 or x <= -1",
+          "x>=4 or x<=-1",
+          "x \\ge 4 \\text{ or } x \\le -1",
+          "x \\le -1 \\text{ or } x \\ge 4"
         ],
-        "fullSolutionLatex": "To find the centre and radius, we complete the square for both `x` and `y` terms. \\n Rearrange the equation: `(x^2 - 4x) + (y^2 + 6y) = 12`. \\n Complete the square for `x`: `x^2 - 4x = (x-2)^2 - 4`. \\n Complete the square for `y`: `y^2 + 6y = (y+3)^2 - 9`. \\n Substitute these back into the equation: `((x-2)^2 - 4) + ((y+3)^2 - 9) = 12`. \\n `(x-2)^2 + (y+3)^2 - 13 = 12`. \\n `(x-2)^2 + (y+3)^2 = 25`. \\n This is in the standard form `(x-h)^2 + (y-k)^2 = r^2`, where `(h,k)` is the centre and `r` is the radius. \\n So, the centre is `(2, -3)` and the radius is `\\sqrt{25} = 5`.",
+        "fullSolutionLatex": "For an inequality of the form $|f(x)| \\ge k$, where $k > 0$, we have two cases: $f(x) \\ge k$ or $f(x) \\le -k$. \\\\ Case 1: $2x-3 \\ge 5$ \\\\ $2x \\ge 8$ \\\\ $x \\ge 4$. \\\\ Case 2: $2x-3 \\le -5$ \\\\ $2x \\le -2$ \\\\ $x \\le -1$. \\\\ Combining these, the solution is $x \\le -1$ or $x \\ge 4$.",
         "hintsLatex": [
-          "Rearrange the equation to group `x` terms and `y` terms.",
-          "Complete the square for the `x` terms and for the `y` terms separately.",
-          "Recall the standard equation of a circle: `(x-h)^2 + (y-k)^2 = r^2`."
+          "Recall that $|A| \\ge B$ implies $A \\ge B$ or $A \\le -B$.",
+          "Separate the inequality into two distinct linear inequalities.",
+          "Solve each inequality independently and combine the results."
         ],
         "topicsCovered": [
-          "Coordinate Geometry of Circles",
-          "Completing the Square",
-          "Algebraic Manipulation"
+          "Inequalities"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mathematics (9709)",
-        "funFact": "Circles are fundamental shapes in geometry, and their equations are used in many real-world applications, from designing wheels and gears to modeling planetary orbits and radio signal ranges."
+        "funFact": "Inequalities are fundamental in mathematics for defining intervals, ranges, and constraints, crucial for optimization and decision-making processes."
       },
       "Medium": {
-        "id": "math-m-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Find the first three terms in the binomial expansion of `(1+2x)^{-2}` in ascending powers of `x`, stating the range of `x` for which the expansion is valid.",
+        "id": "math-m-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Find the first three terms in the expansion of $(1+2x)^{1/2}$ in ascending powers of $x$. State the range of validity for this expansion.",
         "possibleAnswers": [
-          "1 - 4x + 12x^2",
-          "1 - 4x + 12x^2, |x|<1/2",
-          "1 - 4x + 12x^2, -1/2 < x < 1/2"
+          "1 + x - x^2/2, |x| < 1/2",
+          "1+x-x^2/2 and -1/2 < x < 1/2",
+          "1+x-0.5x^2, -0.5 < x < 0.5",
+          "1+x-0.5x^2, |x|<0.5",
+          "1+x-x^2/2, x>-1/2 and x<1/2"
         ],
-        "fullSolutionLatex": "The binomial expansion for `(1+ax)^n` is `1 + n(ax) + \\frac{n(n-1)}{2!}(ax)^2 + \\dots`. \\n Here, `n = -2` and `ax = 2x`. \\n First term: `1`. \\n Second term: `n(ax) = (-2)(2x) = -4x`. \\n Third term: `\\frac{n(n-1)}{2!}(ax)^2 = \\frac{(-2)(-2-1)}{2}(2x)^2 = \\frac{(-2)(-3)}{2}(4x^2) = (3)(4x^2) = 12x^2`. \\n So the first three terms are `1 - 4x + 12x^2`. \\n The expansion is valid for `|ax| < 1`, which means `|2x| < 1`, or `|x| < \\frac{1}{2}`.",
+        "fullSolutionLatex": "Using the binomial expansion formula $(1+u)^n = 1 + nu + \\frac{n(n-1)}{2!}u^2 + \\dots$. \\\\ Here, $u = 2x$ and $n = 1/2$. \\\\ First term: $1$. \\\\ Second term: $nu = (\\frac{1}{2})(2x) = x$. \\\\ Third term: $\\frac{n(n-1)}{2!}u^2 = \\frac{(\\frac{1}{2})(\\frac{1}{2}-1)}{2!}(2x)^2 = \\frac{(\\frac{1}{2})(-\\frac{1}{2})}{2}(4x^2) = \\frac{-\\frac{1}{4}}{2}(4x^2) = -\\frac{1}{8}(4x^2) = -\\frac{1}{2}x^2$. \\\\ So the first three terms are $1 + x - \\frac{1}{2}x^2$. \\\\ The expansion is valid for $|u| < 1$, so $|2x| < 1 \\Rightarrow |x| < \\frac{1}{2}$.",
         "hintsLatex": [
-          "Use the binomial expansion formula for `(1+x)^n` with a negative power.",
-          "Be careful with the signs and coefficients.",
-          "Remember to state the condition for which the expansion is valid."
+          "Recall the binomial expansion formula for $(1+u)^n$.",
+          "Identify 'n' and 'u' correctly.",
+          "Remember to calculate the factorial term in the denominator and the powers of 'u'.",
+          "The validity condition is $|u|<1$."
         ],
         "topicsCovered": [
-          "Binomial Expansion (Fractional Index)",
-          "Algebraic Manipulation"
+          "Binomial Expansion (Fractional Index)"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mathematics (9709)",
-        "funFact": "The binomial theorem, generalized by Newton, allows us to expand expressions with non-integer powers, which is crucial in fields like statistics (e.g., in probability distributions) and physics."
+        "funFact": "The binomial theorem for fractional and negative indices was generalized by Isaac Newton, extending its utility far beyond simple polynomial expansions."
       },
       "Easy": {
-        "id": "math-e-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "Express the quadratic `x^2 - 6x + 11` in the form `(x+a)^2 + b`.",
+        "id": "math-e-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Express $x^2 - 6x + 11$ in the form $(x+a)^2 + b$.",
         "possibleAnswers": [
           "(x-3)^2 + 2",
           "(x-3)^2+2"
         ],
-        "fullSolutionLatex": "To complete the square for `x^2 - 6x + 11`: \\n Take half of the coefficient of `x`, which is `(-6)/2 = -3`. \\n So, the term `(x+a)^2` will be `(x-3)^2`. \\n Expand `(x-3)^2 = x^2 - 6x + 9`. \\n Compare this to `x^2 - 6x + 11`. We have `x^2 - 6x + 9 + 2 = x^2 - 6x + 11`. \\n Therefore, `a = -3` and `b = 2`. The expression is `(x-3)^2 + 2`.",
+        "fullSolutionLatex": "To complete the square for $x^2 + bx + c$, we use $(x + \\frac{b}{2})^2 - (\\frac{b}{2})^2 + c$. \\\\ For $x^2 - 6x + 11$: \\\\ $(x - \\frac{6}{2})^2 - (\\frac{6}{2})^2 + 11$ \\\\ $(x - 3)^2 - 3^2 + 11$ \\\\ $(x - 3)^2 - 9 + 11$ \\\\ $(x - 3)^2 + 2$. \\\\ So $a = -3$ and $b = 2$.",
         "hintsLatex": [
-          "Half the coefficient of `x` to find `a`.",
-          "Square `(x+a)` and see what constant term you get.",
-          "Adjust the constant `b` to match the original expression."
+          "Recall the formula for completing the square: $(x+a)^2 = x^2 + 2ax + a^2$.",
+          "The coefficient of x determines the 'a' value in $(x+a)^2$.",
+          "Adjust the constant term accordingly."
         ],
         "topicsCovered": [
           "Quadratic Functions",
@@ -286,47 +279,48 @@
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mathematics (9709)",
-        "funFact": "Completing the square is not just for solving quadratics; it's also fundamental for analyzing conic sections like circles and parabolas, revealing their center or vertex."
+        "funFact": "Completing the square is not just for solving quadratics; it's also used to transform equations of circles, ellipses, and hyperbolas into standard forms."
       }
     },
     "Further Mechanics (9231)": {
       "Hard": {
-        "id": "fmech-h-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "A particle A of mass `2m` moving with speed `u` collides with a stationary particle B of mass `m`. After the collision, A moves at `90^{\\circ}` to its original direction with speed `v_A`, and B moves at `30^{\\circ}` to A's original direction with speed `v_B`. Find `v_B` in terms of `u`.",
+        "id": "fmech-h-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "A particle A of mass 2kg moving with velocity $(3\\mathbf{i} + 4\\mathbf{j})$ m/s collides with a stationary particle B of mass 3kg. After the collision, A moves with velocity $(1\\mathbf{i} + 2\\mathbf{j})$ m/s. Find the velocity of B after the collision.",
         "possibleAnswers": [
-          "4u/sqrt(3)",
-          "4u\\sqrt{3}/3",
-          "2.309u"
+          "(4/3 i + 4/3 j) m/s",
+          "(4/3i + 4/3j) m/s",
+          "(1.33 i + 1.33 j) m/s",
+          "(1.333 i + 1.333 j) m/s"
         ],
-        "fullSolutionLatex": "Let the initial direction of particle A be along the positive `x`-axis. \\n Initial momentum of the system: `(2mu, 0)`. \\n After collision: \\n Particle A's velocity is `v_A` at `90^{\\circ}` to the original direction, so its velocity vector is `(0, v_A)`. \\n Particle B's velocity is `v_B` at `30^{\\circ}` to A's original direction. Assuming `30^{\\circ}` below the `x`-axis for B to allow for scattering: its velocity vector is `(v_B \\cos 30^{\\circ}, -v_B \\sin 30^{\\circ})`. \\n \\n Conservation of momentum in the `x`-direction: \\n `2mu = (2m)(0) + m(v_B \\cos 30^{\\circ})`. \\n `2mu = m v_B \\frac{\\sqrt{3}}{2}`. \\n Divide by `m`: `2u = v_B \\frac{\\sqrt{3}}{2}`. \\n So, `v_B = \\frac{4u}{\\sqrt{3}} = \\frac{4u\\sqrt{3}}{3}`. \\n (For completeness, conservation of momentum in the `y`-direction: `0 = 2m v_A + m(-v_B \\sin 30^{\\circ}) \\Rightarrow 0 = 2v_A - v_B (1/2) \\Rightarrow v_A = v_B/4 = \\frac{u}{\\sqrt{3}}`.)",
+        "fullSolutionLatex": "Apply the principle of conservation of momentum. \\\\ Total momentum before collision = Total momentum after collision. \\\\ Let $m_A = 2$ kg, $\\mathbf{u}_A = (3\\mathbf{i} + 4\\mathbf{j})$ m/s. \\\\ Let $m_B = 3$ kg, $\\mathbf{u}_B = (0\\mathbf{i} + 0\\mathbf{j})$ m/s (stationary). \\\\ After collision, $\\mathbf{v}_A = (1\\mathbf{i} + 2\\mathbf{j})$ m/s. \\\\ Let $\\mathbf{v}_B = (x\\mathbf{i} + y\\mathbf{j})$ m/s. \\\\ $m_A \\mathbf{u}_A + m_B \\mathbf{u}_B = m_A \\mathbf{v}_A + m_B \\mathbf{v}_B$. \\\\ $2(3\\mathbf{i} + 4\\mathbf{j}) + 3(0\\mathbf{i} + 0\\mathbf{j}) = 2(1\\mathbf{i} + 2\\mathbf{j}) + 3(x\\mathbf{i} + y\\mathbf{j})$. \\\\ $6\\mathbf{i} + 8\\mathbf{j} = 2\\mathbf{i} + 4\\mathbf{j} + 3x\\mathbf{i} + 3y\\mathbf{j}$. \\\\ Equating coefficients for $\\mathbf{i}$: \\\\ $6 = 2 + 3x \\Rightarrow 4 = 3x \\Rightarrow x = \\frac{4}{3}$. \\\\ Equating coefficients for $\\mathbf{j}$: \\\\ $8 = 4 + 3y \\Rightarrow 4 = 3y \\Rightarrow y = \\frac{4}{3}$. \\\\ The velocity of B after collision is $(\\frac{4}{3}\\mathbf{i} + \\frac{4}{3}\\mathbf{j})$ m/s.",
         "hintsLatex": [
           "Apply the principle of conservation of linear momentum.",
-          "Resolve the momentum into perpendicular components (x and y directions).",
-          "Carefully consider the angles and directions of velocities after the collision."
+          "Remember that momentum is a vector quantity, so consider components separately.",
+          "Total momentum before collision equals total momentum after collision."
         ],
         "topicsCovered": [
           "Collisions in Two Dimensions",
-          "Impulse and Momentum (Advanced)",
-          "Equations of Motion in Vector Form"
+          "Impulse and Momentum (Advanced)"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Understanding 2D collisions is vital in sports like billiards, explaining how balls scatter after impact, and in nuclear physics for analyzing particle interactions."
+        "funFact": "The principle of conservation of momentum is a direct consequence of Newton's third law and is fundamental in analyzing interactions between objects, from atomic collisions to galactic mergers."
       },
       "Medium": {
-        "id": "fmech-m-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "A particle of mass `m` attached to a light inextensible string of length `l` moves in a vertical circle. Find the minimum speed at the top of the circle for the string to remain taut.",
+        "id": "fmech-m-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "A particle of mass 2 kg is attached to one end of a light inextensible string of length 0.8 m. The other end is fixed. The particle moves in a vertical circle. If the speed of the particle at its lowest point is 6 m/s, find the tension in the string at that point. (Take $g = 9.8 \\text{ m/s}^2$).",
         "possibleAnswers": [
-          "sqrt(gl)",
-          "\\sqrt{gl}"
+          "109.6 N",
+          "109.6N",
+          "109.60 N"
         ],
-        "fullSolutionLatex": "For the string to remain taut at the top of the circle, the tension `T` in the string must be greater than or equal to zero. \\n At the top, the forces acting on the particle are its weight `mg` downwards and the tension `T` downwards. \\n The centripetal force required is `\\frac{mv^2}{l}` (towards the centre, downwards). \\n So, `T + mg = \\frac{mv^2}{l}`. \\n For the minimum speed, set `T = 0`. \\n `mg = \\frac{mv^2}{l}`. \\n Divide by `m`: `g = \\frac{v^2}{l}`. \\n `v^2 = gl`. \\n `v = \\sqrt{gl}`.",
+        "fullSolutionLatex": "At the lowest point of the vertical circle, the forces acting on the particle are tension (T) upwards and gravity (mg) downwards. \\\\ The net force towards the center provides the centripetal force. \\\\ $T - mg = \\frac{mv^2}{r}$. \\\\ Given: $m = 2$ kg, $r = 0.8$ m, $v = 6$ m/s, $g = 9.8$ m/s$^2$. \\\\ $T - (2)(9.8) = \\frac{(2)(6^2)}{0.8}$. \\\\ $T - 19.6 = \\frac{2 \\cdot 36}{0.8} = \\frac{72}{0.8} = 90$. \\\\ $T = 90 + 19.6 = 109.6$ N.",
         "hintsLatex": [
-          "Consider the forces acting on the particle at the top of the circle.",
-          "Apply Newton's second law in the radial direction.",
-          "For the string to remain taut, the tension must be at least zero."
+          "Draw a free body diagram for the particle at the lowest point.",
+          "Apply Newton's Second Law in the radial direction.",
+          "Remember that centripetal force is $mv^2/r$ and is directed towards the center of the circle."
         ],
         "topicsCovered": [
           "Motion in a Circle",
@@ -334,105 +328,106 @@
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Understanding motion in a vertical circle is crucial for designing roller coasters and analyzing the dynamics of objects on rotating systems, like centrifuges."
+        "funFact": "Understanding circular motion is vital for designing amusement park rides, analyzing satellite orbits, and studying the motion of celestial bodies."
       },
       "Easy": {
-        "id": "fmech-e-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "A particle undergoes Simple Harmonic Motion (SHM) with amplitude `0.5 \\text{ m}` and period `\\pi \\text{ s}`. Find its maximum speed.",
+        "id": "fmech-e-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "A particle undergoes Simple Harmonic Motion (SHM) with a period of 4 seconds and an amplitude of 0.5 m. Find its maximum speed.",
         "possibleAnswers": [
-          "1 m/s",
-          "1.0 m/s"
+          "pi/4 m/s",
+          "\\pi/4 m/s",
+          "0.785 m/s",
+          "0.7854 m/s"
         ],
-        "fullSolutionLatex": "For SHM, the angular frequency `\\omega` is related to the period `T` by `\\omega = \\frac{2\\pi}{T}`. \\n Given `T = \\pi \\text{ s}`, so `\\omega = \\frac{2\\pi}{\\pi} = 2 \\text{ rad/s}`. \\n The maximum speed `v_{max}` in SHM is given by `v_{max} = A\\omega`, where `A` is the amplitude. \\n Given `A = 0.5 \\text{ m}`. \\n So, `v_{max} = (0.5)(2) = 1 \\text{ m/s}`.",
+        "fullSolutionLatex": "The angular frequency $\\omega$ is related to the period T by $\\omega = \\frac{2\\pi}{T}$. \\\\ Given $T = 4$ s, so $\\omega = \\frac{2\\pi}{4} = \\frac{\\pi}{2}$ rad/s. \\\\ The maximum speed $v_{max}$ in SHM is given by $v_{max} = A\\omega$, where A is the amplitude. \\\\ Given $A = 0.5$ m. \\\\ $v_{max} = (0.5)(\\frac{\\pi}{2}) = \\frac{\\pi}{4}$ m/s. \\\\ (Approximately 0.785 m/s).",
         "hintsLatex": [
-          "First, calculate the angular frequency `\\omega` from the period `T`.",
-          "Recall the formula for maximum speed in SHM.",
-          "Substitute the given values into the formula."
+          "Recall the relationship between angular frequency, $\\omega$, and period, T.",
+          "Remember the formula for maximum speed in SHM, $v_{max} = A\\omega$.",
+          "Substitute the given values and calculate."
         ],
         "topicsCovered": [
-          "Simple Harmonic Motion",
-          "Angular Velocity and Acceleration"
+          "Simple Harmonic Motion"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Simple Harmonic Motion describes many natural phenomena, from a swinging pendulum to the vibrations of atoms in a crystal lattice, making it a cornerstone of physics."
+        "funFact": "Simple Harmonic Motion is a fundamental model in physics, describing oscillations ranging from a swinging pendulum to vibrating atoms in a crystal lattice."
       }
     },
     "Mechanics (9701)": {
       "Hard": {
-        "id": "mech-h-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "A particle of mass `2 \\text{ kg}` is projected up a rough plane inclined at `30^{\\circ}` to the horizontal with initial speed `10 \\text{ m/s}`. The coefficient of friction is `0.2`. Calculate the distance the particle travels up the plane before coming to rest. Assume `g = 9.8 \\text{ m/s}^2`.",
+        "id": "mech-h-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "Two particles A (mass 3kg) and B (mass 2kg) are connected by a light inextensible string passing over a smooth fixed pulley. Particle A rests on a rough horizontal table with a coefficient of friction of 0.2. Particle B hangs freely. When the system is released from rest, find the acceleration of the particles. (Take $g = 9.8 \\text{ m/s}^2$).",
         "possibleAnswers": [
-          "7.58 m",
-          "7.58",
-          "7.6 m"
+          "2.74 m/s^2",
+          "2.74 m/s/s",
+          "2.74m/s^2",
+          "2.744 m/s^2"
         ],
-        "fullSolutionLatex": "Using the Work-Energy Principle: The initial kinetic energy is converted into gravitational potential energy and work done against friction. \\n Initial Kinetic Energy `KE_i = \\frac{1}{2}mv^2 = \\frac{1}{2}(2)(10^2) = 100 \\text{ J}`. \\n Let `s` be the distance travelled up the plane. \\n Gain in Gravitational Potential Energy `PE_f = mgh = mg(s \\sin \\theta) = (2)(9.8)(s \\sin 30^{\\circ}) = (2)(9.8)(s)(0.5) = 9.8s \\text{ J}`. \\n Frictional force `F_f = \\mu R`. The normal reaction force `R = mg \\cos \\theta = (2)(9.8)(\\cos 30^{\\circ}) = 19.6 \\frac{\\sqrt{3}}{2} = 9.8\\sqrt{3} \\text{ N}`. \\n Work done against friction `W_f = F_f s = (0.2)(9.8\\sqrt{3})s = 1.96\\sqrt{3}s \\text{ J}`. \\n By the Work-Energy Principle: `KE_i = PE_f + W_f`. \\n `100 = 9.8s + 1.96\\sqrt{3}s`. \\n `100 = s(9.8 + 1.96\\sqrt{3})`. \\n `s = \\frac{100}{9.8 + 1.96\\sqrt{3}}`. \\n Using `\\sqrt{3} \\approx 1.73205`: \\n `s = \\frac{100}{9.8 + 1.96 \\times 1.73205} = \\frac{100}{9.8 + 3.394818} = \\frac{100}{13.194818} \\approx 7.5786 \\text{ m}`. \\n Rounding to 3 significant figures, `s = 7.58 \\text{ m}`.",
+        "fullSolutionLatex": "Let T be the tension in the string and a be the acceleration of the system. \\\\ **For particle B (hanging freely):** \\\\ Forces acting are Tension (T) upwards and Weight ($m_B g$) downwards. \\\\ Since B moves downwards, $m_B g - T = m_B a$. \\\\ $2(9.8) - T = 2a \\Rightarrow 19.6 - T = 2a \\quad (1)$. \\\\ **For particle A (on the table):** \\\\ Forces acting are Tension (T) forwards, Friction ($F_f$) backwards, Normal Reaction (R) upwards, and Weight ($m_A g$) downwards. \\\\ Perpendicular to the table: $R = m_A g = 3(9.8) = 29.4$ N. \\\\ Friction force $F_f = \\mu R = 0.2 \\times 29.4 = 5.88$ N. \\\\ Parallel to the table: $T - F_f = m_A a$. \\\\ $T - 5.88 = 3a \\quad (2)$. \\\\ Now, solve equations (1) and (2) simultaneously. \\\\ From (1), $T = 19.6 - 2a$. \\\\ Substitute into (2): $(19.6 - 2a) - 5.88 = 3a$. \\\\ $13.72 = 5a$. \\\\ $a = \\frac{13.72}{5} = 2.744$ m/s$^2$. \\\\ The acceleration of the particles is 2.74 m/s$^2$ (to 3 s.f.).",
         "hintsLatex": [
-          "Use the Work-Energy Principle: initial KE = final PE + work done against friction.",
-          "Calculate the gravitational potential energy gain.",
-          "Determine the work done by friction, remembering to find the normal reaction force first."
-        ],
-        "topicsCovered": [
-          "Work, Energy and Power",
-          "Conservation of Energy",
-          "Friction",
-          "Modelling Assumptions"
-        ],
-        "difficultyLevel": "Hard",
-        "problemType": "Mechanics (9701)",
-        "funFact": "Understanding friction on inclined planes is crucial for designing safe ramps, conveyor belts, and even for analyzing the stability of objects on slopes in geotechnical engineering."
-      },
-      "Medium": {
-        "id": "mech-m-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "A particle of mass `1 \\text{ kg}` rests on a smooth inclined plane at `30^{\\circ}` to the horizontal. It is connected by a light inextensible string passing over a smooth pulley to a hanging particle of mass `2 \\text{ kg}`. Find the acceleration of the system, assuming `g = 9.8 \\text{ m/s}^2`.",
-        "possibleAnswers": [
-          "4.9 m/s^2",
-          "4.9",
-          "g/2 m/s^2",
-          "g/2"
-        ],
-        "fullSolutionLatex": "Let `T` be the tension in the string and `a` be the acceleration of the system. \\n For the hanging mass (`m_1 = 2 \\text{ kg}`), which will move downwards: \\n Forces acting are weight `m_1 g` downwards and tension `T` upwards. \\n `m_1 g - T = m_1 a \\Rightarrow 2g - T = 2a` (1). \\n \\n For the mass on the incline (`m_2 = 1 \\text{ kg}`), which will move upwards along the plane: \\n The component of weight down the plane is `m_2 g \\sin(30^{\\circ}) = 1g(0.5) = 0.5g`. \\n Forces acting are tension `T` up the plane and `0.5g` down the plane. \\n `T - m_2 g \\sin(30^{\\circ}) = m_2 a \\Rightarrow T - 0.5g = 1a` (2). \\n \\n Add equations (1) and (2): \\n `(2g - T) + (T - 0.5g) = 2a + 1a`. \\n `1.5g = 3a`. \\n `a = \\frac{1.5g}{3} = 0.5g`. \\n Substituting `g = 9.8 \\text{ m/s}^2`: `a = 0.5 \\times 9.8 = 4.9 \\text{ m/s}^2`.",
-        "hintsLatex": [
-          "Draw a free-body diagram for each mass.",
-          "Apply Newton's second law (`F=ma`) to each mass, considering the direction of acceleration.",
-          "Solve the simultaneous equations for tension and acceleration."
+          "Draw separate free body diagrams for each particle.",
+          "Apply Newton's Second Law ($F=ma$) to each particle, considering the direction of acceleration.",
+          "Remember that the tension in the string and the acceleration are the same for both particles.",
+          "Solve the simultaneous equations to find the acceleration."
         ],
         "topicsCovered": [
           "Connected Particles",
           "Forces and Newton’s Laws",
+          "Friction",
           "Dynamics of a Particle"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Mechanics (9701)",
+        "funFact": "Pulley systems are ancient simple machines that modify the direction and magnitude of forces, enabling heavy loads to be lifted with less effort."
+      },
+      "Medium": {
+        "id": "mech-m-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "A block of mass 5 kg is placed on a rough inclined plane which makes an angle of $30^\\circ$ with the horizontal. If the coefficient of friction is 0.2, find the minimum force required to push the block up the plane, parallel to the plane. (Take $g = 9.8 \\text{ m/s}^2$).",
+        "possibleAnswers": [
+          "33.0 N",
+          "33.0N",
+          "32.99 N",
+          "32.99N",
+          "32.987 N"
+        ],
+        "fullSolutionLatex": "Draw a free-body diagram for the block. Resolve forces perpendicular and parallel to the inclined plane. \\\\ 1. Forces perpendicular to the plane: \\\\ Normal reaction $R = mg\\cos(30^\\circ)$. \\\\ $R = 5 \\times 9.8 \\times \\cos(30^\\circ) = 49 \\times \\frac{\\sqrt{3}}{2} \\approx 42.435$ N. \\\\ 2. Forces parallel to the plane: \\\\ Component of weight acting down the plane: $mg\\sin(30^\\circ) = 5 \\times 9.8 \\times \\sin(30^\\circ) = 49 \\times 0.5 = 24.5$ N. \\\\ When pushing the block *up* the plane, the friction force acts *down* the plane. \\\\ Maximum friction force $F_{friction} = \\mu R = 0.2 \\times 42.435 \\approx 8.487$ N. \\\\ For the block to move up (or be on the verge of moving up) the plane, the applied force (P) must overcome both the component of weight down the plane and the friction force down the plane. \\\\ $P = mg\\sin(30^\\circ) + F_{friction}$. \\\\ $P = 24.5 + 8.487 \\approx 32.987$ N. \\\\ Therefore, the minimum force required is approximately 33.0 N (to 3 s.f.).",
+        "hintsLatex": [
+          "Draw a free body diagram and resolve forces parallel and perpendicular to the inclined plane.",
+          "Remember that friction opposes motion, so it acts down the plane when pushing up.",
+          "Calculate the normal force, then the maximum static friction, then sum forces parallel to the plane."
+        ],
+        "topicsCovered": [
+          "Forces and Newton’s Laws",
+          "Friction",
+          "Equilibrium of Forces"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mechanics (9701)",
-        "funFact": "Pulleys are simple machines that allow us to change the direction of forces and gain mechanical advantage, a principle utilized in cranes and elevators."
+        "funFact": "Understanding friction is crucial in engineering, allowing for the design of brakes and tires, or for minimizing wear in machinery."
       },
       "Easy": {
-        "id": "mech-e-40",
-        "date": "2026-03-06T06:59:27.820Z",
-        "problemLatex": "A car accelerates uniformly from rest to `20 \\text{ m/s}` in `5 \\text{ s}`. What distance does it cover during this time?",
+        "id": "mech-e-41",
+        "date": "2026-03-07T06:48:21.682Z",
+        "problemLatex": "A car accelerates uniformly from rest to 20 m/s in 5 seconds. Find the distance travelled during this time.",
         "possibleAnswers": [
           "50 m",
-          "50m",
-          "50.0 m"
+          "50m"
         ],
-        "fullSolutionLatex": "We are given: \\n Initial velocity `u = 0 \\text{ m/s}` (from rest). \\n Final velocity `v = 20 \\text{ m/s}`. \\n Time `t = 5 \\text{ s}`. \\n We need to find the distance `s`. \\n Using the SUVAT equation `s = \\frac{1}{2}(u+v)t`. \\n `s = \\frac{1}{2}(0+20)(5) = \\frac{1}{2}(20)(5) = 10(5) = 50 \\text{ m}`.",
+        "fullSolutionLatex": "Given: \\\\ Initial velocity $u = 0$ m/s (from rest). \\\\ Final velocity $v = 20$ m/s. \\\\ Time $t = 5$ s. \\\\ We need to find the distance $s$. \\\\ Using the SUVAT equation $s = (\\frac{u+v}{2})t$. \\\\ $s = (\\frac{0+20}{2}) \\times 5$. \\\\ $s = (10) \\times 5 = 50$ meters.",
         "hintsLatex": [
-          "List the known quantities (SUVAT variables).",
-          "Choose the appropriate SUVAT equation.",
-          "Substitute the values and calculate the distance."
+          "Identify the known and unknown variables (s, u, v, a, t).",
+          "Choose the appropriate SUVAT equation that relates these variables.",
+          "Substitute the values and solve for the unknown."
         ],
         "topicsCovered": [
-          "Kinematics in One Dimension",
-          "Equations of Motion (SUVAT)",
-          "Displacement, Velocity and Acceleration"
+          "Equations of Motion (SUVAT)"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mechanics (9701)",
-        "funFact": "The SUVAT equations are a simplified model of motion, assuming constant acceleration, which is a good approximation for many real-world scenarios like a car braking or accelerating on a straight road."
+        "funFact": "The SUVAT equations are a simplified set of formulas that efficiently describe motion under constant acceleration, a cornerstone of classical kinematics."
       }
     }
   }
