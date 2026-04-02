@@ -3,6 +3,14 @@ import { getDailyProblems } from '@/lib/db';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+export async function generateStaticParams() {
+    const data = await getDailyProblems();
+    if (!data) return [];
+
+    const allProblems = Object.values(data.problemSet).flatMap((diffs) => Object.values(diffs));
+    return allProblems.map((p) => ({ slug: p.id }));
+}
+
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const { slug } = await params;
     const data = await getDailyProblems();
