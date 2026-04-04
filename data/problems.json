@@ -3,423 +3,152 @@
   "problemSet": {
     "Integration": {
       "Hard": {
-        "id": "int-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Evaluate \\int \\sin^2(x) \\, dx.",
-        "possibleAnswers": [
-          "(1/2)x - (1/4)sin(2x) + C",
-          "0.5x - 0.25sin(2x) + C",
-          "x/2 - sin(2x)/4 + C"
-        ],
-        "fullSolutionLatex": "We use the trigonometric identity \\cos(2x) = 1 - 2\\sin^2(x). \\\\ Rearranging for \\sin^2(x), we get \\sin^2(x) = \\frac{1 - \\cos(2x)}{2}. \\\\ Now, substitute this into the integral: \\\\ \\int \\sin^2(x) \\, dx = \\int \\frac{1 - \\cos(2x)}{2} \\, dx \\\\ = \\frac{1}{2} \\int (1 - \\cos(2x)) \\, dx \\\\ = \\frac{1}{2} \\left( \\int 1 \\, dx - \\int \\cos(2x) \\, dx \\right) \\\\ = \\frac{1}{2} \\left( x - \\frac{1}{2}\\sin(2x) \\right) + C \\\\ = \\frac{1}{2}x - \\frac{1}{4}\\sin(2x) + C.",
+        "id": "int-h-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "\\int_{1}^{\\infty}\\int_0^1 \\ln \\left(\\frac{1+\\frac{\\lfloor\\lceil x \\rceil y \\rfloor}{\\lceil x \\rceil}}{1+\\frac{\\lfloor \\lfloor x \\rfloor y\\rfloor}{\\lfloor x \\rfloor}}\\right)\\,dy\\,dx",
+        "possibleAnswers": ["0.39", ".39", "2ln(2)-1", "2\\ln(2)-1"],
+        "acceptedKeySequences": [["0", ".", "3", "9"], [".", "3", "9"]],
+        "fullSolutionLatex": "The integral evaluates to $2\\ln 2 - 1 \\approx 0.39$ using a telescoping sum and Riemann sum argument.",
         "hintsLatex": [
-          "Think about double angle formulas for cosine.",
-          "Recall that \\cos(2x) = 1 - 2\\sin^2(x).",
-          "Remember to adjust for the constant when integrating \\cos(ax)."
+          "Recognise that floor and ceiling functions simplify over integer intervals.",
+          "Split the outer integral into a sum over intervals $(n-1, n)$.",
+          "The resulting telescoping sum converges to $\\int_0^1 \\ln(1+x)\\,dx = 2\\ln 2 - 1$."
         ],
-        "topicsCovered": [
-          "Integration Using Trigonometric Identities"
-        ],
+        "topicsCovered": ["Improper Integrals"],
         "difficultyLevel": "Hard",
-        "problemType": "Integration",
-        "funFact": "Trigonometric identities are incredibly powerful, allowing us to transform complex trigonometric expressions into simpler forms that are easier to integrate."
+        "problemType": "Integration"
       },
       "Medium": {
-        "id": "int-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Evaluate \\int x e^{2x} \\, dx.",
-        "possibleAnswers": [
-          "(1/2)xe^(2x) - (1/4)e^(2x) + C",
-          "0.5xe^(2x) - 0.25e^(2x) + C",
-          "(xe^(2x))/2 - e^(2x)/4 + C",
-          "e^(2x) * (x/2 - 1/4) + C"
-        ],
-        "fullSolutionLatex": "We use integration by parts: \\int u \\, dv = uv - \\int v \\, du. \\\\ Let $u = x \\implies du = dx$. \\\\ Let $dv = e^{2x} \\, dx \\implies v = \\int e^{2x} \\, dx = \\frac{1}{2}e^{2x}$. \\\\ So, \\int x e^{2x} \\, dx = x \\left(\\frac{1}{2}e^{2x}\\right) - \\int \\left(\\frac{1}{2}e^{2x}\\right) \\, dx \\\\ = \\frac{1}{2}x e^{2x} - \\frac{1}{2} \\int e^{2x} \\, dx \\\\ = \\frac{1}{2}x e^{2x} - \\frac{1}{2} \\left(\\frac{1}{2}e^{2x}\\right) + C \\\\ = \\frac{1}{2}x e^{2x} - \\frac{1}{4}e^{2x} + C.",
+        "id": "int-m-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "Evaluate $\\displaystyle\\int x e^{2x}\\,dx$.",
+        "possibleAnswers": ["(1/2)xe^(2x)-(1/4)e^(2x)+C", "e^(2x)(x/2-1/4)+C"],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Use integration by parts with $u=x$, $dv=e^{2x}dx$: $\\frac{x e^{2x}}{2} - \\frac{e^{2x}}{4} + C$.",
         "hintsLatex": [
-          "Remember the LIATE rule for choosing u and dv.",
-          "The formula for integration by parts is \\int u \\, dv = uv - \\int v \\, du.",
-          "Be careful with the integration of e^(ax)."
+          "Apply integration by parts: $\\int u\\,dv = uv - \\int v\\,du$.",
+          "Choose $u = x$ and $dv = e^{2x}\\,dx$.",
+          "Recall $\\int e^{2x}\\,dx = \\frac{1}{2}e^{2x}$."
         ],
-        "topicsCovered": [
-          "Integration by Parts"
-        ],
+        "topicsCovered": ["Integration by Parts"],
         "difficultyLevel": "Medium",
-        "problemType": "Integration",
-        "funFact": "Integration by parts is a direct consequence of the product rule for differentiation, just in reverse!"
+        "problemType": "Integration"
       },
       "Easy": {
-        "id": "int-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Find \\int (3x^2 - 4x + 5) \\, dx.",
-        "possibleAnswers": [
-          "x^3 - 2x^2 + 5x + C",
-          "x^3-2x^2+5x+C",
-          "x^3 - 2x^2 + 5x + c",
-          "x^3-2x^2+5x+c"
-        ],
-        "fullSolutionLatex": "Using the power rule for integration, \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C. \\\\ \\int (3x^2 - 4x + 5) \\, dx = 3\\frac{x^{2+1}}{2+1} - 4\\frac{x^{1+1}}{1+1} + 5\\frac{x^{0+1}}{0+1} + C \\\\ = 3\\frac{x^3}{3} - 4\\frac{x^2}{2} + 5\\frac{x^1}{1} + C \\\\ = x^3 - 2x^2 + 5x + C.",
+        "id": "int-e-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "Find $\\displaystyle\\int 3x^2\\,dx$.",
+        "possibleAnswers": ["x^3+C", "x^3 + C"],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Apply the power rule: $\\int 3x^2\\,dx = x^3 + C$.",
         "hintsLatex": [
-          "Remember the power rule for integration.",
-          "Integrate term by term.",
-          "Don't forget the constant of integration, C!"
+          "Use the power rule: $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$.",
+          "Increase the exponent by 1 and divide by the new exponent.",
+          "Don't forget the constant of integration $C$."
         ],
-        "topicsCovered": [
-          "Indefinite Integrals of Polynomials"
-        ],
+        "topicsCovered": ["Indefinite Integrals of Polynomials"],
         "difficultyLevel": "Easy",
-        "problemType": "Integration",
-        "funFact": "The integral symbol \\(\\int\\) is an elongated 'S', standing for 'sum', as integration is essentially a way of summing infinitesimally small parts."
+        "problemType": "Integration"
       }
     },
     "Differentiation": {
       "Hard": {
-        "id": "diff-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A rectangular enclosure is to be built with one side against a long existing wall. If 120 metres of fencing are available for the other three sides, find the maximum area of the enclosure.",
-        "possibleAnswers": [
-          "1800 m^2",
-          "1800 square meters",
-          "1800"
-        ],
-        "fullSolutionLatex": "Let the length of the side parallel to the wall be $x$ metres and the lengths of the other two sides (perpendicular to the wall) be $y$ metres each. \\\\ The total fencing available is for the three sides: $x + 2y = 120$. \\\\ From this, $x = 120 - 2y$. \\\\ The area of the enclosure is $A = xy$. \\\\ Substitute $x$: $A(y) = (120 - 2y)y = 120y - 2y^2$. \\\\ To find the maximum area, differentiate $A(y)$ with respect to $y$ and set it to zero: \\\\ $\\frac{dA}{dy} = 120 - 4y$. \\\\ Set $\\frac{dA}{dy} = 0$: $120 - 4y = 0 \\implies 4y = 120 \\implies y = 30$. \\\\ To confirm it's a maximum, find the second derivative: $\\frac{d^2A}{dy^2} = -4$. Since it's negative, it's a maximum. \\\\ Now find $x$: $x = 120 - 2(30) = 120 - 60 = 60$. \\\\ Maximum area $A = xy = 60 \\times 30 = 1800$ square metres.",
+        "id": "diff-h-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "Find $\\dfrac{dy}{dx}$ if $x^y = y^x$.",
+        "possibleAnswers": ["y(ylnx-x)/(x(xlny-y))", "(y(y-xlny))/(x(x-ylnx))"],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Take $\\ln$ of both sides: $y\\ln x = x\\ln y$. Differentiate implicitly and solve for $dy/dx$.",
         "hintsLatex": [
-          "Draw a diagram to visualize the problem.",
-          "Formulate an equation for the quantity to be maximised (Area) in terms of one variable.",
-          "Differentiate, set to zero, and solve for the variable."
+          "Take the natural log of both sides.",
+          "Use implicit differentiation after taking logs.",
+          "Collect $dy/dx$ terms on one side."
         ],
-        "topicsCovered": [
-          "Optimization Problems"
-        ],
+        "topicsCovered": ["Implicit Differentiation"],
         "difficultyLevel": "Hard",
-        "problemType": "Differentiation",
-        "funFact": "Optimization problems are not just textbook exercises; they are used in engineering, economics, and business to find the best possible outcomes, from maximizing profits to minimizing material waste."
+        "problemType": "Differentiation"
       },
       "Medium": {
-        "id": "diff-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Error generating problem.",
-        "possibleAnswers": [
-          "-x/y",
-          "-x over y"
-        ],
-        "fullSolutionLatex": "Differentiate both sides of the equation with respect to $x$: \\\\ $\\frac{d}{dx}(x^2) + \\frac{d}{dx}(y^2) = \\frac{d}{dx}(9)$ \\\\ $2x + 2y \\frac{dy}{dx} = 0$ \\\\ $2y \\frac{dy}{dx} = -2x$ \\\\ $\\frac{dy}{dx} = -\\frac{2x}{2y} = -\\frac{x}{y}$.",
+        "id": "diff-m-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "Differentiate $f(x) = x^2 \\sin x$.",
+        "possibleAnswers": ["2xsinx+x^2cosx", "x(2sinx+xcosx)"],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Product rule: $f'(x) = 2x\\sin x + x^2 \\cos x$.",
         "hintsLatex": [
-          "Differentiate both sides with respect to x.",
-          "Remember to use the chain rule for terms involving y.",
+          "Use the product rule: $(uv)' = u'v + uv'$.",
+          "Let $u = x^2$ and $v = \\sin x$.",
+          "Differentiate each part separately."
+        ],
+        "topicsCovered": ["Product Rule"],
+        "difficultyLevel": "Medium",
+        "problemType": "Differentiation"
+      },
+      "Easy": {
+        "id": "diff-e-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "Find $f'(x)$ if $f(x) = 4x^3 - 2x + 7$.",
+        "possibleAnswers": ["12x^2-2", "12x^2 - 2"],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Apply the power rule term by term: $f'(x) = 12x^2 - 2$.",
+        "hintsLatex": [
+          "Differentiate each term separately.",
+          "The derivative of $x^n$ is $nx^{n-1}$.",
           "The derivative of a constant is zero."
         ],
-        "topicsCovered": [
-          "Implicit Differentiation"
-        ],
-        "difficultyLevel": "Medium",
-        "problemType": "Differentiation",
-        "funFact": "Implicit differentiation is crucial for finding slopes of curves that aren't easily expressed as explicit functions of x, such as circles and ellipses."
-      },
-      "Easy": {
-        "id": "diff-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Differentiate $y = 5e^{3x}$ with respect to $x$.",
-        "possibleAnswers": [
-          "15e^(3x)",
-          "15e^3x"
-        ],
-        "fullSolutionLatex": "If $y = ae^{kx}$, then $\\frac{dy}{dx} = ake^{kx}$. \\\\ Here, $a=5$ and $k=3$. \\\\ So, $\\frac{dy}{dx} = 5 \\times 3 e^{3x} = 15e^{3x}$.",
-        "hintsLatex": [
-          "Recall the derivative of e^(kx).",
-          "The constant multiple rule applies here.",
-          "If y = ae^(kx), then dy/dx = ake^(kx)."
-        ],
-        "topicsCovered": [
-          "Differentiation of Exponential Functions"
-        ],
+        "topicsCovered": ["Power Rule"],
         "difficultyLevel": "Easy",
-        "problemType": "Differentiation",
-        "funFact": "The exponential function $e^x$ is unique because its derivative is itself, a property that makes it fundamental in calculus and many areas of science."
+        "problemType": "Differentiation"
       }
     },
-    "Further Math (9231)": {
+    "Limits": {
       "Hard": {
-        "id": "fm-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Find the general solution to the differential equation $\\frac{d^2y}{dx^2} + 5\\frac{dy}{dx} + 6y = 0$.",
-        "possibleAnswers": [
-          "y = Ae^(-2x) + Be^(-3x)",
-          "y = A*e^(-2x) + B*e^(-3x)",
-          "Ae^-2x + Be^-3x"
-        ],
-        "fullSolutionLatex": "This is a second-order homogeneous linear differential equation with constant coefficients. \\\\ The auxiliary equation is $m^2 + 5m + 6 = 0$. \\\\ Factorizing the quadratic equation: $(m+2)(m+3) = 0$. \\\\ The roots are $m_1 = -2$ and $m_2 = -3$. \\\\ Since the roots are real and distinct, the general solution is $y = Ae^{m_1x} + Be^{m_2x}$. \\\\ Therefore, the general solution is $y = Ae^{-2x} + Be^{-3x}$.",
+        "id": "lim-h-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "Evaluate $\\displaystyle\\lim_{x\\to 0}\\frac{x - \\sin x}{x^3}$.",
+        "possibleAnswers": ["1/6", "0.1667", "0.17"],
+        "acceptedKeySequences": [["1", "/", "6"]],
+        "fullSolutionLatex": "By L'Hopital's Rule (applied three times) or by Taylor series: $\\frac{x - \\sin x}{x^3} \\to \\frac{1}{6}$.",
         "hintsLatex": [
-          "Formulate the auxiliary equation.",
-          "Solve the quadratic auxiliary equation for its roots.",
-          "Apply the general solution form for real and distinct roots."
+          "The limit is of the form $0/0$ — consider L'Hopital's Rule or Taylor expansion.",
+          "The Taylor series for $\\sin x$ around $0$ starts $x - x^3/6 + \\ldots$",
+          "Substitute the series and simplify."
         ],
-        "topicsCovered": [
-          "Second-Order Differential Equations",
-          "Auxiliary Equation Method",
-          "Homogeneous Differential Equations"
-        ],
+        "topicsCovered": ["L\u2019H\u00F4pital\u2019s Rule"],
         "difficultyLevel": "Hard",
-        "problemType": "Further Math (9231)",
-        "funFact": "Second-order differential equations are used to model a vast range of physical systems, from the motion of a pendulum to the flow of electric current in circuits."
+        "problemType": "Limits"
       },
       "Medium": {
-        "id": "fm-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Given matrix $A = \\begin{pmatrix} 2 & 1 \\\\ 3 & 4 \\end{pmatrix}$, find its inverse $A^{-1}$.",
-        "possibleAnswers": [
-          "(1/5) * [[4, -1], [-3, 2]]",
-          "[[0.8, -0.2], [-0.6, 0.4]]",
-          "1/5 [[4, -1], [-3, 2]]",
-          "[[4/5, -1/5], [-3/5, 2/5]]"
-        ],
-        "fullSolutionLatex": "For a 2x2 matrix $A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$, its inverse $A^{-1}$ is given by $\\frac{1}{\\det(A)} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$. \\\\ First, find the determinant of A: $\\det(A) = (2)(4) - (1)(3) = 8 - 3 = 5$. \\\\ Now, apply the formula for the inverse: \\\\ $A^{-1} = \\frac{1}{5} \\begin{pmatrix} 4 & -1 \\\\ -3 & 2 \\end{pmatrix}$.",
+        "id": "lim-m-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "Find $\\displaystyle\\lim_{x\\to 2}\\frac{x^2-4}{x-2}$.",
+        "possibleAnswers": ["4"],
+        "acceptedKeySequences": [["4"]],
+        "fullSolutionLatex": "Factor the numerator: $\\frac{(x-2)(x+2)}{x-2} = x+2 \\to 4$ as $x\\to 2$.",
         "hintsLatex": [
-          "Recall the formula for the inverse of a 2x2 matrix.",
-          "Calculate the determinant first.",
-          "Be careful with the signs and swapping elements."
+          "Factor the numerator $x^2 - 4$.",
+          "Cancel the common factor with the denominator.",
+          "Substitute $x = 2$ into the simplified expression."
         ],
-        "topicsCovered": [
-          "Matrices",
-          "Inverse Matrices",
-          "Determinants"
-        ],
+        "topicsCovered": ["Limits of Rational Functions"],
         "difficultyLevel": "Medium",
-        "problemType": "Further Math (9231)",
-        "funFact": "Matrices are not just abstract mathematical objects; they are fundamental to computer graphics, quantum mechanics, and solving large systems of equations."
+        "problemType": "Limits"
       },
       "Easy": {
-        "id": "fm-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Plot the complex number $z = 3 + 4i$ on an Argand diagram.",
-        "possibleAnswers": [
-          "Point (3,4)",
-          "3+4i plotted",
-          "x=3, y=4"
-        ],
-        "fullSolutionLatex": "To plot the complex number $z = 3 + 4i$ on an Argand diagram, we represent the real part (3) on the horizontal axis (real axis) and the imaginary part (4) on the vertical axis (imaginary axis). \\\\ Locate the point with coordinates $(3, 4)$ in the complex plane.",
+        "id": "lim-e-94",
+        "date": "2026-04-04T00:00:00.000Z",
+        "problemLatex": "Evaluate $\\displaystyle\\lim_{x\\to 3}(2x+1)$.",
+        "possibleAnswers": ["7"],
+        "acceptedKeySequences": [["7"]],
+        "fullSolutionLatex": "The function is continuous at $x=3$, so substitute directly: $2(3)+1 = 7$.",
         "hintsLatex": [
-          "The real part goes on the horizontal axis.",
-          "The imaginary part goes on the vertical axis.",
-          "Think of it as plotting a coordinate (Real part, Imaginary part)."
+          "The function $2x+1$ is a polynomial and is continuous everywhere.",
+          "For continuous functions, the limit equals the function value.",
+          "Simply substitute $x = 3$."
         ],
-        "topicsCovered": [
-          "Argand Diagrams"
-        ],
+        "topicsCovered": ["Limits at a Point"],
         "difficultyLevel": "Easy",
-        "problemType": "Further Math (9231)",
-        "funFact": "Argand diagrams provide a visual way to understand complex numbers, making operations like addition and multiplication geometrically intuitive."
-      }
-    },
-    "Mathematics (9709)": {
-      "Hard": {
-        "id": "math-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "The graph of $y = f(x)$ is transformed to the graph of $y = 2f(x-3) + 1$. Describe the sequence of transformations.",
-        "possibleAnswers": [
-          "Horizontal translation 3 units right, vertical stretch by factor 2, vertical translation 1 unit up",
-          "Shift right 3, stretch by 2, shift up 1",
-          "Translate 3 units right, stretch vertically by 2, translate 1 unit up"
-        ],
-        "fullSolutionLatex": "The transformation $y = 2f(x-3) + 1$ can be broken down into these steps: \\\\ 1. **Horizontal translation:** The $(x-3)$ inside the function indicates a horizontal translation of 3 units to the right. \\\\ 2. **Vertical stretch:** The coefficient '2' multiplying $f(x-3)$ indicates a vertical stretch by a factor of 2. \\\\ 3. **Vertical translation:** The '+1' outside the function indicates a vertical translation of 1 unit upwards. \\\\ So, the sequence is: Horizontal translation 3 units right, followed by a vertical stretch by factor 2, followed by a vertical translation 1 unit up.",
-        "hintsLatex": [
-          "Remember the order of operations for transformations (often reflections/stretches before translations).",
-          "A term like f(x-a) means a horizontal shift.",
-          "A term like bf(x) means a vertical stretch or compression."
-        ],
-        "topicsCovered": [
-          "Transformations of Graphs"
-        ],
-        "difficultyLevel": "Hard",
-        "problemType": "Mathematics (9709)",
-        "funFact": "Understanding graph transformations allows mathematicians and scientists to predict the behavior of complex functions based on simpler, known functions, saving immense computational effort."
-      },
-      "Medium": {
-        "id": "math-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Solve the equation $2\\cos x = -1$ for $0^{\\circ} \\le x \\le 360^{\\circ}$.",
-        "possibleAnswers": [
-          "120 degrees, 240 degrees",
-          "120, 240",
-          "120\\degree, 240\\degree",
-          "120 and 240"
-        ],
-        "fullSolutionLatex": "Given $2\\cos x = -1$. \\\\ $\\cos x = -\\frac{1}{2}$. \\\\ The basic angle $\\alpha$ for which $\\cos \\alpha = \\frac{1}{2}$ is $60^{\\circ}$. \\\\ Since $\\cos x$ is negative, $x$ must be in the second or third quadrants. \\\\ In the second quadrant: $x = 180^{\\circ} - 60^{\\circ} = 120^{\\circ}$. \\\\ In the third quadrant: $x = 180^{\\circ} + 60^{\\circ} = 240^{\\circ}$. \\\\ So the solutions are $x = 120^{\\circ}$ and $x = 240^{\\circ}$.",
-        "hintsLatex": [
-          "First, isolate \\cos x.",
-          "Find the basic angle using the positive value.",
-          "Determine the quadrants where \\cos x is negative."
-        ],
-        "topicsCovered": [
-          "Trigonometric Equations"
-        ],
-        "difficultyLevel": "Medium",
-        "problemType": "Mathematics (9709)",
-        "funFact": "Trigonometric equations are fundamental in fields like physics and engineering for describing periodic phenomena such as waves and oscillations."
-      },
-      "Easy": {
-        "id": "math-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Simplify $\\frac{12}{\\sqrt{3}}$.",
-        "possibleAnswers": [
-          "4\\sqrt{3}",
-          "4sqrt(3)",
-          "4 root 3"
-        ],
-        "fullSolutionLatex": "To simplify $\\frac{12}{\\sqrt{3}}$, we rationalize the denominator by multiplying the numerator and denominator by $\\sqrt{3}$: \\\\ $\\frac{12}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{12\\sqrt{3}}{3}$ \\\\ $= 4\\sqrt{3}$.",
-        "hintsLatex": [
-          "Rationalize the denominator.",
-          "Multiply both numerator and denominator by \\sqrt{3}.",
-          "Remember that \\sqrt{a} \\times \\sqrt{a} = a."
-        ],
-        "topicsCovered": [
-          "Surds and Indices"
-        ],
-        "difficultyLevel": "Easy",
-        "problemType": "Mathematics (9709)",
-        "funFact": "Surds represent irrational numbers whose exact values cannot be expressed as simple fractions, making them essential for precise mathematical calculations."
-      }
-    },
-    "Further Mechanics (9231)": {
-      "Hard": {
-        "id": "fmech-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A uniform rod AB of length $2 \\text{ m}$ and mass $5 \\text{ kg}$ is smoothly hinged at A. A horizontal force F is applied at B, perpendicular to the rod, holding the rod in equilibrium at an angle of $30^{\\circ}$ to the vertical. Calculate the magnitude of the force F. (Take $g=9.8 \\text{ m/s}^2$)",
-        "possibleAnswers": [
-          "14.1 N",
-          "14.1 Newtons",
-          "14.14 N"
-        ],
-        "fullSolutionLatex": "Let the length of the rod be $L = 2 \\text{ m}$ and its mass be $M = 5 \\text{ kg}$. \\\\ The weight of the rod, $W = Mg = 5 \\times 9.8 = 49 \\text{ N}$, acts downwards at the centre of mass, which is at $L/2 = 1 \\text{ m}$ from A. \\\\ The force F is applied at B, a distance $L = 2 \\text{ m}$ from A. \\\\ The rod is in equilibrium, so the sum of moments about A is zero. \\\\ The moment due to the weight is $W \\times (L/2) \\sin(30^{\\circ})$ (perpendicular distance from A to the line of action of weight, if angle is with vertical). \\\\ Alternatively, if angle with vertical is $30^{\\circ}$, then angle with horizontal is $60^{\\circ}$. \\\\ Let's use perpendicular distances for moments. The weight acts vertically downwards at $L/2$. The horizontal distance from A to the line of action of weight is $(L/2) \\sin(30^{\\circ})$. \\\\ The force F acts horizontally at B. The vertical distance from A to the line of action of F is $L \\cos(30^{\\circ})$. \\\\ Taking moments about A: \\\\ Moment due to F (anticlockwise): $F \\times (L \\cos 30^{\\circ})$ \\\\ Moment due to W (clockwise): $W \\times (L/2 \\sin 30^{\\circ})$ \\\\ For equilibrium: $F \\times L \\cos(30^{\\circ}) = W \\times (L/2) \\sin(30^{\\circ})$ \\\\ $F \\times 2 \\times \\frac{\\sqrt{3}}{2} = 49 \\times 1 \\times \\frac{1}{2}$ \\\\ $F \\sqrt{3} = \\frac{49}{2}$ \\\\ $F = \\frac{49}{2\\sqrt{3}} \\approx \\frac{49}{3.4641} \\approx 14.1448 \\text{ N}$. \\\\ Rounded to 3 significant figures, $F \\approx 14.1 \\text{ N}$.",
-        "hintsLatex": [
-          "Draw a clear diagram showing all forces and distances.",
-          "Take moments about the hinge point A to eliminate hinge reactions.",
-          "Remember that the perpendicular distance for a moment depends on the angle relative to the line of action of the force."
-        ],
-        "topicsCovered": [
-          "Rigid Body Dynamics",
-          "Moments and Couples",
-          "Equilibrium of Rigid Bodies"
-        ],
-        "difficultyLevel": "Hard",
-        "problemType": "Further Mechanics (9231)",
-        "funFact": "Rigid body dynamics is essential for designing stable structures like bridges and buildings, ensuring they can withstand various forces without collapsing."
-      },
-      "Medium": {
-        "id": "fmech-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Calculate the gravitational potential energy of a $10 \\text{ kg}$ satellite at an altitude of $1.5 \\times 10^6 \\text{ m}$ above the Earth's surface. (Earth's radius $R = 6.37 \\times 10^6 \\text{ m}$, Earth's mass $M = 5.97 \\times 10^{24} \\text{ kg}$, Gravitational constant $G = 6.67 \\times 10^{-11} \\text{ N m}^2 \\text{ kg}^{-2}$).",
-        "possibleAnswers": [
-          "-5.06e8 J",
-          "-5.06 x 10^8 J",
-          "-5.06 * 10^8 J",
-          "-506000000 J"
-        ],
-        "fullSolutionLatex": "The formula for gravitational potential energy is $U = -\\frac{GMm}{r}$, where $r$ is the distance from the center of the Earth. \\\\ The distance $r = R + h = 6.37 \\times 10^6 + 1.5 \\times 10^6 = (6.37 + 1.5) \\times 10^6 = 7.87 \\times 10^6 \\text{ m}$. \\\\ Given: $m = 10 \\text{ kg}$, $M = 5.97 \\times 10^{24} \\text{ kg}$, $G = 6.67 \\times 10^{-11} \\text{ N m}^2 \\text{ kg}^{-2}$. \\\\ $U = -\\frac{(6.67 \\times 10^{-11})(5.97 \\times 10^{24})(10)}{7.87 \\times 10^6}$ \\\\ $U = -\\frac{(6.67 \\times 5.97 \\times 10) \\times 10^{(-11+24)}}{7.87 \\times 10^6}$ \\\\ $U = -\\frac{398.199 \\times 10^{13}}{7.87 \\times 10^6}$ \\\\ $U = -\\frac{3.98199 \\times 10^{15}}{7.87 \\times 10^6}$ \\\\ $U \\approx -5.0597 \\times 10^8 \\text{ J}$. \\\\ Rounding to 3 significant figures, $U \\approx -5.06 \\times 10^8 \\text{ J}$.",
-        "hintsLatex": [
-          "Remember that the distance 'r' in the potential energy formula is from the center of the Earth.",
-          "Use the formula $U = -GMm/r$.",
-          "Be careful with scientific notation and calculations."
-        ],
-        "topicsCovered": [
-          "Gravitational Fields",
-          "Potential Energy Functions"
-        ],
-        "difficultyLevel": "Medium",
-        "problemType": "Further Mechanics (9231)",
-        "funFact": "Gravitational potential energy is always negative by convention, representing the work done against gravity to move an object from infinity to its current position."
-      },
-      "Easy": {
-        "id": "fmech-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A particle of mass $0.5 \\text{ kg}$ moves in a horizontal circle of radius $2 \\text{ m}$ with a constant speed of $4 \\text{ m/s}$. Calculate the centripetal force acting on the particle.",
-        "possibleAnswers": [
-          "4 N",
-          "4 Newtons"
-        ],
-        "fullSolutionLatex": "The formula for centripetal force is $F = \\frac{mv^2}{r}$. \\\\ Given: mass $m = 0.5 \\text{ kg}$, radius $r = 2 \\text{ m}$, speed $v = 4 \\text{ m/s}$. \\\\ $F = \\frac{(0.5)(4^2)}{2} = \\frac{0.5 \\times 16}{2} = \\frac{8}{2} = 4 \\text{ N}$.",
-        "hintsLatex": [
-          "Recall the formula for centripetal force.",
-          "Identify the given values for mass, velocity, and radius.",
-          "Ensure units are consistent."
-        ],
-        "topicsCovered": [
-          "Motion in a Circle",
-          "Centripetal Force"
-        ],
-        "difficultyLevel": "Easy",
-        "problemType": "Further Mechanics (9231)",
-        "funFact": "Centripetal force is what keeps planets in orbit around the sun and cars from skidding off a curved road, demonstrating its widespread importance in physics."
-      }
-    },
-    "Mechanics (9701)": {
-      "Hard": {
-        "id": "mech-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A projectile is fired from the origin with an initial velocity of $20 \\text{ m/s}$ at an angle of $30^{\\circ}$ above the horizontal. Calculate the maximum height reached by the projectile. (Take $g=9.8 \\text{ m/s}^2$)",
-        "possibleAnswers": [
-          "5.10 m",
-          "5.10 meters",
-          "5.10"
-        ],
-        "fullSolutionLatex": "Initial velocity $u = 20 \\text{ m/s}$, angle $\\theta = 30^{\\circ}$. \\\\ Resolve the initial velocity into horizontal and vertical components: \\\\ Vertical component $u_y = u \\sin \\theta = 20 \\sin 30^{\\circ} = 20 \\times \\frac{1}{2} = 10 \\text{ m/s}$. \\\\ At the maximum height, the vertical velocity $v_y = 0$. \\\\ We use the SUVAT equation $v^2 = u^2 + 2as$ for the vertical motion. \\\\ Here, $v_y = 0$, $u_y = 10$, acceleration $a = -g = -9.8 \\text{ m/s}^2$, and $s = H_{max}$ (maximum height). \\\\ $0^2 = (10)^2 + 2(-9.8)H_{max}$ \\\\ $0 = 100 - 19.6 H_{max}$ \\\\ $19.6 H_{max} = 100$ \\\\ $H_{max} = \\frac{100}{19.6} \\approx 5.102 \\text{ m}$. \\\\ So, the maximum height is approximately $5.10 \\text{ m}$.",
-        "hintsLatex": [
-          "Resolve the initial velocity into horizontal and vertical components.",
-          "At maximum height, the vertical component of velocity is zero.",
-          "Use the appropriate SUVAT equation for vertical motion."
-        ],
-        "topicsCovered": [
-          "Projectiles",
-          "Kinematics in One Dimension",
-          "Motion Under Gravity"
-        ],
-        "difficultyLevel": "Hard",
-        "problemType": "Mechanics (9701)",
-        "funFact": "Projectile motion is a classic physics problem, essential for understanding ballistics, sports, and even the trajectory of water from a fountain."
-      },
-      "Medium": {
-        "id": "mech-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Two particles, A (mass $3 \\text{ kg}$) and B (mass $2 \\text{ kg}$), are connected by a light inextensible string. Particle A rests on a smooth horizontal table, and the string passes over a smooth light pulley at the edge of the table. Particle B hangs freely. Find the acceleration of the system. (Take $g=9.8 \\text{ m/s}^2$)",
-        "possibleAnswers": [
-          "3.92 m/s^2",
-          "3.92",
-          "3.92 ms^-2"
-        ],
-        "fullSolutionLatex": "Let $T$ be the tension in the string and $a$ be the acceleration of the system. \\\\ For particle A (mass $m_A = 3 \\text{ kg}$) on the table: \\\\ The only horizontal force is tension $T$. \\\\ $T = m_A a \\quad \\text{(Equation 1)}$ \\\\ For particle B (mass $m_B = 2 \\text{ kg}$) hanging freely: \\\\ The forces are its weight $m_B g$ downwards and tension $T$ upwards. \\\\ $m_B g - T = m_B a \\quad \\text{(Equation 2)}$ \\\\ Substitute Equation 1 into Equation 2: \\\\ $m_B g - m_A a = m_B a$ \\\\ $m_B g = m_A a + m_B a$ \\\\ $m_B g = (m_A + m_B) a$ \\\\ $a = \\frac{m_B g}{m_A + m_B}$ \\\\ Using $g = 9.8 \\text{ m/s}^2$: \\\\ $a = \\frac{2 \\times 9.8}{3 + 2} = \\frac{19.6}{5} = 3.92 \\text{ m/s}^2$.",
-        "hintsLatex": [
-          "Draw a force diagram for each particle.",
-          "Apply Newton's Second Law (F=ma) to each particle separately.",
-          "Solve the simultaneous equations for acceleration and tension."
-        ],
-        "topicsCovered": [
-          "Connected Particles",
-          "Forces and Newton’s Laws"
-        ],
-        "difficultyLevel": "Medium",
-        "problemType": "Mechanics (9701)",
-        "funFact": "Connected particle problems are a staple in mechanics, helping engineers design systems like cranes and elevators where multiple objects interact via ropes or chains."
-      },
-      "Easy": {
-        "id": "mech-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A block of mass $2 \\text{ kg}$ is pulled horizontally by a force of $10 \\text{ N}$ across a smooth surface. Calculate the acceleration of the block.",
-        "possibleAnswers": [
-          "5 m/s^2",
-          "5 meters per second squared",
-          "5 ms^-2"
-        ],
-        "fullSolutionLatex": "According to Newton's Second Law of Motion, $F = ma$. \\\\ Given: Force $F = 10 \\text{ N}$, mass $m = 2 \\text{ kg}$. \\\\ We need to find acceleration $a$. \\\\ $10 = 2 \\times a$ \\\\ $a = \\frac{10}{2} = 5 \\text{ m/s}^2$.",
-        "hintsLatex": [
-          "Recall Newton's Second Law of Motion.",
-          "Identify the given force and mass.",
-          "Make sure units are consistent."
-        ],
-        "topicsCovered": [
-          "Forces and Newton’s Laws"
-        ],
-        "difficultyLevel": "Easy",
-        "problemType": "Mechanics (9701)",
-        "funFact": "Newton's laws of motion are the bedrock of classical mechanics, accurately describing the motion of objects from falling apples to orbiting satellites."
+        "problemType": "Limits"
       }
     }
   }
