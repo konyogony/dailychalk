@@ -1,0 +1,155 @@
+{
+  "lastUpdate": "2026-04-05",
+  "problemSet": {
+    "Integration": {
+      "Hard": {
+        "id": "int-h-95",
+        "date": "2026-04-05T13:36:42.289Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Integration"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Integration"
+      },
+      "Medium": {
+        "id": "int-m-95",
+        "date": "2026-04-05T13:36:42.304Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Integration"
+        ],
+        "difficultyLevel": "Medium",
+        "problemType": "Integration"
+      },
+      "Easy": {
+        "id": "int-e-95",
+        "date": "2026-04-05T13:36:42.318Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Integration"
+        ],
+        "difficultyLevel": "Easy",
+        "problemType": "Integration"
+      }
+    },
+    "Differentiation": {
+      "Hard": {
+        "id": "diff-h-95",
+        "date": "2026-04-05T13:36:42.333Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Differentiation"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Differentiation"
+      },
+      "Medium": {
+        "id": "diff-m-95",
+        "date": "2026-04-05T13:36:42.347Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Differentiation"
+        ],
+        "difficultyLevel": "Medium",
+        "problemType": "Differentiation"
+      },
+      "Easy": {
+        "id": "diff-e-95",
+        "date": "2026-04-05T13:36:42.360Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Differentiation"
+        ],
+        "difficultyLevel": "Easy",
+        "problemType": "Differentiation"
+      }
+    },
+    "Limits": {
+      "Hard": {
+        "id": "lim-h-95",
+        "date": "2026-04-05T13:36:42.384Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Limits"
+        ],
+        "difficultyLevel": "Hard",
+        "problemType": "Limits"
+      },
+      "Medium": {
+        "id": "lim-m-95",
+        "date": "2026-04-05T13:36:42.410Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Limits"
+        ],
+        "difficultyLevel": "Medium",
+        "problemType": "Limits"
+      },
+      "Easy": {
+        "id": "lim-e-95",
+        "date": "2026-04-05T13:36:42.434Z",
+        "problemLatex": "No problem available for today. Please check back tomorrow.",
+        "possibleAnswers": [
+          "?"
+        ],
+        "acceptedKeySequences": [],
+        "fullSolutionLatex": "Solution unavailable.",
+        "hintsLatex": [],
+        "topicsCovered": [
+          "Limits"
+        ],
+        "difficultyLevel": "Easy",
+        "problemType": "Limits"
+      }
+    }
+  }
+}
