@@ -1,346 +1,333 @@
 {
-  "lastUpdate": "2026-04-04",
+  "lastUpdate": "2026-04-05",
   "problemSet": {
     "Integration": {
       "Hard": {
-        "id": "int-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Evaluate \\int \\sin^2(x) \\, dx.",
+        "id": "int-h-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Find the area enclosed by the curves $y = x^2$ and $y = 2x$.",
         "possibleAnswers": [
-          "(1/2)x - (1/4)sin(2x) + C",
-          "0.5x - 0.25sin(2x) + C",
-          "x/2 - sin(2x)/4 + C"
+          "4/3",
+          "1.333",
+          "1 and 1/3"
         ],
-        "fullSolutionLatex": "We use the trigonometric identity \\cos(2x) = 1 - 2\\sin^2(x). \\\\ Rearranging for \\sin^2(x), we get \\sin^2(x) = \\frac{1 - \\cos(2x)}{2}. \\\\ Now, substitute this into the integral: \\\\ \\int \\sin^2(x) \\, dx = \\int \\frac{1 - \\cos(2x)}{2} \\, dx \\\\ = \\frac{1}{2} \\int (1 - \\cos(2x)) \\, dx \\\\ = \\frac{1}{2} \\left( \\int 1 \\, dx - \\int \\cos(2x) \\, dx \\right) \\\\ = \\frac{1}{2} \\left( x - \\frac{1}{2}\\sin(2x) \\right) + C \\\\ = \\frac{1}{2}x - \\frac{1}{4}\\sin(2x) + C.",
+        "fullSolutionLatex": "Step 1: Find the points of intersection of the two curves.\nSet $x^2 = 2x$.\n$x^2 - 2x = 0$.\n$x(x-2) = 0$.\nSo, the intersection points are $x=0$ and $x=2$.\nStep 2: Determine which function is 'above' the other in the interval $[0,2]$.\nFor $x \\in (0,2)$, choose $x=1$. $y_1 = 1^2 = 1$ and $y_2 = 2(1) = 2$. Since $2x > x^2$, the curve $y=2x$ is above $y=x^2$.\nStep 3: Set up the definite integral for the area.\nArea $= \\int_0^2 (2x - x^2) \\, dx$.\nStep 4: Evaluate the integral.\n$[x^2 - \\frac{x^3}{3}]_0^2$.\n$= (2^2 - \\frac{2^3}{3}) - (0^2 - \\frac{0^3}{3})$.\n$= (4 - \\frac{8}{3}) - 0$.\n$= \\frac{12}{3} - \\frac{8}{3} = \\frac{4}{3}$.",
         "hintsLatex": [
-          "Think about double angle formulas for cosine.",
-          "Recall that \\cos(2x) = 1 - 2\\sin^2(x).",
-          "Remember to adjust for the constant when integrating \\cos(ax)."
+          "First, find the points where the two curves intersect to determine the limits of integration.",
+          "Sketch the graphs to identify which function is greater in the interval between the intersection points.",
+          "The area is found by integrating the difference between the upper function and the lower function over the relevant interval."
         ],
         "topicsCovered": [
-          "Integration Using Trigonometric Identities"
+          "Area Between Two Curves"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Integration",
-        "funFact": "Trigonometric identities are incredibly powerful, allowing us to transform complex trigonometric expressions into simpler forms that are easier to integrate."
+        "funFact": "Area calculations using integration are fundamental in engineering, such as determining cross-sectional areas for stress analysis."
       },
       "Medium": {
-        "id": "int-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Evaluate \\int x e^{2x} \\, dx.",
+        "id": "int-m-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Evaluate $\\int x \\sqrt{x^2 + 5} \\, dx$.",
         "possibleAnswers": [
-          "(1/2)xe^(2x) - (1/4)e^(2x) + C",
-          "0.5xe^(2x) - 0.25e^(2x) + C",
-          "(xe^(2x))/2 - e^(2x)/4 + C",
-          "e^(2x) * (x/2 - 1/4) + C"
+          "(1/3)(x^2+5)^(3/2)+C",
+          "1/3 * (x^2+5)^(3/2) + C",
+          "0.333(x^2+5)^(3/2)+C"
         ],
-        "fullSolutionLatex": "We use integration by parts: \\int u \\, dv = uv - \\int v \\, du. \\\\ Let $u = x \\implies du = dx$. \\\\ Let $dv = e^{2x} \\, dx \\implies v = \\int e^{2x} \\, dx = \\frac{1}{2}e^{2x}$. \\\\ So, \\int x e^{2x} \\, dx = x \\left(\\frac{1}{2}e^{2x}\\right) - \\int \\left(\\frac{1}{2}e^{2x}\\right) \\, dx \\\\ = \\frac{1}{2}x e^{2x} - \\frac{1}{2} \\int e^{2x} \\, dx \\\\ = \\frac{1}{2}x e^{2x} - \\frac{1}{2} \\left(\\frac{1}{2}e^{2x}\\right) + C \\\\ = \\frac{1}{2}x e^{2x} - \\frac{1}{4}e^{2x} + C.",
+        "fullSolutionLatex": "Step 1: Use substitution. Let $u = x^2 + 5$.\nStep 2: Differentiate $u$ with respect to $x$: $\\frac{du}{dx} = 2x$. Rearrange to find $x \\, dx$: $x \\, dx = \\frac{1}{2} du$.\nStep 3: Substitute $u$ and $dx$ into the integral:\n$\\int \\sqrt{u} \\left(\\frac{1}{2} du\\right) = \\frac{1}{2} \\int u^{1/2} \\, du$.\nStep 4: Integrate with respect to $u$:\n$\\frac{1}{2} \\frac{u^{3/2}}{3/2} + C = \\frac{1}{2} \\cdot \\frac{2}{3} u^{3/2} + C = \\frac{1}{3} u^{3/2} + C$.\nStep 5: Substitute back $u = x^2 + 5$:\n$\\frac{1}{3} (x^2 + 5)^{3/2} + C$.",
         "hintsLatex": [
-          "Remember the LIATE rule for choosing u and dv.",
-          "The formula for integration by parts is \\int u \\, dv = uv - \\int v \\, du.",
-          "Be careful with the integration of e^(ax)."
+          "Look for a function and its derivative within the integrand for substitution.",
+          "Let $u$ be the expression inside the square root.",
+          "Remember to change $dx$ in terms of $du$."
         ],
         "topicsCovered": [
-          "Integration by Parts"
+          "Integration by Substitution (u-sub)"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Integration",
-        "funFact": "Integration by parts is a direct consequence of the product rule for differentiation, just in reverse!"
+        "funFact": "The method of substitution in integration is analogous to the chain rule in differentiation."
       },
       "Easy": {
-        "id": "int-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Find \\int (3x^2 - 4x + 5) \\, dx.",
+        "id": "int-e-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Evaluate $\\int_1^2 (3x^2 - 4x + 1) \\, dx$.",
         "possibleAnswers": [
-          "x^3 - 2x^2 + 5x + C",
-          "x^3-2x^2+5x+C",
-          "x^3 - 2x^2 + 5x + c",
-          "x^3-2x^2+5x+c"
+          "2"
         ],
-        "fullSolutionLatex": "Using the power rule for integration, \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C. \\\\ \\int (3x^2 - 4x + 5) \\, dx = 3\\frac{x^{2+1}}{2+1} - 4\\frac{x^{1+1}}{1+1} + 5\\frac{x^{0+1}}{0+1} + C \\\\ = 3\\frac{x^3}{3} - 4\\frac{x^2}{2} + 5\\frac{x^1}{1} + C \\\\ = x^3 - 2x^2 + 5x + C.",
+        "fullSolutionLatex": "Step 1: Integrate each term.\n$\\int (3x^2 - 4x + 1) \\, dx = 3\\frac{x^3}{3} - 4\\frac{x^2}{2} + x + C = x^3 - 2x^2 + x + C$.\nStep 2: Apply the limits of integration.\n$[x^3 - 2x^2 + x]_1^2 = (2^3 - 2(2^2) + 2) - (1^3 - 2(1^2) + 1)$.\n$= (8 - 8 + 2) - (1 - 2 + 1)$.\n$= 2 - 0 = 2$.",
         "hintsLatex": [
-          "Remember the power rule for integration.",
-          "Integrate term by term.",
-          "Don't forget the constant of integration, C!"
+          "Integrate each term using the power rule.",
+          "Remember to evaluate the antiderivative at the upper limit and subtract the evaluation at the lower limit.",
+          "Don't forget the constant term for indefinite integrals, but it cancels out for definite integrals."
         ],
         "topicsCovered": [
-          "Indefinite Integrals of Polynomials"
+          "Definite Integrals"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Integration",
-        "funFact": "The integral symbol \\(\\int\\) is an elongated 'S', standing for 'sum', as integration is essentially a way of summing infinitesimally small parts."
+        "funFact": "Definite integrals are used to calculate the total change of a quantity given its rate of change."
       }
     },
     "Differentiation": {
       "Hard": {
-        "id": "diff-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A rectangular enclosure is to be built with one side against a long existing wall. If 120 metres of fencing are available for the other three sides, find the maximum area of the enclosure.",
+        "id": "diff-h-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "The radius of a spherical balloon is increasing at a rate of $0.5 \\, \\text{cm/s}$. Find the rate at which its volume is increasing when the radius is $10 \\, \\text{cm}$. (Volume of a sphere $V = \\frac{4}{3}\\pi r^3$).",
         "possibleAnswers": [
-          "1800 m^2",
-          "1800 square meters",
-          "1800"
+          "200pi",
+          "200\\pi",
+          "200 pi",
+          "628.318"
         ],
-        "fullSolutionLatex": "Let the length of the side parallel to the wall be $x$ metres and the lengths of the other two sides (perpendicular to the wall) be $y$ metres each. \\\\ The total fencing available is for the three sides: $x + 2y = 120$. \\\\ From this, $x = 120 - 2y$. \\\\ The area of the enclosure is $A = xy$. \\\\ Substitute $x$: $A(y) = (120 - 2y)y = 120y - 2y^2$. \\\\ To find the maximum area, differentiate $A(y)$ with respect to $y$ and set it to zero: \\\\ $\\frac{dA}{dy} = 120 - 4y$. \\\\ Set $\\frac{dA}{dy} = 0$: $120 - 4y = 0 \\implies 4y = 120 \\implies y = 30$. \\\\ To confirm it's a maximum, find the second derivative: $\\frac{d^2A}{dy^2} = -4$. Since it's negative, it's a maximum. \\\\ Now find $x$: $x = 120 - 2(30) = 120 - 60 = 60$. \\\\ Maximum area $A = xy = 60 \\times 30 = 1800$ square metres.",
+        "fullSolutionLatex": "Step 1: Write down the given information and what needs to be found.\nGiven: $\\frac{dr}{dt} = 0.5 \\, \\text{cm/s}$.\nFind: $\\frac{dV}{dt}$ when $r=10 \\, \\text{cm}$.\nFormula: $V = \\frac{4}{3}\\pi r^3$.\nStep 2: Differentiate the volume formula with respect to $r$.\n$\\frac{dV}{dr} = \\frac{d}{dr}(\\frac{4}{3}\\pi r^3) = 4\\pi r^2$.\nStep 3: Use the chain rule to relate $\\frac{dV}{dt}$ to $\\frac{dr}{dt}$.\n$\\frac{dV}{dt} = \\frac{dV}{dr} \\cdot \\frac{dr}{dt}$.\nStep 4: Substitute the known values.\n$\\frac{dV}{dt} = (4\\pi r^2) \\cdot (0.5)$.\nStep 5: Calculate $\\frac{dV}{dt}$ when $r=10$.\n$\\frac{dV}{dt} = 4\\pi (10)^2 \\cdot (0.5) = 4\\pi (100) \\cdot (0.5) = 200\\pi \\, \\text{cm}^3\\text{/s}$.",
         "hintsLatex": [
-          "Draw a diagram to visualize the problem.",
-          "Formulate an equation for the quantity to be maximised (Area) in terms of one variable.",
-          "Differentiate, set to zero, and solve for the variable."
+          "Start by writing down the formula for the volume of a sphere.",
+          "Differentiate the volume formula with respect to the radius.",
+          "Apply the chain rule to connect the rates of change: $\\frac{dV}{dt} = \\frac{dV}{dr} \\cdot \\frac{dr}{dt}$."
         ],
         "topicsCovered": [
-          "Optimization Problems"
+          "Connected Rates"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Differentiation",
-        "funFact": "Optimization problems are not just textbook exercises; they are used in engineering, economics, and business to find the best possible outcomes, from maximizing profits to minimizing material waste."
+        "funFact": "Related rates problems are widely applied in physics and engineering to understand how interdependent quantities change over time."
       },
       "Medium": {
-        "id": "diff-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Error generating problem.",
+        "id": "diff-m-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "A curve is defined parametrically by $x = t^2$ and $y = \\ln(t+1)$. Find $\\frac{dy}{dx}$ in terms of $t$.",
         "possibleAnswers": [
-          "-x/y",
-          "-x over y"
+          "1/(2t(t+1))",
+          "1/(2t^2+2t)"
         ],
-        "fullSolutionLatex": "Differentiate both sides of the equation with respect to $x$: \\\\ $\\frac{d}{dx}(x^2) + \\frac{d}{dx}(y^2) = \\frac{d}{dx}(9)$ \\\\ $2x + 2y \\frac{dy}{dx} = 0$ \\\\ $2y \\frac{dy}{dx} = -2x$ \\\\ $\\frac{dy}{dx} = -\\frac{2x}{2y} = -\\frac{x}{y}$.",
+        "fullSolutionLatex": "Step 1: Differentiate $x$ with respect to $t$.\n$\\frac{dx}{dt} = \\frac{d}{dt}(t^2) = 2t$.\nStep 2: Differentiate $y$ with respect to $t$.\n$\\frac{dy}{dt} = \\frac{d}{dt}(\\ln(t+1)) = \\frac{1}{t+1}$.\nStep 3: Apply the chain rule for parametric differentiation: $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$.\n$\\frac{dy}{dx} = \\frac{1/(t+1)}{2t} = \\frac{1}{2t(t+1)}$.",
         "hintsLatex": [
-          "Differentiate both sides with respect to x.",
-          "Remember to use the chain rule for terms involving y.",
-          "The derivative of a constant is zero."
+          "Find $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$ separately.",
+          "Use the chain rule for parametric differentiation: $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}$.",
+          "Remember the derivative of $\\ln(f(t))$ is $\\frac{f'(t)}{f(t)}$."
         ],
         "topicsCovered": [
-          "Implicit Differentiation"
+          "Parametric Differentiation"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Differentiation",
-        "funFact": "Implicit differentiation is crucial for finding slopes of curves that aren't easily expressed as explicit functions of x, such as circles and ellipses."
+        "funFact": "Parametric equations allow us to describe complex curves that cannot be easily represented as simple functions of x or y, like cycloids."
       },
       "Easy": {
-        "id": "diff-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Differentiate $y = 5e^{3x}$ with respect to $x$.",
+        "id": "diff-e-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Differentiate $y = x^3 \\sin x$ with respect to $x$.",
         "possibleAnswers": [
-          "15e^(3x)",
-          "15e^3x"
+          "3x^2 sin x + x^3 cos x",
+          "x^2(3 sin x + x cos x)"
         ],
-        "fullSolutionLatex": "If $y = ae^{kx}$, then $\\frac{dy}{dx} = ake^{kx}$. \\\\ Here, $a=5$ and $k=3$. \\\\ So, $\\frac{dy}{dx} = 5 \\times 3 e^{3x} = 15e^{3x}$.",
+        "fullSolutionLatex": "Step 1: Identify the two functions being multiplied. Let $u = x^3$ and $v = \\sin x$.\nStep 2: Find the derivatives of $u$ and $v$.\n$\\frac{du}{dx} = 3x^2$.\n$\\frac{dv}{dx} = \\cos x$.\nStep 3: Apply the product rule formula: $\\frac{dy}{dx} = u\\frac{dv}{dx} + v\\frac{du}{dx}$.\n$\\frac{dy}{dx} = (x^3)(\\cos x) + (\\sin x)(3x^2)$.\nStep 4: Simplify the expression.\n$\\frac{dy}{dx} = x^3 \\cos x + 3x^2 \\sin x$.",
         "hintsLatex": [
-          "Recall the derivative of e^(kx).",
-          "The constant multiple rule applies here.",
-          "If y = ae^(kx), then dy/dx = ake^(kx)."
+          "Remember the product rule: $\\frac{d}{dx}(uv) = u'v + uv'$.",
+          "Identify $u$ and $v$ correctly.",
+          "Recall the derivatives of power functions and trigonometric functions."
         ],
         "topicsCovered": [
-          "Differentiation of Exponential Functions"
+          "Product Rule"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Differentiation",
-        "funFact": "The exponential function $e^x$ is unique because its derivative is itself, a property that makes it fundamental in calculus and many areas of science."
+        "funFact": "The product rule is essential for differentiating functions that are combinations of other functions, such as in signal processing."
       }
     },
     "Further Math (9231)": {
       "Hard": {
-        "id": "fm-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Find the general solution to the differential equation $\\frac{d^2y}{dx^2} + 5\\frac{dy}{dx} + 6y = 0$.",
+        "id": "fm-h-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Describe the locus of points $z$ satisfying $|z - (3+4i)| = 2$ geometrically.",
         "possibleAnswers": [
-          "y = Ae^(-2x) + Be^(-3x)",
-          "y = A*e^(-2x) + B*e^(-3x)",
-          "Ae^-2x + Be^-3x"
+          "Circle with centre (3,4) and radius 2",
+          "Centre (3,4), Radius 2",
+          "a circle, center (3,4), radius 2"
         ],
-        "fullSolutionLatex": "This is a second-order homogeneous linear differential equation with constant coefficients. \\\\ The auxiliary equation is $m^2 + 5m + 6 = 0$. \\\\ Factorizing the quadratic equation: $(m+2)(m+3) = 0$. \\\\ The roots are $m_1 = -2$ and $m_2 = -3$. \\\\ Since the roots are real and distinct, the general solution is $y = Ae^{m_1x} + Be^{m_2x}$. \\\\ Therefore, the general solution is $y = Ae^{-2x} + Be^{-3x}$.",
+        "fullSolutionLatex": "Step 1: Recall the general form of a complex locus representing a circle.\nThe equation $|z - z_0| = r$ represents a circle with centre $z_0$ and radius $r$.\nStep 2: Identify $z_0$ and $r$ from the given equation.\nComparing $|z - (3+4i)| = 2$ with the general form, we have:\n$z_0 = 3+4i$, which means the centre of the circle is the point $(3,4)$ on the Argand diagram.\n$r = 2$, which means the radius of the circle is 2 units.\nStep 3: Describe the locus.\nThe locus of points $z$ is a circle with centre $(3,4)$ and radius $2$.",
         "hintsLatex": [
-          "Formulate the auxiliary equation.",
-          "Solve the quadratic auxiliary equation for its roots.",
-          "Apply the general solution form for real and distinct roots."
+          "Recall the geometric interpretation of $|z-z_0|$.",
+          "The expression $|z-z_0|$ represents the distance between $z$ and $z_0$.",
+          "What shape is formed by all points that are a constant distance from a fixed point?"
         ],
         "topicsCovered": [
-          "Second-Order Differential Equations",
-          "Auxiliary Equation Method",
-          "Homogeneous Differential Equations"
+          "Loci in the Complex Plane"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Math (9231)",
-        "funFact": "Second-order differential equations are used to model a vast range of physical systems, from the motion of a pendulum to the flow of electric current in circuits."
+        "funFact": "Complex loci can describe paths of particles or regions in fluid dynamics, offering a visual interpretation of complex number properties."
       },
       "Medium": {
-        "id": "fm-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Given matrix $A = \\begin{pmatrix} 2 & 1 \\\\ 3 & 4 \\end{pmatrix}$, find its inverse $A^{-1}$.",
+        "id": "fm-m-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Use De Moivre's Theorem to express $(\\cos \\theta + i \\sin \\theta)^4$ in the form $a+bi$.",
         "possibleAnswers": [
-          "(1/5) * [[4, -1], [-3, 2]]",
-          "[[0.8, -0.2], [-0.6, 0.4]]",
-          "1/5 [[4, -1], [-3, 2]]",
-          "[[4/5, -1/5], [-3/5, 2/5]]"
+          "cos(4theta)+i sin(4theta)",
+          "cos(4\\theta)+i sin(4\\theta)"
         ],
-        "fullSolutionLatex": "For a 2x2 matrix $A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$, its inverse $A^{-1}$ is given by $\\frac{1}{\\det(A)} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$. \\\\ First, find the determinant of A: $\\det(A) = (2)(4) - (1)(3) = 8 - 3 = 5$. \\\\ Now, apply the formula for the inverse: \\\\ $A^{-1} = \\frac{1}{5} \\begin{pmatrix} 4 & -1 \\\\ -3 & 2 \\end{pmatrix}$.",
+        "fullSolutionLatex": "Step 1: Recall De Moivre's Theorem for powers.\n$(\\cos \\theta + i \\sin \\theta)^n = \\cos(n\\theta) + i \\sin(n\\theta)$.\nStep 2: Apply the theorem with $n=4$.\n$(\\cos \\theta + i \\sin \\theta)^4 = \\cos(4\\theta) + i \\sin(4\\theta)$.\nStep 3: This expression is already in the form $a+bi$, where $a = \\cos(4\\theta)$ and $b = \\sin(4\\theta)$.",
         "hintsLatex": [
-          "Recall the formula for the inverse of a 2x2 matrix.",
-          "Calculate the determinant first.",
-          "Be careful with the signs and swapping elements."
+          "De Moivre's Theorem states that $(\\cos \\theta + i \\sin \\theta)^n = \\cos(n\\theta) + i \\sin(n\\theta)$.",
+          "Identify the power $n$ in the given expression.",
+          "Simply apply the theorem directly."
         ],
         "topicsCovered": [
-          "Matrices",
-          "Inverse Matrices",
-          "Determinants"
+          "De Moivre’s Theorem"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Math (9231)",
-        "funFact": "Matrices are not just abstract mathematical objects; they are fundamental to computer graphics, quantum mechanics, and solving large systems of equations."
+        "funFact": "De Moivre's Theorem simplifies calculations involving powers and roots of complex numbers, making it indispensable in electrical engineering and signal processing."
       },
       "Easy": {
-        "id": "fm-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Plot the complex number $z = 3 + 4i$ on an Argand diagram.",
+        "id": "fm-e-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Find the modulus and argument of the complex number $z = 1 + i\\sqrt{3}$.",
         "possibleAnswers": [
-          "Point (3,4)",
-          "3+4i plotted",
-          "x=3, y=4"
+          "Modulus=2, Argument=pi/3",
+          "Modulus=2, Argument=60 degrees",
+          "2 and pi/3",
+          "2, pi/3"
         ],
-        "fullSolutionLatex": "To plot the complex number $z = 3 + 4i$ on an Argand diagram, we represent the real part (3) on the horizontal axis (real axis) and the imaginary part (4) on the vertical axis (imaginary axis). \\\\ Locate the point with coordinates $(3, 4)$ in the complex plane.",
+        "fullSolutionLatex": "Step 1: Find the modulus $|z|$.\n$|z| = \\sqrt{(\\text{Re}(z))^2 + (\\text{Im}(z))^2}$.\n$|z| = \\sqrt{1^2 + (\\sqrt{3})^2} = \\sqrt{1 + 3} = \\sqrt{4} = 2$.\nStep 2: Find the argument $\\arg(z)$.\nSince $z$ is in the first quadrant (both real and imaginary parts are positive), the argument is $\\arctan\\left(\\frac{\\text{Im}(z)}{\\text{Re}(z)}\\right)$.\n$\\arg(z) = \\arctan\\left(\\frac{\\sqrt{3}}{1}\\right) = \\frac{\\pi}{3}$ radians (or $60^\\circ$).",
         "hintsLatex": [
-          "The real part goes on the horizontal axis.",
-          "The imaginary part goes on the vertical axis.",
-          "Think of it as plotting a coordinate (Real part, Imaginary part)."
+          "The modulus is the distance from the origin to the point representing the complex number on the Argand diagram.",
+          "The argument is the angle measured counter-clockwise from the positive real axis.",
+          "Use the formulas $|z| = \\sqrt{x^2+y^2}$ and $\\arg(z) = \\arctan(y/x)$ (adjusting for quadrant)."
         ],
         "topicsCovered": [
-          "Argand Diagrams"
+          "Complex Numbers (Basic Operations)",
+          "Modulus and Argument"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Math (9231)",
-        "funFact": "Argand diagrams provide a visual way to understand complex numbers, making operations like addition and multiplication geometrically intuitive."
+        "funFact": "Complex numbers provide elegant solutions to problems that are difficult or impossible using only real numbers, such as finding all roots of polynomials."
       }
     },
     "Mathematics (9709)": {
       "Hard": {
-        "id": "math-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "The graph of $y = f(x)$ is transformed to the graph of $y = 2f(x-3) + 1$. Describe the sequence of transformations.",
+        "id": "math-h-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Given vectors $\\mathbf{a} = 2\\mathbf{i} - \\mathbf{j} + 3\\mathbf{k}$ and $\\mathbf{b} = \\mathbf{i} + 2\\mathbf{j} - \\mathbf{k}$, find the angle between $\\mathbf{a}$ and $\\mathbf{b}$ to one decimal place.",
         "possibleAnswers": [
-          "Horizontal translation 3 units right, vertical stretch by factor 2, vertical translation 1 unit up",
-          "Shift right 3, stretch by 2, shift up 1",
-          "Translate 3 units right, stretch vertically by 2, translate 1 unit up"
+          "109.1 degrees",
+          "109.1"
         ],
-        "fullSolutionLatex": "The transformation $y = 2f(x-3) + 1$ can be broken down into these steps: \\\\ 1. **Horizontal translation:** The $(x-3)$ inside the function indicates a horizontal translation of 3 units to the right. \\\\ 2. **Vertical stretch:** The coefficient '2' multiplying $f(x-3)$ indicates a vertical stretch by a factor of 2. \\\\ 3. **Vertical translation:** The '+1' outside the function indicates a vertical translation of 1 unit upwards. \\\\ So, the sequence is: Horizontal translation 3 units right, followed by a vertical stretch by factor 2, followed by a vertical translation 1 unit up.",
+        "fullSolutionLatex": "Step 1: Calculate the scalar (dot) product of $\\mathbf{a}$ and $\\mathbf{b}$.\n$\\mathbf{a} \\cdot \\mathbf{b} = (2)(1) + (-1)(2) + (3)(-1) = 2 - 2 - 3 = -3$.\nStep 2: Calculate the magnitude of vector $\\mathbf{a}$.\n$|\\mathbf{a}| = \\sqrt{2^2 + (-1)^2 + 3^2} = \\sqrt{4+1+9} = \\sqrt{14}$.\nStep 3: Calculate the magnitude of vector $\\mathbf{b}$.\n$|\\mathbf{b}| = \\sqrt{1^2 + 2^2 + (-1)^2} = \\sqrt{1+4+1} = \\sqrt{6}$.\nStep 4: Use the formula for the angle between two vectors: $\\cos \\theta = \\frac{\\mathbf{a} \\cdot \\mathbf{b}}{|\\mathbf{a}||\\mathbf{b}|}$.\n$\\cos \\theta = \\frac{-3}{\\sqrt{14}\\sqrt{6}} = \\frac{-3}{\\sqrt{84}}$.\nStep 5: Calculate $\\theta$.\n$\\theta = \\arccos\\left(\\frac{-3}{\\sqrt{84}}\\right) \\approx \\arccos(-0.3273) \\approx 109.106...^\\circ$.\nRounding to one decimal place, $\\theta = 109.1^\\circ$.",
         "hintsLatex": [
-          "Remember the order of operations for transformations (often reflections/stretches before translations).",
-          "A term like f(x-a) means a horizontal shift.",
-          "A term like bf(x) means a vertical stretch or compression."
+          "Recall the formula for the angle between two vectors: $\\mathbf{a} \\cdot \\mathbf{b} = |\\mathbf{a}||\\mathbf{b}| \\cos \\theta$.",
+          "First, calculate the dot product (scalar product) of the two vectors.",
+          "Next, calculate the magnitude of each vector."
         ],
         "topicsCovered": [
-          "Transformations of Graphs"
+          "Scalar Product",
+          "Vectors in 3D"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mathematics (9709)",
-        "funFact": "Understanding graph transformations allows mathematicians and scientists to predict the behavior of complex functions based on simpler, known functions, saving immense computational effort."
+        "funFact": "The scalar product of vectors is used to determine the work done by a force and the angle between vectors in 3D space, which has applications in computer graphics and robotics."
       },
       "Medium": {
-        "id": "math-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Solve the equation $2\\cos x = -1$ for $0^{\\circ} \\le x \\le 360^{\\circ}$.",
+        "id": "math-m-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Find the first three terms in the expansion of $(1+2x)^{1/2}$ in ascending powers of $x$.",
         "possibleAnswers": [
-          "120 degrees, 240 degrees",
-          "120, 240",
-          "120\\degree, 240\\degree",
-          "120 and 240"
+          "1+x-1/2 x^2",
+          "1+x-0.5x^2"
         ],
-        "fullSolutionLatex": "Given $2\\cos x = -1$. \\\\ $\\cos x = -\\frac{1}{2}$. \\\\ The basic angle $\\alpha$ for which $\\cos \\alpha = \\frac{1}{2}$ is $60^{\\circ}$. \\\\ Since $\\cos x$ is negative, $x$ must be in the second or third quadrants. \\\\ In the second quadrant: $x = 180^{\\circ} - 60^{\\circ} = 120^{\\circ}$. \\\\ In the third quadrant: $x = 180^{\\circ} + 60^{\\circ} = 240^{\\circ}$. \\\\ So the solutions are $x = 120^{\\circ}$ and $x = 240^{\\circ}$.",
+        "fullSolutionLatex": "Step 1: Use the binomial expansion formula for $(1+ax)^n = 1 + n(ax) + \\frac{n(n-1)}{2!}(ax)^2 + \\dots$\nHere, $n = \\frac{1}{2}$ and $ax = 2x$.\nStep 2: Calculate the first term:\n$1$.\nStep 3: Calculate the second term:\n$n(ax) = (\\frac{1}{2})(2x) = x$.\nStep 4: Calculate the third term:\n$\\frac{n(n-1)}{2!}(ax)^2 = \\frac{(\\frac{1}{2})(\\frac{1}{2}-1)}{2 \\cdot 1}(2x)^2$.\n$= \\frac{(\\frac{1}{2})(-\\frac{1}{2})}{2}(4x^2)$.\n$= \\frac{-\\frac{1}{4}}{2}(4x^2) = -\\frac{1}{8}(4x^2) = -\\frac{1}{2}x^2$.\nStep 5: Combine the terms:\n$1 + x - \\frac{1}{2}x^2 + \\dots$",
         "hintsLatex": [
-          "First, isolate \\cos x.",
-          "Find the basic angle using the positive value.",
-          "Determine the quadrants where \\cos x is negative."
+          "Recall the binomial expansion for $(1+ax)^n$: $1 + n(ax) + \\frac{n(n-1)}{2!}(ax)^2 + \\dots$",
+          "Carefully substitute $n$ and $ax$ into the formula.",
+          "Pay attention to the signs and fractions in your calculations."
         ],
         "topicsCovered": [
-          "Trigonometric Equations"
+          "Binomial Expansion (Fractional Index)"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mathematics (9709)",
-        "funFact": "Trigonometric equations are fundamental in fields like physics and engineering for describing periodic phenomena such as waves and oscillations."
+        "funFact": "The binomial theorem, even for fractional indices, is used in approximations and series expansions, vital in fields like quantum mechanics."
       },
       "Easy": {
-        "id": "math-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Simplify $\\frac{12}{\\sqrt{3}}$.",
+        "id": "math-e-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Express $x^2 - 6x + 11$ in the form $(x+a)^2 + b$.",
         "possibleAnswers": [
-          "4\\sqrt{3}",
-          "4sqrt(3)",
-          "4 root 3"
+          "(x-3)^2+2",
+          "x-3 squared + 2"
         ],
-        "fullSolutionLatex": "To simplify $\\frac{12}{\\sqrt{3}}$, we rationalize the denominator by multiplying the numerator and denominator by $\\sqrt{3}$: \\\\ $\\frac{12}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{12\\sqrt{3}}{3}$ \\\\ $= 4\\sqrt{3}$.",
+        "fullSolutionLatex": "Step 1: Take the coefficient of $x$, which is $-6$. Halve it to get $-3$.\nStep 2: Write the first part of the completed square form: $(x-3)^2$.\nStep 3: Expand $(x-3)^2 = x^2 - 6x + 9$.\nStep 4: Compare this to the original expression $x^2 - 6x + 11$. We have $x^2 - 6x + 9$, but we need $x^2 - 6x + 11$. The difference is $11 - 9 = 2$.\nStep 5: Add this difference to complete the expression: $(x-3)^2 + 2$.",
         "hintsLatex": [
-          "Rationalize the denominator.",
-          "Multiply both numerator and denominator by \\sqrt{3}.",
-          "Remember that \\sqrt{a} \\times \\sqrt{a} = a."
+          "Take half of the coefficient of $x$.",
+          "Square the result from the previous step and subtract it.",
+          "Combine the constant terms."
         ],
         "topicsCovered": [
-          "Surds and Indices"
+          "Completing the Square"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mathematics (9709)",
-        "funFact": "Surds represent irrational numbers whose exact values cannot be expressed as simple fractions, making them essential for precise mathematical calculations."
+        "funFact": "Completing the square is not just for solving quadratics but is also crucial for finding the vertex of a parabola and standard forms of conic sections."
       }
     },
     "Further Mechanics (9231)": {
       "Hard": {
-        "id": "fmech-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A uniform rod AB of length $2 \\text{ m}$ and mass $5 \\text{ kg}$ is smoothly hinged at A. A horizontal force F is applied at B, perpendicular to the rod, holding the rod in equilibrium at an angle of $30^{\\circ}$ to the vertical. Calculate the magnitude of the force F. (Take $g=9.8 \\text{ m/s}^2$)",
+        "id": "fmech-h-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "A particle A of mass $2 \\, \\text{kg}$ moving with velocity $(3\\mathbf{i} + 2\\mathbf{j}) \\, \\text{m/s}$ collides with a stationary particle B of mass $1 \\, \\text{kg}$. After the collision, A moves with velocity $(1\\mathbf{i} + 4\\mathbf{j}) \\, \\text{m/s}$. Find the velocity of B after the collision.",
         "possibleAnswers": [
-          "14.1 N",
-          "14.1 Newtons",
-          "14.14 N"
+          "4i-4j m/s",
+          "4i - 4j",
+          "4i - 4j m/s"
         ],
-        "fullSolutionLatex": "Let the length of the rod be $L = 2 \\text{ m}$ and its mass be $M = 5 \\text{ kg}$. \\\\ The weight of the rod, $W = Mg = 5 \\times 9.8 = 49 \\text{ N}$, acts downwards at the centre of mass, which is at $L/2 = 1 \\text{ m}$ from A. \\\\ The force F is applied at B, a distance $L = 2 \\text{ m}$ from A. \\\\ The rod is in equilibrium, so the sum of moments about A is zero. \\\\ The moment due to the weight is $W \\times (L/2) \\sin(30^{\\circ})$ (perpendicular distance from A to the line of action of weight, if angle is with vertical). \\\\ Alternatively, if angle with vertical is $30^{\\circ}$, then angle with horizontal is $60^{\\circ}$. \\\\ Let's use perpendicular distances for moments. The weight acts vertically downwards at $L/2$. The horizontal distance from A to the line of action of weight is $(L/2) \\sin(30^{\\circ})$. \\\\ The force F acts horizontally at B. The vertical distance from A to the line of action of F is $L \\cos(30^{\\circ})$. \\\\ Taking moments about A: \\\\ Moment due to F (anticlockwise): $F \\times (L \\cos 30^{\\circ})$ \\\\ Moment due to W (clockwise): $W \\times (L/2 \\sin 30^{\\circ})$ \\\\ For equilibrium: $F \\times L \\cos(30^{\\circ}) = W \\times (L/2) \\sin(30^{\\circ})$ \\\\ $F \\times 2 \\times \\frac{\\sqrt{3}}{2} = 49 \\times 1 \\times \\frac{1}{2}$ \\\\ $F \\sqrt{3} = \\frac{49}{2}$ \\\\ $F = \\frac{49}{2\\sqrt{3}} \\approx \\frac{49}{3.4641} \\approx 14.1448 \\text{ N}$. \\\\ Rounded to 3 significant figures, $F \\approx 14.1 \\text{ N}$.",
+        "fullSolutionLatex": "Step 1: State the principle of conservation of momentum.\nFor a collision, the total momentum before collision equals the total momentum after collision.\n$m_A \\mathbf{u}_A + m_B \\mathbf{u}_B = m_A \\mathbf{v}_A + m_B \\mathbf{v}_B$.\nStep 2: Write down the given values.\n$m_A = 2 \\, \\text{kg}$, $\\mathbf{u}_A = (3\\mathbf{i} + 2\\mathbf{j}) \\, \\text{m/s}$.\n$m_B = 1 \\, \\text{kg}$, $\\mathbf{u}_B = \\mathbf{0} \\, \\text{m/s}$ (stationary).\n$\\mathbf{v}_A = (1\\mathbf{i} + 4\\mathbf{j}) \\, \\text{m/s}$.\nWe need to find $\\mathbf{v}_B$.\nStep 3: Substitute the values into the conservation of momentum equation.\n$(2)(3\\mathbf{i} + 2\\mathbf{j}) + (1)(\\mathbf{0}) = (2)(1\\mathbf{i} + 4\\mathbf{j}) + (1)(\\mathbf{v}_B)$.\nStep 4: Simplify and solve for $\\mathbf{v}_B$.\n$6\\mathbf{i} + 4\\mathbf{j} = 2\\mathbf{i} + 8\\mathbf{j} + \\mathbf{v}_B$.\n$\\mathbf{v}_B = (6\\mathbf{i} + 4\\mathbf{j}) - (2\\mathbf{i} + 8\\mathbf{j})$.\n$\\mathbf{v}_B = (6-2)\\mathbf{i} + (4-8)\\mathbf{j}$.\n$\\mathbf{v}_B = 4\\mathbf{i} - 4\\mathbf{j} \\, \\text{m/s}$.",
         "hintsLatex": [
-          "Draw a clear diagram showing all forces and distances.",
-          "Take moments about the hinge point A to eliminate hinge reactions.",
-          "Remember that the perpendicular distance for a moment depends on the angle relative to the line of action of the force."
+          "Apply the principle of conservation of momentum for collisions in two dimensions.",
+          "Remember that momentum is a vector quantity, so you must conserve it in both the $\\mathbf{i}$ and $\\mathbf{j}$ directions.",
+          "Set up the equation $m_A \\mathbf{u}_A + m_B \\mathbf{u}_B = m_A \\mathbf{v}_A + m_B \\mathbf{v}_B$ and solve for the unknown velocity vector."
         ],
         "topicsCovered": [
-          "Rigid Body Dynamics",
-          "Moments and Couples",
-          "Equilibrium of Rigid Bodies"
+          "Collisions in Two Dimensions",
+          "Impulse and Momentum (Advanced)"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Rigid body dynamics is essential for designing stable structures like bridges and buildings, ensuring they can withstand various forces without collapsing."
+        "funFact": "Two-dimensional collisions are critical in understanding scenarios like billiard ball dynamics, nuclear scattering, and vehicle crash analysis."
       },
       "Medium": {
-        "id": "fmech-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Calculate the gravitational potential energy of a $10 \\text{ kg}$ satellite at an altitude of $1.5 \\times 10^6 \\text{ m}$ above the Earth's surface. (Earth's radius $R = 6.37 \\times 10^6 \\text{ m}$, Earth's mass $M = 5.97 \\times 10^{24} \\text{ kg}$, Gravitational constant $G = 6.67 \\times 10^{-11} \\text{ N m}^2 \\text{ kg}^{-2}$).",
+        "id": "fmech-m-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "A particle moves with simple harmonic motion with period $T = \\frac{\\pi}{2} \\, \\text{s}$ and amplitude $A = 0.5 \\, \\text{m}$. Find the maximum speed of the particle.",
         "possibleAnswers": [
-          "-5.06e8 J",
-          "-5.06 x 10^8 J",
-          "-5.06 * 10^8 J",
-          "-506000000 J"
+          "2 m/s",
+          "2m/s",
+          "2"
         ],
-        "fullSolutionLatex": "The formula for gravitational potential energy is $U = -\\frac{GMm}{r}$, where $r$ is the distance from the center of the Earth. \\\\ The distance $r = R + h = 6.37 \\times 10^6 + 1.5 \\times 10^6 = (6.37 + 1.5) \\times 10^6 = 7.87 \\times 10^6 \\text{ m}$. \\\\ Given: $m = 10 \\text{ kg}$, $M = 5.97 \\times 10^{24} \\text{ kg}$, $G = 6.67 \\times 10^{-11} \\text{ N m}^2 \\text{ kg}^{-2}$. \\\\ $U = -\\frac{(6.67 \\times 10^{-11})(5.97 \\times 10^{24})(10)}{7.87 \\times 10^6}$ \\\\ $U = -\\frac{(6.67 \\times 5.97 \\times 10) \\times 10^{(-11+24)}}{7.87 \\times 10^6}$ \\\\ $U = -\\frac{398.199 \\times 10^{13}}{7.87 \\times 10^6}$ \\\\ $U = -\\frac{3.98199 \\times 10^{15}}{7.87 \\times 10^6}$ \\\\ $U \\approx -5.0597 \\times 10^8 \\text{ J}$. \\\\ Rounding to 3 significant figures, $U \\approx -5.06 \\times 10^8 \\text{ J}$.",
+        "fullSolutionLatex": "Step 1: Calculate the angular frequency $\\omega$.\n$\\omega = \\frac{2\\pi}{T}$.\nGiven $T = \\frac{\\pi}{2} \\, \\text{s}$.\n$\\omega = \\frac{2\\pi}{\\pi/2} = 2\\pi \\cdot \\frac{2}{\\pi} = 4 \\, \\text{rad/s}$.\nStep 2: Recall the formula for maximum speed in SHM.\n$V_{max} = A\\omega$.\nStep 3: Substitute the given amplitude and calculated angular frequency.\n$V_{max} = (0.5 \\, \\text{m})(4 \\, \\text{rad/s}) = 2 \\, \\text{m/s}$.",
         "hintsLatex": [
-          "Remember that the distance 'r' in the potential energy formula is from the center of the Earth.",
-          "Use the formula $U = -GMm/r$.",
-          "Be careful with scientific notation and calculations."
+          "First, determine the angular frequency $\\omega$ from the given period $T$.",
+          "Recall the relationship between maximum speed, amplitude, and angular frequency in SHM.",
+          "Make sure to use consistent units."
         ],
         "topicsCovered": [
-          "Gravitational Fields",
-          "Potential Energy Functions"
+          "Simple Harmonic Motion"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Gravitational potential energy is always negative by convention, representing the work done against gravity to move an object from infinity to its current position."
+        "funFact": "Simple Harmonic Motion describes many oscillating systems, from pendulums to molecular vibrations, forming the basis of many physical phenomena."
       },
       "Easy": {
-        "id": "fmech-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A particle of mass $0.5 \\text{ kg}$ moves in a horizontal circle of radius $2 \\text{ m}$ with a constant speed of $4 \\text{ m/s}$. Calculate the centripetal force acting on the particle.",
+        "id": "fmech-e-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "A particle of mass $0.5 \\, \\text{kg}$ moves in a horizontal circle of radius $2 \\, \\text{m}$ with a constant speed of $4 \\, \\text{m/s}$. Calculate the centripetal force acting on the particle.",
         "possibleAnswers": [
           "4 N",
-          "4 Newtons"
+          "4N"
         ],
-        "fullSolutionLatex": "The formula for centripetal force is $F = \\frac{mv^2}{r}$. \\\\ Given: mass $m = 0.5 \\text{ kg}$, radius $r = 2 \\text{ m}$, speed $v = 4 \\text{ m/s}$. \\\\ $F = \\frac{(0.5)(4^2)}{2} = \\frac{0.5 \\times 16}{2} = \\frac{8}{2} = 4 \\text{ N}$.",
+        "fullSolutionLatex": "Step 1: Identify the given values.\nMass $m = 0.5 \\, \\text{kg}$.\nRadius $r = 2 \\, \\text{m}$.\nSpeed $v = 4 \\, \\text{m/s}$.\nStep 2: Recall the formula for centripetal force.\n$F = \\frac{mv^2}{r}$.\nStep 3: Substitute the values into the formula and calculate.\n$F = \\frac{(0.5)(4^2)}{2} = \\frac{(0.5)(16)}{2} = \\frac{8}{2} = 4 \\, \\text{N}$.",
         "hintsLatex": [
           "Recall the formula for centripetal force.",
-          "Identify the given values for mass, velocity, and radius.",
-          "Ensure units are consistent."
+          "Ensure all units are consistent (SI units are usually preferred).",
+          "Substitute the given mass, speed, and radius into the formula."
         ],
         "topicsCovered": [
           "Motion in a Circle",
@@ -348,78 +335,80 @@
         ],
         "difficultyLevel": "Easy",
         "problemType": "Further Mechanics (9231)",
-        "funFact": "Centripetal force is what keeps planets in orbit around the sun and cars from skidding off a curved road, demonstrating its widespread importance in physics."
+        "funFact": "Circular motion is fundamental to understanding planetary orbits, centrifuges, and how car tires grip the road."
       }
     },
     "Mechanics (9701)": {
       "Hard": {
-        "id": "mech-h-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A projectile is fired from the origin with an initial velocity of $20 \\text{ m/s}$ at an angle of $30^{\\circ}$ above the horizontal. Calculate the maximum height reached by the projectile. (Take $g=9.8 \\text{ m/s}^2$)",
+        "id": "mech-h-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "A projectile is fired from the ground with an initial speed of $20 \\, \\text{m/s}$ at an angle of $30^\\circ$ above the horizontal. Find the maximum height reached by the projectile. (Use $g = 9.8 \\, \\text{m/s}^2$).",
         "possibleAnswers": [
           "5.10 m",
-          "5.10 meters",
-          "5.10"
+          "5.10m",
+          "5.1"
         ],
-        "fullSolutionLatex": "Initial velocity $u = 20 \\text{ m/s}$, angle $\\theta = 30^{\\circ}$. \\\\ Resolve the initial velocity into horizontal and vertical components: \\\\ Vertical component $u_y = u \\sin \\theta = 20 \\sin 30^{\\circ} = 20 \\times \\frac{1}{2} = 10 \\text{ m/s}$. \\\\ At the maximum height, the vertical velocity $v_y = 0$. \\\\ We use the SUVAT equation $v^2 = u^2 + 2as$ for the vertical motion. \\\\ Here, $v_y = 0$, $u_y = 10$, acceleration $a = -g = -9.8 \\text{ m/s}^2$, and $s = H_{max}$ (maximum height). \\\\ $0^2 = (10)^2 + 2(-9.8)H_{max}$ \\\\ $0 = 100 - 19.6 H_{max}$ \\\\ $19.6 H_{max} = 100$ \\\\ $H_{max} = \\frac{100}{19.6} \\approx 5.102 \\text{ m}$. \\\\ So, the maximum height is approximately $5.10 \\text{ m}$.",
+        "fullSolutionLatex": "Step 1: Resolve the initial velocity into horizontal and vertical components.\nInitial speed $u = 20 \\, \\text{m/s}$. Angle $\\theta = 30^\\circ$.\nVertical component of initial velocity $u_y = u \\sin \\theta = 20 \\sin 30^\\circ = 20 \\cdot 0.5 = 10 \\, \\text{m/s}$.\nHorizontal component of initial velocity $u_x = u \\cos \\theta = 20 \\cos 30^\\circ = 20 \\cdot \\frac{\\sqrt{3}}{2} = 10\\sqrt{3} \\, \\text{m/s}$.\nStep 2: Consider vertical motion to the maximum height.\nAt maximum height, the vertical component of velocity $v_y = 0$.\nAcceleration due to gravity $a_y = -g = -9.8 \\, \\text{m/s}^2$ (taking upwards as positive).\nStep 3: Use the kinematic equation $v^2 = u^2 + 2as$ for vertical motion.\n$v_y^2 = u_y^2 + 2a_y H_{max}$.\n$0^2 = (10)^2 + 2(-9.8)H_{max}$.\n$0 = 100 - 19.6 H_{max}$.\nStep 4: Solve for $H_{max}$.\n$19.6 H_{max} = 100$.\n$H_{max} = \\frac{100}{19.6} \\approx 5.10204... \\, \\text{m}$.\nRounding to 3 significant figures, $H_{max} = 5.10 \\, \\text{m}$.",
         "hintsLatex": [
-          "Resolve the initial velocity into horizontal and vertical components.",
-          "At maximum height, the vertical component of velocity is zero.",
-          "Use the appropriate SUVAT equation for vertical motion."
+          "Break the initial velocity into its horizontal and vertical components.",
+          "At the maximum height, the vertical component of the velocity is zero.",
+          "Use the appropriate SUVAT equation for vertical motion, remembering that acceleration due to gravity acts downwards."
         ],
         "topicsCovered": [
           "Projectiles",
-          "Kinematics in One Dimension",
+          "Kinematics in 1D",
           "Motion Under Gravity"
         ],
         "difficultyLevel": "Hard",
         "problemType": "Mechanics (9701)",
-        "funFact": "Projectile motion is a classic physics problem, essential for understanding ballistics, sports, and even the trajectory of water from a fountain."
+        "funFact": "Projectile motion, neglecting air resistance, provides a simplified yet powerful model for understanding the trajectory of objects under gravity, from sports to ballistics."
       },
       "Medium": {
-        "id": "mech-m-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "Two particles, A (mass $3 \\text{ kg}$) and B (mass $2 \\text{ kg}$), are connected by a light inextensible string. Particle A rests on a smooth horizontal table, and the string passes over a smooth light pulley at the edge of the table. Particle B hangs freely. Find the acceleration of the system. (Take $g=9.8 \\text{ m/s}^2$)",
+        "id": "mech-m-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "Two blocks of masses $3 \\, \\text{kg}$ and $2 \\, \\text{kg}$ are connected by a light inextensible string passing over a smooth fixed pulley. Find the acceleration of the system. (Use $g = 9.8 \\, \\text{m/s}^2$).",
         "possibleAnswers": [
-          "3.92 m/s^2",
-          "3.92",
-          "3.92 ms^-2"
+          "1.96 m/s^2",
+          "1.96m/s^2",
+          "g/5",
+          "9.8/5"
         ],
-        "fullSolutionLatex": "Let $T$ be the tension in the string and $a$ be the acceleration of the system. \\\\ For particle A (mass $m_A = 3 \\text{ kg}$) on the table: \\\\ The only horizontal force is tension $T$. \\\\ $T = m_A a \\quad \\text{(Equation 1)}$ \\\\ For particle B (mass $m_B = 2 \\text{ kg}$) hanging freely: \\\\ The forces are its weight $m_B g$ downwards and tension $T$ upwards. \\\\ $m_B g - T = m_B a \\quad \\text{(Equation 2)}$ \\\\ Substitute Equation 1 into Equation 2: \\\\ $m_B g - m_A a = m_B a$ \\\\ $m_B g = m_A a + m_B a$ \\\\ $m_B g = (m_A + m_B) a$ \\\\ $a = \\frac{m_B g}{m_A + m_B}$ \\\\ Using $g = 9.8 \\text{ m/s}^2$: \\\\ $a = \\frac{2 \\times 9.8}{3 + 2} = \\frac{19.6}{5} = 3.92 \\text{ m/s}^2$.",
+        "fullSolutionLatex": "Step 1: Draw a free-body diagram for each mass.\nFor the $3 \\, \\text{kg}$ mass (let's call it $m_1$), the forces are tension $T$ upwards and gravity $m_1g$ downwards. Assuming it moves downwards, the net force is $m_1g - T$.\nFor the $2 \\, \\text{kg}$ mass (let's call it $m_2$), the forces are tension $T$ upwards and gravity $m_2g$ downwards. Assuming it moves upwards, the net force is $T - m_2g$.\nStep 2: Apply Newton's Second Law ($F=ma$) to each mass.\nFor $m_1$: $m_1g - T = m_1a \\implies 3g - T = 3a$ (Equation 1).\nFor $m_2$: $T - m_2g = m_2a \\implies T - 2g = 2a$ (Equation 2).\nStep 3: Solve the simultaneous equations for $a$.\nAdd Equation 1 and Equation 2:\n$(3g - T) + (T - 2g) = 3a + 2a$.\n$g = 5a$.\n$a = \\frac{g}{5}$.\nStep 4: Substitute the value of $g$.\n$a = \\frac{9.8}{5} = 1.96 \\, \\text{m/s}^2$.",
         "hintsLatex": [
-          "Draw a force diagram for each particle.",
-          "Apply Newton's Second Law (F=ma) to each particle separately.",
-          "Solve the simultaneous equations for acceleration and tension."
+          "Draw a free-body diagram for each block, showing all forces acting on them.",
+          "Apply Newton's Second Law ($F=ma$) to each block separately, considering the direction of motion.",
+          "Solve the resulting simultaneous equations for the acceleration."
         ],
         "topicsCovered": [
           "Connected Particles",
-          "Forces and Newton’s Laws"
+          "Newton’s Laws"
         ],
         "difficultyLevel": "Medium",
         "problemType": "Mechanics (9701)",
-        "funFact": "Connected particle problems are a staple in mechanics, helping engineers design systems like cranes and elevators where multiple objects interact via ropes or chains."
+        "funFact": "Connected particles problems illustrate how forces and accelerations are transmitted through systems, which is crucial in designing pulley systems and cranes."
       },
       "Easy": {
-        "id": "mech-e-66",
-        "date": "2026-04-04T07:06:28.794Z",
-        "problemLatex": "A block of mass $2 \\text{ kg}$ is pulled horizontally by a force of $10 \\text{ N}$ across a smooth surface. Calculate the acceleration of the block.",
+        "id": "mech-e-67",
+        "date": "2026-04-05T07:12:45.839Z",
+        "problemLatex": "A block of mass $5 \\, \\text{kg}$ is pulled by a horizontal force of $20 \\, \\text{N}$ on a smooth surface. Calculate the acceleration of the block.",
         "possibleAnswers": [
-          "5 m/s^2",
-          "5 meters per second squared",
-          "5 ms^-2"
+          "4 m/s^2",
+          "4m/s^2",
+          "4"
         ],
-        "fullSolutionLatex": "According to Newton's Second Law of Motion, $F = ma$. \\\\ Given: Force $F = 10 \\text{ N}$, mass $m = 2 \\text{ kg}$. \\\\ We need to find acceleration $a$. \\\\ $10 = 2 \\times a$ \\\\ $a = \\frac{10}{2} = 5 \\text{ m/s}^2$.",
+        "fullSolutionLatex": "Step 1: Identify the given values.\nMass $m = 5 \\, \\text{kg}$.\nForce $F = 20 \\, \\text{N}$.\nThe surface is smooth, so friction is negligible.\nStep 2: Apply Newton's Second Law of Motion.\n$F = ma$.\nStep 3: Substitute the values and solve for acceleration $a$.\n$20 = (5)(a)$.\n$a = \\frac{20}{5} = 4 \\, \\text{m/s}^2$.",
         "hintsLatex": [
           "Recall Newton's Second Law of Motion.",
-          "Identify the given force and mass.",
-          "Make sure units are consistent."
+          "Identify the mass and the net force acting on the object.",
+          "A smooth surface implies that there is no friction."
         ],
         "topicsCovered": [
-          "Forces and Newton’s Laws"
+          "Forces and Newton’s Laws",
+          "Dynamics of a Particle"
         ],
         "difficultyLevel": "Easy",
         "problemType": "Mechanics (9701)",
-        "funFact": "Newton's laws of motion are the bedrock of classical mechanics, accurately describing the motion of objects from falling apples to orbiting satellites."
+        "funFact": "Newton's Second Law, F=ma, is the cornerstone of classical mechanics, explaining how forces cause objects to accelerate."
       }
     }
   }
