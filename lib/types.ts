@@ -4,10 +4,7 @@ export type DifficultyLevel = (typeof difficultyArray)[number];
 export const typeMap: Record<string, ProblemType> = {
     int: 'Integration',
     diff: 'Differentiation',
-    fm: 'Further Math (9231)',
-    math: 'Mathematics (9709)',
-    fmech: 'Further Mechanics (9231)',
-    mech: 'Mechanics (9701)',
+    lim: 'Limits',
 };
 
 export const diffMap: Record<string, DifficultyLevel> = {
@@ -16,14 +13,7 @@ export const diffMap: Record<string, DifficultyLevel> = {
     h: 'Hard',
 };
 
-export const problemArray = [
-    'Integration',
-    'Differentiation',
-    'Further Math (9231)',
-    'Mathematics (9709)',
-    'Further Mechanics (9231)',
-    'Mechanics (9701)',
-];
+export const problemArray = ['Integration', 'Differentiation', 'Limits'];
 export type ProblemType = (typeof problemArray)[number];
 export type DailyProblems = Record<ProblemType, Record<DifficultyLevel, Problem>>;
 
@@ -32,6 +22,8 @@ export interface Problem {
     date: Date | string;
     problemLatex: string;
     possibleAnswers: string[];
+    /** Key-sequences from Supabase puzzle_data for flexible answer matching */
+    acceptedKeySequences?: string[][];
     fullSolutionLatex: string;
     hintsLatex: string[];
     topicsCovered: string[];
