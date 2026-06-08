@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-06-07",
+  "lastUpdate": "2026-06-08",
   "problemSet": {
     "Integration": {
       "Hard": {
-        "id": "int-h-158",
-        "date": "2026-06-07T09:17:34.916Z",
+        "id": "int-h-159",
+        "date": "2026-06-08T11:01:32.506Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
@@ -19,8 +19,8 @@
         "problemType": "Integration"
       },
       "Medium": {
-        "id": "int-m-158",
-        "date": "2026-06-07T09:17:34.924Z",
+        "id": "int-m-159",
+        "date": "2026-06-08T11:01:32.515Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
@@ -35,8 +35,8 @@
         "problemType": "Integration"
       },
       "Easy": {
-        "id": "int-e-158",
-        "date": "2026-06-07T09:17:34.932Z",
+        "id": "int-e-159",
+        "date": "2026-06-08T11:01:32.524Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
@@ -53,8 +53,8 @@
     },
     "Differentiation": {
       "Hard": {
-        "id": "diff-h-158",
-        "date": "2026-06-07T09:17:34.944Z",
+        "id": "diff-h-159",
+        "date": "2026-06-08T11:01:32.533Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
@@ -69,8 +69,8 @@
         "problemType": "Differentiation"
       },
       "Medium": {
-        "id": "diff-m-158",
-        "date": "2026-06-07T09:17:34.963Z",
+        "id": "diff-m-159",
+        "date": "2026-06-08T11:01:32.542Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
@@ -85,8 +85,8 @@
         "problemType": "Differentiation"
       },
       "Easy": {
-        "id": "diff-e-158",
-        "date": "2026-06-07T09:17:34.969Z",
+        "id": "diff-e-159",
+        "date": "2026-06-08T11:01:32.552Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
@@ -103,8 +103,8 @@
     },
     "Limits": {
       "Hard": {
-        "id": "lim-h-158",
-        "date": "2026-06-07T09:17:34.986Z",
+        "id": "lim-h-159",
+        "date": "2026-06-08T11:01:32.571Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
@@ -119,8 +119,8 @@
         "problemType": "Limits"
       },
       "Medium": {
-        "id": "lim-m-158",
-        "date": "2026-06-07T09:17:35.001Z",
+        "id": "lim-m-159",
+        "date": "2026-06-08T11:01:32.590Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
@@ -135,8 +135,8 @@
         "problemType": "Limits"
       },
       "Easy": {
-        "id": "lim-e-158",
-        "date": "2026-06-07T09:17:35.013Z",
+        "id": "lim-e-159",
+        "date": "2026-06-08T11:01:32.608Z",
         "problemLatex": "No problem available for today. Please check back tomorrow.",
         "possibleAnswers": [
           "?"
